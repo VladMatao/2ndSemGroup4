@@ -1,44 +1,55 @@
 package DBLayer;
 
 import ModelLayer.Product;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
-import java.sql.Connection;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by Vlad Mataoanu.
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductDBTest {
+    private ProductDB productDB;
     @Before
-    public void setUp() throws Exception {
-        Connection conn = DBConnection.getInstance().getDBcon();
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        
+    public void setUp(){
+        productDB=new ProductDB();
     }
 
     @Test
-    public void create() throws Exception {
-        new ProductDB().create("nike", "2", 1.5, 10, 100, "1");
-        assertNotNull("Create() Method Failed",new ProductDB().read("2"));
+    public void testA_create() throws Exception {
+        productDB.create("nike", "2", 1.5, 10, 100, "1");
+        assertNotNull(productDB.read("2"));
     }
 
     @Test
-    public void update() throws Exception {
+    public void testB_update() throws Exception {
+        Product product = new Product("test", "4", 3.5, 12, 25, "4");
+        assertNotNull(productDB.read("2"));
+        productDB.update(product,"2");
+        assertNotNull(productDB.read("4"));
     }
 
     @Test
-    public void delete() throws Exception {
+    public void testC_read() throws Exception {
+        assertNotNull(productDB.read("4"));
     }
 
     @Test
-    public void read() throws Exception {
+    public void testD_delete() throws Exception {
+        productDB.delete("4");
+        assertNull(productDB.read("4"));
     }
-
+/*ProductDB productDB = new ProductDB();
+        productDB.create("nike", "2", 1.5, 10, 100, "1");
+        assertNotNull(productDB.read("2"));
+        Product product = new Product("test", "4", 3.5, 12, 25, "4");
+        assertNotNull(productDB.read("2"));
+        productDB.update(product,"2");
+        assertNotNull(productDB.read("4"));
+        productDB.delete("4");
+        assertNull("Delete() Method Failed", productDB.read("4"));*/
 }

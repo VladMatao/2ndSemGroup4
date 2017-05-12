@@ -23,11 +23,11 @@ public class ProductDB implements ProductDBIF {
 
             // execute the preparedstatement
             preparedStmt.execute();
-
-            conn.close();
         } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
+        }finally{
+            DBConnection.closeConnection();
         }
     }
 
@@ -35,18 +35,21 @@ public class ProductDB implements ProductDBIF {
     public boolean update(Product product, String barcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID WHERE Barcode = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID = ? WHERE Barcode = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setNString(1,product.getName());
+            psttm.setNString(2,product.getBarcode());
             psttm.setDouble(3,product.getPrice());
             psttm.setInt(4,product.getStock());
             psttm.setInt(5,product.getProductionTime());
-            psttm.setNString(2,product.getBarcode());
-            psttm.setNString(6,barcode);
+            psttm.setNString(6,product.getRequiredMatID());
+            psttm.setNString(7,barcode);
             psttm.executeUpdate();
         } catch(SQLException e) {
-            e.printStackTrace();
-            throw e;
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+        }finally{
+            DBConnection.closeConnection();
         }
         return true;
     }
@@ -68,17 +71,20 @@ public class ProductDB implements ProductDBIF {
     public Product read(String barcode) throws SQLException{
         Product product = null;
         try{
-            Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM Product where barcode=%s",barcode);
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("SELECT * FROM product where barcode=%s",barcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 product = buildObject(rs);
             }
-        } finally{
+        }catch (SQLException e) {
+            throw e;
+        }finally{
             DBConnection.closeConnection();
         }
         return product;
     }
+
 
     private static Product buildObject(ResultSet rs) throws SQLException{
         Product product;

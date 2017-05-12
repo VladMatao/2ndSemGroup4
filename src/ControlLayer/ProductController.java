@@ -33,7 +33,7 @@ public class ProductController {
         return product;
     }
 
-    public boolean update(Product product){
+    /*public boolean update(Product product){
 
         try {
             return productDb.update(product);
@@ -41,7 +41,7 @@ public class ProductController {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
     public boolean delete(String barcode){
         boolean aux = false;
