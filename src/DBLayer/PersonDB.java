@@ -137,4 +137,8 @@ public class PersonDB implements PersonDBIF {
     }
 
 
+    public String getId() {
+        Person person = null;
+        return person.getId();
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="dmaj0916_197353@kraka.ucn.dk" uuid="6b8901e4-e601-4347-9bc4-6def1eb25589">
+    <data-source name="kraka.ucn.dk" uuid="25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10">
       <database-info product="Microsoft SQL Server" version="12.00.2000" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
