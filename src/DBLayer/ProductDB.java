@@ -4,14 +4,6 @@ import ModelLayer.Product;
 import java.sql.*;
 
 public class ProductDB {
-    public static void main(String[] args) throws SQLException {
-        new ProductDB().create("nike", "2", 1.5, 10, 100, "1");
-        new ProductDB().delete("1");
-        new ProductDB().delete("123456");
-        new ProductDB().delete("1234546");
-        new ProductDB().delete("2");
-        System.out.println("success");
-    }
 
     public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException {
         try {
