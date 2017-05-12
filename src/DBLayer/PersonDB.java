@@ -5,40 +5,35 @@ import java.sql.*;
 /**
  * Created by Alexander on 5/10/2017.
  */
-public class PersonDB {
-    public static void main(String[] args){
+public class PersonDB implements PersonDBIF {
+      public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
+          try {
+              Connection conn = DBConnection.getInstance().getDBcon();
+              String query = " INSERT INTO Person (id, f_name, l_name, CNP, address, phNr, city, position, wage)" + "values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try{
-            Person person = new Person("123","Morosan","Toader", 12, "Bucuresti", "0123456","Aalborg","manager",332);
-            new PersonDB().delete("123");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println("success");
-    }
+              // create the mysql insert preparedstatement
 
+              PreparedStatement preparedStmt = conn.prepareStatement(query);
+              preparedStmt.setString(1, id);
+              preparedStmt.setString(2, f_name);
+              preparedStmt.setString(3, l_name);
+              preparedStmt.setInt(4, CNP);
+              preparedStmt.setString(5, address);
+              preparedStmt.setString(6, phNr);
+              preparedStmt.setString(7, city);
+              preparedStmt.setString(8, position);
+              preparedStmt.setDouble(9, wage);
 
+              // execute the preparedstatement
+              preparedStmt.execute();
 
-    public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
-        try{
-            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("ADD Person Set ID = ?,f_name = ?, l_name = ?, CNP = ?, address = ?, phNr = ?, city = ?, position = ?, wage = ?");
-            psttm.setNString(1,id);
-            psttm.setNString(2,f_name);
-            psttm.setNString(3,l_name);
-            psttm.setInt(4,CNP);
-            psttm.setNString(5,address);
-            psttm.setNString(6,phNr);
-            psttm.setNString(7,city);
-            psttm.setNString(8,position);
-            psttm.setDouble(9,wage);
-            psttm.executeLargeUpdate();
-        } catch(SQLException e) {
-            e.printStackTrace();
-            throw e;
-        }
-        return true;
-    }
+              conn.close();
+          } catch (Exception e) {
+              System.err.println("Got an exception!");
+              System.err.println(e.getMessage());
+          }
+      }
+
 
     /*public Person create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage)
     {
@@ -60,7 +55,7 @@ public class PersonDB {
 
     public boolean update(Person person) throws SQLException {
         try{
-            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            Connection conn = DBConnection.getInstance().getDBcon();
             String id = person.getId();
             String f_name = person.getF_name();
             String l_name = person.getL_name();
@@ -90,9 +85,11 @@ public class PersonDB {
     public Person read(String id) throws SQLException{
         Person person = null;
         try{
-            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM Person where PersonID=%s",id);
-            ResultSet rs = conn.createStatement().executeQuery(sql);
+            ResultSet rs;
+            try (Connection conn = DBConnection.getInstance().getDBcon()) {
+                String sql = String.format("SELECT * FROM Person where PersonID=%s", id);
+                rs = conn.createStatement().executeQuery(sql);
+            }
             if (rs.next()){
                 person = buildObject(rs);
             }
@@ -127,7 +124,7 @@ public class PersonDB {
 
     public boolean delete(String id) throws SQLException {
         try {
-            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            Connection conn = DBConnection.getInstance().getDBcon();
             String sql = String.format("Delete from Person where PersonID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch(SQLException e) {

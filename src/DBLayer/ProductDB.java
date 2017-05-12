@@ -3,9 +3,10 @@ package DBLayer;
 import ModelLayer.Product;
 import java.sql.*;
 
-public class ProductDB {
+public class ProductDB implements ProductDBIF {
 
-    public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException {
+    @Override
+    public void create(String name, String barcode, int productionTime, int price, int stock, String requiredMatID) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String query = " INSERT INTO Product (Name, Barcode, Price, Stock, Production_Time, RequiredMatID)"
@@ -30,7 +31,7 @@ public class ProductDB {
         }
     }
 
-
+    @Override
     public boolean update(Product product) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
@@ -54,7 +55,7 @@ public class ProductDB {
         }
         return true;
     }
-
+    @Override
     public boolean delete(String barcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
@@ -68,7 +69,7 @@ public class ProductDB {
         }
         return true;
     }
-
+    @Override
     public Product read(String barcode) throws SQLException{
         Product product = null;
         try{
