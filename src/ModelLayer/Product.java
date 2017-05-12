@@ -1,7 +1,5 @@
 package ModelLayer;
 
-import java.util.*;
-
 /**
  * Created by Mircea on 27-Mar-17.
  */
@@ -43,7 +41,7 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

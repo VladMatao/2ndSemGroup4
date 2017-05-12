@@ -1,21 +1,17 @@
 package DBLayer;
 
-import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 
-
 public class DBConnection {
-    //Constants used to get access to the database
-
-    private static final String  driver = "jdbc:sqlserver:kraka.ucn.dk";;
+    private static final String  driver = "jdbc:sqlserver://kraka.ucn.dk";
     private static final String  databaseName = ";databaseName=dmaj0916_197353";
 
     private static String  userName = "; user=dmaj0916_197353";
     private static String password = ";password=Password1!";
 
     private DatabaseMetaData dma;
-    private static Connection con;
+    private static java.sql.Connection con;
 
     // an instance of the class is generated
     private static DBConnection  instance = null;
@@ -65,7 +61,7 @@ public class DBConnection {
     }//end closeDB
 
     //getDBcon: returns the singleton instance of the DB connection
-    public static Connection getDBcon()
+    public java.sql.Connection getDBcon()
     {
         return con;
     }
@@ -83,5 +79,4 @@ public class DBConnection {
         }
         return instance;
     }
-
-}//end DbConnection
+}

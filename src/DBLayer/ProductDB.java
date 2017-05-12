@@ -1,36 +1,43 @@
 
 package DBLayer;
-import DBLayer.DBConnection;
 import ModelLayer.Product;
 import java.sql.*;
 
-public class ProductDB  {
+public class ProductDB {
     public static void main(String[] args) throws SQLException {
-        ProductDB productDB = new ProductDB();
-        productDB.create("qweqeq","123456",23,445,100,"qweq111");
+        new ProductDB().create("nike", "2", 1.5, 10, 100, "1");
+        new ProductDB().delete("1");
+        new ProductDB().delete("123456");
+        new ProductDB().delete("1234546");
+        new ProductDB().delete("2");
+        System.out.println("success");
     }
 
-    public boolean create(String name, String barcode, int productionTime, double price, int stock, String requiredMatID) throws SQLException {
+    public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("INSERT INTO Product VALUES(Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID = ?)");
-            //psttm.setInt(1,curentQuantity);
-            psttm.setNString(1,name);
-            psttm.setDouble(3,price);
-            psttm.setInt(4,stock);
-            psttm.setInt(5,productionTime);
-            psttm.setNString(2,barcode);
-            psttm.setNString(6,requiredMatID);
-            psttm.executeUpdate();
-        } catch(SQLException e) {
-            e.printStackTrace();
-            throw e;
+            String query = " INSERT INTO Product (Name, Barcode, Price, Stock, Production_Time, RequiredMatID)"
+                    + " values (?, ?, ?, ?, ?, ?)";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt.setString(1, name);
+            preparedStmt.setString(2, barcode);
+            preparedStmt.setDouble(3, price);
+            preparedStmt.setInt(4, stock);
+            preparedStmt.setInt(5, productionTime);
+            preparedStmt.setString(6, requiredMatID);
+
+            // execute the preparedstatement
+            preparedStmt.execute();
+
+            conn.close();
+        } catch (Exception e) {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
         }
-        finally{
-            DBConnection.closeConnection();
-        }
-        return true;
     }
+
 
     public boolean update(Product product) throws SQLException {
         try {
@@ -90,7 +97,7 @@ public class ProductDB  {
         try {
             String name = rs.getString(1);
             String barcode = rs.getString(2);
-            double price = rs.getDouble(3);
+            int price = rs.getInt(3);
             int stock = rs.getInt(4);
             int productionTime = rs.getInt(5);
             String requiredMatID=rs.getString(6);

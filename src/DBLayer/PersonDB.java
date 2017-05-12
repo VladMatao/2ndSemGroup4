@@ -1,15 +1,12 @@
-
 package DBLayer;
 import ModelLayer.Person;
-import java.sql.SQLException;
-import java.sql.ResultSet;
 import java.sql.*;
 
 /**
  * Created by Alexander on 5/10/2017.
  */
 public class PersonDB {
-    private static void main(String[] args){
+    public static void main(String[] args){
 
         try{
             Person person = new Person("123","Morosan","Toader", 12, "Bucuresti", "0123456","Aalborg","manager",332);
@@ -19,6 +16,8 @@ public class PersonDB {
         }
         System.out.println("success");
     }
+
+
 
     public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
         try{
@@ -40,6 +39,24 @@ public class PersonDB {
         }
         return true;
     }
+
+    /*public Person create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage)
+    {
+        Person person = new Person(id,f_name,l_name,CNP,address,phNr,city,position, double, wage);
+        String sql = String.format("INSERT INTO Product VALUES ('%s', '%s', '%d', '%d', '%d', '%s') ",name,barcode,price,stock,productionTime,requiredMatID);
+
+
+        try {
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            conn.createStatement().executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DBConnection.closeConnection();
+        }
+        return product;
+    }*/
 
     public boolean update(Person person) throws SQLException {
         try{

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.*;
 
 public class CompanyDB implements CompanyDBIF {
-    private static void main(String[] args){
+    public static void main(String[] args){
 
         try {
             Company product = new Company("1","Adidas","999999","adidas@adidas.com","Customer", "Bucharest");
