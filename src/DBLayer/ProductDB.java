@@ -6,7 +6,7 @@ import java.sql.*;
 public class ProductDB implements ProductDBIF {
 
     @Override
-    public void create(String name, String barcode, int productionTime, double price, int stock, String requiredMatID) throws SQLException {
+    public void create(String name, String barcode, double price,  int stock, int productionTime, String requiredMatID) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String query = " INSERT INTO Product (Name, Barcode, Price, Stock, Production_Time, RequiredMatID)"
@@ -32,22 +32,17 @@ public class ProductDB implements ProductDBIF {
     }
 
     @Override
-    public boolean update(Product product) throws SQLException {
+    public boolean update(Product product, String barcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String barcode=product.getBarcode();
-            String name = product.getName();
-            double price = product.getPrice();
-            int stock = product.getStock();
-            int productionTime=product.getProductionTime();
-            //ArrayList<RAW_Material> rawMaterials=product.getRawMaterials();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Price = ?, Stock = ?, Production_Time = ? WHERE barcode = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID WHERE Barcode = ? ");
             //psttm.setInt(1,curentQuantity);
-            psttm.setNString(1,name);
-            psttm.setDouble(2,price);
-            psttm.setInt(3,stock);
-            psttm.setInt(4,productionTime);
-            psttm.setNString(5,barcode);
+            psttm.setNString(1,product.getName());
+            psttm.setDouble(3,product.getPrice());
+            psttm.setInt(4,product.getStock());
+            psttm.setInt(5,product.getProductionTime());
+            psttm.setNString(2,product.getBarcode());
+            psttm.setNString(6,barcode);
             psttm.executeUpdate();
         } catch(SQLException e) {
             e.printStackTrace();
