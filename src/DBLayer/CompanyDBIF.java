@@ -1,8 +1,8 @@
 package DBLayer;
 
-import ModelLayer.Company;
+        import ModelLayer.Company;
 
-import java.sql.SQLException;
+        import java.sql.SQLException;
 
 /**
  * Created by Admin on 3/29/2017.

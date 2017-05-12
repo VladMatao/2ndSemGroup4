@@ -6,21 +6,11 @@ package ModelLayer;
 public class RAW_Material {
     private String barcode;
     private String name;
-    private String supplierId;
 
-    public RAW_Material(String barcode, String name, String supplierId) {
+    public RAW_Material(String barcode, String name) {
 
         this.barcode = barcode;
         this.name = name;
-        this.supplierId = supplierId;
-    }
-
-    public String getSupplierId() {
-        return supplierId;
-    }
-
-    public void setSupplierId(String supplierId) {
-        this.supplierId = supplierId;
     }
 
     public String getBarcode() {
