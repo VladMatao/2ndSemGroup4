@@ -9,7 +9,7 @@ import java.sql.SQLException;
  */
 public interface  ProductDBIF {
 
-    void create(String name, String barcode, int productionTime, int price, int stock, String requiredMatID) throws SQLException;
+    void create(String name, String barcode, int productionTime, double price, int stock, String requiredMatID) throws SQLException;
     boolean update (Product product) throws SQLException;
     boolean delete (String barcode) throws SQLException;
     Product read(String barcode) throws SQLException;

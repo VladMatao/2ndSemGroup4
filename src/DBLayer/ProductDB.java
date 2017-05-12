@@ -6,7 +6,7 @@ import java.sql.*;
 public class ProductDB implements ProductDBIF {
 
     @Override
-    public void create(String name, String barcode, int productionTime, int price, int stock, String requiredMatID) throws SQLException {
+    public void create(String name, String barcode, int productionTime, double price, int stock, String requiredMatID) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String query = " INSERT INTO Product (Name, Barcode, Price, Stock, Production_Time, RequiredMatID)"
@@ -90,7 +90,7 @@ public class ProductDB implements ProductDBIF {
         try {
             String name = rs.getString(1);
             String barcode = rs.getString(2);
-            int price = rs.getInt(3);
+            double price = rs.getDouble(3);
             int stock = rs.getInt(4);
             int productionTime = rs.getInt(5);
             String requiredMatID=rs.getString(6);
