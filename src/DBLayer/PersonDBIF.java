@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public interface PersonDBIF  {
 
    void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException;
-   boolean update (Person person) throws SQLException;
+   boolean update (Person person, String personID) throws SQLException;
    boolean delete (String id) throws SQLException;
    Person read (String id) throws SQLException;
 }
