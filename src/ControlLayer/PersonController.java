@@ -12,14 +12,14 @@ public class PersonController {
         personDb = new PersonDB();
     }
 
-    public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage){
+    /*public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage){
         try {
             personDb.create(id,f_name,l_name,CNP,address,phNr,city,position,wage);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return true;
-    }
+    }*/
 
     public Person read(String id){
         Person person = null;
@@ -31,7 +31,7 @@ public class PersonController {
         return person;
     }
 
-    public boolean update(Person person){
+    /*public boolean update(Person person){
 
         try {
             return personDb.update(person);
@@ -39,7 +39,7 @@ public class PersonController {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
     public boolean delete(String id){
         boolean aux = false;
