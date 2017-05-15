@@ -3,26 +3,24 @@ package ModelLayer;
 import java.util.Date;
 
 /**
- * Created by Vlad Mataoanu on 03.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
-public class Employee{
-    Person person;
-    private int id;
-    private Date schedule;
+public class Employee extends Person{
+    private Date shiftOn;
     private String department;
 
-    public Employee(String id, Date schedule, String department) {
-        id = person.getId();
-        this.schedule = schedule;
+    public Employee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, Date shiftOn, String department) {
+        super(id, f_name, l_name, CNP, address, phNr, city, position, wage);
+        this.shiftOn = shiftOn;
         this.department = department;
     }
 
-    public Date getSchedule() {
-        return schedule;
+    public Date getShiftOn() {
+        return shiftOn;
     }
 
-    public void setSchedule(Date schedule) {
-        this.schedule = schedule;
+    public void setShiftOn(Date schedule) {
+        this.shiftOn = shiftOn;
     }
 
     public String getDepartment() {

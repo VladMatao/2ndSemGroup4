@@ -33,10 +33,10 @@ public class ProductController {
         return product;
     }
 
-    public boolean update(Product product){
+    public boolean update(Product product,String barcode){
 
         try {
-            return productDb.update(product);
+            return productDb.update(product,barcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
