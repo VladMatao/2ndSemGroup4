@@ -43,13 +43,4 @@ public class ProductDBTest {
         productDB.delete("4");
         assertNull(productDB.read("4"));
     }
-/*ProductDB productDB = new ProductDB();
-        productDB.create("nike", "2", 1.5, 10, 100, "1");
-        assertNotNull(productDB.read("2"));
-        Product product = new Product("test", "4", 3.5, 12, 25, "4");
-        assertNotNull(productDB.read("2"));
-        productDB.update(product,"2");
-        assertNotNull(productDB.read("4"));
-        productDB.delete("4");
-        assertNull("Delete() Method Failed", productDB.read("4"));*/
 }

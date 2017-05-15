@@ -53,6 +53,7 @@ public class ProductDB implements ProductDBIF {
         }
         return true;
     }
+
     @Override
     public boolean delete(String barcode) throws SQLException {
         try {
@@ -67,6 +68,7 @@ public class ProductDB implements ProductDBIF {
         }
         return true;
     }
+
     @Override
     public Product read(String barcode) throws SQLException{
         Product product = null;
