@@ -9,7 +9,7 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
 
 /**
- * Created by Vlad Mataoanu.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductDBTest {

@@ -3,6 +3,10 @@ package DBLayer;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 
+/**
+ Project 2nd Semester Group 4 dmaj0916 UCN
+ */
+
 public class DBConnection {
     private static final String  driver = "jdbc:sqlserver://kraka.ucn.dk";
     private static final String  databaseName = ";databaseName=dmaj0916_197353";

@@ -3,7 +3,7 @@ package ModelLayer;
 import java.util.Date;
 
 /**
- * Created by Vlad Mataoanu on 02.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Order {
     private String id;

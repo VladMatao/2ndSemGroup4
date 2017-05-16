@@ -6,6 +6,10 @@ import java.sql.*;
 import java.util.*;
 import java.sql.Date;
 
+/**
+ Project 2nd Semester Group 4 dmaj0916 UCN
+ */
+
 public class EmployeeDB implements EmployeeDBIF {
 
     @Override

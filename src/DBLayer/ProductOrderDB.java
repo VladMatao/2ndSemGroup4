@@ -1,7 +1,7 @@
 package DBLayer;
 
 /**
- * Created by Alexander on 5/12/2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductOrderDB {
 }

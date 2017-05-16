@@ -1,7 +1,7 @@
 package ModelLayer;
 
 /**
- * Created by Vlad Mataoanu on 03.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RawMaterialLine {
     private String id;
