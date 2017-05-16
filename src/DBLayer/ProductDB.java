@@ -79,9 +79,7 @@ public class ProductDB implements ProductDBIF {
             if (rs.next()){
                 product = buildObject(rs);
             }
-        }catch (SQLException e) {
-            throw e;
-        }finally{
+        } finally{
             DBConnection.closeConnection();
         }
         return product;

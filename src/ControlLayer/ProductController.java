@@ -1,14 +1,14 @@
 package ControlLayer;
 
-import java.sql.SQLException;
-import DBLayer.*;
-import ModelLayer.*;
+import DBLayer.ProductDB;
+import ModelLayer.Product;
+
 import java.sql.SQLException;
 /**
- * Created by Vlad Mataoanu on 09.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductController {
-    ProductDB productDb;
+    private ProductDB productDb;
 
     public ProductController() {
         productDb = new ProductDB();
