@@ -13,42 +13,46 @@ import java.sql.Date;
 public class EmployeeDB implements EmployeeDBIF {
 
     @Override
-    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) throws SQLException {
+    public  void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage,String department) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO Employee (PersonID, Departament)"
-                    + " values (?, ?)";
-
-            // create the mysql insert preparedstatement
-            PreparedStatement preparedStmt = conn.prepareStatement(query);
-            PersonDB personDB= new PersonDB();
-            personDB.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
-            preparedStmt.setString(1, id);
-            preparedStmt.setString(2, department);
-
-
-            // execute the preparedstatement
-            preparedStmt.execute();
+            PreparedStatement psPersonCreation = conn.prepareStatement("INSERT INTO Person (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            psPersonCreation.setString(1, id);
+            psPersonCreation.setString(2, f_name);
+            psPersonCreation.setString(3, l_name);
+            psPersonCreation.setInt(4, CNP);
+            psPersonCreation.setString(5, address);
+            psPersonCreation.setString(6, phNr);
+            psPersonCreation.setString(7, city);
+            psPersonCreation.setString(8, position);
+            psPersonCreation.setDouble(9, wage);
+            PreparedStatement psEmployeeCreation = conn.prepareStatement("INSERT INTO Employee (PersonID, Department) VALUES (?, ?)");
+            psEmployeeCreation.setString(1, id);
+            psEmployeeCreation.setString(2, department);
+            psPersonCreation.executeUpdate();
+            psEmployeeCreation.executeUpdate();
         } catch (Exception e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception in EmployeeDB.create()!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DBConnection.closeConnection();
         }
     }
 
+    public void createPerson(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage){
+        PersonDB personDB= new PersonDB();
+        personDB.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
+    }
     @Override
-    public boolean update(Person person,Employee employee, String personId) throws SQLException {
+    public boolean update(Employee employee, String personId) throws SQLException {
         try {
-            Connection conn = DBConnection.getInstance().getDBcon();
             PersonDB personDB = new PersonDB();
+            personDB.update(employee,personId);
+            Connection conn = DBConnection.getInstance().getDBcon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE Employee SET PersonID = ?, Department = ? WHERE PersonID = ? ");
-            personDB.update(person,personId);
             psttm.setString(1,employee.getId());
             psttm.setString(2,employee.getDepartment());
             psttm.setString(3,personId);
-
-
             psttm.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception!");
@@ -58,6 +62,7 @@ public class EmployeeDB implements EmployeeDBIF {
         }
         return true;
     }
+
     @Override
     public boolean delete(String id) throws SQLException {
         try {
@@ -77,8 +82,6 @@ public class EmployeeDB implements EmployeeDBIF {
     @Override
     public Employee read(String id) throws SQLException{
         Employee employee = null;
-        PersonDB personDB=new PersonDB();
-        Person person= null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
             String sql = String.format("SELECT * FROM Employee where PersonID =%s",id);

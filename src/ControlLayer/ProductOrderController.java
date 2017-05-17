@@ -10,7 +10,7 @@ import java.util.Date;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductOrderController {
-    ProductOrderDB productOrderDB;
+    /*ProductOrderDB productOrderDB;
 
     public ProductOrderController() {
         productOrderDB = new ProductOrderDB();
@@ -18,7 +18,7 @@ public class ProductOrderController {
 
     public boolean create(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String companyType) {
         try {
-            productOrderDB.create(id, deliveryDate, orderStatus, totalPrice, companyId, companyType)
+            productOrderDB.create(id, deliveryDate, orderStatus, totalPrice, companyId, companyType);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class ProductOrderController {
         }
         return aux;
     }
-
+*/
 }
 
 
