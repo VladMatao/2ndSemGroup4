@@ -1,4 +1,3 @@
-
 package DBLayer;
 import ModelLayer.Employee;
 import ModelLayer.Person;
@@ -99,12 +98,17 @@ public class EmployeeDB implements EmployeeDBIF {
 
             String id = rs.getString(1);
             Person person = personDB.read(id);
-            String name = rs.getString(2);
-            String phNr = rs.getString(3);
-            String email = rs.getString(4);
-            String employeeType = rs.getString(5);
-            String address=rs.getString(6);
-            employee = new Employee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department);
+            String department = rs.getString(2);
+            String f_name = person.getF_name();
+            String l_name = person.getL_name();
+            int CNP = person.getCNP();
+            String address = person.getAddress();
+            String phNr = person.getPhNr();
+            String city = person.getCity();
+            String position = person.getposition();
+            double wage = person.getWage();
+
+            employee = new Employee(id,f_name,l_name,CNP,address,phNr,city,position,wage,department);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
