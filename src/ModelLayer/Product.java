@@ -1,7 +1,7 @@
 package ModelLayer;
 
 /**
- * Created by Mircea on 27-Mar-17.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Product {
 

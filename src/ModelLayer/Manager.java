@@ -1,7 +1,7 @@
 package ModelLayer;
 
 /**
- * Created by ProiectChiarBaban.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Manager extends Person{
     private String password;

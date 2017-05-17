@@ -3,6 +3,10 @@ package DBLayer;
 import ModelLayer.Product;
 import java.sql.*;
 
+/**
+ Project 2nd Semester Group 4 dmaj0916 UCN
+ */
+
 public class ProductDB implements ProductDBIF {
 
     @Override
@@ -24,7 +28,7 @@ public class ProductDB implements ProductDBIF {
             // execute the preparedstatement
             preparedStmt.execute();
         } catch (Exception e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception in ProductDB.create()!");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
@@ -79,9 +83,7 @@ public class ProductDB implements ProductDBIF {
             if (rs.next()){
                 product = buildObject(rs);
             }
-        }catch (SQLException e) {
-            throw e;
-        }finally{
+        } finally{
             DBConnection.closeConnection();
         }
         return product;

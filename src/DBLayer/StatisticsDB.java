@@ -3,6 +3,10 @@ package DBLayer;
 import ModelLayer.Statistics;
 import java.sql.*;
 
+/**
+ Project 2nd Semester Group 4 dmaj0916 UCN
+ */
+
 public class StatisticsDB implements StatisticsDBIF {
 
     @Override

@@ -3,7 +3,7 @@ import DBLayer.*;
 import ModelLayer.*;
 import java.sql.SQLException;
 /**
- * Created by Group 4  on 09.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class PersonController {
     PersonDB personDb;

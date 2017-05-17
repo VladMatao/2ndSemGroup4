@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.*;
 
 /**
- * Created by Vlad Mataoanu on 03.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RawMaterialOrder extends Order{
     private String RawMaterialOrderId;

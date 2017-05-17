@@ -3,6 +3,10 @@ package DBLayer;
 import ModelLayer.Company;
 import java.sql.*;
 
+/**
+ Project 2nd Semester Group 4 dmaj0916 UCN
+ */
+
 public class CompanyDB implements CompanyDBIF {
 
     @Override

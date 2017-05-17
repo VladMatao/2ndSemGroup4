@@ -5,7 +5,7 @@ import ModelLayer.RAW_Material;
 import java.sql.SQLException;
 
 /**
- * Created by Admin on 3/29/2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public interface  RawMaterialDBIF {
 

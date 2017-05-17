@@ -3,7 +3,7 @@ package DBLayer;
 import java.sql.SQLException;
 
 /**
- * Created by Vlad Mataoanu on 09.05.2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public interface ReqRawForProdDBIF {
     boolean create(String requiredMatID, String RAWBarcode, double quantity) throws SQLException;
