@@ -3,7 +3,7 @@ package GuiLayer;
 import javax.swing.*;
 
 /**
- * Created by Mircea on 16-May-17.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Menu {
     private JPanel panel1;
