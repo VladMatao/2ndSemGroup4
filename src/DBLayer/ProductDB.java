@@ -28,7 +28,7 @@ public class ProductDB implements ProductDBIF {
             // execute the preparedstatement
             preparedStmt.execute();
         } catch (Exception e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception in ProductDB.create()!");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
