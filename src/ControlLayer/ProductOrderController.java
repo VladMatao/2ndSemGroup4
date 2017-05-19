@@ -10,7 +10,7 @@ import java.util.Date;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductOrderController {
-    /*ProductOrderDB productOrderDB;
+   ProductOrderDB productOrderDB;
 
     public ProductOrderController() {
         productOrderDB = new ProductOrderDB();
@@ -32,7 +32,7 @@ public class ProductOrderController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return ProductOrder;
+        return productOrder;
     }
 
     public boolean update(ProductOrder productOrder) {
@@ -53,7 +53,7 @@ public class ProductOrderController {
         }
         return aux;
     }
-*/
+
 }
 
 

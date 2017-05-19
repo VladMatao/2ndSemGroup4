@@ -1,7 +1,7 @@
 package DBLayer;
 
 import ModelLayer.Employee;
-import ModelLayer.Person;
+
 
 import java.sql.SQLException;
 
