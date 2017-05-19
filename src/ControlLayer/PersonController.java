@@ -12,9 +12,9 @@ public class PersonController {
         personDb = new PersonDB();
     }
 
-    /*public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage){
+    /*public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         try {
-            personDb.create(id,f_name,l_name,CNP,address,phNr,city,position,wage);
+            personDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
             e.printStackTrace();
         }

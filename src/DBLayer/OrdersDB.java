@@ -14,7 +14,7 @@ public class OrdersDB implements OrdersDBIF {
     public void create(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String companyType) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO Order (OrderID, Total_price, Order_Status, Delivery_Date, CompanyID, Company_type)"
+            String query = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_Date, CompanyID, Company_type)"
                     + " values (?, ?, ?, ?, ?, ?)";
 
             // create the mysql insert preparedstatement
@@ -40,7 +40,7 @@ public class OrdersDB implements OrdersDBIF {
     public boolean update(Order company, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE Order SET OrderID = ?, Total_price = ?, Order_Status = ?,Delivery_date = ?, CompnayID = ?, Company_type = ? WHERE OrderID = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE Orders SET  Total_price = ?, Order_Status = ?,Delivery_date = ?, CompanyID = ?, Company_type = ? WHERE OrderID = ? ");
             psttm.setString(1,company.getId());
             psttm.setDouble(2,company.getTotalPrice());
             psttm.setString(3,company.getOrderStatus());
@@ -61,7 +61,7 @@ public class OrdersDB implements OrdersDBIF {
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from Order where OrderID='%s'", id);
+            String sql = String.format("Delete from Orders where OrderID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -76,7 +76,7 @@ public class OrdersDB implements OrdersDBIF {
         Order company = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM company where OrderID =%s",id);
+            String sql = String.format("SELECT * FROM Company where OrderID =%s",id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 company = buildObject(rs);
