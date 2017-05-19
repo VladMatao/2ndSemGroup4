@@ -16,7 +16,7 @@ public class ProductOrderController {
         productOrderDB = new ProductOrderDB();
     }
 
-    public boolean create(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String companyType) {
+    /*public boolean create(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String companyType) {
         try {
             productOrderDB.create(id, deliveryDate, orderStatus, totalPrice, companyId, companyType);
         } catch (SQLException e) {
@@ -52,7 +52,7 @@ public class ProductOrderController {
             e.printStackTrace();
         }
         return aux;
-    }
+    }*/
 
 }
 
