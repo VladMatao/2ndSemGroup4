@@ -39,16 +39,27 @@ public class ManagerDB implements ManagerDBIF {
     @Override
     public boolean update(Manager manager, String personId) throws SQLException {
         try {
-            PersonDB personDB = new PersonDB();
-            personDB.update(manager,personId);
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE Manager SET PersonID = ?, Pw= ? WHERE PersonID = ? ");
-            psttm.setString(1,manager.getId());
-            psttm.setString(2,manager.getPassword());
-            psttm.setString(3,personId);
-            psttm.executeUpdate();
+            PreparedStatement psttmPerson = conn.prepareStatement("UPDATE Person SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ?  WHERE PersonID = ?");
+            psttmPerson.setString(1,manager.getF_name());
+            psttmPerson.setString(2,manager.getL_name());
+            psttmPerson.setInt(3,manager.getCNP());
+            psttmPerson.setString(4,manager.getAddress());
+            psttmPerson.setString(5,manager.getPhNr());
+            psttmPerson.setString(6,manager.getCity());
+            psttmPerson.setString(7,manager.getposition());
+            psttmPerson.setDouble(8,manager.getWage());
+            psttmPerson.setString(9,personId);
+
+            psttmPerson.executeUpdate();
+
+            PreparedStatement psttmManager = conn.prepareStatement("UPDATE Manager SET Pw = ? WHERE PersonID = ? ");
+            psttmManager.setString(1,manager.getPassword());
+            psttmManager.setString(2,personId);
+
+            psttmManager.executeUpdate();
         } catch(SQLException e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception at ManagerDB.update()");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
@@ -78,10 +89,12 @@ public class ManagerDB implements ManagerDBIF {
         Manager manager = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM Manager where PersonID =%s",id);
-            ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()){
-                manager = buildObject(rs);
+            String sqlManager = String.format("SELECT * FROM Manager where PersonID =%s",id);
+            String sqlPerson = String.format("SELECT * FROM Person where PersonID =%s",id);
+            ResultSet rs = conn.createStatement().executeQuery(sqlManager);
+            ResultSet rs1 = conn.createStatement().executeQuery(sqlPerson);
+            if (rs.next() && rs1.next()){
+                manager = buildObject(rs,rs1);
             }
         }catch (SQLException e) {
             throw e;
@@ -92,22 +105,19 @@ public class ManagerDB implements ManagerDBIF {
     }
 
 
-    private static Manager buildObject(ResultSet rs) throws SQLException{
+    private static Manager buildObject(ResultSet rs, ResultSet rs1) throws SQLException{
         Manager manager;
-        PersonDB personDB= new PersonDB();
         try {
-
             String id = rs.getString(1);
-            Person person = personDB.read(id);
             String password = rs.getString(2);
-            String f_name = person.getF_name();
-            String l_name = person.getL_name();
-            int CNP = person.getCNP();
-            String address = person.getAddress();
-            String phNr = person.getPhNr();
-            String city = person.getCity();
-            String position = person.getposition();
-            double wage = person.getWage();
+            String f_name = rs1.getString(2);
+            String l_name = rs1.getString(3);
+            int CNP = rs1.getInt(4);
+            String address = rs1.getString(5);
+            String phNr = rs1.getString(6);
+            String city = rs1.getString(7);
+            String position = rs1.getString(8);
+            double wage = rs1.getDouble(9);
 
             manager = new Manager(id,f_name,l_name,CNP,address,phNr,city,position,wage,password);
         } catch(SQLException e) {

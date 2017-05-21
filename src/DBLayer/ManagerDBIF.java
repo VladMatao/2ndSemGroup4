@@ -5,7 +5,7 @@ import ModelLayer.Manager;
 import java.sql.SQLException;
 
 /**
- * Created by Alexander on 5/18/2017.
+ Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public interface ManagerDBIF {
     void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String password) throws SQLException;
