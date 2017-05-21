@@ -1,5 +1,6 @@
 package DBLayer;
 
+import ModelLayer.Order;
 import ModelLayer.Product;
 import ModelLayer.ProductOrder;
 
@@ -29,7 +30,7 @@ public class ProductOrderDB implements ProductOrderDBIF{
             preparedStmtO.setString(4, deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, OrderID, ProductBarcode)"
+            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, OrderID, ProductLineID)"
                     + " values (?, ?, ?)";
 
             PreparedStatement preparedStmtPO = conn.prepareStatement(queryProductOrder);
@@ -48,19 +49,18 @@ public class ProductOrderDB implements ProductOrderDBIF{
     }
 
     @Override
-    public boolean update(Product product, String barcode) throws SQLException {
+    public boolean update(ProductOrder productOrder,String productOrderId) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID = ? WHERE Barcode = ? ");
-            //psttm.setInt(1,curentQuantity);
-            psttm.setNString(1,product.getName());
-            psttm.setNString(2,product.getBarcode());
-            psttm.setDouble(3,product.getPrice());
-            psttm.setInt(4,product.getStock());
-            psttm.setInt(5,product.getProductionTime());
-            psttm.setNString(6,product.getRequiredMatID());
-            psttm.setNString(7,barcode);
-            psttm.executeUpdate();
+            PreparedStatement psttmOrder = conn.prepareStatement("UPDATE Orders SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
+            psttmOrder.setDouble(1,productOrder.getTotalPrice());
+            psttmOrder.setNString(2,productOrder.getOrderStatus());
+            psttmOrder.setNString(3, String.valueOf(productOrder.getDeliveryDate()));
+            psttmOrder.setNString(4,productOrder.getCompanyId());
+            psttmOrder.setNString(5,productOrderId);
+            psttmOrder.executeUpdate();
+
+            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
         } catch(SQLException e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
