@@ -5,11 +5,11 @@ package ModelLayer;
  */
 public class RawMaterialLine {
     private String rawMaterialLineID;
-    private int quantity;
+    private double quantity;
     private String rawMaterialBarcode;
     private String rawMaterialOrderId;
 
-    public RawMaterialLine(String id, int quantity, String rawMaterialBarcode, String rawMaterialOrderId) {
+    public RawMaterialLine(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) {
         this.rawMaterialLineID = id;
         this.quantity = quantity;
         this.rawMaterialBarcode = rawMaterialBarcode;
@@ -24,11 +24,11 @@ public class RawMaterialLine {
         this.rawMaterialLineID = id;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
