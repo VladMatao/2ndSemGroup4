@@ -16,11 +16,9 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmployeeDBTest {
     private EmployeeDB employeeDB;
-    private PersonDB personDB;
     @Before
     public void setUp(){
         employeeDB=new EmployeeDB();
-        personDB=new PersonDB();
     }
 
     @Test
@@ -31,16 +29,15 @@ public class EmployeeDBTest {
 
     @Test
     public void testB_update() throws Exception {
-        Employee employee = new Employee("2","update","update",111,"vej","123","caca","caca",33.4,"mare");
+        Employee employee = new Employee("1","update","update",111,"vej","123","Rahat","Rahat",33.4,"mare");
         assertNotNull(employeeDB.read("1"));
         employeeDB.update(employee,"1");
-        assertNotNull(employeeDB.read("2"));
+        assertEquals("update",employeeDB.read("1").getF_name());
     }
 
     @Test
     public void testC_read() throws Exception {
-        assertNotNull(employeeDB.read("2"));
-        assertNotNull(personDB.read("2"));
+        assertNotNull(employeeDB.read("1"));
     }
 
     @Test

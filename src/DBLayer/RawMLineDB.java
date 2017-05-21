@@ -13,7 +13,7 @@ public class RawMLineDB implements RawMLineDBIF {
     public void create(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO RawMLine (ID, Quantity, RawBarcode, RawID)"
+            String query = " INSERT INTO RawMaterialLine (RawMaterialLineID, Quantity, RawBarcode, RawMaterialOrderID)"
                     + " values (?, ?, ?, ?)";
 
             // create the mysql insert preparedstatement
@@ -36,7 +36,7 @@ public class RawMLineDB implements RawMLineDBIF {
     public boolean update(RawMaterialLine rawMLine, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMLine SET ID = ?, Quantity = ?, RawBarcode = ?, RawID = ? WHERE ID = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ?, RawMaterialOrderID = ? WHERE RawMaterialLineID = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1,rawMLine.getId());
             psttm.setDouble(2,rawMLine.getQuantity());
