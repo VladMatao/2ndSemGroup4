@@ -16,7 +16,7 @@ import java.util.Date;
 public class ProductOrderDB implements ProductOrderDBIF{
 
     @Override
-    public void create(String productOrderId, String orderId, String productBarcode,  double totalPrice, String orderStatus, String deliveryDate, String companyId) throws SQLException {
+    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
@@ -24,21 +24,21 @@ public class ProductOrderDB implements ProductOrderDBIF{
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmtO = conn.prepareStatement(queryOrder);
-            preparedStmtO.setString(1, orderId);
+            preparedStmtO.setString(1, productOrderId);
             preparedStmtO.setDouble(2, totalPrice);
             preparedStmtO.setString(3, orderStatus);
             preparedStmtO.setString(4, deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, OrderID, ProductLineID)"
-                    + " values (?, ?, ?)";
+            preparedStmtO.execute();
+
+            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, ProductLineID)"
+                    + " values (?, ?)";
 
             PreparedStatement preparedStmtPO = conn.prepareStatement(queryProductOrder);
             preparedStmtPO.setString(1, productOrderId);
-            preparedStmtPO.setString(2, orderId);
-            preparedStmtPO.setString(3, productBarcode);
-            // execute the preparedstatement
-            preparedStmtO.execute();
+            preparedStmtPO.setString(2, productLineId);
+
             preparedStmtPO.execute();
         } catch (Exception e) {
             System.err.println("Got an exception in ProductDB.create()!");
@@ -60,9 +60,12 @@ public class ProductOrderDB implements ProductOrderDBIF{
             psttmOrder.setNString(5,productOrderId);
             psttmOrder.executeUpdate();
 
-            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
+            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE OrderID = ?");
+            psttmOrder.setNString(1,productOrder.getProductLineId());
+            psttmOrder.setNString(2,productOrderId);
+            psttmPO.executeUpdate();
         } catch(SQLException e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception at productOrderDb.update()");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
@@ -71,11 +74,13 @@ public class ProductOrderDB implements ProductOrderDBIF{
     }
 
     @Override
-    public boolean delete(String barcode) throws SQLException {
+    public boolean delete(String productOrderId) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from Product where barcode='%s'", barcode);
+            String sql = String.format("Delete from ProductOrder where ProductOrderId='%s'", productOrderId);
+            String sql1 = String.format("Delete from Orders where OrderID='%s'", productOrderId);
             conn.createStatement().executeUpdate(sql);
+            conn.createStatement().executeUpdate(sql1);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
@@ -86,37 +91,40 @@ public class ProductOrderDB implements ProductOrderDBIF{
     }
 
     @Override
-    public Product read(String barcode) throws SQLException{
-        Product product = null;
+    public ProductOrder read(String orderId) throws SQLException{
+        ProductOrder productOrder = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM product where barcode=%s",barcode);
-            ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()){
-                product = buildObject(rs);
+            String sqlO = String.format("SELECT * FROM Orders where OrderID=%s",orderId);
+            ResultSet rsO = conn.createStatement().executeQuery(sqlO);
+
+            String sqlPO = String.format("SELECT * FROM ProductOrder where ProductOrderId=%s",orderId);
+            ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
+            if (rsO.next() && rsPO.next()){
+                productOrder = buildObject(rsO,rsPO);
             }
         } finally{
             DBConnection.closeConnection();
         }
-        return product;
+        return productOrder;
     }
 
 
-    private static Product buildObject(ResultSet rs) throws SQLException{
-        Product product;
+    private static ProductOrder buildObject(ResultSet rsO,ResultSet rsPO) throws SQLException{
+        ProductOrder productOrder;
         try {
-            String name = rs.getString(1);
-            String barcode = rs.getString(2);
-            double price = rs.getDouble(3);
-            int stock = rs.getInt(4);
-            int productionTime = rs.getInt(5);
-            String requiredMatID=rs.getString(6);
-            product = new Product(name,barcode,price,stock,productionTime,requiredMatID);
+            String id = rsO.getString(1);
+            Date deliveryDate = rsO.getDate(4);
+            String orderStatus = rsO.getString(3);
+            double totalPrice = rsO.getDouble(2);
+            String companyId = rsO.getString(5);
+            String productLineId=rsPO.getString(2);
+            productOrder = new ProductOrder(id,deliveryDate,orderStatus,totalPrice,companyId,productLineId);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
         }
 
-        return product;
+        return productOrder;
     }
 }

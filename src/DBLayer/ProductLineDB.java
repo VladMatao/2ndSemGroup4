@@ -13,7 +13,7 @@ public class ProductLineDB implements ProductLineDBIF {
     public void create(String id, double quantity, String productBarcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO ProductLine (ProductLineID, Quantity,ProductBarcode)"
+            String query = " INSERT INTO ProductLine (ID, Quantity,ProductBarcode)"
                     + " values (?, ?, ?)";
 
             // create the mysql insert preparedstatement
@@ -36,7 +36,7 @@ public class ProductLineDB implements ProductLineDBIF {
     public boolean update(ProductLine productLine, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ProductLineID = ?, Quantity = ?, ProductBarcode = ? WHERE ProductLine = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ID = ?, Quantity = ?, ProductBarcode = ? WHERE ProductLine = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1,productLine.getproductLineId());
             psttm.setDouble(2,productLine.getQuantity());
