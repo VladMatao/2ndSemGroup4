@@ -8,7 +8,7 @@ import java.util.*;
 public class ProductOrder extends Order{
     private String productLineId;
 
-    public ProductOrder(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String productLineId) {
+    public ProductOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, String productLineId) {
         super(id, deliveryDate, orderStatus, totalPrice, companyId);
         this.productLineId = productLineId;
     }

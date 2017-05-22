@@ -16,7 +16,7 @@ import java.util.Date;
 public class ProductOrderDB implements ProductOrderDBIF{
 
     @Override
-    public void create(String productOrderId, double totalPrice, String orderStatus, Date deliveryDate, String companyId, String productLineId) throws SQLException {
+    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
@@ -27,7 +27,7 @@ public class ProductOrderDB implements ProductOrderDBIF{
             preparedStmtO.setString(1, productOrderId);
             preparedStmtO.setDouble(2, totalPrice);
             preparedStmtO.setString(3, orderStatus);
-            preparedStmtO.setDate(4, (java.sql.Date) deliveryDate);
+            preparedStmtO.setString(4,  deliveryDate);
             preparedStmtO.setString(5, companyId);
 
             preparedStmtO.execute();
@@ -54,9 +54,9 @@ public class ProductOrderDB implements ProductOrderDBIF{
             Connection conn = DBConnection.getInstance().getDBcon();
             PreparedStatement psttmOrder = conn.prepareStatement("UPDATE Orders SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
             psttmOrder.setDouble(1,productOrder.getTotalPrice());
-            psttmOrder.setNString(2,productOrder.getOrderStatus());
-            psttmOrder.setDate(3, (java.sql.Date) productOrder.getDeliveryDate());
-            psttmOrder.setNString(4,productOrder.getCompanyId());
+            psttmOrder.setString(2,productOrder.getOrderStatus());
+            psttmOrder.setString(3,productOrder.getDeliveryDate());
+            psttmOrder.setString(4,productOrder.getCompanyId());
             psttmOrder.setNString(5,productOrderId);
             psttmOrder.executeUpdate();
 
@@ -114,7 +114,7 @@ public class ProductOrderDB implements ProductOrderDBIF{
         ProductOrder productOrder;
         try {
             String id = rsO.getString(1);
-            Date deliveryDate = rsO.getDate(4);
+            String deliveryDate = rsO.getString(4);
             String orderStatus = rsO.getString(3);
             double totalPrice = rsO.getDouble(2);
             String companyId = rsO.getString(5);

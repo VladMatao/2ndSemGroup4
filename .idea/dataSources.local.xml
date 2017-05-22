@@ -7,9 +7,7 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
       <user-name>dmaj0916_197353</user-name>
-      <introspection-schemas>dmaj0916_197353:dbo</introspection-schemas>
     </data-source>
   </component>
 </project>

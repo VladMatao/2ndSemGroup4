@@ -10,7 +10,7 @@ public class RawMaterialOrder extends Order{
     private String OrderId;
     private String rawMaterialLineId;
 
-    public RawMaterialOrder(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId) {
+    public RawMaterialOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId) {
         super(id, deliveryDate, orderStatus, totalPrice, companyId);
     }
 
