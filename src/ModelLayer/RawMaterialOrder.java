@@ -8,10 +8,9 @@ import java.util.Date;
 public class RawMaterialOrder extends Order{
     private String rawMaterialLineId;
 
-    public RawMaterialOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId,String rawMaterialLineId) {
+    public RawMaterialOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, String rawMaterialLineId) {
         super(id, deliveryDate, orderStatus, totalPrice, companyId);
         this.rawMaterialLineId = rawMaterialLineId;
-
     }
 
     public String getRawMaterialLineId() {

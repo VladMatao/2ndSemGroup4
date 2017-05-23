@@ -16,7 +16,7 @@ import java.util.Date;
 public class ProductOrderDB implements ProductOrderDBIF{
 
     @Override
-    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId) throws SQLException {
+    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, Double totalProductionTime) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
@@ -30,17 +30,19 @@ public class ProductOrderDB implements ProductOrderDBIF{
             preparedStmtO.setString(4,  deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, ProductLineID)"
-                    + " values (?, ?)";
+
+            String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, ProductLineID, TotalProductionTime)"
+                    + " values (?, ?, ?)";
 
             PreparedStatement preparedStmtPO = conn.prepareStatement(queryProductOrder);
             preparedStmtPO.setString(1, productOrderId);
             preparedStmtPO.setString(2, productLineId);
+            preparedStmtPO.setDouble(3, totalProductionTime);
 
             preparedStmtPO.execute();
             preparedStmtO.execute();
         } catch (Exception e) {
-            System.err.println("Got an exception in ProductDB.create()!");
+            System.err.println("Got an exception in ProductOrderDB.create()!");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
@@ -59,9 +61,10 @@ public class ProductOrderDB implements ProductOrderDBIF{
             psttmOrder.setString(5,productOrderId);
             psttmOrder.executeUpdate();
 
-            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE ProductOrderID = ?");
+            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ?, TotalProductionTime = ? WHERE ProductOrderID = ?");
             psttmPO.setString(1,productOrder.getProductLineId());
-            psttmPO.setString(2,productOrderId);
+            psttmPO.setDouble(2,productOrder.getTotalProductionTime());
+            psttmPO.setString(3,productOrderId);
             psttmPO.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception at productOrderDb.update()");
@@ -118,7 +121,8 @@ public class ProductOrderDB implements ProductOrderDBIF{
             double totalPrice = rsO.getDouble(2);
             String companyId = rsO.getString(5);
             String productLineId=rsPO.getString(2);
-            productOrder = new ProductOrder(id,deliveryDate,orderStatus,totalPrice,companyId,productLineId);
+            double totalProductionTime=rsPO.getDouble(3);
+            productOrder = new ProductOrder(id,deliveryDate,orderStatus,totalPrice,companyId,totalProductionTime,productLineId);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;

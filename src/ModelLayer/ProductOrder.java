@@ -7,10 +7,12 @@ import java.util.*;
  */
 public class ProductOrder extends Order{
     private String productLineId;
+    private Double totalProductionTime;
 
-    public ProductOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, String productLineId) {
+    public ProductOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, double totalProductionTime, String productLineId) {
         super(id, deliveryDate, orderStatus, totalPrice, companyId);
         this.productLineId = productLineId;
+        this.totalProductionTime=totalProductionTime;
     }
 
     public String getProductLineId() {
@@ -19,5 +21,13 @@ public class ProductOrder extends Order{
 
     public void setProductLineId(String productLineId) {
         this.productLineId = productLineId;
+    }
+
+    public Double getTotalProductionTime() {
+        return totalProductionTime;
+    }
+
+    public void setTotalProductionTime(Double totalProductionTime) {
+        this.totalProductionTime = totalProductionTime;
     }
 }
