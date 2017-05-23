@@ -30,8 +30,6 @@ public class ProductOrderDB implements ProductOrderDBIF{
             preparedStmtO.setString(4,  deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-            preparedStmtO.execute();
-
             String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, ProductLineID)"
                     + " values (?, ?)";
 
@@ -40,6 +38,7 @@ public class ProductOrderDB implements ProductOrderDBIF{
             preparedStmtPO.setString(2, productLineId);
 
             preparedStmtPO.execute();
+            preparedStmtO.execute();
         } catch (Exception e) {
             System.err.println("Got an exception in ProductDB.create()!");
             System.err.println(e.getMessage());
@@ -79,8 +78,8 @@ public class ProductOrderDB implements ProductOrderDBIF{
             Connection conn = DBConnection.getInstance().getDBcon();
             String sql = String.format("Delete from ProductOrder where ProductOrderId='%s'", productOrderId);
             String sql1 = String.format("Delete from Orders where OrderID='%s'", productOrderId);
-            conn.createStatement().executeUpdate(sql);
             conn.createStatement().executeUpdate(sql1);
+            conn.createStatement().executeUpdate(sql);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
