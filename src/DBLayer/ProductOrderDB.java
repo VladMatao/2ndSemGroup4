@@ -60,8 +60,8 @@ public class ProductOrderDB implements ProductOrderDBIF{
             psttmOrder.executeUpdate();
 
             PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE ProductOrderID = ?");
-            psttmOrder.setString(1,productOrder.getProductLineId());
-            psttmOrder.setString(2,productOrderId);
+            psttmPO.setString(1,productOrder.getProductLineId());
+            psttmPO.setString(2,productOrderId);
             psttmPO.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception at productOrderDb.update()");
