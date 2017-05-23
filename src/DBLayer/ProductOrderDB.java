@@ -56,12 +56,12 @@ public class ProductOrderDB implements ProductOrderDBIF{
             psttmOrder.setString(2,productOrder.getOrderStatus());
             psttmOrder.setString(3,productOrder.getDeliveryDate());
             psttmOrder.setString(4,productOrder.getCompanyId());
-            psttmOrder.setNString(5,productOrderId);
+            psttmOrder.setString(5,productOrderId);
             psttmOrder.executeUpdate();
 
             PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE ProductOrderID = ?");
-            psttmOrder.setNString(1,productOrder.getProductLineId());
-            psttmOrder.setNString(2,productOrderId);
+            psttmOrder.setString(1,productOrder.getProductLineId());
+            psttmOrder.setString(2,productOrderId);
             psttmPO.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception at productOrderDb.update()");
