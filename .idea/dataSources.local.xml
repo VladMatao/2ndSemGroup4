@@ -8,6 +8,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <user-name>dmaj0916_197353</user-name>
+      <introspection-schemas>dmaj0916_197353:dbo</introspection-schemas>
     </data-source>
   </component>
 </project>

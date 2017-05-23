@@ -26,16 +26,17 @@ public class ProductOrderDBTest {
 
     @Test
     public void testA_create() throws Exception {
-        productOrderDB.create("1", 10.3, "bun", "10", "1", "222");
+        productOrderDB.create("1", 10.3, "bun", "10", "1", "222",100.12);
         assertNotNull(productOrderDB.read("1"));
     }
 
     @Test
     public void testB_update() throws Exception {
-        ProductOrder productOrder = new ProductOrder("1", "12", "update", 111, "1", "123");
+        ProductOrder productOrder = new ProductOrder("1", "12", "update", 111, "1",123.123, "123");
         assertNotNull(productOrderDB.read("1"));
         productOrderDB.update(productOrder, "1");
         assertEquals("update", productOrderDB.read("1").getOrderStatus());
+        assertEquals("123", productOrderDB.read("1").getProductLineId());
     }
 
     @Test

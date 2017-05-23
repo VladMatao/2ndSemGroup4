@@ -59,5 +59,4 @@ public class Order {
     public void setCompanyId(String companyId) {
         this.companyId = companyId;
     }
-
 }

@@ -7,10 +7,10 @@ import java.sql.SQLException;
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
-public class ProductController {
+public class Manage_Product {
     private ProductDB productDb;
 
-    public ProductController() {
+    public Manage_Product() {
         productDb = new ProductDB();
     }
 
