@@ -41,7 +41,7 @@ public class CompanyDBTest {
 
     @Test
     public void testD_delete() throws Exception {
-        companyDB.delete("2");
-        assertNull(companyDB.read("2"));
+        companyDB.delete("1");
+        assertNull(companyDB.read("1"));
     }
 }
