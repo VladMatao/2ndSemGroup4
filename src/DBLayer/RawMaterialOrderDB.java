@@ -61,8 +61,8 @@ public class RawMaterialOrderDB implements RawMaterialOrderDBIF{
             psttmOrder.executeUpdate();
 
             PreparedStatement psttmRMO = conn.prepareStatement("UPDATE RawMaterialOrder SET RawMaterialLineID = ? WHERE RawMaterialOrderID = ?");
-            psttmOrder.setString(1,rawMaterialOrder.getRawMaterialLineId());
-            psttmOrder.setString(2,RawMaterialOrderId);
+            psttmRMO.setString(1,rawMaterialOrder.getRawMaterialLineId());
+            psttmRMO.setString(2,RawMaterialOrderId);
             psttmRMO.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception at rawMaterialOrderDb.update()");
