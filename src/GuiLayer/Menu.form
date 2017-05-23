@@ -42,6 +42,7 @@
               <enabled value="true"/>
               <hideActionText value="false"/>
               <text value="Manage Product"/>
+              <verifyInputWhenFocusTarget value="true"/>
             </properties>
           </component>
           <component id="e9fff" class="javax.swing.JButton" binding="managerMenuButton" default-binding="true">
