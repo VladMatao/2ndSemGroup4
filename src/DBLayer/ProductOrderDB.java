@@ -60,7 +60,7 @@ public class ProductOrderDB implements ProductOrderDBIF{
             psttmOrder.setNString(5,productOrderId);
             psttmOrder.executeUpdate();
 
-            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE OrderID = ?");
+            PreparedStatement psttmPO = conn.prepareStatement("UPDATE ProductOrder SET ProductLineID = ? WHERE ProductOrderID = ?");
             psttmOrder.setNString(1,productOrder.getProductLineId());
             psttmOrder.setNString(2,productOrderId);
             psttmPO.executeUpdate();
