@@ -40,7 +40,7 @@ public class ProductDBTest {
 
     @Test
     public void testD_delete() throws Exception {
-        productDB.delete("4");
-        assertNull(productDB.read("4"));
+        productDB.delete("2");
+        assertNull(productDB.read("2"));
     }
 }
