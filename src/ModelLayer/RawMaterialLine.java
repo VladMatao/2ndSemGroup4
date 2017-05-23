@@ -4,24 +4,24 @@ package ModelLayer;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RawMaterialLine {
-    private String id;
+    private String rawMaterialLineID;
     private double quantity;
     private String rawMaterialBarcode;
     private String rawMaterialOrderId;
 
     public RawMaterialLine(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) {
-        this.id = id;
+        this.rawMaterialLineID = id;
         this.quantity = quantity;
         this.rawMaterialBarcode = rawMaterialBarcode;
         this.rawMaterialOrderId = rawMaterialOrderId;
     }
 
     public String getId() {
-        return id;
+        return rawMaterialLineID;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.rawMaterialLineID = id;
     }
 
     public double getQuantity() {

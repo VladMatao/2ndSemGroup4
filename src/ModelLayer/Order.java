@@ -7,19 +7,17 @@ import java.util.Date;
  */
 public class Order {
     private String id;
-    private Date deliveryDate;
+    private String deliveryDate;
     private String orderStatus;
     private double totalPrice;
     private String companyId;
-    private String companyType;
 
-    public Order(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String companyType) {
+    public Order(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId) {
         this.id = id;
         this.deliveryDate = deliveryDate;
         this.orderStatus = orderStatus;
         this.totalPrice = totalPrice;
         this.companyId = companyId;
-        this.companyType = companyType;
     }
 
     public String getId() {
@@ -30,11 +28,11 @@ public class Order {
         this.id = id;
     }
 
-    public Date getDeliveryDate() {
+    public String getDeliveryDate() {
         return deliveryDate;
     }
 
-    public void setDeliveryDate(Date deliveryDate) {
+    public void setDeliveryDate(String deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
 
@@ -62,11 +60,4 @@ public class Order {
         this.companyId = companyId;
     }
 
-    public String getCompanyType() {
-        return companyType;
-    }
-
-    public void setCompanyType(String companyType) {
-        this.companyType = companyType;
-    }
 }

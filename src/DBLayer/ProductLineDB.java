@@ -1,31 +1,31 @@
 
 package DBLayer;
-import ModelLayer.RawMaterialLine;
+import ModelLayer.ProductLine;
 import java.sql.*;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
-public class RawMLineDB implements RawMLineDBIF {
+public class ProductLineDB implements ProductLineDBIF {
 
     @Override
-    public void create(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) throws SQLException {
+    public void create(String id, double quantity, String productBarcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO RawMaterialLine (RawMaterialLineID, Quantity, RawBarcode, RawMaterialOrderID)"
-                    + " values (?, ?, ?, ?)";
+            String query = " INSERT INTO ProductLine (ID, Quantity,ProductBarcode)"
+                    + " values (?, ?, ?)";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, id);
             preparedStmt.setDouble(2, quantity);
-            preparedStmt.setString(3, rawMaterialBarcode);
-            preparedStmt.setString(4, rawMaterialOrderId);
+            preparedStmt.setString(3, productBarcode);
+
             // execute the preparedstatement
             preparedStmt.execute();
         } catch (Exception e) {
-            System.err.println("Got an exception!");
+            System.err.println("Got an exception in ProductLineDB.create()!");
             System.err.println(e.getMessage());
         }finally{
             DBConnection.closeConnection();
@@ -33,16 +33,14 @@ public class RawMLineDB implements RawMLineDBIF {
     }
 
     @Override
-    public boolean update(RawMaterialLine rawMLine, String id) throws SQLException {
+    public boolean update(ProductLine productLine, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ?, RawMaterialOrderID = ? WHERE RawMaterialLineID = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ID = ?, Quantity = ?, ProductBarcode = ? WHERE ProductLine = ? ");
             //psttm.setInt(1,curentQuantity);
-            psttm.setString(1,rawMLine.getId());
-            psttm.setDouble(2,rawMLine.getQuantity());
-            psttm.setString(3,rawMLine.getRawMaterialBarcode());
-            psttm.setString(4,rawMLine.getRawMaterialOrderId());
-            psttm.setString(5,id);
+            psttm.setString(1,productLine.getproductLineId());
+            psttm.setDouble(2,productLine.getQuantity());
+            psttm.setString(3,productLine.getProductBarcode());
             psttm.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception!");
@@ -52,11 +50,12 @@ public class RawMLineDB implements RawMLineDBIF {
         }
         return true;
     }
+
     @Override
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMLine where ID='%s'", id);
+            String sql = String.format("Delete from ProductLine where id='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -66,38 +65,36 @@ public class RawMLineDB implements RawMLineDBIF {
         }
         return true;
     }
+
     @Override
-    public RawMaterialLine read(String id) throws SQLException{
-        RawMaterialLine rawMLine = null;
+    public ProductLine read(String id) throws SQLException{
+        ProductLine productLine = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM rawMLine where ID =%s",id);
+            String sql = String.format("SELECT * FROM ProductLine where barcode=%s",id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
-                rawMLine = buildObject(rs);
+                productLine = buildObject(rs);
             }
-        }catch (SQLException e) {
-            throw e;
-        }finally{
+        } finally{
             DBConnection.closeConnection();
         }
-        return rawMLine;
+        return productLine;
     }
 
 
-    private static RawMaterialLine buildObject(ResultSet rs) throws SQLException{
-        RawMaterialLine rawMLine;
+    private static ProductLine buildObject(ResultSet rs) throws SQLException{
+        ProductLine productLine;
         try {
-            String id = rs.getString(1);
+            String productLineID = rs.getString(1);
             Double quantity = rs.getDouble(2);
-            String rawMaterialBarcode = rs.getString(3);
-            String rawMaterialOrderID = rs.getString(4);
-            rawMLine = new RawMaterialLine(id, quantity,rawMaterialBarcode,rawMaterialOrderID);
+            String productBarcode = rs.getString(3);
+            productLine = new ProductLine(productLineID,quantity,productBarcode);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
         }
 
-        return rawMLine;
+        return productLine;
     }
 }

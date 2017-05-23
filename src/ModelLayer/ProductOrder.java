@@ -6,32 +6,18 @@ import java.util.*;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductOrder extends Order{
-    private String productOrderId;
-    private Stack<String> productsOrdered;
+    private String productLineId;
 
-    public ProductOrder(String id, Date deliveryDate, String orderStatus, double totalPrice, String companyId, String type, String productOrderId) {
-        super(id, deliveryDate, orderStatus, totalPrice, companyId, type);
-        this.productOrderId=productOrderId;
-        productsOrdered=new Stack<>();
+    public ProductOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, String productLineId) {
+        super(id, deliveryDate, orderStatus, totalPrice, companyId);
+        this.productLineId = productLineId;
     }
 
-    public String getProductOrderId() {
-        return productOrderId;
+    public String getProductLineId() {
+        return productLineId;
     }
 
-    public void setProductOrderId(String productOrderId) {
-        this.productOrderId = productOrderId;
-    }
-
-    public void addProductsOrdered(String productsBarcode){
-        productsOrdered.add(productsBarcode);
-    }
-
-    public Stack<String> getProductsOrdered(){
-        return productsOrdered;
-    }
-
-    public void deleteProduct(Product product){
-        productsOrdered.remove(product);
+    public void setProductLineId(String productLineId) {
+        this.productLineId = productLineId;
     }
 }

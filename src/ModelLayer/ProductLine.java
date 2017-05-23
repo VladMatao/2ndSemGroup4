@@ -4,31 +4,29 @@ package ModelLayer;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductLine {
-    private String id;
-    private int quantity;
+    private String productLineId;
+    private double quantity;
     private String productBarcode;
-    private String productOrderId;
 
-    public ProductLine(String id, int quantity, String productBarcode, String productOrderId) {
-        this.id = id;
+    public ProductLine(String id, double quantity, String productBarcode) {
+        this.productLineId = id;
         this.quantity = quantity;
         this.productBarcode = productBarcode;
-        this.productOrderId = productOrderId;
     }
 
-    public String getId() {
-        return id;
+    public String getproductLineId() {
+        return productLineId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setproductLineId(String id) {
+        this.productLineId = id;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
@@ -40,11 +38,4 @@ public class ProductLine {
         this.productBarcode = productBarcode;
     }
 
-    public String getProductOrderId() {
-        return productOrderId;
-    }
-
-    public void setProductOrderId(String productOrderId) {
-        this.productOrderId = productOrderId;
-    }
 }
