@@ -7,7 +7,7 @@ import java.sql.*;
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
-public class RawMaterialLineDB implements RawMLineDBIF {
+public class RawMaterialLineDB implements RawMaterialLineDBIF {
 
     @Override
     public void create(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) throws SQLException {
