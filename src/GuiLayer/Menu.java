@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 
 
 
+
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
@@ -47,19 +48,21 @@ public class Menu extends JFrame {
         });
 
 
-        managerMenuButton = new JButton();
-        managerMenuButton.addMouseListener(new MouseAdapter() {
+
+        managerMenuButton.setBounds(248, 48, 124, 23);
+        //panel1.add(managerMenuButton);
+        managerMenuButton.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent arg0) {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("muie viata");
                 dispose();
                 ManagerMenu managerMenu = new ManagerMenu();
                 JFrame frame= new JFrame("Menu");
-                frame.setContentPane(managerMenu);
+                frame.setContentPane(managerMenu.getContentPane());
                 managerMenu.setVisible(true);
+
             }
         });
-        managerMenuButton.setBounds(248, 48, 124, 23);
-        panel1.add(managerMenuButton);
     }
 
 
