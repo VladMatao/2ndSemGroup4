@@ -47,17 +47,19 @@ public class Menu {
         });
 
 
-        managerMenuButton = new JButton("Manager Menu");
+        managerMenuButton = new JButton();
         managerMenuButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
                 dispose();
-                ManagerMenu managerMenu=new ManagerMenu();
+                ManagerMenu managerMenu = new ManagerMenu();
                 managerMenu.setVisible(true);
             }
         });
-        btnCustomers.setBounds(248, 48, 124, 23);
-        contentPane.add(btnCustomers);
+        managerMenuButton.setBounds(248, 48, 124, 23);
+        contentPane.add(managerMenuButton);
+    }
+
 
 
     }
