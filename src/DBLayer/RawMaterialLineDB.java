@@ -10,18 +10,17 @@ import java.sql.*;
 public class RawMaterialLineDB implements RawMaterialLineDBIF {
 
     @Override
-    public void create(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) throws SQLException {
+    public void create(String id, double quantity, String rawMaterialBarcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String query = " INSERT INTO RawMaterialLine (RawMaterialLineID, Quantity, RawBarcode, RawMaterialOrderID)"
-                    + " values (?, ?, ?, ?)";
+            String query = " INSERT INTO RawMaterialLine (RawMaterialLineID, Quantity, RawBarcode)"
+                    + " values (?, ?, ?)";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, id);
             preparedStmt.setDouble(2, quantity);
             preparedStmt.setString(3, rawMaterialBarcode);
-            preparedStmt.setString(4, rawMaterialOrderId);
             // execute the preparedstatement
             preparedStmt.execute();
         } catch (Exception e) {
@@ -36,13 +35,12 @@ public class RawMaterialLineDB implements RawMaterialLineDBIF {
     public boolean update(RawMaterialLine rawMLine, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ?, RawMaterialOrderID = ? WHERE RawMaterialLineID = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ? WHERE RawMaterialLineID = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1,rawMLine.getId());
             psttm.setDouble(2,rawMLine.getQuantity());
             psttm.setString(3,rawMLine.getRawMaterialBarcode());
-            psttm.setString(4,rawMLine.getRawMaterialOrderId());
-            psttm.setString(5,id);
+            psttm.setString(4,id);
             psttm.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception!");
@@ -91,13 +89,28 @@ public class RawMaterialLineDB implements RawMaterialLineDBIF {
             String id = rs.getString(1);
             Double quantity = rs.getDouble(2);
             String rawMaterialBarcode = rs.getString(3);
-            String rawMaterialOrderID = rs.getString(4);
-            rawMLine = new RawMaterialLine(id, quantity,rawMaterialBarcode,rawMaterialOrderID);
+            rawMLine = new RawMaterialLine(id, quantity,rawMaterialBarcode);
         } catch(SQLException e) {
             e.printStackTrace();
             throw e;
         }
 
         return rawMLine;
+    }
+
+
+    @Override
+    public boolean deleteRawMaterialFromRawMaterialLine(String id, String rawMaterialBarcode) throws SQLException {
+        try {
+            Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("Delete from RawMaterialLine where id='%s' AND RawBarcode='%s' ", id,rawMaterialBarcode);
+            conn.createStatement().executeUpdate(sql);
+        } catch(SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }finally {
+            DBConnection.closeConnection();
+        }
+        return true;
     }
 }

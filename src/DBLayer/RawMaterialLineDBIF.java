@@ -9,8 +9,9 @@ import java.sql.SQLException;
  */
 public interface RawMaterialLineDBIF {
 
-    void create(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) throws SQLException;
+    void create(String id, double quantity, String rawMaterialBarcode) throws SQLException;
     boolean update (RawMaterialLine rawMLine, String id ) throws SQLException;
     boolean delete (String id) throws SQLException;
     RawMaterialLine read(String id) throws SQLException;
+    boolean deleteRawMaterialFromRawMaterialLine(String id, String rawMaterialBarcode) throws SQLException;
 }

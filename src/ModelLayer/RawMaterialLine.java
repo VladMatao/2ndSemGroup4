@@ -7,13 +7,11 @@ public class RawMaterialLine {
     private String rawMaterialLineID;
     private double quantity;
     private String rawMaterialBarcode;
-    private String rawMaterialOrderId;
 
-    public RawMaterialLine(String id, double quantity, String rawMaterialBarcode, String rawMaterialOrderId) {
+    public RawMaterialLine(String id, double quantity, String rawMaterialBarcode) {
         this.rawMaterialLineID = id;
         this.quantity = quantity;
         this.rawMaterialBarcode = rawMaterialBarcode;
-        this.rawMaterialOrderId = rawMaterialOrderId;
     }
 
     public String getId() {
@@ -40,11 +38,5 @@ public class RawMaterialLine {
         this.rawMaterialBarcode = rawMaterialBarcode;
     }
 
-    public String getRawMaterialOrderId() {
-        return rawMaterialOrderId;
-    }
 
-    public void setRawMaterialOrderId(String rawMaterialOrderId) {
-        this.rawMaterialOrderId = rawMaterialOrderId;
-    }
 }
