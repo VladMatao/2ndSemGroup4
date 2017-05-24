@@ -82,7 +82,6 @@ public class ProductLineDB implements ProductLineDBIF {
         return productLine;
     }
 
-
     private static ProductLine buildObject(ResultSet rs) throws SQLException{
         ProductLine productLine;
         try {
@@ -96,5 +95,20 @@ public class ProductLineDB implements ProductLineDBIF {
         }
 
         return productLine;
+    }
+
+    @Override
+    public boolean deleteProductFromProductLine(String id, String productBarcode) throws SQLException {
+        try {
+            Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("Delete from ProductLine where id='%s' AND ProductBarcode='%s' ", id,productBarcode);
+            conn.createStatement().executeUpdate(sql);
+        } catch(SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }finally {
+            DBConnection.closeConnection();
+        }
+        return true;
     }
 }

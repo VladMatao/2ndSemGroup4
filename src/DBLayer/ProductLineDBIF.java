@@ -13,4 +13,5 @@ public interface  ProductLineDBIF {
     boolean update (ProductLine productLine, String id) throws SQLException;
     boolean delete (String id) throws SQLException;
     ProductLine read(String id) throws SQLException;
+    boolean deleteProductFromProductLine(String id, String productBarcode) throws SQLException;
 }

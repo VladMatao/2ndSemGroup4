@@ -14,9 +14,11 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductDBTest {
     private ProductDB productDB;
+    private ProductLineDB productLineDB;
     @Before
     public void setUp(){
         productDB=new ProductDB();
+        productLineDB=new ProductLineDB();
     }
 
     @Test
@@ -42,5 +44,12 @@ public class ProductDBTest {
     public void testD_delete() throws Exception {
         productDB.delete("2");
         assertNull(productDB.read("2"));
+    }
+
+    @Test
+    public void testE_productLineDBTest() throws Exception {
+        productLineDB.create("1",10,"2");
+        productLineDB.create("1",20,"4");
+        productLineDB.deleteProductFromProductLine("1","2");
     }
 }
