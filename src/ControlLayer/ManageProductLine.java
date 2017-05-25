@@ -24,10 +24,10 @@ public class ManageProductLine {
         return true;
     }
 
-    public ProductLine read(String id){
+    public ProductLine read(String id,String productBarcode){
         ProductLine productLine = null;
         try {
-            productLine = productLineDB.read(id);
+            productLine = productLineDB.read(id,productBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }

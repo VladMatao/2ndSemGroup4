@@ -62,7 +62,7 @@ public class ProductDB implements ProductDBIF {
     public boolean delete(String barcode) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from Product where barcode='%s'", barcode);
+            String sql = String.format("Delete from Product where barcode=%s", barcode);
             conn.createStatement().executeUpdate(sql);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -78,7 +78,7 @@ public class ProductDB implements ProductDBIF {
         Product product = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM product where barcode=%s",barcode);
+            String sql = String.format("SELECT * FROM product where barcode='%s'",barcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 product = buildObject(rs);

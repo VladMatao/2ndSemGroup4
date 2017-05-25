@@ -66,12 +66,28 @@ public class ProductLineDB implements ProductLineDBIF {
         return true;
     }
 
-    @Override
-    public ProductLine read(String id) throws SQLException{
+    /*@Override
+    public ProductLine readAll(String id) throws SQLException{
         ProductLine productLine = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM ProductLine where barcode=%s",id);
+            String sql = String.format("SELECT * FROM ProductLine where ID=%s",id);
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            if (rs.next()){
+                productLine = buildObject(rs);
+            }
+        } finally{
+            DBConnection.closeConnection();
+        }
+        return productLine;
+    }*/
+
+    @Override
+    public ProductLine read(String id, String productBarcode) throws SQLException{
+        ProductLine productLine = null;
+        try{
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("SELECT * FROM ProductLine where ID=%s AND ProductBarcode=%s",id,productBarcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 productLine = buildObject(rs);
