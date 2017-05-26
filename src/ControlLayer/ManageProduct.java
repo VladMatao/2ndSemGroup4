@@ -4,6 +4,7 @@ import DBLayer.ProductDB;
 import ModelLayer.Product;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
@@ -31,6 +32,19 @@ public class ManageProduct {
             e.printStackTrace();
         }
         return product;
+    }
+    
+    public ArrayList<Product> readAll(){
+    	ArrayList<Product> allproducts = null;
+    	try {
+    		allproducts = productDb.readAll();
+    	} catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return allproducts;
+    	
+    	
     }
 
     public boolean update(Product product,String barcode){

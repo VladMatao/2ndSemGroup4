@@ -65,7 +65,7 @@ public class MenuNou extends JFrame{
 		JButton btnNewButton_1 = new JButton("Manage Product");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ManageProduct();
+				new MenuManageProduct();
 				frame.dispose();
 			}
 		});

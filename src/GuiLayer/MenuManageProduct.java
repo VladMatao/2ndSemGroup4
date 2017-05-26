@@ -49,6 +49,10 @@ public class MenuManageProduct {
 		frame.getContentPane().add(btnCreateProduct);
 		
 		JButton btnUpdateProduct = new JButton("Update Product");
+		btnUpdateProduct.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnUpdateProduct.setBounds(152, 118, 107, 23);
 		frame.getContentPane().add(btnUpdateProduct);
 		

@@ -2,6 +2,7 @@
 package DBLayer;
 import ModelLayer.Product;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -87,6 +88,24 @@ public class ProductDB implements ProductDBIF {
             DBConnection.closeConnection();
         }
         return product;
+    }
+    
+    
+    public ArrayList<Product> readAll() throws SQLException{
+        ArrayList<Product> productcollection = new ArrayList<Product>();
+    	Product product = null;
+        try{
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("SELECT * FROM product ");
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()){
+                product = buildObject(rs);
+                productcollection.add(product);
+            }
+        } finally{
+            DBConnection.closeConnection();
+        }
+        return productcollection;
     }
 
 
