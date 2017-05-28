@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MenuNou extends JFrame{
 
@@ -89,5 +91,17 @@ public class MenuNou extends JFrame{
 		lblScDumisSrl.setHorizontalAlignment(SwingConstants.CENTER);
 		lblScDumisSrl.setBounds(120, 11, 184, 31);
 		panel.add(lblScDumisSrl);
+		
+		JButton companyButton = new JButton("Company");
+		companyButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.dispose();
+				CompanyGUI companyGUI= new CompanyGUI();
+				companyGUI.setVisible(true);
+			}
+		});
+		companyButton.setBounds(151, 222, 119, 23);
+		panel.add(companyButton);
 	}
 }

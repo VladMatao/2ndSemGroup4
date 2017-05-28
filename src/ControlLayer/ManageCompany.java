@@ -2,8 +2,10 @@ package ControlLayer;
 
 import DBLayer.CompanyDB;
 import ModelLayer.Company;
+import ModelLayer.Product;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
  */
@@ -42,6 +44,19 @@ public class ManageCompany {
         }
         return false;
     }
+    
+    public ArrayList<Company> readAll(){
+    	ArrayList<Company> allcompanies = null;
+    	try {
+    		allcompanies = companyDb.readAll();
+    	} catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return allcompanies;
+    }
+    	
+    	
 
     public boolean delete(String id){
         boolean aux = false;

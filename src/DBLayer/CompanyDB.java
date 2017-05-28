@@ -1,7 +1,10 @@
 
 package DBLayer;
 import ModelLayer.Company;
+import ModelLayer.Product;
+
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -87,6 +90,23 @@ public class CompanyDB implements CompanyDBIF {
             DBConnection.closeConnection();
         }
         return company;
+    }
+    
+    public ArrayList<Company> readAll() throws SQLException{
+        ArrayList<Company> companycollection = new ArrayList<Company>();
+    	Company company = null;
+        try{
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("SELECT * FROM Company ");
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()){
+                company = buildObject(rs);
+                companycollection.add(company);
+            }
+        } finally{
+            DBConnection.closeConnection();
+        }
+        return companycollection;
     }
 
 
