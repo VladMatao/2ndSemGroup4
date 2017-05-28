@@ -33,8 +33,8 @@ public class ManageCompany {
         return company;
     }
 
-    public boolean update(Company company,String id){
-
+    public boolean update(String id, String name, String phNr, String email, String companyType, String address){
+        Company company = new Company(id, name, phNr, email, companyType, address);
         try {
             return companyDb.update(company,id);
         } catch (SQLException e) {
