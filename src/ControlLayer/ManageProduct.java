@@ -47,8 +47,8 @@ public class ManageProduct {
     	
     }
 
-    public boolean update(Product product,String barcode){
-
+    public boolean update(String name, String barcode, double price, int stock, int productionTime, String requiredMatID){
+        Product product=new Product(name, barcode, price, stock, productionTime, requiredMatID);
         try {
             return productDb.update(product,barcode);
         } catch (SQLException e) {
