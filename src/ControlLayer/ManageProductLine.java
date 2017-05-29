@@ -1,9 +1,11 @@
 package ControlLayer;
 
 import DBLayer.ProductLineDB;
+import ModelLayer.Company;
 import ModelLayer.ProductLine;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
@@ -52,6 +54,17 @@ public class ManageProductLine {
             e.printStackTrace();
         }
         return aux;
+    }
+    
+    public ArrayList<ProductLine> readAll(){
+    	ArrayList<ProductLine> allproductLines = null;
+    	try {
+    		allproductLines = productLineDB.readAll();
+    	} catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return allproductLines;
     }
 
     public boolean deleteProductFromProducLine(String idProductLine, String productBarcode){

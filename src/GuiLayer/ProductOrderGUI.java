@@ -37,6 +37,7 @@ public class ProductOrderGUI extends JFrame {
 	private JTextField deliveryDateTextField;
 	private JTextField companyIDTextField;
 	private JTextField productLineTextField;
+	private JLabel timeLabel;
 
 
 	/**
@@ -65,8 +66,17 @@ public class ProductOrderGUI extends JFrame {
 		
 		contentPane.add(table);
 		
+		JLabel price = new JLabel("0");
+		price.setBounds(552, 355, 46, 14);
+		contentPane.add(price);
+		
+		JLabel timeLabel;
+		timeLabel = new JLabel("0");
+		timeLabel.setBounds(552, 312, 46, 14);
+		contentPane.add(timeLabel);
+		
 		quantityTextField = new JTextField();
-		quantityTextField.setBounds(389, 24, 145, 31);
+		quantityTextField.setBounds(383, 117, 145, 31);
 		contentPane.add(quantityTextField);
 		quantityTextField.setColumns(10);
 		
@@ -77,21 +87,29 @@ public class ProductOrderGUI extends JFrame {
 		
 		productBarcodeTextField = new JTextField();
 		productBarcodeTextField.setColumns(10);
-		productBarcodeTextField.setBounds(586, 24, 145, 31);
+		productBarcodeTextField.setBounds(383, 24, 145, 31);
 		contentPane.add(productBarcodeTextField);
-		
 		JButton addButton = new JButton("Add");
 		addButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				ManageProductLine productLine=new ManageProductLine();
-				productLine.create(productLineTextField.getText(),Double.parseDouble(quantityTextField.getText()),productBarcodeTextField.getText());
+                CreateProductOrder order=new CreateProductOrder();
+				productLine.create(productBarcodeTextField.getText(),Double.parseDouble(quantityTextField.getText()),productBarcodeTextField.getText());
+				//double sum=Double.parseDouble(price.getText());
+				//sum=sum+order.calculatePrice(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
+				//price.setText(""+sum);
+				//double time=Double.parseDouble(timeLabel.getText());
+				//time=time+order.calculateTime(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
+				//timeLabel.setText("" + time);
+				price.setText("" + 12);
+				timeLabel.setText("" + 6);
 				fillTable(productLinetable);
 
 
 			}
 		});
-		addButton.setBounds(24, 394, 89, 23);
+		addButton.setBounds(383, 230, 89, 23);
 		contentPane.add(addButton);
 		
 		JButton deteleButton = new JButton("Delete");
@@ -99,12 +117,12 @@ public class ProductOrderGUI extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ManageProductLine productLine=new ManageProductLine();
-				productLine.delete(orderIDTextField.getText());
+				productLine.delete(productLineTextField.getText());
 				fillTable(productLinetable);
 
 			}
 		});
-		deteleButton.setBounds(123, 394, 89, 23);
+		deteleButton.setBounds(482, 230, 89, 23);
 		contentPane.add(deteleButton);
 		
 		JButton updateButton = new JButton("Update");
@@ -116,7 +134,7 @@ public class ProductOrderGUI extends JFrame {
 				fillTable(productLinetable);
 			}
 		});
-		updateButton.setBounds(242, 394, 89, 23);
+		updateButton.setBounds(599, 230, 89, 23);
 		contentPane.add(updateButton);
 		
 		JLabel lbld = new JLabel("order ID");
@@ -124,15 +142,15 @@ public class ProductOrderGUI extends JFrame {
 		contentPane.add(lbld);
 		
 		JLabel lblQuantity = new JLabel("Quantity");
-		lblQuantity.setBounds(438, 66, 46, 14);
+		lblQuantity.setBounds(429, 93, 46, 14);
 		contentPane.add(lblQuantity);
 		
 		JLabel lblProductBarcode = new JLabel("Product Barcode");
-		lblProductBarcode.setBounds(638, 66, 46, 14);
+		lblProductBarcode.setBounds(429, 11, 99, 14);
 		contentPane.add(lblProductBarcode);
 		
 		JLabel lblOrderStatus = new JLabel("Order Status");
-		lblOrderStatus.setBounds(10, 93, 46, 14);
+		lblOrderStatus.setBounds(10, 93, 89, 14);
 		contentPane.add(lblOrderStatus);
 		
 		orderStatusTextField = new JTextField();
@@ -141,7 +159,7 @@ public class ProductOrderGUI extends JFrame {
 		orderStatusTextField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Delivery Date");
-		lblNewLabel.setBounds(10, 158, 46, 14);
+		lblNewLabel.setBounds(10, 158, 103, 14);
 		contentPane.add(lblNewLabel);
 		
 		deliveryDateTextField = new JTextField();
@@ -150,7 +168,7 @@ public class ProductOrderGUI extends JFrame {
 		deliveryDateTextField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("CompanyID");
-		lblNewLabel_1.setBounds(10, 216, 46, 14);
+		lblNewLabel_1.setBounds(10, 216, 89, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		companyIDTextField = new JTextField();
@@ -159,29 +177,37 @@ public class ProductOrderGUI extends JFrame {
 		companyIDTextField.setColumns(10);
 		
 		JLabel lblProductlineid = new JLabel("ProductLineID");
-		lblProductlineid.setBounds(0, 271, 113, 14);
+		lblProductlineid.setBounds(415, 161, 113, 14);
 		contentPane.add(lblProductlineid);
 		
 		productLineTextField = new JTextField();
-		productLineTextField.setBounds(143, 268, 145, 20);
+		productLineTextField.setBounds(383, 185, 145, 20);
 		contentPane.add(productLineTextField);
 		productLineTextField.setColumns(10);
 		
-		JLabel time = new JLabel("New label");
-		time.setBounds(143, 312, 46, 14);
-		contentPane.add(time);
+		
 		
 		JLabel lblTotalTime = new JLabel("Total time");
-		lblTotalTime.setBounds(0, 312, 46, 14);
+		lblTotalTime.setBounds(392, 312, 80, 14);
 		contentPane.add(lblTotalTime);
 		
 		JLabel lblTotalPrice = new JLabel("Total Price");
-		lblTotalPrice.setBounds(0, 355, 46, 14);
+		lblTotalPrice.setBounds(392, 355, 80, 14);
 		contentPane.add(lblTotalPrice);
 		
-		JLabel price = new JLabel("New label");
-		price.setBounds(143, 355, 46, 14);
-		contentPane.add(price);
+		
+		
+		JButton finalizeButton = new JButton("Finalize");
+		finalizeButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CreateProductOrder productOrder=new CreateProductOrder();
+				productOrder.create(productLineTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
+				
+			}
+		});
+		finalizeButton.setBounds(10, 334, 89, 23);
+		contentPane.add(finalizeButton);
 	}
 	
 	

@@ -57,8 +57,9 @@ public class MenuNou extends JFrame{
 		JButton btnNewButton = new JButton("Create Order");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new CreateOrder();
 				frame.dispose();
+				ProductOrderGUI productOrderGUI= new ProductOrderGUI();
+				productOrderGUI.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(153, 84, 117, 23);

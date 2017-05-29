@@ -90,14 +90,13 @@ public class ProductGUI extends JFrame {
         requiredMatIDTextField.setColumns(10);
         requiredMatIDTextField.setBounds(143, 340, 145, 31);
         contentPane.add(requiredMatIDTextField);
-
         JButton addButton = new JButton("Add");
         addButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
                 ManageProduct product=new ManageProduct();
                 product.create(nameTextField.getText(),barcodeTextField.getText(),Double.parseDouble(priceTextField.getText()),Integer.parseInt(stockTextField.getText()),Integer.parseInt(producionTimeTextField.getText()),requiredMatIDTextField.getText());
-                fillTable(producttable);
+                
 
 
             }

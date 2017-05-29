@@ -1,7 +1,9 @@
 
 package DBLayer;
+import ModelLayer.Company;
 import ModelLayer.ProductLine;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -67,21 +69,22 @@ public class ProductLineDB implements ProductLineDBIF {
         return true;
     }
 
-    /*@Override
-    public ProductLine readAll(String id) throws SQLException{
-        ProductLine productLine = null;
+    public ArrayList<ProductLine> readAll() throws SQLException{
+        ArrayList<ProductLine> productLinecollection = new ArrayList<ProductLine>();
+    	ProductLine productLine = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM ProductLine where ID=%s",id);
+            String sql = String.format("SELECT * FROM ProductLine ");
             ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()){
-                productLine = buildObject(rs);
+            while (rs.next()){
+            	productLine = buildObject(rs);
+            	productLinecollection.add(productLine);
             }
         } finally{
             DBConnection.closeConnection();
         }
-        return productLine;
-    }*/
+        return productLinecollection;
+    }
 
     @Override
     public ProductLine read(String id, String productBarcode) throws SQLException{
