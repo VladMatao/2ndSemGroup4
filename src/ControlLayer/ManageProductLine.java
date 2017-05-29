@@ -34,8 +34,8 @@ public class ManageProductLine {
         return productLine;
     }
 
-    public boolean update(ProductLine productLine,String id){
-
+    public boolean update(String id, double quantity, String productBarcode){
+        ProductLine productLine = new ProductLine(id, quantity, productBarcode);
         try {
             return productLineDB.update(productLine,id);
         } catch (SQLException e) {
