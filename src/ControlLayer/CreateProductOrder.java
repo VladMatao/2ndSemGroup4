@@ -19,7 +19,7 @@ public class CreateProductOrder {
         productOrderDB = new ProductOrderDB();
     }
 
-    public boolean create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, Double totalProductionTime){
+    public boolean create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, double totalProductionTime){
         try {
             productOrderDB.create(productOrderId, totalPrice, orderStatus, deliveryDate, companyId, productLineId, totalProductionTime);
         } catch (SQLException e) {
