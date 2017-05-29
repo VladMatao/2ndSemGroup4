@@ -79,7 +79,7 @@ public class ProductDB implements ProductDBIF {
         Product product = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM product where barcode='%s'",barcode);
+            String sql = String.format("SELECT * FROM Product where Barcode='%s'",barcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 product = buildObject(rs);
@@ -96,7 +96,7 @@ public class ProductDB implements ProductDBIF {
     	Product product = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM product ");
+            String sql = String.format("SELECT * FROM Product ");
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()){
                 product = buildObject(rs);

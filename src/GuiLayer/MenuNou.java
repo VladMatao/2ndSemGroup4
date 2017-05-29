@@ -67,8 +67,9 @@ public class MenuNou extends JFrame{
 		JButton btnNewButton_1 = new JButton("Manage Product");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MenuManageProduct();
 				frame.dispose();
+				ProductGUI productGUI= new ProductGUI();
+				productGUI.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(153, 120, 117, 23);

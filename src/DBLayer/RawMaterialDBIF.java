@@ -3,6 +3,7 @@ package DBLayer;
 import ModelLayer.RAW_Material;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -13,4 +14,5 @@ public interface  RawMaterialDBIF {
     boolean update (RAW_Material rawMat, String barcode) throws SQLException;
     boolean delete (String barcode) throws SQLException;
     RAW_Material read(String barcode) throws SQLException;
+    ArrayList<RAW_Material> readAll() throws SQLException;
 }

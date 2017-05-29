@@ -15,7 +15,7 @@ public class ManageProduct {
         productDb = new ProductDB();
     }
 
-    public boolean create(String name, String barcode, int price, int stock, int productionTime, String requiredMatID){
+    public boolean create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID){
         try {
             productDb.create(name,barcode,price,stock,productionTime,requiredMatID);
         } catch (SQLException e) {

@@ -1,7 +1,9 @@
 
 package DBLayer;
+import ModelLayer.Company;
 import ModelLayer.RAW_Material;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -79,6 +81,23 @@ public class RawMaterialDB implements RawMaterialDBIF {
             DBConnection.closeConnection();
         }
         return rawMat;
+    }
+    
+    public ArrayList<RAW_Material> readAll() throws SQLException{
+        ArrayList<RAW_Material>rawMaterialcollection = new ArrayList<RAW_Material>();
+    	RAW_Material rawMaterial = null;
+        try{
+            java.sql.Connection conn = DBConnection.getInstance().getDBcon();
+            String sql = String.format("SELECT * FROM RawMaterial ");
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()){
+            	rawMaterial = buildObject(rs);
+            	rawMaterialcollection.add(rawMaterial);
+            }
+        } finally{
+            DBConnection.closeConnection();
+        }
+        return rawMaterialcollection;
     }
 
 

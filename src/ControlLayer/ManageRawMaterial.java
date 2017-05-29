@@ -1,9 +1,11 @@
 package ControlLayer;
 
 import DBLayer.RawMaterialDB;
+import ModelLayer.Company;
 import ModelLayer.RAW_Material;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 /**
  * Created by Alexander on 5/24/2017.
  */
@@ -38,6 +40,18 @@ public class ManageRawMaterial {
             e.printStackTrace();
         }
         return false;
+    }
+    
+
+    public ArrayList<RAW_Material> readAll(){
+    	ArrayList<RAW_Material> allrawmaterials = null;
+    	try {
+    		allrawmaterials = rawMaterialDB.readAll();
+    	} catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return allrawmaterials;
     }
 
     public boolean delete(String barcode){

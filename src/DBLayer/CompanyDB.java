@@ -79,7 +79,7 @@ public class CompanyDB implements CompanyDBIF {
         Company company = null;
         try{
             java.sql.Connection conn = DBConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM company where CompanyID =%s",id);
+            String sql = String.format("SELECT * FROM Company where CompanyID =%s",id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()){
                 company = buildObject(rs);
