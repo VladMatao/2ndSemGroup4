@@ -36,11 +36,12 @@ public class ProductLineDB implements ProductLineDBIF {
     public boolean update(ProductLine productLine, String id) throws SQLException {
         try {
             Connection conn = DBConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ID = ?, Quantity = ?, ProductBarcode = ? WHERE ProductLine = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ID = ?, Quantity = ?, ProductBarcode = ? WHERE ID = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1,productLine.getproductLineId());
             psttm.setDouble(2,productLine.getQuantity());
             psttm.setString(3,productLine.getProductBarcode());
+            psttm.setString(4,id);
             psttm.executeUpdate();
         } catch(SQLException e) {
             System.err.println("Got an exception!");
