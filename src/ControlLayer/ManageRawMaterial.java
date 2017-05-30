@@ -33,7 +33,8 @@ public class ManageRawMaterial {
         return rawMaterial;
     }
 
-    public boolean update(RAW_Material raw_material, String barcode){
+    public boolean update(String barcode, String name){
+        RAW_Material raw_material=new RAW_Material( barcode,  name);
         try{
             return rawMaterialDB.update(raw_material,barcode);
         }catch (SQLException e) {
