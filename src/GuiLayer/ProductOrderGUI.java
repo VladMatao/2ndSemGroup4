@@ -84,29 +84,31 @@ public class ProductOrderGUI extends JFrame {
 		orderIDTextField.setColumns(10);
 		orderIDTextField.setBounds(143, 24, 145, 31);
 		contentPane.add(orderIDTextField);
-		
+
+		productLineTextField = new JTextField();
+		productLineTextField.setBounds(383, 185, 145, 20);
+		contentPane.add(productLineTextField);
+		productLineTextField.setColumns(10);
+
 		productBarcodeTextField = new JTextField();
 		productBarcodeTextField.setColumns(10);
 		productBarcodeTextField.setBounds(383, 24, 145, 31);
 		contentPane.add(productBarcodeTextField);
+
 		JButton addButton = new JButton("Add");
 		addButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				ManageProductLine productLine=new ManageProductLine();
                 CreateProductOrder order=new CreateProductOrder();
-				productLine.create(productBarcodeTextField.getText(),Double.parseDouble(quantityTextField.getText()),productBarcodeTextField.getText());
-				//double sum=Double.parseDouble(price.getText());
-				//sum=sum+order.calculatePrice(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
-				//price.setText(""+sum);
-				//double time=Double.parseDouble(timeLabel.getText());
-				//time=time+order.calculateTime(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
-				//timeLabel.setText("" + time);
-				price.setText("" + 12);
-				timeLabel.setText("" + 6);
+				productLine.create(productLineTextField.getText(),Double.parseDouble(quantityTextField.getText()),productBarcodeTextField.getText());
+				double sum=Double.parseDouble(price.getText());
+				sum=sum+order.calculatePrice(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
+				price.setText(""+sum);
+				double time=Double.parseDouble(timeLabel.getText());
+				time=time+order.calculateTime(productBarcodeTextField.getText(),Integer.parseInt(quantityTextField.getText()));
+				timeLabel.setText("" + time);
 				fillTable(productLinetable);
-
-
 			}
 		});
 		addButton.setBounds(383, 230, 89, 23);
@@ -179,13 +181,6 @@ public class ProductOrderGUI extends JFrame {
 		JLabel lblProductlineid = new JLabel("ProductLineID");
 		lblProductlineid.setBounds(415, 161, 113, 14);
 		contentPane.add(lblProductlineid);
-		
-		productLineTextField = new JTextField();
-		productLineTextField.setBounds(383, 185, 145, 20);
-		contentPane.add(productLineTextField);
-		productLineTextField.setColumns(10);
-		
-		
 		
 		JLabel lblTotalTime = new JLabel("Total time");
 		lblTotalTime.setBounds(392, 312, 80, 14);

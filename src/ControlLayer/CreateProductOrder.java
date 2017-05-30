@@ -17,6 +17,8 @@ public class CreateProductOrder {
 
     public CreateProductOrder() {
         productOrderDB = new ProductOrderDB();
+        productLineDB = new ProductLineDB();
+        productDB = new ProductDB();
     }
 
     public boolean create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, double totalProductionTime){
@@ -31,8 +33,8 @@ public class CreateProductOrder {
     public double calculatePrice(String productBarcode, int quantity){
         double totalPrice=0;
         try {
-            if(productDB.read(productBarcode)!=null)
-                totalPrice=productDB.read(productBarcode).getPrice()*quantity;
+            totalPrice=productDB.read(productBarcode).getPrice()*quantity;
+            //System.out.println(productDB.read(productBarcode).getPrice()*quantity);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,8 +44,8 @@ public class CreateProductOrder {
     public double calculateTime(String productBarcode, int quantity){
         double totalTime=0;
         try {
-            if(productDB.read(productBarcode)!=null)
-                totalTime=productDB.read(productBarcode).getProductionTime()*quantity;
+            totalTime=productDB.read(productBarcode).getProductionTime()*quantity;
+            //System.out.println(productDB.read(productBarcode).getProductionTime()*quantity)
         } catch (SQLException e) {
             e.printStackTrace();
         }
