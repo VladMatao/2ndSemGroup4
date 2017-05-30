@@ -20,6 +20,7 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class CompanyGUI extends JFrame {
 
@@ -53,13 +54,7 @@ public class CompanyGUI extends JFrame {
 				new String[] {
 					"Company ID", "Name", "Phone Number", "Email", "Company Type", "Adress"
 				});
-		
-		table = new JTable();
-		table.setModel(companytable);
-		table.setBounds(341, 0, 645, 456);
 		fillTable(companytable);
-		
-		contentPane.add(table);
 		
 		nameTextField = new JTextField();
 		nameTextField.setBounds(143, 72, 145, 31);
@@ -153,6 +148,14 @@ public class CompanyGUI extends JFrame {
 		JLabel lblAdress = new JLabel("Adress");
 		lblAdress.setBounds(10, 348, 46, 14);
 		contentPane.add(lblAdress);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(338, 0, 648, 456);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setModel(companytable);
 	}
 	
 	

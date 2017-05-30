@@ -23,6 +23,7 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class ProductOrderGUI extends JFrame {
 
@@ -58,13 +59,7 @@ public class ProductOrderGUI extends JFrame {
 				new String[] {
 					"ID", "Quantity", "Product Barcode"
 				});
-		
-		table = new JTable();
-		table.setModel(productLinetable);
-		table.setBounds(792, 0, 194, 456);
 		fillTable(productLinetable);
-		
-		contentPane.add(table);
 		
 		JLabel price = new JLabel("0");
 		price.setBounds(552, 355, 46, 14);
@@ -136,7 +131,7 @@ public class ProductOrderGUI extends JFrame {
 				fillTable(productLinetable);
 			}
 		});
-		updateButton.setBounds(599, 230, 89, 23);
+		updateButton.setBounds(581, 230, 89, 23);
 		contentPane.add(updateButton);
 		
 		JLabel lbld = new JLabel("order ID");
@@ -203,6 +198,14 @@ public class ProductOrderGUI extends JFrame {
 		});
 		finalizeButton.setBounds(10, 334, 89, 23);
 		contentPane.add(finalizeButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(675, 0, 311, 456);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setModel(productLinetable);
 	}
 	
 	

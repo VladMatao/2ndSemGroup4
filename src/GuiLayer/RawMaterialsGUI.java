@@ -20,6 +20,7 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class RawMaterialsGUI extends JFrame {
 
@@ -49,13 +50,7 @@ public class RawMaterialsGUI extends JFrame {
 				new String[] {
 					"Barcode", "Name"
 				});
-		
-		table = new JTable();
-		table.setModel(rawMaterialtable);
-		table.setBounds(341, 0, 645, 456);
 		fillTable(rawMaterialtable);
-		
-		contentPane.add(table);
 		
 		nameTextField = new JTextField();
 		nameTextField.setBounds(143, 72, 145, 31);
@@ -113,6 +108,14 @@ public class RawMaterialsGUI extends JFrame {
 		JLabel lblName = new JLabel("Name");
 		lblName.setBounds(10, 80, 46, 14);
 		contentPane.add(lblName);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(344, 0, 642, 456);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setModel(rawMaterialtable);
 	}
 	
 	
