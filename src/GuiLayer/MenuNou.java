@@ -62,7 +62,7 @@ public class MenuNou extends JFrame{
 				productOrderGUI.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(153, 84, 117, 23);
+		btnNewButton.setBounds(153, 84, 140, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Manage Product");
@@ -73,11 +73,11 @@ public class MenuNou extends JFrame{
 				productGUI.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(153, 120, 117, 23);
+		btnNewButton_1.setBounds(153, 120, 140, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Manager Menu");
-		btnNewButton_2.setBounds(153, 154, 117, 23);
+		btnNewButton_2.setBounds(153, 154, 140, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Check Schedule");
@@ -85,7 +85,7 @@ public class MenuNou extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_3.setBounds(153, 188, 117, 23);
+		btnNewButton_3.setBounds(153, 188, 140, 23);
 		panel.add(btnNewButton_3);
 		
 		JLabel lblScDumisSrl = new JLabel("SC DUMIS SRL");
@@ -103,7 +103,7 @@ public class MenuNou extends JFrame{
 				companyGUI.setVisible(true);
 			}
 		});
-		companyButton.setBounds(151, 222, 119, 23);
+		companyButton.setBounds(151, 222, 140, 23);
 		panel.add(companyButton);
 	}
 }
