@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -53,13 +54,7 @@ public class ProductGUI extends JFrame {
                 new String[] {
                         "Name", "Barcode", "Price", "Stock", "Production_Time", "RequiredMatID"
                 });
-
-        table = new JTable();
-        table.setModel(producttable);
-        table.setBounds(341, 0, 645, 456);
         fillTable(producttable);
-
-        contentPane.add(table);
 
         barcodeTextField = new JTextField();
         barcodeTextField.setBounds(143, 72, 145, 31);
@@ -152,6 +147,14 @@ public class ProductGUI extends JFrame {
         JLabel lblAdress = new JLabel("Required  Material ID");
         lblAdress.setBounds(10, 348, 46, 14);
         contentPane.add(lblAdress);
+        
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setBounds(341, 0, 645, 456);
+        contentPane.add(scrollPane);
+        
+                table = new JTable();
+                scrollPane.setViewportView(table);
+                table.setModel(producttable);
     }
 
 
