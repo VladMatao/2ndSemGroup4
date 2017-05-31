@@ -46,7 +46,7 @@ public class InvoiceGUI extends JFrame {
 				new Object[][] {
 				},
 				new String[] {
-					 "Quantity", "ProductBarcode"
+					 "ProductBarcode", "Quantity"
 				});
 		ReadProductOrder readProductOrder= new ReadProductOrder();
 		fillTable(invoicetable,readProductOrder.read(orderID).getProductLineId());
@@ -111,10 +111,10 @@ public class InvoiceGUI extends JFrame {
 		ArrayList<ProductLine> productLines = productLineCtr.readAll();
 		if (!productLines.isEmpty()) {
 			for (ProductLine productLine : productLines) {
-				if(productLine.getproductLineId()==productLineID) {
+				if(productLine.getproductLineId().equals(productLineID)) {
 					double quantity = productLine.getQuantity();
 					String productBarcode = productLine.getProductBarcode();
-					model.addRow(new Object[]{quantity, productBarcode});
+					model.addRow(new Object[]{productBarcode, quantity});
 				}
 			}
 
