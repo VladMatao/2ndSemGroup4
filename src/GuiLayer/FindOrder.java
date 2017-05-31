@@ -25,7 +25,6 @@ public class FindOrder {
 	 */
 	public FindOrder() {
 		initialize();
-		
 	}
 
 	/**

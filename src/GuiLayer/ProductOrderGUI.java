@@ -185,20 +185,6 @@ public class ProductOrderGUI extends JFrame {
 		lblTotalPrice.setBounds(392, 355, 80, 14);
 		contentPane.add(lblTotalPrice);
 		
-		
-		
-		JButton finalizeButton = new JButton("Finalize");
-		finalizeButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CreateProductOrder productOrder=new CreateProductOrder();
-				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
-				
-			}
-		});
-		finalizeButton.setBounds(10, 334, 89, 23);
-		contentPane.add(finalizeButton);
-		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(675, 0, 311, 456);
 		contentPane.add(scrollPane);
@@ -206,6 +192,20 @@ public class ProductOrderGUI extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		table.setModel(productLinetable);
+		
+		JButton finalizeButton = new JButton("Finalize");
+		finalizeButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CreateProductOrder productOrder=new CreateProductOrder();
+				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
+				dispose();
+				ConfirmationGUI confirmationGUI=new ConfirmationGUI();
+				confirmationGUI.setVisible(true);
+			}
+		});
+		finalizeButton.setBounds(33, 346, 89, 23);
+		contentPane.add(finalizeButton);
 	}
 	
 	

@@ -19,8 +19,6 @@ import javax.swing.ImageIcon;
 
 public class Menu extends JFrame{
 
-	private JFrame frmMenu;
-
 	/**
 	 * Launch the application.
 	 */
@@ -29,7 +27,7 @@ public class Menu extends JFrame{
 			public void run() {
 				try {
 					Menu window = new Menu();
-					window.frmMenu.setVisible(true);
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,15 +46,14 @@ public class Menu extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmMenu = new JFrame();
-		frmMenu.setTitle("Menu");
-		frmMenu.setBounds(100, 100, 664, 560);
-		frmMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Menu");
+		setBounds(100, 100, 664, 560);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(25, 93, 115));
 		panel.setForeground(new Color(255, 255, 255));
-		frmMenu.getContentPane().add(panel, BorderLayout.CENTER);
+		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		JButton createOrderButton = new JButton("Create Order");
@@ -64,7 +61,7 @@ public class Menu extends JFrame{
 		createOrderButton.setBackground(new Color(2, 52, 68));
 		createOrderButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmMenu.dispose();
+				dispose();
 				ProductOrderGUI productOrderGUI= new ProductOrderGUI();
 				productOrderGUI.setVisible(true);
 			}
@@ -77,7 +74,7 @@ public class Menu extends JFrame{
 		productButton.setBackground(new Color(2, 52, 68));
 		productButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmMenu.dispose();
+				dispose();
 				ProductGUI productGUI= new ProductGUI();
 				productGUI.setVisible(true);
 			}
@@ -102,7 +99,7 @@ public class Menu extends JFrame{
 		companyButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				frmMenu.dispose();
+				dispose();
 				CompanyGUI companyGUI= new CompanyGUI();
 				companyGUI.setVisible(true);
 			}
@@ -135,7 +132,7 @@ public class Menu extends JFrame{
 		ordersButton.setBackground(new Color(2, 52, 68));
 		ordersButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmMenu.dispose();
+				dispose();
 				ChoseOrderGUI choseOrderGUI= new ChoseOrderGUI();
 				choseOrderGUI.setVisible(true);
 			}
