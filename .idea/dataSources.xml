@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="dmaj0916_197353@kraka.ucn.dk" uuid="6b8901e4-e601-4347-9bc4-6def1eb25589">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://kraka.ucn.dk;databaseName=dmaj0916_197353</jdbc-url>
+    </data-source>
+  </component>
+</project>
