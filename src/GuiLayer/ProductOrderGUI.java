@@ -195,7 +195,7 @@ public class ProductOrderGUI extends JFrame {
 				CreateProductOrder productOrder=new CreateProductOrder();
 				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
 				dispose();
-				InvoiceGUI invoiceGUI =new InvoiceGUI();
+				InvoiceGUI invoiceGUI =new InvoiceGUI(orderIDTextField.getText());
 				invoiceGUI.setVisible(true);
 			}
 		});

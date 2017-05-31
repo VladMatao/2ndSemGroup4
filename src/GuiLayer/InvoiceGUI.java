@@ -24,10 +24,12 @@ public class InvoiceGUI extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 
+
 	/**
 	 * Create the frame.
 	 */
-	public InvoiceGUI() {
+	public InvoiceGUI(String orderID) {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 659, 478);
 		contentPane = new JPanel();
@@ -35,9 +37,10 @@ public class InvoiceGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblOrdID = new JLabel("ordIDlbl");
+		JLabel lblOrdID = new JLabel("");
 		lblOrdID.setBounds(119, 52, 46, 14);
 		contentPane.add(lblOrdID);
+		lblOrdID.setText(orderID);
 		
 		DefaultTableModel invoicetable= new DefaultTableModel(
 				new Object[][] {
@@ -45,8 +48,8 @@ public class InvoiceGUI extends JFrame {
 				new String[] {
 					 "Quantity", "ProductBarcode"
 				});
-		ReadProductOrder read= new ReadProductOrder();
-		fillTable(invoicetable,read.read(lblOrdID.getText()).getProductLineId());
+		ReadProductOrder readProductOrder= new ReadProductOrder();
+		fillTable(invoicetable,readProductOrder.read(orderID).getProductLineId());
 	
 		
 		JLabel lblOrderid = new JLabel("OrderID:");
