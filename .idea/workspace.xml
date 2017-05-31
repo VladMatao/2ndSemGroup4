@@ -1,10 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4a626fc-afba-448d-ac60-11d1633d49c7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/sample.fxml" afterPath="" />
+    <list default="true" id="b4a626fc-afba-448d-ac60-11d1633d49c7" name="Default" comment="ceva">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/control/layer/ManageCompany.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/control/layer/ManageRawMaterial.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/layer/GuiStart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/layer/ProductLine.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterial.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageCompany.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageRawMaterial.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ModelLayer/ProductLine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ModelLayer/RAW_Material.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/CompanyDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/CompanyDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/EmployeeDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/EmployeeDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/ProductDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/ProductDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/ProductOrderDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/ProductOrderDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/CreateProductOrder.java" afterPath="$PROJECT_DIR$/src/control/layer/CreateProductOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageEmployee.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageEmployee.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageProduct.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageProductLine.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageProductLine.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageRawMaterialLine.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageRawMaterialLine.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ReadProductOrder.java" afterPath="$PROJECT_DIR$/src/control/layer/ReadProductOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/CompanyDB.java" afterPath="$PROJECT_DIR$/src/db/layer/CompanyDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/CompanyDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/CompanyDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/DBConnection.java" afterPath="$PROJECT_DIR$/src/db/layer/DbConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/EmployeeDB.java" afterPath="$PROJECT_DIR$/src/db/layer/EmployeeDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/EmployeeDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/EmployeeDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductDbId.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductLineDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductLineDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductLineDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductLineDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductOrderDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductOrderDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductOrderDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductOrderDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialLineDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialLineDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialLineDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialLineDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialOrderDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialOrderDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialOrderDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialOrderDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/StatisticsDB.java" afterPath="$PROJECT_DIR$/src/db/layer/StatisticsDb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/StatisticsDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/StatisticsDbIf.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ChoseOrderGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/CompanyGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/CompanyGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/CreateProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/CreateProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/FindOrder.java" afterPath="$PROJECT_DIR$/src/gui/layer/FindOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/InvoiceGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/Menu.java" afterPath="$PROJECT_DIR$/src/gui/layer/Menu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/MenuManageProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/MenuManageProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ProductGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ProductGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/RawMaterialsGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/RawMaterialsGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/StatisticsGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/StatisticsGui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/UpdateProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/UpdateProduct.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Company.java" afterPath="$PROJECT_DIR$/src/model/layer/Company.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Employee.java" afterPath="$PROJECT_DIR$/src/model/layer/Employee.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Order.java" afterPath="$PROJECT_DIR$/src/model/layer/Order.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Person.java" afterPath="$PROJECT_DIR$/src/model/layer/Person.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Product.java" afterPath="$PROJECT_DIR$/src/model/layer/Product.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/ProductOrder.java" afterPath="$PROJECT_DIR$/src/model/layer/ProductOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/RawMaterialLine.java" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterialLine.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/RawMaterialOrder.java" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterialOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Statistics.java" afterPath="$PROJECT_DIR$/src/model/layer/Statistics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -85,49 +142,104 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menu.java">
+      <file leaf-file-name="RawMaterial.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/layer/RawMaterial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="117" column="21" lean-forward="false" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RawMaterialdDb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#849#850#0" expanded="false" />
-                <element signature="e#868#869#0" expanded="false" />
+                <marker date="1496264733873" expanded="true" signature="409:487" ph="INSERT INTO RawMaterial... " />
+                <marker date="1496264733873" expanded="true" signature="1252:1314" ph="UPDATE RawMa... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductOrderGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java">
+      <file leaf-file-name="Company.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/layer/Company.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3230">
-              <caret line="208" column="37" lean-forward="false" selection-start-line="208" selection-start-column="37" selection-end-line="208" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="-34">
+              <caret line="13" column="104" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="104" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvoiceGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java">
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/layer/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="121" column="65" lean-forward="false" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="ChoseOrderGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/layer/CompanyGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2392">
+              <caret line="187" column="21" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyDbIf.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/layer/CompanyDbIf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateProductOrder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/CreateProductOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManageCompany.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/ManageCompany.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-340">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadProductOrder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/ReadProductOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -195,10 +307,19 @@
         <option value="$PROJECT_DIR$/src/GuiLayer/ConfirmationGUI.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/FindOrder.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/CompanyGUI.java" />
-        <option value="$PROJECT_DIR$/src/GuiLayer/Menu.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/Menus.form" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/asd.form" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/asd.java" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/Menu.java" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/NewMenu.form" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/NewMenu.java" />
+        <option value="$PROJECT_DIR$/src/GuiLayer/GUI_START.java" />
+        <option value="$PROJECT_DIR$/src/gui/layer/Menu.java" />
+        <option value="$PROJECT_DIR$/src/model/layer/RawMaterial.java" />
+        <option value="$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java" />
       </list>
     </option>
   </component>
@@ -232,6 +353,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -261,8 +384,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,11 +394,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="data&#9;ACTION&#9;ActivateDatabaseToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="jformdesigner&#9;null&#9;null&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="327" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="300" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -296,7 +418,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.GUI_START">
     <configuration default="false" name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -325,6 +447,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="GuiLayer.MenuNou" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="2ndSemGroup4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GUI_START" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="GuiLayer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="GuiLayer.GUI_START" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -724,14 +866,16 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Menu" />
       <item index="1" class="java.lang.String" itemvalue="Application.MenuNou" />
+      <item index="2" class="java.lang.String" itemvalue="Application.GUI_START" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Menu" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MenuNou" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.GUI_START" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Menu" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MenuNou" />
       </list>
     </recent_temporary>
   </component>
@@ -773,7 +917,8 @@
       <workItem from="1496224338926" duration="2220000" />
       <workItem from="1496226665871" duration="13917000" />
       <workItem from="1496242838535" duration="1615000" />
-      <workItem from="1496261224868" duration="580000" />
+      <workItem from="1496261224868" duration="817000" />
+      <workItem from="1496262154096" duration="2693000" />
     </task>
     <task id="LOCAL-00001" summary="OrderController">
       <created>1494846242334</created>
@@ -1027,11 +1172,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496261770476</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="ceva">
+      <created>1496261822504</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1496261822504</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85902000" />
+    <option name="totallyTimeSpent" value="88832000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1048,6 +1200,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1059,8 +1212,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19288956" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1072,10 +1226,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1162,7 +1314,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1171,117 +1323,74 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/OrdersDB.java" />
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/OrderController.java" />
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menu.html" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ProductOrderController.java" />
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ProductController.java" />
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/Manage_Product.java" />
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ManagePerson.java" />
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/ManagerMenu.java" />
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/TestMenu.form" />
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/TestMenu.java" />
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/ManagerMenu.form" />
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menu.form" />
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="104" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/CompanyDB.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/CompanyDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/ProductOrderDB.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductOrderDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="18" column="122" lean-forward="false" selection-start-line="18" selection-start-column="122" selection-end-line="18" selection-end-column="122" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/EmployeeDB.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/EmployeeDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ManageCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/ProductDB.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/ProductLineDBIF.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductLineDbIf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ManageProduct.java">
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/ProductLine.java">
+    <entry file="file://$PROJECT_DIR$/src/model/layer/ProductLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="72" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/RAW_Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/RawMaterialsGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/RawMaterialsGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-901">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ManageRawMaterial.java">
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageRawMaterial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="36" column="68" lean-forward="false" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/model/layer/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-85">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -1295,7 +1404,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ModelLayer/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/model/layer/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="113" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="113" />
@@ -1303,27 +1412,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/MenuNou.java" />
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ManageProductLine.java">
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageProductLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#330#331#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DBLayer/ManagerDB.java" />
-    <entry file="file://$PROJECT_DIR$/src/DBLayer/ProductLineDB.java">
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductLineDb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/CreateProduct.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/CreateProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
@@ -1332,113 +1440,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GuiLayer/CreateOrder.java" />
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Orders">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Company">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Employee">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Product">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/CreateProductOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayer/ReadProductOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/StatisticsGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/FindOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/FindOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/ChoseOrderGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/CompanyGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="187" column="21" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="117" column="21" lean-forward="false" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#849#850#0" expanded="false" />
-            <element signature="e#868#869#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductLine">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1447,20 +1503,25 @@
           </column-attributes>
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductOrder">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductOrder">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3230">
           <caret line="208" column="37" lean-forward="false" selection-start-line="208" selection-start-column="37" selection-end-line="208" selection-end-column="37" />
@@ -1470,12 +1531,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/InvoiceGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="121" column="65" lean-forward="false" selection-start-line="121" selection-start-column="65" selection-end-line="121" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1484,6 +1545,154 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/UpdateProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menus.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/StatisticsGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GuiLayer/Menu.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GuiLayer/NewMenu.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GuiLayer/NewMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/GuiStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1419">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/layer/RawMaterial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1496264733873" expanded="true" signature="409:487" ph="INSERT INTO RawMaterial... " />
+            <marker date="1496264733873" expanded="true" signature="1252:1314" ph="UPDATE RawMa... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/layer/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="13" column="104" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/layer/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/CompanyGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2392">
+          <caret line="187" column="21" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/CompanyDbIf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/CreateProductOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ReadProductOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
