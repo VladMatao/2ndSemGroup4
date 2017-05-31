@@ -21,6 +21,8 @@ import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class RawMaterialsGUI extends JFrame {
 
@@ -39,6 +41,7 @@ public class RawMaterialsGUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1002, 495);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -53,16 +56,18 @@ public class RawMaterialsGUI extends JFrame {
 		fillTable(rawMaterialtable);
 		
 		nameTextField = new JTextField();
-		nameTextField.setBounds(143, 72, 145, 31);
+		nameTextField.setBounds(90, 276, 145, 31);
 		contentPane.add(nameTextField);
 		nameTextField.setColumns(10);
 		
 		barcodeTextField = new JTextField();
 		barcodeTextField.setColumns(10);
-		barcodeTextField.setBounds(143, 24, 145, 31);
+		barcodeTextField.setBounds(90, 179, 145, 31);
 		contentPane.add(barcodeTextField);
 		
 		JButton addButton = new JButton("Add");
+		addButton.setForeground(new Color(255, 255, 255));
+		addButton.setBackground(new Color(2, 52, 68));
 		addButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -77,6 +82,8 @@ public class RawMaterialsGUI extends JFrame {
 		contentPane.add(addButton);
 		
 		JButton deteleButton = new JButton("Delete");
+		deteleButton.setForeground(new Color(255, 255, 204));
+		deteleButton.setBackground(new Color(2, 52, 68));
 		deteleButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -90,6 +97,8 @@ public class RawMaterialsGUI extends JFrame {
 		contentPane.add(deteleButton);
 		
 		JButton updateButton = new JButton("Update");
+		updateButton.setForeground(new Color(255, 255, 255));
+		updateButton.setBackground(new Color(2, 52, 68));
 		updateButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -98,15 +107,17 @@ public class RawMaterialsGUI extends JFrame {
 				fillTable(rawMaterialtable);
 			}
 		});
-		updateButton.setBounds(242, 394, 89, 23);
+		updateButton.setBounds(222, 394, 89, 23);
 		contentPane.add(updateButton);
 		
-		JLabel lblBarcode = new JLabel("Barcode");
-		lblBarcode.setBounds(10, 32, 103, 14);
+		JLabel lblBarcode = new JLabel("Barcode:");
+		lblBarcode.setForeground(new Color(255, 255, 255));
+		lblBarcode.setBounds(90, 148, 103, 14);
 		contentPane.add(lblBarcode);
 		
-		JLabel lblName = new JLabel("Name");
-		lblName.setBounds(10, 80, 46, 14);
+		JLabel lblName = new JLabel("Name:");
+		lblName.setForeground(new Color(255, 255, 255));
+		lblName.setBounds(90, 251, 46, 14);
 		contentPane.add(lblName);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -115,7 +126,13 @@ public class RawMaterialsGUI extends JFrame {
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		table.setBackground(new Color(62, 143, 169));
 		table.setModel(rawMaterialtable);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("photos\\rawmat.png"));
+		label.setBounds(0, 11, 336, 92);
+		contentPane.add(label);
 	}
 	
 	
