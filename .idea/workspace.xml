@@ -2,67 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4a626fc-afba-448d-ac60-11d1633d49c7" name="Default" comment="ceva">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/control/layer/ManageCompany.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/control/layer/ManageRawMaterial.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/layer/GuiStart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/layer/ProductLine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterial.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageCompany.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageRawMaterial.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ModelLayer/ProductLine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ModelLayer/RAW_Material.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/CompanyDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/CompanyDbTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/EmployeeDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/EmployeeDbTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/ProductDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/ProductDbTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/DBLayer/ProductOrderDBTest.java" afterPath="$PROJECT_DIR$/JunitTests/db/layer/ProductOrderDbTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/CreateProductOrder.java" afterPath="$PROJECT_DIR$/src/control/layer/CreateProductOrder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageEmployee.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageEmployee.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageProduct.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageProductLine.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageProductLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ManageRawMaterialLine.java" afterPath="$PROJECT_DIR$/src/control/layer/ManageRawMaterialLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ControlLayer/ReadProductOrder.java" afterPath="$PROJECT_DIR$/src/control/layer/ReadProductOrder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/CompanyDB.java" afterPath="$PROJECT_DIR$/src/db/layer/CompanyDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/CompanyDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/CompanyDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/DBConnection.java" afterPath="$PROJECT_DIR$/src/db/layer/DbConnection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/EmployeeDB.java" afterPath="$PROJECT_DIR$/src/db/layer/EmployeeDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/EmployeeDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/EmployeeDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductDbId.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductLineDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductLineDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductLineDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductLineDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductOrderDB.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductOrderDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/ProductOrderDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/ProductOrderDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialLineDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialLineDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialLineDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialLineDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialOrderDB.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialOrderDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/RawMaterialOrderDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/RawMaterialOrderDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/StatisticsDB.java" afterPath="$PROJECT_DIR$/src/db/layer/StatisticsDb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBLayer/StatisticsDBIF.java" afterPath="$PROJECT_DIR$/src/db/layer/StatisticsDbIf.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ChoseOrderGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/CompanyGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/CompanyGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/CreateProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/CreateProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/FindOrder.java" afterPath="$PROJECT_DIR$/src/gui/layer/FindOrder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/InvoiceGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/Menu.java" afterPath="$PROJECT_DIR$/src/gui/layer/Menu.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/MenuManageProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/MenuManageProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ProductGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ProductGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/RawMaterialsGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/RawMaterialsGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/StatisticsGUI.java" afterPath="$PROJECT_DIR$/src/gui/layer/StatisticsGui.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GuiLayer/UpdateProduct.java" afterPath="$PROJECT_DIR$/src/gui/layer/UpdateProduct.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Company.java" afterPath="$PROJECT_DIR$/src/model/layer/Company.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Employee.java" afterPath="$PROJECT_DIR$/src/model/layer/Employee.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Order.java" afterPath="$PROJECT_DIR$/src/model/layer/Order.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Person.java" afterPath="$PROJECT_DIR$/src/model/layer/Person.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Product.java" afterPath="$PROJECT_DIR$/src/model/layer/Product.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/ProductOrder.java" afterPath="$PROJECT_DIR$/src/model/layer/ProductOrder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/RawMaterialLine.java" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterialLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/RawMaterialOrder.java" afterPath="$PROJECT_DIR$/src/model/layer/RawMaterialOrder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ModelLayer/Statistics.java" afterPath="$PROJECT_DIR$/src/model/layer/Statistics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/db/layer/CompanyDbTest.java" afterPath="$PROJECT_DIR$/junit.tests/db/layer/CompanyDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/db/layer/EmployeeDbTest.java" afterPath="$PROJECT_DIR$/junit.tests/db/layer/EmployeeDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/db/layer/ProductDbTest.java" afterPath="$PROJECT_DIR$/junit.tests/db/layer/ProductDbTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/JunitTests/db/layer/ProductOrderDbTest.java" afterPath="$PROJECT_DIR$/junit.tests/db/layer/ProductOrderDbTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2ndSemGroup4.iml" afterPath="$PROJECT_DIR$/2ndSemGroup4.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,16 +88,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RawMaterial.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/layer/RawMaterial.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RawMaterialdDb.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -235,11 +171,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadProductOrder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReadProductOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/control/layer/ReadProductOrder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -309,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/GuiLayer/CompanyGUI.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/ProductOrderGUI.java" />
         <option value="$PROJECT_DIR$/src/GuiLayer/InvoiceGUI.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/GuiLayer/Menus.form" />
         <option value="$PROJECT_DIR$/src/GuiLayer/asd.form" />
         <option value="$PROJECT_DIR$/src/GuiLayer/asd.java" />
@@ -320,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/gui/layer/Menu.java" />
         <option value="$PROJECT_DIR$/src/model/layer/RawMaterial.java" />
         <option value="$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -918,7 +864,7 @@
       <workItem from="1496226665871" duration="13917000" />
       <workItem from="1496242838535" duration="1615000" />
       <workItem from="1496261224868" duration="817000" />
-      <workItem from="1496262154096" duration="2693000" />
+      <workItem from="1496262154096" duration="2852000" />
     </task>
     <task id="LOCAL-00001" summary="OrderController">
       <created>1494846242334</created>
@@ -1179,11 +1125,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496261822504</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="ceva">
+      <created>1496264945528</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1496264945529</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88832000" />
+    <option name="totallyTimeSpent" value="88991000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1541,14 +1494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/layer/UpdateProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1693,6 +1638,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
