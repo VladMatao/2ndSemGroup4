@@ -21,6 +21,8 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class ProductGUI extends JFrame {
 
@@ -41,8 +43,9 @@ public class ProductGUI extends JFrame {
      */
     public ProductGUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1002, 495);
+        setBounds(100, 100, 1002, 577);
         contentPane = new JPanel();
+    	contentPane.setBackground(new Color(25, 93, 115));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -57,35 +60,37 @@ public class ProductGUI extends JFrame {
         fillTable(producttable);
 
         barcodeTextField = new JTextField();
-        barcodeTextField.setBounds(143, 72, 145, 31);
+        barcodeTextField.setBounds(152, 173, 145, 31);
         contentPane.add(barcodeTextField);
         barcodeTextField.setColumns(10);
 
         nameTextField = new JTextField();
         nameTextField.setColumns(10);
-        nameTextField.setBounds(143, 24, 145, 31);
+        nameTextField.setBounds(152, 125, 145, 31);
         contentPane.add(nameTextField);
 
         priceTextField = new JTextField();
         priceTextField.setColumns(10);
-        priceTextField.setBounds(143, 150, 145, 31);
+        priceTextField.setBounds(152, 226, 145, 31);
         contentPane.add(priceTextField);
 
         stockTextField = new JTextField();
         stockTextField.setColumns(10);
-        stockTextField.setBounds(143, 210, 145, 31);
+        stockTextField.setBounds(152, 286, 145, 31);
         contentPane.add(stockTextField);
 
         producionTimeTextField = new JTextField();
         producionTimeTextField.setColumns(10);
-        producionTimeTextField.setBounds(143, 277, 145, 31);
+        producionTimeTextField.setBounds(152, 353, 145, 31);
         contentPane.add(producionTimeTextField);
 
         requiredMatIDTextField = new JTextField();
         requiredMatIDTextField.setColumns(10);
-        requiredMatIDTextField.setBounds(143, 340, 145, 31);
+        requiredMatIDTextField.setBounds(152, 416, 145, 31);
         contentPane.add(requiredMatIDTextField);
         JButton addButton = new JButton("Add");
+        addButton.setForeground(new Color(255, 255, 255));
+        addButton.setBackground(new Color(2, 52, 68));
         addButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
@@ -96,10 +101,12 @@ public class ProductGUI extends JFrame {
 
             }
         });
-        addButton.setBounds(24, 394, 89, 23);
+        addButton.setBounds(10, 504, 89, 23);
         contentPane.add(addButton);
 
         JButton deteleButton = new JButton("Delete");
+        deteleButton.setForeground(new Color(255, 255, 255));
+        deteleButton.setBackground(new Color(2, 52, 68));
         deteleButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -109,10 +116,12 @@ public class ProductGUI extends JFrame {
 
             }
         });
-        deteleButton.setBounds(123, 394, 89, 23);
+        deteleButton.setBounds(109, 504, 89, 23);
         contentPane.add(deteleButton);
 
         JButton updateButton = new JButton("Update");
+        updateButton.setForeground(new Color(255, 255, 255));
+        updateButton.setBackground(new Color(2, 52, 68));
         updateButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -121,40 +130,66 @@ public class ProductGUI extends JFrame {
                 fillTable(producttable);
             }
         });
-        updateButton.setBounds(242, 394, 89, 23);
+        updateButton.setBounds(208, 504, 89, 23);
         contentPane.add(updateButton);
 
         JLabel lblProductId = new JLabel("Name");
-        lblProductId.setBounds(10, 32, 103, 14);
+        lblProductId.setForeground(new Color(255, 255, 255));
+        lblProductId.setBounds(19, 133, 103, 14);
         contentPane.add(lblProductId);
 
         JLabel name = new JLabel("Barcode");
-        name.setBounds(10, 80, 46, 14);
+        name.setForeground(new Color(255, 255, 255));
+        name.setBounds(19, 181, 46, 14);
         contentPane.add(name);
 
         JLabel lblPhoneNumber = new JLabel("Price");
-        lblPhoneNumber.setBounds(10, 158, 46, 14);
+        lblPhoneNumber.setForeground(new Color(255, 255, 255));
+        lblPhoneNumber.setBounds(19, 234, 46, 14);
         contentPane.add(lblPhoneNumber);
 
         JLabel lblEmail = new JLabel("Stock");
-        lblEmail.setBounds(10, 218, 46, 14);
+        lblEmail.setForeground(new Color(255, 255, 255));
+        lblEmail.setBounds(19, 294, 46, 14);
         contentPane.add(lblEmail);
 
         JLabel lblProductType = new JLabel("Production Time");
-        lblProductType.setBounds(10, 285, 46, 14);
+        lblProductType.setForeground(new Color(255, 255, 255));
+        lblProductType.setBounds(19, 361, 103, 14);
         contentPane.add(lblProductType);
 
         JLabel lblAdress = new JLabel("Required  Material ID");
-        lblAdress.setBounds(10, 348, 46, 14);
+        lblAdress.setForeground(new Color(255, 255, 255));
+        lblAdress.setBounds(19, 424, 123, 14);
         contentPane.add(lblAdress);
         
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(341, 0, 645, 456);
+        scrollPane.setBounds(341, 0, 645, 527);
         contentPane.add(scrollPane);
         
                 table = new JTable();
                 scrollPane.setViewportView(table);
+                table.setBackground(new Color(62, 143, 169));
                 table.setModel(producttable);
+                
+                JLabel label = new JLabel("");
+                label.setIcon(new ImageIcon("C:\\Users\\Mircea\\IdeaProjects\\ProiectChiarBaban\\photos\\manprod.png"));
+                label.setBounds(10, 0, 321, 122);
+                contentPane.add(label);
+                
+                JButton button = new JButton("<");
+                button.addMouseListener(new MouseAdapter() {
+                	@Override
+                	public void mouseClicked(MouseEvent e) {
+                		dispose();
+        				Menu menu= new Menu();
+        				menu.setVisible(true);
+                	}
+                });
+                button.setForeground(new Color(255, 255, 255));
+                button.setBackground(new Color(2, 52, 68));
+                button.setBounds(10, 473, 46, 23);
+                contentPane.add(button);
     }
 
 
