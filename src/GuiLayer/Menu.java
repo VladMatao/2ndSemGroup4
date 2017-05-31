@@ -136,12 +136,12 @@ public class Menu extends JFrame{
 		panel.add(ordersButton);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\Mircea\\IdeaProjects\\ProiectChiarBaban\\photos\\Adidas Shoebox.png"));
+		label_1.setIcon(new ImageIcon("photos\\Adidas Shoebox.png"));
 		label_1.setBounds(272, 108, 578, 433);
 		panel.add(label_1);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Mircea\\IdeaProjects\\ProiectChiarBaban\\photos\\logo3.png"));
+		label.setIcon(new ImageIcon("photos\\logo3.png"));
 		label.setBounds(-168, 11, 835, 108);
 		panel.add(label);
 	}
