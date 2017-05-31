@@ -117,7 +117,7 @@ public class Menu extends JFrame{
 		rawMaterialsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				frmMenu.dispose();
+				dispose();
 				RawMaterialsGUI rawmaterialgui = new RawMaterialsGUI();
 				rawmaterialgui.setVisible(true);
 			}
