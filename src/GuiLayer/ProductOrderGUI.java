@@ -192,7 +192,7 @@ public class ProductOrderGUI extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CreateProductOrder productOrder=new CreateProductOrder();
-				productOrder.create(productLineTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
+				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
 				
 			}
 		});

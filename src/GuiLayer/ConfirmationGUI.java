@@ -125,14 +125,15 @@ public class ConfirmationGUI extends JFrame {
 		ArrayList<ProductLine> productLines = productLineCtr.readAll();
 		if (!productLines.isEmpty()) {
 			for (ProductLine productLine : productLines) {
-				if(productLine.getproductLineId()==productLineID)
+				if(productLine.getproductLineId()==productLineID) {
 					double quantity = productLine.getQuantity();
 					String productOrderID = productLine.getProductBarcode();
-					model.addRow(new Object[] {  quantity, productOrderID });
+					model.addRow(new Object[]{quantity, productOrderID});
+				}
 			}
 
 		} else {
-			model.addRow(new Object[] { "Product Lines", "FOUND", 0 });
+			model.addRow(new Object[] { "Product Lines", "FOUND" });
 		}
 	}
 }
