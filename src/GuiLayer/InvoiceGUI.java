@@ -113,8 +113,8 @@ public class InvoiceGUI extends JFrame {
 			for (ProductLine productLine : productLines) {
 				if(productLine.getproductLineId()==productLineID) {
 					double quantity = productLine.getQuantity();
-					String productOrderID = productLine.getProductBarcode();
-					model.addRow(new Object[]{quantity, productOrderID});
+					String productBarcode = productLine.getProductBarcode();
+					model.addRow(new Object[]{quantity, productBarcode});
 				}
 			}
 

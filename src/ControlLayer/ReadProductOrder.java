@@ -12,9 +12,11 @@ import DBLayer.ProductOrderDB;
 public class ReadProductOrder {
 	private ProductOrderDB productOrderDb;
 
+
 	
     public ProductOrder read(String id){
         ProductOrder productOrder = null;
+        productOrderDb=new ProductOrderDB();
         try {
         	productOrder = productOrderDb.read(id);
         } catch (SQLException e) {
