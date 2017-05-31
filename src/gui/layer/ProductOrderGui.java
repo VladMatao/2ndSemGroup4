@@ -192,8 +192,8 @@ public class ProductOrderGui extends JFrame {
 		finalizeButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CreateProductOrder productOrder=new CreateProductOrder();
-				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
+				CreateProductOrder productOrderCtr=new CreateProductOrder();
+				productOrderCtr.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
 				dispose();
 				InvoiceGui invoiceGui =new InvoiceGui(orderIDTextField.getText());
 				invoiceGui.setVisible(true);

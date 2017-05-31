@@ -17,8 +17,10 @@ public class ManageProductLine {
     }
 
     public boolean create(String id, double quantity, String productBarcode){
+
         try {
-            productLineDb.create(id, quantity, productBarcode);
+            if(productLineDb.read(id,productBarcode)==null)
+                productLineDb.create(id, quantity, productBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }

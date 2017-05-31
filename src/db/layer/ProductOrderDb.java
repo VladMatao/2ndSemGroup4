@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  Project 2nd Semester Group 4 dmaj0916 UCN
@@ -106,6 +107,26 @@ public class ProductOrderDb implements ProductOrderDbIf {
             DbConnection.closeConnection();
         }
         return productOrder;
+    }
+
+    public ArrayList<ProductOrder> readAll() throws SQLException{
+        ArrayList<ProductOrder> productOrders = new ArrayList<ProductOrder>();
+        ProductOrder productOrder = null;
+        try{
+            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            String sqlO = String.format("SELECT * FROM Orders");
+            ResultSet rsO = conn.createStatement().executeQuery(sqlO);
+
+            String sqlPO = String.format("SELECT * FROM ProductOrder");
+            ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
+            while (rsO.next() && rsPO.next()){
+                productOrder = buildObject(rsO,rsPO);
+                productOrders.add(productOrder);
+            }
+        } finally{
+            DbConnection.closeConnection();
+        }
+        return productOrders;
     }
 
 

@@ -3,6 +3,7 @@ package control.layer;
 import db.layer.ProductDb;
 import db.layer.ProductLineDb;
 import db.layer.ProductOrderDb;
+import model.layer.ProductOrder;
 
 import java.sql.SQLException;
 
