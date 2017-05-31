@@ -61,8 +61,9 @@ public class InvoiceGUI extends JFrame {
 		contentPane.add(lblOrderStatus);
 		
 		JLabel lblOrderstatus = new JLabel("orderstatus");
-		lblOrderstatus.setBounds(119, 100, 46, 14);
+		lblOrderstatus.setBounds(119, 100, 73, 14);
 		contentPane.add(lblOrderstatus);
+		lblOrderstatus.setText(readProductOrder.read(orderID).getOrderStatus());
 		
 		JLabel lblDeliverydate = new JLabel("DeliveryDate");
 		lblDeliverydate.setBounds(10, 143, 46, 14);
@@ -71,6 +72,7 @@ public class InvoiceGUI extends JFrame {
 		JLabel lblDelivery = new JLabel("delivery");
 		lblDelivery.setBounds(119, 143, 46, 14);
 		contentPane.add(lblDelivery);
+		lblDelivery.setText(readProductOrder.read(orderID).getOrderStatus());
 		
 		JLabel lblCompanyid = new JLabel("CompanyID");
 		lblCompanyid.setBounds(10, 192, 46, 14);
@@ -79,6 +81,7 @@ public class InvoiceGUI extends JFrame {
 		JLabel lblCompanyid_1 = new JLabel("companyID");
 		lblCompanyid_1.setBounds(119, 192, 54, 14);
 		contentPane.add(lblCompanyid_1);
+		lblCompanyid_1.setText(readProductOrder.read(orderID).getCompanyId());
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(313, 0, 330, 439);
@@ -95,6 +98,7 @@ public class InvoiceGUI extends JFrame {
 		JLabel lblTime = new JLabel("time");
 		lblTime.setBounds(119, 230, 46, 14);
 		contentPane.add(lblTime);
+		lblTime.setText(""+readProductOrder.read(orderID).getTotalProductionTime());
 		
 		JLabel lblTotalPrice = new JLabel("Total Price");
 		lblTotalPrice.setBounds(10, 269, 46, 14);
@@ -103,6 +107,7 @@ public class InvoiceGUI extends JFrame {
 		JLabel lblPrice = new JLabel("Price");
 		lblPrice.setBounds(119, 269, 46, 14);
 		contentPane.add(lblPrice);
+		lblPrice.setText(""+readProductOrder.read(orderID).getTotalPrice());
 		
 }
 	private void fillTable(DefaultTableModel model, String productLineID) {
