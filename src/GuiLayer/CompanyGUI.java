@@ -178,6 +178,20 @@ public class CompanyGUI extends JFrame {
 		label.setIcon(new ImageIcon("photos\\companies.png"));
 		label.setBounds(10, 11, 351, 104);
 		contentPane.add(label);
+		
+		JButton button = new JButton("<");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				dispose();
+				Menu menu= new Menu();
+				menu.setVisible(true);
+			}
+		});
+		button.setForeground(new Color(255, 255, 255));
+		button.setBackground(new Color(2, 52, 68));
+		button.setBounds(10, 473, 47, 23);
+		contentPane.add(button);
 	}
 	
 	
