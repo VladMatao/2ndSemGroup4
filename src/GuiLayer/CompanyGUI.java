@@ -21,6 +21,8 @@ import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class CompanyGUI extends JFrame {
 
@@ -41,8 +43,9 @@ public class CompanyGUI extends JFrame {
 	 */
 	public CompanyGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1002, 495);
+		setBounds(100, 100, 1002, 583);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -57,36 +60,38 @@ public class CompanyGUI extends JFrame {
 		fillTable(companytable);
 		
 		nameTextField = new JTextField();
-		nameTextField.setBounds(143, 72, 145, 31);
+		nameTextField.setBounds(143, 192, 145, 31);
 		contentPane.add(nameTextField);
 		nameTextField.setColumns(10);
 		
 		companyIDTextField = new JTextField();
 		companyIDTextField.setColumns(10);
-		companyIDTextField.setBounds(143, 24, 145, 31);
+		companyIDTextField.setBounds(143, 144, 145, 31);
 		contentPane.add(companyIDTextField);
 		
 		phoneNumberTextField = new JTextField();
 		phoneNumberTextField.setColumns(10);
-		phoneNumberTextField.setBounds(143, 150, 145, 31);
+		phoneNumberTextField.setBounds(143, 243, 145, 31);
 		contentPane.add(phoneNumberTextField);
 		
 		emailTextField = new JTextField();
 		emailTextField.setColumns(10);
-		emailTextField.setBounds(143, 210, 145, 31);
+		emailTextField.setBounds(143, 303, 145, 31);
 		contentPane.add(emailTextField);
 		
 		companyTypeTextField = new JTextField();
 		companyTypeTextField.setColumns(10);
-		companyTypeTextField.setBounds(143, 277, 145, 31);
+		companyTypeTextField.setBounds(143, 355, 145, 31);
 		contentPane.add(companyTypeTextField);
 		
 		adressTextField = new JTextField();
 		adressTextField.setColumns(10);
-		adressTextField.setBounds(143, 340, 145, 31);
+		adressTextField.setBounds(143, 418, 145, 31);
 		contentPane.add(adressTextField);
 		
 		JButton addButton = new JButton("Add");
+		addButton.setForeground(new Color(255, 255, 255));
+		addButton.setBackground(new Color(2, 52, 68));
 		addButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -97,10 +102,13 @@ public class CompanyGUI extends JFrame {
 
 			}
 		});
-		addButton.setBounds(24, 394, 89, 23);
+		addButton.setBounds(10, 510, 89, 23);
 		contentPane.add(addButton);
 		
 		JButton deteleButton = new JButton("Delete");
+		deteleButton.setForeground(new Color(255, 255, 255));
+		
+		deteleButton.setBackground(new Color(2, 52, 68));
 		deteleButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -110,10 +118,12 @@ public class CompanyGUI extends JFrame {
 
 			}
 		});
-		deteleButton.setBounds(123, 394, 89, 23);
+		deteleButton.setBounds(104, 510, 89, 23);
 		contentPane.add(deteleButton);
 		
 		JButton updateButton = new JButton("Update");
+		updateButton.setForeground(new Color(255, 255, 255));
+		updateButton.setBackground(new Color(2, 52, 68));
 		updateButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -122,40 +132,52 @@ public class CompanyGUI extends JFrame {
 				fillTable(companytable);
 			}
 		});
-		updateButton.setBounds(242, 394, 89, 23);
+		updateButton.setBounds(199, 510, 89, 23);
 		contentPane.add(updateButton);
 		
 		JLabel lblCompanyId = new JLabel("Company ID");
-		lblCompanyId.setBounds(10, 32, 103, 14);
+		lblCompanyId.setForeground(new Color(255, 255, 255));
+		lblCompanyId.setBounds(10, 152, 103, 14);
 		contentPane.add(lblCompanyId);
 		
 		JLabel lblName = new JLabel("Name");
-		lblName.setBounds(10, 80, 46, 14);
+		lblName.setForeground(new Color(255, 255, 255));
+		lblName.setBounds(10, 200, 103, 14);
 		contentPane.add(lblName);
 		
 		JLabel lblPhoneNumber = new JLabel("Phone Number");
-		lblPhoneNumber.setBounds(10, 158, 46, 14);
+		lblPhoneNumber.setForeground(new Color(255, 255, 255));
+		lblPhoneNumber.setBounds(10, 251, 89, 14);
 		contentPane.add(lblPhoneNumber);
 		
 		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setBounds(10, 218, 46, 14);
+		lblEmail.setForeground(new Color(255, 255, 255));
+		lblEmail.setBounds(10, 311, 89, 14);
 		contentPane.add(lblEmail);
 		
 		JLabel lblCompanyType = new JLabel("Company Type");
-		lblCompanyType.setBounds(10, 285, 46, 14);
+		lblCompanyType.setForeground(new Color(255, 255, 255));
+		lblCompanyType.setBounds(10, 363, 89, 14);
 		contentPane.add(lblCompanyType);
 		
 		JLabel lblAdress = new JLabel("Adress");
-		lblAdress.setBounds(10, 348, 46, 14);
+		lblAdress.setForeground(new Color(255, 255, 255));
+		lblAdress.setBounds(10, 426, 89, 14);
 		contentPane.add(lblAdress);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(338, 0, 648, 456);
+		scrollPane.setBounds(338, 0, 648, 533);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
 		table.setModel(companytable);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("photos\\companies.png"));
+		label.setBounds(10, 11, 351, 104);
+		contentPane.add(label);
 	}
 	
 	
