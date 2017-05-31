@@ -19,7 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class ConfirmationGUI extends JFrame {
+public class InvoiceGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -27,7 +27,7 @@ public class ConfirmationGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ConfirmationGUI() {
+	public InvoiceGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 659, 478);
 		contentPane = new JPanel();
@@ -52,9 +52,7 @@ public class ConfirmationGUI extends JFrame {
 		JLabel lblOrderid = new JLabel("OrderID:");
 		lblOrderid.setBounds(45, 52, 46, 14);
 		contentPane.add(lblOrderid);
-		
-		
-		
+
 		JLabel lblOrderStatus = new JLabel("Order Status");
 		lblOrderStatus.setBounds(10, 100, 81, 14);
 		contentPane.add(lblOrderStatus);
