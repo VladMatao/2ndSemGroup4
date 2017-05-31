@@ -117,6 +117,14 @@ public class Menu extends JFrame{
 		panel.add(employeeButton);
 		
 		JButton rawMaterialsButton = new JButton("Raw Materials");
+		rawMaterialsButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmMenu.dispose();
+				RawMaterialsGUI rawmaterialgui = new RawMaterialsGUI();
+				rawmaterialgui.setVisible(true);
+			}
+		});
 		rawMaterialsButton.setForeground(new Color(255, 255, 255));
 		rawMaterialsButton.setBackground(new Color(2, 52, 68));
 		rawMaterialsButton.setBounds(67, 425, 140, 23);
