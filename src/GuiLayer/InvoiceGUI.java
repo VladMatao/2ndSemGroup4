@@ -39,14 +39,14 @@ public class InvoiceGUI extends JFrame {
 		lblOrdID.setBounds(119, 52, 46, 14);
 		contentPane.add(lblOrdID);
 		
-		DefaultTableModel companytable= new DefaultTableModel(
+		DefaultTableModel invoicetable= new DefaultTableModel(
 				new Object[][] {
 				},
 				new String[] {
 					 "Quantity", "ProductBarcode"
 				});
 		ReadProductOrder read= new ReadProductOrder();
-		fillTable(companytable,read.read(lblOrdID.getText()).getProductLineId());
+		fillTable(invoicetable,read.read(lblOrdID.getText()).getProductLineId());
 	
 		
 		JLabel lblOrderid = new JLabel("OrderID:");
@@ -78,11 +78,12 @@ public class InvoiceGUI extends JFrame {
 		contentPane.add(lblCompanyid_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(313, 11, 330, 291);
+		scrollPane.setBounds(313, 0, 330, 439);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		table.setModel(invoicetable);
 		
 		JLabel lblTotalTime = new JLabel("Total time");
 		lblTotalTime.setBounds(10, 230, 46, 14);
