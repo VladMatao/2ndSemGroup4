@@ -1,7 +1,5 @@
 package GuiLayer;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -13,14 +11,11 @@ import javax.swing.table.DefaultTableModel;
 import ControlLayer.CreateProductOrder;
 import ControlLayer.ManageProductLine;
 import ModelLayer.ProductLine;
-import ModelLayer.ProductOrder;
-import DBLayer.ProductOrderDB;
-import DBLayer.ProductLineDB;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.SQLException;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -200,8 +195,8 @@ public class ProductOrderGUI extends JFrame {
 				CreateProductOrder productOrder=new CreateProductOrder();
 				productOrder.create(orderIDTextField.getText(),Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText(),Double.parseDouble(timeLabel.getText()));
 				dispose();
-				ConfirmationGUI confirmationGUI=new ConfirmationGUI();
-				confirmationGUI.setVisible(true);
+				InvoiceGUI invoiceGUI =new InvoiceGUI();
+				invoiceGUI.setVisible(true);
 			}
 		});
 		finalizeButton.setBounds(33, 346, 89, 23);
