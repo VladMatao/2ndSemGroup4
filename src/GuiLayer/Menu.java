@@ -141,8 +141,8 @@ public class Menu extends JFrame{
 		panel.add(label_1);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Mircea\\Desktop\\logo2.png"));
-		label.setBounds(-172, 0, 810, 133);
+		label.setIcon(new ImageIcon("C:\\Users\\Mircea\\Desktop\\logo3.png"));
+		label.setBounds(-171, 11, 852, 145);
 		panel.add(label);
 	}
 }
