@@ -1,9 +1,7 @@
 package model.layer;
 
-import java.util.Date;
-
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Order {
     private String id;

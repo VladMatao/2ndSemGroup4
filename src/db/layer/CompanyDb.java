@@ -1,12 +1,16 @@
 
 package db.layer;
+
 import model.layer.Company;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
 public class CompanyDb implements CompanyDbIf {
@@ -32,7 +36,7 @@ public class CompanyDb implements CompanyDbIf {
         } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
     }
@@ -43,73 +47,73 @@ public class CompanyDb implements CompanyDbIf {
             Connection conn = DbConnection.getInstance().getDBcon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE Company SET CompanyID = ?, Name = ?, Phone_number = ?, Email = ?, Company_type = ?, Adress = ? WHERE CompanyID = ? ");
             //psttm.setInt(1,curentQuantity);
-            psttm.setString(1,company.getId());
-            psttm.setString(2,company.getName());
-            psttm.setString(3,company.getPhNr());
-            psttm.setString(4,company.getEmail());
-            psttm.setString(5,company.getcompanyType());
-            psttm.setString(6,company.getAddress());
-            psttm.setString(7,id);
+            psttm.setString(1, company.getId());
+            psttm.setString(2, company.getName());
+            psttm.setString(3, company.getPhNr());
+            psttm.setString(4, company.getEmail());
+            psttm.setString(5, company.getcompanyType());
+            psttm.setString(6, company.getAddress());
+            psttm.setString(7, id);
             psttm.executeUpdate();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
     }
+
     @Override
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             String sql = String.format("Delete from Company where CompanyID='%s'", id);
             conn.createStatement().executeUpdate(sql);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }finally {
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
     }
+
     @Override
-    public Company read(String id) throws SQLException{
+    public Company read(String id) throws SQLException {
         Company company = null;
-        try{
+        try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM Company where CompanyID =%s",id);
+            String sql = String.format("SELECT * FROM Company where CompanyID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()){
+            if (rs.next()) {
                 company = buildObject(rs);
             }
-        }catch (SQLException e) {
-            throw e;
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return company;
     }
-    
-    public ArrayList<Company> readAll() throws SQLException{
+
+    public ArrayList<Company> readAll() throws SQLException {
         ArrayList<Company> companycollection = new ArrayList<Company>();
-    	Company company = null;
-        try{
+        Company company = null;
+        try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM Company ");
+            String sql = "SELECT * FROM Company ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
-            while (rs.next()){
+            while (rs.next()) {
                 company = buildObject(rs);
                 companycollection.add(company);
             }
-        } finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return companycollection;
     }
 
 
-    private static Company buildObject(ResultSet rs) throws SQLException{
+    private static Company buildObject(ResultSet rs) throws SQLException {
         Company company;
         try {
             String id = rs.getString(1);
@@ -117,9 +121,9 @@ public class CompanyDb implements CompanyDbIf {
             String phNr = rs.getString(3);
             String email = rs.getString(4);
             String companyType = rs.getString(5);
-            String address=rs.getString(6);
-            company = new Company(id, name,phNr,email,companyType,address);
-        } catch(SQLException e) {
+            String address = rs.getString(6);
+            company = new Company(id, name, phNr, email, companyType, address);
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
         }

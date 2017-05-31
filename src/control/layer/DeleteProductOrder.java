@@ -8,8 +8,9 @@ import java.sql.SQLException;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class DeleteProductOrder {
-    ProductOrderDb productOrderDb=new ProductOrderDb();
-    ManageProductLine productLineCtr=new ManageProductLine();
+    ProductOrderDb productOrderDb = new ProductOrderDb();
+    ManageProductLine productLineCtr = new ManageProductLine();
+
     public void delete(String orderId) {
         try {
             productLineCtr.delete(productOrderDb.read(orderId).getProductLineId());

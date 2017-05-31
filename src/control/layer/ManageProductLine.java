@@ -16,10 +16,10 @@ public class ManageProductLine {
         productLineDb = new ProductLineDb();
     }
 
-    public boolean create(String id, double quantity, String productBarcode){
+    public boolean create(String id, double quantity, String productBarcode) {
 
         try {
-            if(productLineDb.read(id,productBarcode)==null)
+            if (productLineDb.read(id, productBarcode) == null)
                 productLineDb.create(id, quantity, productBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -27,27 +27,27 @@ public class ManageProductLine {
         return true;
     }
 
-    public ProductLine read(String id,String productBarcode){
+    public ProductLine read(String id, String productBarcode) {
         ProductLine productLine = null;
         try {
-            productLine = productLineDb.read(id,productBarcode);
+            productLine = productLineDb.read(id, productBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return productLine;
     }
 
-    public boolean update(String id, double quantity, String productBarcode){
+    public boolean update(String id, double quantity, String productBarcode) {
         ProductLine productLine = new ProductLine(id, quantity, productBarcode);
         try {
-            return productLineDb.update(productLine,id);
+            return productLineDb.update(productLine, id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
-    public boolean delete(String id){
+    public boolean delete(String id) {
         boolean aux = false;
         try {
             aux = productLineDb.delete(id);
@@ -56,22 +56,21 @@ public class ManageProductLine {
         }
         return aux;
     }
-    
-    public ArrayList<ProductLine> readAll(){
-    	ArrayList<ProductLine> allproductLines = null;
-    	try {
-    		allproductLines = productLineDb.readAll();
-    	} catch(SQLException e)
-    	{
-    		e.printStackTrace();
-    	}
-    	return allproductLines;
+
+    public ArrayList<ProductLine> readAll() {
+        ArrayList<ProductLine> allproductLines = null;
+        try {
+            allproductLines = productLineDb.readAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allproductLines;
     }
 
-    public boolean deleteProductFromProducLine(String idProductLine, String productBarcode){
+    public boolean deleteProductFromProducLine(String idProductLine, String productBarcode) {
         boolean aux = false;
         try {
-            aux = productLineDb.deleteProductFromProductLine(idProductLine,productBarcode);
+            aux = productLineDb.deleteProductFromProductLine(idProductLine, productBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }

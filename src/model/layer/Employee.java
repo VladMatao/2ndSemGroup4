@@ -1,12 +1,10 @@
 package model.layer;
 
-import java.util.Date;
-
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Employee {
-	private String id;
+    private String id;
     private String f_name;
     private String l_name;
     private int CNP;
@@ -18,7 +16,7 @@ public class Employee {
     private String department;
 
     public Employee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) {
-    	this.id = id;
+        this.id = id;
         this.f_name = f_name;
         this.l_name = l_name;
         this.CNP = CNP;
@@ -29,7 +27,7 @@ public class Employee {
         this.wage = wage;
         this.department = department;
     }
-    
+
     public String getId() {
         return id;
     }

@@ -8,12 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
 
     @Override
-    public void create(String rawMaterialOrderId, String deliveryDate, String orderStatus, double totalPrice, String companyId,String rawMaterialLineId) throws SQLException {
+    public void create(String rawMaterialOrderId, String deliveryDate, String orderStatus, double totalPrice, String companyId, String rawMaterialLineId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
@@ -24,7 +24,7 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             preparedStmtO.setString(1, rawMaterialOrderId);
             preparedStmtO.setDouble(2, totalPrice);
             preparedStmtO.setString(3, orderStatus);
-            preparedStmtO.setString(4,  deliveryDate);
+            preparedStmtO.setString(4, deliveryDate);
             preparedStmtO.setString(5, companyId);
 
             preparedStmtO.execute();
@@ -40,31 +40,31 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
         } catch (Exception e) {
             System.err.println("Got an exception in RawMaterialdDb.create()!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
     }
 
     @Override
-    public boolean update(RawMaterialOrder rawMaterialOrder,String RawMaterialOrderId) throws SQLException {
+    public boolean update(RawMaterialOrder rawMaterialOrder, String RawMaterialOrderId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             PreparedStatement psttmOrder = conn.prepareStatement("UPDATE Orders SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
-            psttmOrder.setDouble(1,rawMaterialOrder.getTotalPrice());
-            psttmOrder.setString(2,rawMaterialOrder.getOrderStatus());
-            psttmOrder.setString(3,rawMaterialOrder.getDeliveryDate());
-            psttmOrder.setString(4,rawMaterialOrder.getCompanyId());
-            psttmOrder.setString(5,RawMaterialOrderId);
+            psttmOrder.setDouble(1, rawMaterialOrder.getTotalPrice());
+            psttmOrder.setString(2, rawMaterialOrder.getOrderStatus());
+            psttmOrder.setString(3, rawMaterialOrder.getDeliveryDate());
+            psttmOrder.setString(4, rawMaterialOrder.getCompanyId());
+            psttmOrder.setString(5, RawMaterialOrderId);
             psttmOrder.executeUpdate();
 
             PreparedStatement psttmRMO = conn.prepareStatement("UPDATE RawMaterialOrder SET RawMaterialLineID = ? WHERE RawMaterialOrderID = ?");
-            psttmRMO.setString(1,rawMaterialOrder.getRawMaterialLineId());
-            psttmRMO.setString(2,RawMaterialOrderId);
+            psttmRMO.setString(1, rawMaterialOrder.getRawMaterialLineId());
+            psttmRMO.setString(2, RawMaterialOrderId);
             psttmRMO.executeUpdate();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.err.println("Got an exception at rawMaterialOrderDb.update()");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
@@ -78,36 +78,36 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             String sql1 = String.format("Delete from Orders where OrderID='%s'", rawMaterialOrderId);
             conn.createStatement().executeUpdate(sql);
             conn.createStatement().executeUpdate(sql1);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }finally {
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
     }
 
     @Override
-    public RawMaterialOrder read(String orderId) throws SQLException{
+    public RawMaterialOrder read(String orderId) throws SQLException {
         RawMaterialOrder rawMaterialOrder = null;
-        try{
+        try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sqlO = String.format("SELECT * FROM Orders where OrderID=%s",orderId);
+            String sqlO = String.format("SELECT * FROM Orders where OrderID=%s", orderId);
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
 
-            String sqlRMO = String.format("SELECT * FROM RawMaterialOrder where RawMaterialOrderId=%s",orderId);
+            String sqlRMO = String.format("SELECT * FROM RawMaterialOrder where RawMaterialOrderId=%s", orderId);
             ResultSet rsRMO = conn.createStatement().executeQuery(sqlRMO);
-            if (rsO.next() && rsRMO.next()){
-                rawMaterialOrder = buildObject(rsO,rsRMO);
+            if (rsO.next() && rsRMO.next()) {
+                rawMaterialOrder = buildObject(rsO, rsRMO);
             }
-        } finally{
+        } finally {
             DbConnection.closeConnection();
         }
-        return rawMaterialOrder ;
+        return rawMaterialOrder;
     }
 
 
-    private static RawMaterialOrder buildObject(ResultSet rsO,ResultSet rsRMO) throws SQLException{
+    private static RawMaterialOrder buildObject(ResultSet rsO, ResultSet rsRMO) throws SQLException {
         RawMaterialOrder rawMaterialOrder;
         try {
             String id = rsO.getString(1);
@@ -115,9 +115,9 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             String orderStatus = rsO.getString(3);
             double totalPrice = rsO.getDouble(2);
             String companyId = rsO.getString(5);
-            String rawMaterialLineId=rsRMO.getString(2);
-            rawMaterialOrder = new RawMaterialOrder(id,deliveryDate,orderStatus,totalPrice,companyId,rawMaterialLineId);
-        } catch(SQLException e) {
+            String rawMaterialLineId = rsRMO.getString(2);
+            rawMaterialOrder = new RawMaterialOrder(id, deliveryDate, orderStatus, totalPrice, companyId, rawMaterialLineId);
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
         }

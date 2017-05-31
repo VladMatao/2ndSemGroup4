@@ -17,7 +17,7 @@ public class ManageEmployee {
         employeeDb = new EmployeeDb();
     }
 
-    public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage,String department){
+    public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) {
         try {
             employeeDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage, department);
         } catch (SQLException e) {
@@ -26,7 +26,7 @@ public class ManageEmployee {
         return true;
     }
 
-    public Employee readEmployee(String personId){
+    public Employee readEmployee(String personId) {
         Employee employee = null;
         try {
             employee = employeeDb.read(personId);
@@ -37,10 +37,10 @@ public class ManageEmployee {
     }
 
 
-    public boolean updateEmployee(Employee employee,String personId){
+    public boolean updateEmployee(Employee employee, String personId) {
 
         try {
-            return employeeDb.update(employee,personId);
+            return employeeDb.update(employee, personId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class ManageEmployee {
     }
 
 
-    public boolean deleteEmployee(String personId){
+    public boolean deleteEmployee(String personId) {
         boolean aux = false;
         try {
             aux = employeeDb.delete(personId);

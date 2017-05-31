@@ -9,7 +9,10 @@ import java.sql.SQLException;
  */
 public interface ProductOrderDbIf {
     void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, Double totalProductionTime) throws SQLException;
+
     ProductOrder read(String orderId) throws SQLException;
-    boolean update(ProductOrder productOrder,String productOrderId) throws SQLException;
+
+    boolean update(ProductOrder productOrder, String productOrderId) throws SQLException;
+
     boolean delete(String productOrderId) throws SQLException;
 }

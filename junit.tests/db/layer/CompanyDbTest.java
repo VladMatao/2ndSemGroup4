@@ -1,35 +1,37 @@
 package db.layer;
 
 import model.layer.Company;
-import org.junit.*;
-
+import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CompanyDbTest {
     private CompanyDb companyDb;
+
     @Before
-    public void setUp(){
-        companyDb =new CompanyDb();
+    public void setUp() {
+        companyDb = new CompanyDb();
     }
 
     @Test
     public void testA_create() throws Exception {
-        companyDb.create("1","NuFuramSRL","91919191","nu_furam@smr.com","Client","123 st");
+        companyDb.create("1", "NuFuramSRL", "91919191", "nu_furam@smr.com", "Client", "123 st");
         assertNotNull(companyDb.read("1"));
     }
 
     @Test
     public void testB_update() throws Exception {
-        Company company = new Company("2","PeBune","12121212","peBune@smr.com","Supplier","456 st");
+        Company company = new Company("2", "PeBune", "12121212", "peBune@smr.com", "Supplier", "456 st");
         assertNotNull(companyDb.read("1"));
-        companyDb.update(company,"1");
+        companyDb.update(company, "1");
         assertNotNull(companyDb.read("2"));
     }
 

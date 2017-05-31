@@ -1,10 +1,15 @@
 
 package db.layer;
+
 import model.layer.RawMaterialLine;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
 public class RawMaterialLineDb implements RawMaterialLineDbIf {
@@ -26,7 +31,7 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
     }
@@ -37,60 +42,60 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
             Connection conn = DbConnection.getInstance().getDBcon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ? WHERE RawMaterialLineID = ? ");
             //psttm.setInt(1,curentQuantity);
-            psttm.setString(1,rawMLine.getId());
-            psttm.setDouble(2,rawMLine.getQuantity());
-            psttm.setString(3,rawMLine.getRawMaterialBarcode());
-            psttm.setString(4,id);
+            psttm.setString(1, rawMLine.getId());
+            psttm.setDouble(2, rawMLine.getQuantity());
+            psttm.setString(3, rawMLine.getRawMaterialBarcode());
+            psttm.setString(4, id);
             psttm.executeUpdate();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
     }
+
     @Override
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             String sql = String.format("Delete from RawMLine where ID='%s'", id);
             conn.createStatement().executeUpdate(sql);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }finally {
+        } finally {
             DbConnection.closeConnection();
         }
         return true;
     }
+
     @Override
-    public RawMaterialLine read(String id) throws SQLException{
+    public RawMaterialLine read(String id) throws SQLException {
         RawMaterialLine rawMLine = null;
-        try{
+        try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM rawMLine where ID =%s",id);
+            String sql = String.format("SELECT * FROM rawMLine where ID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()){
+            if (rs.next()) {
                 rawMLine = buildObject(rs);
             }
-        }catch (SQLException e) {
-            throw e;
-        }finally{
+        } finally {
             DbConnection.closeConnection();
         }
         return rawMLine;
     }
 
 
-    private static RawMaterialLine buildObject(ResultSet rs) throws SQLException{
+    private static RawMaterialLine buildObject(ResultSet rs) throws SQLException {
         RawMaterialLine rawMLine;
         try {
             String id = rs.getString(1);
             Double quantity = rs.getDouble(2);
             String rawMaterialBarcode = rs.getString(3);
-            rawMLine = new RawMaterialLine(id, quantity,rawMaterialBarcode);
-        } catch(SQLException e) {
+            rawMLine = new RawMaterialLine(id, quantity, rawMaterialBarcode);
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
         }
@@ -103,12 +108,12 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
     public boolean deleteRawMaterialFromRawMaterialLine(String id, String rawMaterialBarcode) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMaterialLine where id='%s' AND RawBarcode='%s' ", id,rawMaterialBarcode);
+            String sql = String.format("Delete from RawMaterialLine where id='%s' AND RawBarcode='%s' ", id, rawMaterialBarcode);
             conn.createStatement().executeUpdate(sql);
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }finally {
+        } finally {
             DbConnection.closeConnection();
         }
         return true;

@@ -1,7 +1,7 @@
 package model.layer;
 
 /**
- Project 2nd Semester Group 4 dmaj0916 UCN
+ * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RawMaterialLine {
     private String rawMaterialLineID;

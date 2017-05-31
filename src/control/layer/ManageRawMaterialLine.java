@@ -16,7 +16,7 @@ public class ManageRawMaterialLine {
         rawMaterialLineDb = new RawMaterialLineDb();
     }
 
-    public boolean create(String id, double quantity, String rawMaterialBarcode){
+    public boolean create(String id, double quantity, String rawMaterialBarcode) {
         try {
             rawMaterialLineDb.create(id, quantity, rawMaterialBarcode);
         } catch (SQLException e) {
@@ -25,7 +25,7 @@ public class ManageRawMaterialLine {
         return true;
     }
 
-    public RawMaterialLine read(String id){
+    public RawMaterialLine read(String id) {
         RawMaterialLine rawMaterialLine = null;
         try {
             rawMaterialLine = rawMaterialLineDb.read(id);
@@ -35,17 +35,17 @@ public class ManageRawMaterialLine {
         return rawMaterialLine;
     }
 
-    public boolean update(RawMaterialLine rawMaterialLine,String id){
+    public boolean update(RawMaterialLine rawMaterialLine, String id) {
 
         try {
-            return rawMaterialLineDb.update(rawMaterialLine,id);
+            return rawMaterialLineDb.update(rawMaterialLine, id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
-    public boolean delete(String id){
+    public boolean delete(String id) {
         boolean aux = false;
         try {
             aux = rawMaterialLineDb.delete(id);
@@ -55,10 +55,10 @@ public class ManageRawMaterialLine {
         return aux;
     }
 
-    public boolean deleteProductFromProducLine(String idRawMaterialLine, String rawMaterialBarcode){
+    public boolean deleteProductFromProducLine(String idRawMaterialLine, String rawMaterialBarcode) {
         boolean aux = false;
         try {
-            aux = rawMaterialLineDb.deleteRawMaterialFromRawMaterialLine(idRawMaterialLine,rawMaterialBarcode);
+            aux = rawMaterialLineDb.deleteRawMaterialFromRawMaterialLine(idRawMaterialLine, rawMaterialBarcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
