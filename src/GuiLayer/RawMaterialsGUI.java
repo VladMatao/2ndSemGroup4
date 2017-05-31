@@ -78,7 +78,7 @@ public class RawMaterialsGUI extends JFrame {
 
 			}
 		});
-		addButton.setBounds(24, 394, 89, 23);
+		addButton.setBounds(32, 422, 89, 23);
 		contentPane.add(addButton);
 		
 		JButton deteleButton = new JButton("Delete");
@@ -93,7 +93,7 @@ public class RawMaterialsGUI extends JFrame {
 
 			}
 		});
-		deteleButton.setBounds(123, 394, 89, 23);
+		deteleButton.setBounds(131, 422, 89, 23);
 		contentPane.add(deteleButton);
 		
 		JButton updateButton = new JButton("Update");
@@ -107,7 +107,7 @@ public class RawMaterialsGUI extends JFrame {
 				fillTable(rawMaterialtable);
 			}
 		});
-		updateButton.setBounds(222, 394, 89, 23);
+		updateButton.setBounds(230, 422, 89, 23);
 		contentPane.add(updateButton);
 		
 		JLabel lblBarcode = new JLabel("Barcode:");
@@ -133,6 +133,20 @@ public class RawMaterialsGUI extends JFrame {
 		label.setIcon(new ImageIcon("photos\\rawmat.png"));
 		label.setBounds(0, 11, 336, 92);
 		contentPane.add(label);
+		
+		JButton btnNewButton = new JButton("<");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+				Menu menu= new Menu();
+				menu.setVisible(true);
+			}
+		});
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(2, 52, 68));
+		btnNewButton.setBounds(32, 388, 46, 23);
+		contentPane.add(btnNewButton);
 	}
 	
 	
