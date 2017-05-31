@@ -10,9 +10,6 @@ import model.layer.ProductOrder;
  */
 public class ReadProductOrder {
 	private ProductOrderDb productOrderDb;
-
-
-	
     public ProductOrder read(String id){
         ProductOrder productOrder = null;
         productOrderDb=new ProductOrderDb();

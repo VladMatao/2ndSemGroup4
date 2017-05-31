@@ -10,7 +10,8 @@ public class GuiStart {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    gui.layer.Menu menu = new gui.layer.Menu();
+                    Menu menu = new Menu();
+                    menu.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

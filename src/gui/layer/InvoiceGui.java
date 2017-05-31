@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import control.layer.CreateProductOrder;
+import control.layer.DeleteProductOrder;
 import control.layer.ManageProductLine;
 import model.layer.ProductLine;
 import control.layer.ReadProductOrder;
@@ -14,6 +16,9 @@ import control.layer.ReadProductOrder;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class InvoiceGui extends JFrame {
 
@@ -104,6 +109,44 @@ public class InvoiceGui extends JFrame {
 		lblPrice.setBounds(119, 269, 46, 14);
 		contentPane.add(lblPrice);
 		lblPrice.setText(""+readProductOrder.read(orderID).getTotalPrice());
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			    dispose();
+                ProductOrderGui productOrderGui=new ProductOrderGui();
+                productOrderGui.setVisible(true);
+			}
+		});
+		btnBack.setBounds(21, 348, 89, 23);
+		contentPane.add(btnBack);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+                DeleteProductOrder deleteProductOrder = new DeleteProductOrder();
+                deleteProductOrder.delete(lblOrdID.getText());
+                dispose();
+                ProductOrderGui productOrderGui=new ProductOrderGui();
+                productOrderGui.setVisible(true);
+			}
+		});
+		btnCancel.setBounds(158, 348, 89, 23);
+		contentPane.add(btnCancel);
+		
+		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			    dispose();
+			    Menu menu=new Menu();
+			    menu.setVisible(true);
+			}
+		});
+		btnConfirm.setBounds(84, 405, 89, 23);
+		contentPane.add(btnConfirm);
 		
 }
 	private void fillTable(DefaultTableModel model, String productLineID) {
