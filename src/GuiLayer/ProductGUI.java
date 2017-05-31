@@ -173,7 +173,7 @@ public class ProductGUI extends JFrame {
                 table.setModel(producttable);
                 
                 JLabel label = new JLabel("");
-                label.setIcon(new ImageIcon("C:\\Users\\Mircea\\IdeaProjects\\ProiectChiarBaban\\photos\\manprod.png"));
+                label.setIcon(new ImageIcon("photos\\manprod.png"));
                 label.setBounds(10, 0, 321, 122);
                 contentPane.add(label);
                 
