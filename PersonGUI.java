@@ -15,7 +15,6 @@ import ModelLayer.Employee;
 import ModelLayer.Manager;
 import ModelLayer.Person;
 import DBLayer.EmployeeDB;
-import DBLayer.ManagerDB;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
