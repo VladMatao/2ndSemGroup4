@@ -34,25 +34,6 @@ public class ManageProductOrderGui extends JFrame {
 	private JTextField ProductLineIDtextField;
 	private JButton btnCreateNewOrder;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ManageProductOrderGui frame = new ManageProductOrderGui();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public ManageProductOrderGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1017, 541);
