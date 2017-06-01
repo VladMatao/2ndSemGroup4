@@ -25,6 +25,7 @@ public class ReadProductOrder {
     }
     
     public ArrayList<ProductOrder> readAll() {
+        productOrderDb = new ProductOrderDb();
         ArrayList<ProductOrder> allproductorders = null;
         try {
         	allproductorders = productOrderDb.readAll();

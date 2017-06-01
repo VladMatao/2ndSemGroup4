@@ -138,8 +138,8 @@ public class ProductOrderDb implements ProductOrderDbIf {
             String orderStatus = rsO.getString(3);
             double totalPrice = rsO.getDouble(2);
             String companyId = rsO.getString(5);
-            String productLineId = rsPO.getString(6);
-            double totalProductionTime = rsPO.getDouble(7);
+            String productLineId = rsPO.getString(2);
+            double totalProductionTime = rsPO.getDouble(3);
             productOrder = new ProductOrder(id, deliveryDate, orderStatus, totalPrice, companyId, totalProductionTime, productLineId);
         } catch (SQLException e) {
             e.printStackTrace();
