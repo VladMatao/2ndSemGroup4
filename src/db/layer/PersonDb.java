@@ -1,11 +1,13 @@
 package db.layer;
 
+import model.layer.Company;
 import model.layer.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 /**
@@ -18,17 +20,17 @@ public class PersonDb implements PersonDbIf {
     public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psEmployeeCreation = conn.prepareStatement("INSERT INTO Employee (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            psEmployeeCreation.setString(1, id);
-            psEmployeeCreation.setString(2, f_name);
-            psEmployeeCreation.setString(3, l_name);
-            psEmployeeCreation.setInt(4, CNP);
-            psEmployeeCreation.setString(5, address);
-            psEmployeeCreation.setString(6, phNr);
-            psEmployeeCreation.setString(7, city);
-            psEmployeeCreation.setString(8, position);
-            psEmployeeCreation.setDouble(9, wage);
-            psEmployeeCreation.executeUpdate();
+            PreparedStatement psPersonCreation = conn.prepareStatement("INSERT INTO Person (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            psPersonCreation.setString(1, id);
+            psPersonCreation.setString(2, f_name);
+            psPersonCreation.setString(3, l_name);
+            psPersonCreation.setInt(4, CNP);
+            psPersonCreation.setString(5, address);
+            psPersonCreation.setString(6, phNr);
+            psPersonCreation.setString(7, city);
+            psPersonCreation.setString(8, position);
+            psPersonCreation.setDouble(9, wage);
+            psPersonCreation.executeUpdate();
         } catch (Exception e) {
             System.err.println("Got an exception in PersonDb.create()!");
             System.err.println(e.getMessage());
@@ -41,19 +43,19 @@ public class PersonDb implements PersonDbIf {
     public boolean update(Person person, String personId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttmEmployee = conn.prepareStatement("UPDATE Employee SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ? WHERE PersonID = ?");
-            psttmEmployee.setString(1, person.getF_name());
-            psttmEmployee.setString(2, person.getL_name());
-            psttmEmployee.setInt(3, person.getCNP());
-            psttmEmployee.setString(4, person.getAddress());
-            psttmEmployee.setString(5, person.getPhNr());
-            psttmEmployee.setString(6, person.getCity());
-            psttmEmployee.setString(7, person.getposition());
-            psttmEmployee.setDouble(8, person.getWage());
-            psttmEmployee.setString(9, personId);
+            PreparedStatement psttmPerson = conn.prepareStatement("UPDATE Person SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ? WHERE PersonID = ?");
+            psttmPerson.setString(1, person.getF_name());
+            psttmPerson.setString(2, person.getL_name());
+            psttmPerson.setInt(3, person.getCNP());
+            psttmPerson.setString(4, person.getAddress());
+            psttmPerson.setString(5, person.getPhNr());
+            psttmPerson.setString(6, person.getCity());
+            psttmPerson.setString(7, person.getposition());
+            psttmPerson.setDouble(8, person.getWage());
+            psttmPerson.setString(9, personId);
 
         } catch (SQLException e) {
-            System.err.println("Got an exception at employeeDB.update()");
+            System.err.println("Got an exception at personDB.update()");
             System.err.println(e.getMessage());
         } finally {
             DbConnection.closeConnection();
@@ -81,8 +83,8 @@ public class PersonDb implements PersonDbIf {
         Person person = null;
         try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sqlEmployee = String.format("SELECT * FROM Person where PersonID =%s", id);
-            ResultSet rs = conn.createStatement().executeQuery(sqlEmployee);
+            String sqlPerson = String.format("SELECT * FROM Person where PersonID =%s", id);
+            ResultSet rs = conn.createStatement().executeQuery(sqlPerson);
             if (rs.next()) {
                 person = buildObject(rs);
             }
@@ -90,6 +92,23 @@ public class PersonDb implements PersonDbIf {
             DbConnection.closeConnection();
         }
         return person;
+    }
+
+    public ArrayList<Person> readAll() throws SQLException {
+        ArrayList<Person> personcollection = new ArrayList<Person>();
+        Person person = null;
+        try {
+            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            String sql = "SELECT * FROM Person ";
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()) {
+                person = buildObject(rs);
+                personcollection.add(person);
+            }
+        } finally {
+            DbConnection.closeConnection();
+        }
+        return personcollection;
     }
 
 

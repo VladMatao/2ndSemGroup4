@@ -71,11 +71,19 @@ public class Menu extends JFrame {
         companyButton.setBounds(65, 343, 140, 23);
         panel.add(companyButton);
 
-        JButton employeeButton = new JButton("Person");
-        employeeButton.setForeground(new Color(255, 255, 255));
-        employeeButton.setBackground(new Color(2, 52, 68));
-        employeeButton.setBounds(67, 383, 140, 23);
-        panel.add(employeeButton);
+        JButton personButton = new JButton("Person");
+        personButton.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent arg0) {
+        		dispose();
+        		PersonGui persongui= new PersonGui();
+        		persongui.setVisible(true);
+        	}
+        });
+        personButton.setForeground(new Color(255, 255, 255));
+        personButton.setBackground(new Color(2, 52, 68));
+        personButton.setBounds(67, 383, 140, 23);
+        panel.add(personButton);
 
         JButton rawMaterialsButton = new JButton("Raw Materials");
         rawMaterialsButton.addMouseListener(new MouseAdapter() {

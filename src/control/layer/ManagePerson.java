@@ -1,9 +1,11 @@
 package control.layer;
 
 import db.layer.PersonDb;
+import model.layer.Company;
 import model.layer.Person;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
@@ -17,7 +19,7 @@ public class ManagePerson {
         personDb = new PersonDb();
     }
 
-    public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
+    public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         try {
             personDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
@@ -26,7 +28,7 @@ public class ManagePerson {
         return true;
     }
 
-    public Person readEmployee(String personId) {
+    public Person read(String personId) {
         Person person = null;
         try {
             person = personDb.read(personId);
@@ -36,11 +38,21 @@ public class ManagePerson {
         return person;
     }
 
-
-    public boolean updateEmployee(Person person, String personId) {
-
+    public ArrayList<Person> readAll() {
+        ArrayList<Person> allpersons = null;
         try {
-            return personDb.update(person, personId);
+            allpersons = personDb.readAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allpersons;
+    }
+
+
+    public boolean update(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
+        Person person = new Person(id, f_name, l_name, CNP, address, phNr, city, position, wage);
+        try {
+            return personDb.update(person, id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -48,7 +60,7 @@ public class ManagePerson {
     }
 
 
-    public boolean deleteEmployee(String personId) {
+    public boolean delete(String personId) {
         boolean aux = false;
         try {
             aux = personDb.delete(personId);
