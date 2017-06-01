@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class ProductOrderGui extends JFrame {
 
@@ -30,12 +31,13 @@ public class ProductOrderGui extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 495);
         JPanel contentPane = new JPanel();
+        contentPane.setBackground(new Color(25, 93, 115));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         productLineTextField = new JTextField();
-        productLineTextField.setBounds(383, 185, 145, 20);
+        productLineTextField.setBounds(143, 422, 145, 23);
         contentPane.add(productLineTextField);
         productLineTextField.setColumns(10);
 
@@ -48,32 +50,36 @@ public class ProductOrderGui extends JFrame {
         fillTable(productLineTable,productLineTextField.getText());
 
         JLabel price = new JLabel("0");
-        price.setBounds(552, 355, 46, 14);
+        price.setForeground(new Color(255, 255, 255));
+        price.setBounds(573, 254, 46, 14);
         contentPane.add(price);
 
         JLabel timeLabel;
         timeLabel = new JLabel("0");
-        timeLabel.setBounds(552, 312, 46, 14);
+        timeLabel.setForeground(new Color(255, 255, 255));
+        timeLabel.setBounds(573, 211, 46, 14);
         contentPane.add(timeLabel);
 
         quantityTextField = new JTextField();
-        quantityTextField.setBounds(383, 117, 145, 31);
+        quantityTextField.setBounds(143, 369, 145, 23);
         contentPane.add(quantityTextField);
         quantityTextField.setColumns(10);
 
         orderIDTextField = new JTextField();
         orderIDTextField.setColumns(10);
-        orderIDTextField.setBounds(143, 24, 145, 31);
+        orderIDTextField.setBounds(143, 79, 145, 23);
         contentPane.add(orderIDTextField);
 
 
 
         productBarcodeTextField = new JTextField();
         productBarcodeTextField.setColumns(10);
-        productBarcodeTextField.setBounds(383, 24, 145, 31);
+        productBarcodeTextField.setBounds(143, 311, 145, 23);
         contentPane.add(productBarcodeTextField);
 
         JButton addButton = new JButton("Add");
+        addButton.setForeground(new Color(255, 255, 255));
+        addButton.setBackground(new Color(2, 52, 68));
         addButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
@@ -89,10 +95,12 @@ public class ProductOrderGui extends JFrame {
                 fillTable(productLineTable,productLineTextField.getText());
             }
         });
-        addButton.setBounds(383, 230, 89, 23);
+        addButton.setBounds(353, 314, 89, 23);
         contentPane.add(addButton);
 
         JButton deleteButton = new JButton("Delete");
+        deleteButton.setForeground(new Color(255, 255, 255));
+        deleteButton.setBackground(new Color(2, 52, 68));
         deleteButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -104,10 +112,12 @@ public class ProductOrderGui extends JFrame {
 
             }
         });
-        deleteButton.setBounds(482, 230, 89, 23);
+        deleteButton.setBounds(465, 314, 89, 23);
         contentPane.add(deleteButton);
 
         JButton updateButton = new JButton("Update");
+        updateButton.setBackground(new Color(2, 52, 68));
+        updateButton.setForeground(new Color(255, 255, 255));
         updateButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -116,58 +126,67 @@ public class ProductOrderGui extends JFrame {
                 fillTable(productLineTable,productLineTextField.getText());
             }
         });
-        updateButton.setBounds(581, 230, 89, 23);
+        updateButton.setBounds(576, 314, 89, 23);
         contentPane.add(updateButton);
 
-        JLabel lbld = new JLabel("order ID");
-        lbld.setBounds(10, 32, 103, 14);
+        JLabel lbld = new JLabel("Order Id");
+        lbld.setForeground(new Color(255, 255, 255));
+        lbld.setBounds(10, 83, 103, 14);
         contentPane.add(lbld);
 
         JLabel lblQuantity = new JLabel("Quantity");
-        lblQuantity.setBounds(429, 93, 46, 14);
+        lblQuantity.setForeground(new Color(255, 255, 255));
+        lblQuantity.setBounds(10, 373, 103, 14);
         contentPane.add(lblQuantity);
 
         JLabel lblProductBarcode = new JLabel("Product Barcode");
-        lblProductBarcode.setBounds(429, 11, 99, 14);
+        lblProductBarcode.setForeground(new Color(255, 255, 255));
+        lblProductBarcode.setBounds(10, 315, 103, 14);
         contentPane.add(lblProductBarcode);
 
         JLabel lblOrderStatus = new JLabel("Order Status");
-        lblOrderStatus.setBounds(10, 93, 89, 14);
+        lblOrderStatus.setForeground(new Color(255, 255, 255));
+        lblOrderStatus.setBounds(10, 141, 103, 14);
         contentPane.add(lblOrderStatus);
 
         orderStatusTextField = new JTextField();
-        orderStatusTextField.setBounds(143, 84, 145, 23);
+        orderStatusTextField.setBounds(143, 137, 145, 23);
         contentPane.add(orderStatusTextField);
         orderStatusTextField.setColumns(10);
 
         JLabel lblNewLabel = new JLabel("Delivery Date");
-        lblNewLabel.setBounds(10, 158, 103, 14);
+        lblNewLabel.setForeground(new Color(255, 255, 255));
+        lblNewLabel.setBounds(10, 199, 103, 14);
         contentPane.add(lblNewLabel);
 
         deliveryDateTextField = new JTextField();
-        deliveryDateTextField.setBounds(146, 155, 142, 20);
+        deliveryDateTextField.setBounds(143, 195, 145, 23);
         contentPane.add(deliveryDateTextField);
         deliveryDateTextField.setColumns(10);
 
-        JLabel lblNewLabel_1 = new JLabel("CompanyID");
-        lblNewLabel_1.setBounds(10, 216, 89, 14);
+        JLabel lblNewLabel_1 = new JLabel("Company ID");
+        lblNewLabel_1.setForeground(new Color(255, 255, 255));
+        lblNewLabel_1.setBounds(10, 257, 103, 14);
         contentPane.add(lblNewLabel_1);
 
         companyIDTextField = new JTextField();
-        companyIDTextField.setBounds(143, 213, 145, 20);
+        companyIDTextField.setBounds(143, 253, 145, 23);
         contentPane.add(companyIDTextField);
         companyIDTextField.setColumns(10);
 
-        JLabel lblProductlineId = new JLabel("ProductLineID");
-        lblProductlineId.setBounds(415, 161, 113, 14);
+        JLabel lblProductlineId = new JLabel("Product Line Id");
+        lblProductlineId.setForeground(new Color(255, 255, 255));
+        lblProductlineId.setBounds(10, 431, 103, 14);
         contentPane.add(lblProductlineId);
 
         JLabel lblTotalTime = new JLabel("Total time");
-        lblTotalTime.setBounds(392, 312, 80, 14);
+        lblTotalTime.setForeground(new Color(255, 255, 255));
+        lblTotalTime.setBounds(413, 211, 80, 14);
         contentPane.add(lblTotalTime);
 
         JLabel lblTotalPrice = new JLabel("Total Price");
-        lblTotalPrice.setBounds(392, 355, 80, 14);
+        lblTotalPrice.setForeground(new Color(255, 255, 255));
+        lblTotalPrice.setBounds(413, 254, 80, 14);
         contentPane.add(lblTotalPrice);
 
         JScrollPane scrollPane = new JScrollPane();
@@ -179,6 +198,8 @@ public class ProductOrderGui extends JFrame {
         table.setModel(productLineTable);
 
         JButton finalizeButton = new JButton("Finalize");
+        finalizeButton.setForeground(new Color(255, 255, 255));
+        finalizeButton.setBackground(new Color(2, 52, 68));
         finalizeButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -189,8 +210,38 @@ public class ProductOrderGui extends JFrame {
                 invoiceGui.setVisible(true);
             }
         });
-        finalizeButton.setBounds(33, 346, 89, 23);
+        finalizeButton.setBounds(465, 422, 89, 23);
         contentPane.add(finalizeButton);
+        
+        JPanel panel = new JPanel();
+        panel.setBackground(new Color(62, 143, 169));
+        panel.setBounds(353, 145, 311, 311);
+        contentPane.add(panel);
+        panel.setLayout(null);
+        
+        JButton btnNewButton = new JButton("<");
+        btnNewButton.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent arg0) {
+        		 dispose();
+                 Menu menu = new Menu();
+                 menu.setVisible(true);
+        	}
+        });
+        btnNewButton.setForeground(new Color(255, 255, 255));
+        btnNewButton.setBackground(new Color(2, 52, 68));
+        btnNewButton.setBounds(0, 277, 41, 23);
+        panel.add(btnNewButton);
+        
+        JLabel label_1 = new JLabel("");
+        label_1.setIcon(new ImageIcon("photos\\total.png"));
+        label_1.setBounds(10, 0, 306, 77);
+        panel.add(label_1);
+        
+        JLabel label = new JLabel("");
+        label.setIcon(new ImageIcon("photos\\createorder.png"));
+        label.setBounds(22, 0, 619, 86);
+        contentPane.add(label);
     }
 
 
