@@ -26,7 +26,6 @@ public class Person {
         this.wage = wage;
     }
 
-
     public String getId() {
         return id;
     }
@@ -98,4 +97,5 @@ public class Person {
     public void setWage(double wage) {
         this.wage = wage;
     }
+
 }

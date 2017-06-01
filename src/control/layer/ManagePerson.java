@@ -1,46 +1,46 @@
 package control.layer;
 
-import db.layer.EmployeeDb;
-import model.layer.Employee;
+import db.layer.PersonDb;
+import model.layer.Person;
 
 import java.sql.SQLException;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
-public class ManageEmployee {
+public class ManagePerson {
 
 
-    private EmployeeDb employeeDb;
+    private PersonDb personDb;
 
-    public ManageEmployee() {
-        employeeDb = new EmployeeDb();
+    public ManagePerson() {
+        personDb = new PersonDb();
     }
 
     public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         try {
-            employeeDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
+            personDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return true;
     }
 
-    public Employee readEmployee(String personId) {
-        Employee employee = null;
+    public Person readEmployee(String personId) {
+        Person person = null;
         try {
-            employee = employeeDb.read(personId);
+            person = personDb.read(personId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return employee;
+        return person;
     }
 
 
-    public boolean updateEmployee(Employee employee, String personId) {
+    public boolean updateEmployee(Person person, String personId) {
 
         try {
-            return employeeDb.update(employee, personId);
+            return personDb.update(person, personId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class ManageEmployee {
     public boolean deleteEmployee(String personId) {
         boolean aux = false;
         try {
-            aux = employeeDb.delete(personId);
+            aux = personDb.delete(personId);
         } catch (SQLException e) {
             e.printStackTrace();
         }

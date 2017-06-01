@@ -1,6 +1,6 @@
 package db.layer;
 
-import model.layer.Employee;
+import model.layer.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
-public class EmployeeDb implements EmployeeDbIf {
+public class PersonDb implements PersonDbIf {
 
     @Override
     public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
@@ -30,7 +30,7 @@ public class EmployeeDb implements EmployeeDbIf {
             psEmployeeCreation.setDouble(9, wage);
             psEmployeeCreation.executeUpdate();
         } catch (Exception e) {
-            System.err.println("Got an exception in EmployeeDb.create()!");
+            System.err.println("Got an exception in PersonDb.create()!");
             System.err.println(e.getMessage());
         } finally {
             DbConnection.closeConnection();
@@ -38,18 +38,18 @@ public class EmployeeDb implements EmployeeDbIf {
     }
 
     @Override
-    public boolean update(Employee employee, String personId) throws SQLException {
+    public boolean update(Person person, String personId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             PreparedStatement psttmEmployee = conn.prepareStatement("UPDATE Employee SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ? WHERE PersonID = ?");
-            psttmEmployee.setString(1, employee.getF_name());
-            psttmEmployee.setString(2, employee.getL_name());
-            psttmEmployee.setInt(3, employee.getCNP());
-            psttmEmployee.setString(4, employee.getAddress());
-            psttmEmployee.setString(5, employee.getPhNr());
-            psttmEmployee.setString(6, employee.getCity());
-            psttmEmployee.setString(7, employee.getposition());
-            psttmEmployee.setDouble(8, employee.getWage());
+            psttmEmployee.setString(1, person.getF_name());
+            psttmEmployee.setString(2, person.getL_name());
+            psttmEmployee.setInt(3, person.getCNP());
+            psttmEmployee.setString(4, person.getAddress());
+            psttmEmployee.setString(5, person.getPhNr());
+            psttmEmployee.setString(6, person.getCity());
+            psttmEmployee.setString(7, person.getposition());
+            psttmEmployee.setDouble(8, person.getWage());
             psttmEmployee.setString(9, personId);
 
         } catch (SQLException e) {
@@ -65,7 +65,7 @@ public class EmployeeDb implements EmployeeDbIf {
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from Employee where PersonID='%s'", id);
+            String sql = String.format("Delete from Person where PersonID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -77,24 +77,24 @@ public class EmployeeDb implements EmployeeDbIf {
     }
 
     @Override
-    public Employee read(String id) throws SQLException {
-        Employee employee = null;
+    public Person read(String id) throws SQLException {
+        Person person = null;
         try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sqlEmployee = String.format("SELECT * FROM Employee where PersonID =%s", id);
+            String sqlEmployee = String.format("SELECT * FROM Person where PersonID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sqlEmployee);
             if (rs.next()) {
-                employee = buildObject(rs);
+                person = buildObject(rs);
             }
         } finally {
             DbConnection.closeConnection();
         }
-        return employee;
+        return person;
     }
 
 
-    private static Employee buildObject(ResultSet rs) throws SQLException {
-        Employee employee;
+    private static Person buildObject(ResultSet rs) throws SQLException {
+        Person person;
         try {
             String id = rs.getString(1);
             String f_name = rs.getString(2);
@@ -106,12 +106,12 @@ public class EmployeeDb implements EmployeeDbIf {
             String position = rs.getString(8);
             double wage = rs.getDouble(9);
 
-            employee = new Employee(id, f_name, l_name, CNP, address, phNr, city, position, wage);
+            person = new Person(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
         }
 
-        return employee;
+        return person;
     }
 }
