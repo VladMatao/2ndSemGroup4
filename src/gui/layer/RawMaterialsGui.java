@@ -42,13 +42,13 @@ public class RawMaterialsGui extends JFrame {
         fillTable(rawMaterialtable);
 
         nameTextField = new JTextField();
-        nameTextField.setBounds(90, 276, 145, 31);
+        nameTextField.setBounds(131, 309, 145, 23);
         contentPane.add(nameTextField);
         nameTextField.setColumns(10);
 
         barcodeTextField = new JTextField();
         barcodeTextField.setColumns(10);
-        barcodeTextField.setBounds(90, 179, 145, 31);
+        barcodeTextField.setBounds(131, 250, 145, 23);
         contentPane.add(barcodeTextField);
 
         JButton addButton = new JButton("Add");
@@ -95,12 +95,12 @@ public class RawMaterialsGui extends JFrame {
 
         JLabel lblBarcode = new JLabel("Barcode:");
         lblBarcode.setForeground(new Color(255, 255, 255));
-        lblBarcode.setBounds(90, 148, 103, 14);
+        lblBarcode.setBounds(18, 254, 103, 14);
         contentPane.add(lblBarcode);
 
         JLabel lblName = new JLabel("Name:");
         lblName.setForeground(new Color(255, 255, 255));
-        lblName.setBounds(90, 251, 46, 14);
+        lblName.setBounds(21, 317, 46, 14);
         contentPane.add(lblName);
 
         JScrollPane scrollPane = new JScrollPane();
@@ -132,12 +132,13 @@ public class RawMaterialsGui extends JFrame {
         contentPane.add(btnNewButton);
         
         stockTf = new JTextField();
-        stockTf.setBounds(87, 106, 148, 31);
+        stockTf.setBounds(131, 190, 145, 23);
         contentPane.add(stockTf);
         stockTf.setColumns(10);
         
         JLabel lblStock = new JLabel("Stock:");
-        lblStock.setBounds(10, 114, 46, 14);
+        lblStock.setForeground(new Color(255, 255, 255));
+        lblStock.setBounds(18, 194, 46, 14);
         contentPane.add(lblStock);
     }
 
