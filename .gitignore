@@ -1,7 +1,6 @@
 
 /.idea/
-/out/
 /.classpath
+/out/
 /.project
 /2ndSemGroup4.iml
-!/PersonGUI.java
