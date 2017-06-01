@@ -9,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class PersonGui extends JFrame {
 
@@ -32,8 +33,9 @@ public class PersonGui extends JFrame {
      */
     public PersonGui() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1002, 720);
+        setBounds(100, 100, 1056, 720);
         contentPane = new JPanel();
+        contentPane.setBackground(new Color(25, 93, 115));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -48,36 +50,38 @@ public class PersonGui extends JFrame {
         fillTable(persontable);
 
         f_nameTextField = new JTextField();
-        f_nameTextField.setBounds(143, 72, 145, 31);
+        f_nameTextField.setBounds(143, 251, 145, 23);
         contentPane.add(f_nameTextField);
         f_nameTextField.setColumns(10);
 
         personIDTextField = new JTextField();
         personIDTextField.setColumns(10);
-        personIDTextField.setBounds(143, 24, 145, 31);
+        personIDTextField.setBounds(143, 217, 145, 23);
         contentPane.add(personIDTextField);
 
         l_nameTextField = new JTextField();
         l_nameTextField.setColumns(10);
-        l_nameTextField.setBounds(143, 150, 145, 31);
+        l_nameTextField.setBounds(143, 285, 145, 23);
         contentPane.add(l_nameTextField);
 
         cnpTextField = new JTextField();
         cnpTextField.setColumns(10);
-        cnpTextField.setBounds(143, 210, 145, 31);
+        cnpTextField.setBounds(143, 319, 145, 23);
         contentPane.add(cnpTextField);
 
         adressTextField = new JTextField();
         adressTextField.setColumns(10);
-        adressTextField.setBounds(143, 277, 145, 31);
+        adressTextField.setBounds(143, 353, 145, 23);
         contentPane.add(adressTextField);
 
         phoneNumberTextField = new JTextField();
         phoneNumberTextField.setColumns(10);
-        phoneNumberTextField.setBounds(143, 340, 145, 31);
+        phoneNumberTextField.setBounds(143, 387, 145, 23);
         contentPane.add(phoneNumberTextField);
 
         JButton addButton = new JButton("Add");
+        addButton.setBackground(new Color(2, 52, 68));
+        addButton.setForeground(new Color(255, 255, 255));
         addButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent arg0) {
@@ -88,10 +92,12 @@ public class PersonGui extends JFrame {
 
             }
         });
-        addButton.setBounds(24, 619, 89, 23);
+        addButton.setBounds(24, 593, 89, 23);
         contentPane.add(addButton);
 
         JButton deteleButton = new JButton("Delete");
+        deteleButton.setBackground(new Color(2, 52, 68));
+        deteleButton.setForeground(new Color(255, 255, 255));
         deteleButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -101,10 +107,12 @@ public class PersonGui extends JFrame {
 
             }
         });
-        deteleButton.setBounds(123, 619, 89, 23);
+        deteleButton.setBounds(123, 593, 89, 23);
         contentPane.add(deteleButton);
 
         JButton updateButton = new JButton("Update");
+        updateButton.setBackground(new Color(2, 52, 68));
+        updateButton.setForeground(new Color(255, 255, 255));
         updateButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -113,67 +121,95 @@ public class PersonGui extends JFrame {
                 fillTable(persontable);
             }
         });
-        updateButton.setBounds(222, 619, 89, 23);
+        updateButton.setBounds(222, 593, 89, 23);
         contentPane.add(updateButton);
 
         JLabel lblCompanyId = new JLabel("ID");
-        lblCompanyId.setBounds(10, 32, 103, 14);
+        lblCompanyId.setForeground(new Color(255, 255, 255));
+        lblCompanyId.setBounds(10, 225, 103, 14);
         contentPane.add(lblCompanyId);
 
         JLabel lblName = new JLabel("First Name");
-        lblName.setBounds(10, 80, 46, 14);
+        lblName.setForeground(new Color(255, 255, 255));
+        lblName.setBounds(10, 259, 103, 14);
         contentPane.add(lblName);
 
         JLabel lblPhoneNumber = new JLabel("Last Name");
-        lblPhoneNumber.setBounds(10, 158, 46, 14);
+        lblPhoneNumber.setForeground(new Color(255, 255, 255));
+        lblPhoneNumber.setBounds(10, 293, 103, 14);
         contentPane.add(lblPhoneNumber);
 
         JLabel lblEmail = new JLabel("CNP");
-        lblEmail.setBounds(10, 218, 46, 14);
+        lblEmail.setForeground(new Color(255, 255, 255));
+        lblEmail.setBounds(10, 327, 103, 14);
         contentPane.add(lblEmail);
 
         JLabel lblCompanyType = new JLabel("Adress");
-        lblCompanyType.setBounds(10, 285, 46, 14);
+        lblCompanyType.setForeground(new Color(255, 255, 255));
+        lblCompanyType.setBounds(10, 361, 103, 14);
         contentPane.add(lblCompanyType);
 
         JLabel lblAdress = new JLabel("Phone Number");
-        lblAdress.setBounds(10, 348, 46, 14);
+        lblAdress.setForeground(new Color(255, 255, 255));
+        lblAdress.setBounds(10, 395, 103, 14);
         contentPane.add(lblAdress);
 
         JLabel lblNewLabel = new JLabel("City");
-        lblNewLabel.setBounds(10, 418, 46, 14);
+        lblNewLabel.setForeground(new Color(255, 255, 255));
+        lblNewLabel.setBounds(10, 421, 103, 14);
         contentPane.add(lblNewLabel);
 
         JLabel lblPosition = new JLabel("Position");
-        lblPosition.setBounds(10, 475, 46, 14);
+        lblPosition.setForeground(new Color(255, 255, 255));
+        lblPosition.setBounds(10, 451, 103, 14);
         contentPane.add(lblPosition);
 
         JLabel lblWage = new JLabel("Wage");
-        lblWage.setBounds(10, 530, 46, 14);
+        lblWage.setForeground(new Color(255, 255, 255));
+        lblWage.setBounds(10, 483, 103, 14);
         contentPane.add(lblWage);
 
         cityTextField = new JTextField();
-        cityTextField.setBounds(143, 404, 145, 28);
+        cityTextField.setBounds(143, 417, 145, 23);
         contentPane.add(cityTextField);
         cityTextField.setColumns(10);
 
         positionTextField = new JTextField();
         positionTextField.setColumns(10);
-        positionTextField.setBounds(143, 472, 145, 28);
+        positionTextField.setBounds(143, 448, 145, 23);
         contentPane.add(positionTextField);
 
         wageTextField = new JTextField();
         wageTextField.setColumns(10);
-        wageTextField.setBounds(143, 523, 145, 28);
+        wageTextField.setBounds(143, 476, 145, 23);
         contentPane.add(wageTextField);
         
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(323, 0, 663, 643);
+        scrollPane.setBounds(323, 0, 717, 670);
         contentPane.add(scrollPane);
         
                 table = new JTable();
                 scrollPane.setViewportView(table);
                 table.setModel(persontable);
+                
+                JButton btnBack = new JButton("Back");
+                btnBack.addMouseListener(new MouseAdapter() {
+                	@Override
+                	public void mouseClicked(MouseEvent e) {
+                		 dispose();
+                         Menu menu = new Menu();
+                         menu.setVisible(true);
+                	}
+                });
+                btnBack.setForeground(new Color(255, 255, 255));
+                btnBack.setBackground(new Color(2, 52, 68));
+                btnBack.setBounds(24, 647, 89, 23);
+                contentPane.add(btnBack);
+                
+                JLabel label = new JLabel("");
+                label.setIcon(new ImageIcon("photos\\manageperson.png"));
+                label.setBounds(10, 41, 369, 140);
+                contentPane.add(label);
     }
 
 
