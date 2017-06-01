@@ -56,7 +56,7 @@ public class ManageProductOrderGui extends JFrame {
 	        fillTable(productOrdertable);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(452, 0, 595, 502);
+		scrollPane.setBounds(452, 0, 605, 502);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
