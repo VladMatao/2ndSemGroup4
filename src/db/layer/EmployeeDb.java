@@ -15,10 +15,10 @@ import java.sql.SQLException;
 public class EmployeeDb implements EmployeeDbIf {
 
     @Override
-    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) throws SQLException {
+    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psEmployeeCreation = conn.prepareStatement("INSERT INTO Employee (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage,Department) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+            PreparedStatement psEmployeeCreation = conn.prepareStatement("INSERT INTO Employee (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             psEmployeeCreation.setString(1, id);
             psEmployeeCreation.setString(2, f_name);
             psEmployeeCreation.setString(3, l_name);
@@ -28,7 +28,6 @@ public class EmployeeDb implements EmployeeDbIf {
             psEmployeeCreation.setString(7, city);
             psEmployeeCreation.setString(8, position);
             psEmployeeCreation.setDouble(9, wage);
-            psEmployeeCreation.setString(10, department);
             psEmployeeCreation.executeUpdate();
         } catch (Exception e) {
             System.err.println("Got an exception in EmployeeDb.create()!");
@@ -42,7 +41,7 @@ public class EmployeeDb implements EmployeeDbIf {
     public boolean update(Employee employee, String personId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttmEmployee = conn.prepareStatement("UPDATE Employee SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ?, Department=?  WHERE PersonID = ?");
+            PreparedStatement psttmEmployee = conn.prepareStatement("UPDATE Employee SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ? WHERE PersonID = ?");
             psttmEmployee.setString(1, employee.getF_name());
             psttmEmployee.setString(2, employee.getL_name());
             psttmEmployee.setInt(3, employee.getCNP());
@@ -51,7 +50,6 @@ public class EmployeeDb implements EmployeeDbIf {
             psttmEmployee.setString(6, employee.getCity());
             psttmEmployee.setString(7, employee.getposition());
             psttmEmployee.setDouble(8, employee.getWage());
-            psttmEmployee.setString(8, employee.getDepartment());
             psttmEmployee.setString(9, personId);
 
         } catch (SQLException e) {
@@ -107,9 +105,8 @@ public class EmployeeDb implements EmployeeDbIf {
             String city = rs.getString(7);
             String position = rs.getString(8);
             double wage = rs.getDouble(9);
-            String department = rs.getString(10);
 
-            employee = new Employee(id, f_name, l_name, CNP, address, phNr, city, position, wage, department);
+            employee = new Employee(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;

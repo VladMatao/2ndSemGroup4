@@ -17,9 +17,9 @@ public class ManageEmployee {
         employeeDb = new EmployeeDb();
     }
 
-    public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) {
+    public boolean createEmployee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         try {
-            employeeDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage, department);
+            employeeDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
         } catch (SQLException e) {
             e.printStackTrace();
         }

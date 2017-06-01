@@ -13,9 +13,8 @@ public class Employee {
     private String city;
     private String position;
     private double wage;
-    private String department;
 
-    public Employee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage, String department) {
+    public Employee(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         this.id = id;
         this.f_name = f_name;
         this.l_name = l_name;
@@ -25,7 +24,6 @@ public class Employee {
         this.city = city;
         this.position = position;
         this.wage = wage;
-        this.department = department;
     }
 
     public String getId() {
@@ -100,11 +98,4 @@ public class Employee {
         this.wage = wage;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
 }
