@@ -26,7 +26,7 @@ public class ChoseOrderGui extends JFrame {
         JButton supplierOrderButton = new JButton("Supplier Order");
         supplierOrderButton.setForeground(new Color(255, 255, 255));
         supplierOrderButton.setBackground(new Color(2, 52, 68));
-        supplierOrderButton.setBounds(248, 147, 109, 23);
+        supplierOrderButton.setBounds(248, 147, 140, 23);
         contentPane.add(supplierOrderButton);
         
         JButton btnProductOrders = new JButton("Product Orders");
@@ -40,7 +40,7 @@ public class ChoseOrderGui extends JFrame {
         		manageProductOrderGui.setVisible(true);
         	}
         });
-        btnProductOrders.setBounds(67, 147, 109, 23);
+        btnProductOrders.setBounds(36, 147, 140, 23);
         contentPane.add(btnProductOrders);
         
         JLabel label = new JLabel("");
