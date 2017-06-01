@@ -22,13 +22,13 @@ public class PersonDbTest {
 
     @Test
     public void testA_create() throws Exception {
-        personDb.create("1", "gica", "ionnel", 197123, "strada", "9123", "Vaslui", "Person", 22.5, "Vidanjor");
+        personDb.create("1", "gica", "ionnel", 197123, "strada", "9123", "Vaslui", "Person", 22.5);
         assertNotNull(personDb.read("1"));
     }
 
     @Test
     public void testB_update() throws Exception {
-        Person person = new Person("1", "update", "update", 111, "vej", "123", "Rahat", "Rahat", 33.4, "mare");
+        Person person = new Person("1", "update", "update", 111, "vej", "123", "Rahat", "Rahat", 33.4);
         assertNotNull(personDb.read("1"));
         personDb.update(person, "1");
         assertEquals("update", personDb.read("1").getF_name());
