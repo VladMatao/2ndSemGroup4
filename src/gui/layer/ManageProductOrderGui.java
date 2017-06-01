@@ -107,7 +107,7 @@ public class ManageProductOrderGui extends JFrame {
 		
 		JLabel lblProductLineId = new JLabel("Product Line ID");
 		lblProductLineId.setForeground(new Color(255, 255, 255));
-		lblProductLineId.setBounds(102, 325, 80, 14);
+		lblProductLineId.setBounds(102, 325, 100, 14);
 		contentPane.add(lblProductLineId);
 		
 		ProductLineIDtextField = new JTextField();
