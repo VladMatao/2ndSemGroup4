@@ -2,6 +2,10 @@ package gui.layer;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ChoseOrderGui extends JFrame {
 
@@ -16,13 +20,21 @@ public class ChoseOrderGui extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JButton productOrderButton = new JButton("Product Orders");
-        productOrderButton.setBounds(77, 119, 109, 23);
-        contentPane.add(productOrderButton);
-
         JButton supplierOrderButton = new JButton("Supplier Order");
         supplierOrderButton.setBounds(230, 119, 109, 23);
         contentPane.add(supplierOrderButton);
+        
+        JButton btnProductOrders = new JButton("Product Orders");
+        btnProductOrders.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		dispose();
+        		ManageProductOrderGui manageProductOrderGui= new ManageProductOrderGui();
+        		manageProductOrderGui.setVisible(true);
+        	}
+        });
+        btnProductOrders.setBounds(66, 119, 89, 23);
+        contentPane.add(btnProductOrders);
     }
 
 }

@@ -1,5 +1,6 @@
 package db.layer;
 
+import model.layer.Company;
 import model.layer.ProductOrder;
 
 import java.sql.Connection;
@@ -116,7 +117,6 @@ public class ProductOrderDb implements ProductOrderDbIf {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
             String sqlO = "SELECT * FROM Orders";
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
-
             String sqlPO = "SELECT * FROM ProductOrder";
             ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
             while (rsO.next() && rsPO.next()) {
@@ -128,7 +128,7 @@ public class ProductOrderDb implements ProductOrderDbIf {
         }
         return productOrders;
     }
-
+    
 
     private static ProductOrder buildObject(ResultSet rsO, ResultSet rsPO) throws SQLException {
         ProductOrder productOrder;
@@ -138,8 +138,8 @@ public class ProductOrderDb implements ProductOrderDbIf {
             String orderStatus = rsO.getString(3);
             double totalPrice = rsO.getDouble(2);
             String companyId = rsO.getString(5);
-            String productLineId = rsPO.getString(2);
-            double totalProductionTime = rsPO.getDouble(3);
+            String productLineId = rsPO.getString(6);
+            double totalProductionTime = rsPO.getDouble(7);
             productOrder = new ProductOrder(id, deliveryDate, orderStatus, totalPrice, companyId, totalProductionTime, productLineId);
         } catch (SQLException e) {
             e.printStackTrace();
