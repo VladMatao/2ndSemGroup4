@@ -17,6 +17,7 @@ public class RawMaterialsGui extends JFrame {
     private JTable table_1;
     private JTextField nameTextField;
     private JTextField barcodeTextField;
+    private JTextField stockTf;
 
 
     /**
@@ -36,7 +37,7 @@ public class RawMaterialsGui extends JFrame {
                 new Object[][]{
                 },
                 new String[]{
-                        "Barcode", "Name"
+                        "Barcode", "Name", "Stock"
                 });
         fillTable(rawMaterialtable);
 
@@ -57,10 +58,8 @@ public class RawMaterialsGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent arg0) {
                 ManageRawMaterial rawMaterial = new ManageRawMaterial();
-                rawMaterial.create(barcodeTextField.getText(), nameTextField.getText());
+                rawMaterial.create(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()));
                 fillTable(rawMaterialtable);
-
-
             }
         });
         addButton.setBounds(32, 422, 89, 23);
@@ -75,7 +74,6 @@ public class RawMaterialsGui extends JFrame {
                 ManageRawMaterial rawMaterial = new ManageRawMaterial();
                 rawMaterial.delete(barcodeTextField.getText());
                 fillTable(rawMaterialtable);
-
             }
         });
         deteleButton.setBounds(131, 422, 89, 23);
@@ -88,7 +86,7 @@ public class RawMaterialsGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 ManageRawMaterial rawMaterial = new ManageRawMaterial();
-                rawMaterial.update(barcodeTextField.getText(), nameTextField.getText());
+                rawMaterial.update(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()));
                 fillTable(rawMaterialtable);
             }
         });
@@ -132,20 +130,29 @@ public class RawMaterialsGui extends JFrame {
         btnNewButton.setBackground(new Color(2, 52, 68));
         btnNewButton.setBounds(32, 388, 46, 23);
         contentPane.add(btnNewButton);
+        
+        stockTf = new JTextField();
+        stockTf.setBounds(87, 106, 148, 31);
+        contentPane.add(stockTf);
+        stockTf.setColumns(10);
+        
+        JLabel lblStock = new JLabel("Stock:");
+        lblStock.setBounds(10, 114, 46, 14);
+        contentPane.add(lblStock);
     }
 
 
     private void fillTable(DefaultTableModel model) {
         model.setRowCount(0);
         ManageRawMaterial rawMaterialCtr = new ManageRawMaterial();
-        ArrayList<RawMaterial> rawMaterial = rawMaterialCtr.readAll();
-        if (!rawMaterial.isEmpty()) {
-            for (RawMaterial rawMaterials : rawMaterial) {
-                String barcode = rawMaterials.getBarcode();
-                String name = rawMaterials.getName();
-                model.addRow(new Object[]{barcode, name});
+        ArrayList<RawMaterial> rawMaterials = rawMaterialCtr.readAll();
+        if (!rawMaterials.isEmpty()) {
+            for (RawMaterial rawMaterial : rawMaterials) {
+                String barcode = rawMaterial.getBarcode();
+                String name = rawMaterial.getName();
+                Double stock = rawMaterial.getStock();
+                model.addRow(new Object[]{barcode, name, stock});
             }
-
         } else {
             model.addRow(new Object[]{"NO", "RawMaterials", "FOUND", "!", 0});
         }

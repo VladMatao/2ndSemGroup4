@@ -759,7 +759,7 @@
     </database>
     <schema id="253" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2017-05-28.13:56:24.970</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-06-01.11:44:29.027</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -842,7 +842,7 @@
     <table id="274" parent="253" name="RawMaterial">
       <ObjectId>885578193</ObjectId>
       <CreatedTimestamp>2017-05-10.14:31:19.310</CreatedTimestamp>
-      <ModifiedTimestamp>2017-05-23.11:08:58.527</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-06-01.11:44:26.483</ModifiedTimestamp>
     </table>
     <table id="275" parent="253" name="RawMaterialLine">
       <ObjectId>1029578706</ObjectId>
@@ -1226,14 +1226,18 @@
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="343" parent="274" name="PK__RawMater__177800D2A499F903">
+    <column id="343" parent="274" name="Stock">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <index id="344" parent="274" name="PK__RawMater__177800D2A499F903">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Barcode</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="344" parent="274" name="PK__RawMater__177800D2A499F903">
+    <key id="345" parent="274" name="PK__RawMater__177800D2A499F903">
       <ObjectId>901578250</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-10.14:31:19.323</CreatedTimestamp>
@@ -1242,28 +1246,28 @@
       <UnderlyingIndexName>PK__RawMater__177800D2A499F903</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="345" parent="275" name="RawMaterialLineID">
+    <column id="346" parent="275" name="RawMaterialLineID">
       <Position>1</Position>
       <DataType>varchar(5)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="346" parent="275" name="Quantity">
+    <column id="347" parent="275" name="Quantity">
       <Position>2</Position>
       <DataType>float|0</DataType>
     </column>
-    <column id="347" parent="275" name="RawBarcode">
+    <column id="348" parent="275" name="RawBarcode">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="348" parent="275" name="PK__RawMLine__3214EC270C4E0A7F">
+    <index id="349" parent="275" name="PK__RawMLine__3214EC270C4E0A7F">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RawMaterialLineID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="349" parent="275" name="PK__RawMLine__3214EC270C4E0A7F">
+    <key id="350" parent="275" name="PK__RawMLine__3214EC270C4E0A7F">
       <ObjectId>1045578763</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-10.14:39:06.760</CreatedTimestamp>
@@ -1272,7 +1276,7 @@
       <UnderlyingIndexName>PK__RawMLine__3214EC270C4E0A7F</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="350" parent="275" name="FK__RawMLine__RawBar__3F466844">
+    <foreign-key id="351" parent="275" name="FK__RawMLine__RawBar__3F466844">
       <ObjectId>1061578820</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-10.14:39:06.760</CreatedTimestamp>
@@ -1282,24 +1286,24 @@
       <RefKeyName>PK__RawMater__177800D2A499F903</RefKeyName>
       <RefColNames>Barcode</RefColNames>
     </foreign-key>
-    <column id="351" parent="276" name="RawMaterialOrderID">
+    <column id="352" parent="276" name="RawMaterialOrderID">
       <Position>1</Position>
       <DataType>varchar(5)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="276" name="RawMaterialLineID">
+    <column id="353" parent="276" name="RawMaterialLineID">
       <Position>3</Position>
       <DataType>varchar(5)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="353" parent="276" name="PK__RawMOrde__3935AC0B70835EC9">
+    <index id="354" parent="276" name="PK__RawMOrde__3935AC0B70835EC9">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RawMaterialOrderID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="354" parent="276" name="PK__RawMOrde__3935AC0B70835EC9">
+    <key id="355" parent="276" name="PK__RawMOrde__3935AC0B70835EC9">
       <ObjectId>933578364</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-10.14:35:46.470</CreatedTimestamp>
@@ -1308,7 +1312,7 @@
       <UnderlyingIndexName>PK__RawMOrde__3935AC0B70835EC9</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="355" parent="276" name="RawMaterialLineID___fk">
+    <foreign-key id="356" parent="276" name="RawMaterialLineID___fk">
       <ObjectId>610101214</ObjectId>
       <CreatedTimestamp>2017-05-21.13:08:29.210</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-21.13:08:29.210</ModifiedTimestamp>
@@ -1317,19 +1321,19 @@
       <RefKeyName>PK__RawMLine__3214EC270C4E0A7F</RefKeyName>
       <RefColNames>RawMaterialLineID</RefColNames>
     </foreign-key>
-    <column id="356" parent="277" name="ID">
+    <column id="357" parent="277" name="ID">
       <Position>1</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="357" parent="277" name="RawMaterialBarcode">
+    <column id="358" parent="277" name="RawMaterialBarcode">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="358" parent="277" name="Quantity">
+    <column id="359" parent="277" name="Quantity">
       <Position>3</Position>
       <DataType>float|0</DataType>
     </column>
-    <foreign-key id="359" parent="277" name="BarcodeRawMaterial___fk">
+    <foreign-key id="360" parent="277" name="BarcodeRawMaterial___fk">
       <ObjectId>834102012</ObjectId>
       <CreatedTimestamp>2017-05-23.11:08:58.523</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-23.11:08:58.523</ModifiedTimestamp>
@@ -1338,19 +1342,19 @@
       <RefKeyName>PK__RawMater__177800D2A499F903</RefKeyName>
       <RefColNames>Barcode</RefColNames>
     </foreign-key>
-    <column id="360" parent="278" name="ProductBarcode">
+    <column id="361" parent="278" name="ProductBarcode">
       <Position>1</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="361" parent="278" name="Revenue">
+    <column id="362" parent="278" name="Revenue">
       <Position>2</Position>
       <DataType>float|0</DataType>
     </column>
-    <column id="362" parent="278" name="Quantity">
+    <column id="363" parent="278" name="Quantity">
       <Position>3</Position>
       <DataType>int|0</DataType>
     </column>
-    <foreign-key id="363" parent="278" name="FK__Statistic__Produ__1CF15040">
+    <foreign-key id="364" parent="278" name="FK__Statistic__Produ__1CF15040">
       <ObjectId>629577281</ObjectId>
       <CreatedTimestamp>2017-05-09.13:07:58.907</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-09.13:07:58.907</ModifiedTimestamp>
@@ -1359,44 +1363,44 @@
       <RefKeyName>PK__Product__177800D2AEFA1794</RefKeyName>
       <RefColNames>Barcode</RefColNames>
     </foreign-key>
-    <column id="364" parent="279" name="name">
+    <column id="365" parent="279" name="name">
       <Position>1</Position>
       <DataType>sysname|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="365" parent="279" name="principal_id">
+    <column id="366" parent="279" name="principal_id">
       <Position>2</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="366" parent="279" name="diagram_id">
+    <column id="367" parent="279" name="diagram_id">
       <Position>3</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="367" parent="279" name="version">
+    <column id="368" parent="279" name="version">
       <Position>4</Position>
       <DataType>int|0</DataType>
     </column>
-    <column id="368" parent="279" name="definition">
+    <column id="369" parent="279" name="definition">
       <Position>5</Position>
       <DataType>varbinary|0</DataType>
     </column>
-    <index id="369" parent="279" name="PK__sysdiagr__C2B05B6120B4BBFE">
+    <index id="370" parent="279" name="PK__sysdiagr__C2B05B6120B4BBFE">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>diagram_id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <index id="370" parent="279" name="UK_principal_name">
+    <index id="371" parent="279" name="UK_principal_name">
       <Position>2</Position>
       <ColNames>principal_id
 name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="371" parent="279" name="PK__sysdiagr__C2B05B6120B4BBFE">
+    <key id="372" parent="279" name="PK__sysdiagr__C2B05B6120B4BBFE">
       <ObjectId>1253579504</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-05-12.13:05:00.307</CreatedTimestamp>
@@ -1405,7 +1409,7 @@ name</ColNames>
       <UnderlyingIndexName>PK__sysdiagr__C2B05B6120B4BBFE</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="372" parent="279" name="UK_principal_name">
+    <key id="373" parent="279" name="UK_principal_name">
       <ObjectId>1269579561</ObjectId>
       <CreatedTimestamp>2017-05-12.13:05:00.307</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-12.13:05:00.307</ModifiedTimestamp>
@@ -1413,59 +1417,59 @@ name</ColNames>
 name</ColNames>
       <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
     </key>
-    <argument id="373" parent="280">
+    <argument id="374" parent="280">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>int|0</DataType>
     </argument>
-    <argument id="374" parent="281" name="@diagramname">
+    <argument id="375" parent="281" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="375" parent="281" name="@owner_id">
+    <argument id="376" parent="281" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="376" parent="281" name="@version">
+    <argument id="377" parent="281" name="@version">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="377" parent="281" name="@definition">
+    <argument id="378" parent="281" name="@definition">
       <DataType>varbinary|0</DataType>
     </argument>
-    <argument id="378" parent="282" name="@diagramname">
+    <argument id="379" parent="282" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="379" parent="282" name="@owner_id">
+    <argument id="380" parent="282" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="380" parent="282" name="@version">
+    <argument id="381" parent="282" name="@version">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="381" parent="282" name="@definition">
+    <argument id="382" parent="282" name="@definition">
       <DataType>varbinary|0</DataType>
     </argument>
-    <argument id="382" parent="283" name="@diagramname">
+    <argument id="383" parent="283" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="383" parent="283" name="@owner_id">
+    <argument id="384" parent="283" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="384" parent="284" name="@diagramname">
+    <argument id="385" parent="284" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="385" parent="284" name="@owner_id">
+    <argument id="386" parent="284" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="386" parent="285" name="@diagramname">
+    <argument id="387" parent="285" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="387" parent="285" name="@owner_id">
+    <argument id="388" parent="285" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="388" parent="286" name="@diagramname">
+    <argument id="389" parent="286" name="@diagramname">
       <DataType>sysname|0</DataType>
     </argument>
-    <argument id="389" parent="286" name="@owner_id">
+    <argument id="390" parent="286" name="@owner_id">
       <DataType>int|0</DataType>
     </argument>
-    <argument id="390" parent="286" name="@new_diagramname">
+    <argument id="391" parent="286" name="@new_diagramname">
       <DataType>sysname|0</DataType>
     </argument>
   </database-model>

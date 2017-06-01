@@ -99,6 +99,8 @@ public class ProductOrderGui extends JFrame {
                 ManageProductLine productLine = new ManageProductLine();
                 productLine.delete(productLineTextField.getText());
                 fillTable(productLineTable,productLineTextField.getText());
+                price.setText("0");
+                timeLabel.setText("0");
 
             }
         });
