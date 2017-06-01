@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class ProductOrderGui extends JFrame {
 
     private JFrame frame;
-    private JTable table_1;
     private JTextField quantityTextField;
     private JTextField orderIDTextField;
     private JTextField productBarcodeTextField;
@@ -22,28 +21,31 @@ public class ProductOrderGui extends JFrame {
     private JTextField deliveryDateTextField;
     private JTextField companyIDTextField;
     private JTextField productLineTextField;
-    private JLabel timeLabel;
 
 
     /**
      * Create the frame.
      */
     public ProductOrderGui() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 495);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        productLineTextField = new JTextField();
+        productLineTextField.setBounds(383, 185, 145, 20);
+        contentPane.add(productLineTextField);
+        productLineTextField.setColumns(10);
 
-        DefaultTableModel productLinetable = new DefaultTableModel(
+        DefaultTableModel productLineTable = new DefaultTableModel(
                 new Object[][]{
                 },
                 new String[]{
-                        "ID", "Quantity", "Product Barcode"
+                        "Product Barcode", "Quantity"
                 });
-        fillTable(productLinetable);
+        fillTable(productLineTable,productLineTextField.getText());
 
         JLabel price = new JLabel("0");
         price.setBounds(552, 355, 46, 14);
@@ -64,10 +66,7 @@ public class ProductOrderGui extends JFrame {
         orderIDTextField.setBounds(143, 24, 145, 31);
         contentPane.add(orderIDTextField);
 
-        productLineTextField = new JTextField();
-        productLineTextField.setBounds(383, 185, 145, 20);
-        contentPane.add(productLineTextField);
-        productLineTextField.setColumns(10);
+
 
         productBarcodeTextField = new JTextField();
         productBarcodeTextField.setColumns(10);
@@ -87,24 +86,24 @@ public class ProductOrderGui extends JFrame {
                 double time = Double.parseDouble(timeLabel.getText());
                 time = time + order.calculateTime(productBarcodeTextField.getText(), Integer.parseInt(quantityTextField.getText()));
                 timeLabel.setText("" + time);
-                fillTable(productLinetable);
+                fillTable(productLineTable,productLineTextField.getText());
             }
         });
         addButton.setBounds(383, 230, 89, 23);
         contentPane.add(addButton);
 
-        JButton deteleButton = new JButton("Delete");
-        deteleButton.addMouseListener(new MouseAdapter() {
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 ManageProductLine productLine = new ManageProductLine();
                 productLine.delete(productLineTextField.getText());
-                fillTable(productLinetable);
+                fillTable(productLineTable,productLineTextField.getText());
 
             }
         });
-        deteleButton.setBounds(482, 230, 89, 23);
-        contentPane.add(deteleButton);
+        deleteButton.setBounds(482, 230, 89, 23);
+        contentPane.add(deleteButton);
 
         JButton updateButton = new JButton("Update");
         updateButton.addMouseListener(new MouseAdapter() {
@@ -112,7 +111,7 @@ public class ProductOrderGui extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 ManageProductLine company = new ManageProductLine();
                 company.update(productLineTextField.getText(), Double.parseDouble(quantityTextField.getText()), productBarcodeTextField.getText());
-                fillTable(productLinetable);
+                fillTable(productLineTable,productLineTextField.getText());
             }
         });
         updateButton.setBounds(581, 230, 89, 23);
@@ -157,9 +156,9 @@ public class ProductOrderGui extends JFrame {
         contentPane.add(companyIDTextField);
         companyIDTextField.setColumns(10);
 
-        JLabel lblProductlineid = new JLabel("ProductLineID");
-        lblProductlineid.setBounds(415, 161, 113, 14);
-        contentPane.add(lblProductlineid);
+        JLabel lblProductlineId = new JLabel("ProductLineID");
+        lblProductlineId.setBounds(415, 161, 113, 14);
+        contentPane.add(lblProductlineId);
 
         JLabel lblTotalTime = new JLabel("Total time");
         lblTotalTime.setBounds(392, 312, 80, 14);
@@ -175,7 +174,7 @@ public class ProductOrderGui extends JFrame {
 
         JTable table = new JTable();
         scrollPane.setViewportView(table);
-        table.setModel(productLinetable);
+        table.setModel(productLineTable);
 
         JButton finalizeButton = new JButton("Finalize");
         finalizeButton.addMouseListener(new MouseAdapter() {
@@ -193,20 +192,20 @@ public class ProductOrderGui extends JFrame {
     }
 
 
-    private void fillTable(DefaultTableModel model) {
+    private void fillTable(DefaultTableModel model, String productLineID) {
         model.setRowCount(0);
         ManageProductLine productLineCtr = new ManageProductLine();
-        ArrayList<ProductLine> productLine = productLineCtr.readAll();
-        if (!productLine.isEmpty()) {
-            for (ProductLine productLines : productLine) {
-                String productLineID = productLines.getproductLineId();
-                double quantity = productLines.getQuantity();
-                String productOrderID = productLines.getProductBarcode();
-                model.addRow(new Object[]{productLineID, quantity, productOrderID});
-            }
-
+        ArrayList<ProductLine> productLines = productLineCtr.readAll();
+        if (productLines.isEmpty()) {
+            model.addRow(new Object[]{"Product Lines", "FOUND"});
         } else {
-            model.addRow(new Object[]{"NO", "Product Lines", "FOUND", "!", 0});
+            for (ProductLine productLine : productLines)
+                if (productLine.getproductLineId().equals(productLineID)) {
+                    double quantity = productLine.getQuantity();
+                    String productBarcode = productLine.getProductBarcode();
+                    model.addRow(new Object[]{productBarcode, quantity});
+                }
+
         }
     }
 }
