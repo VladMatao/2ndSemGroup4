@@ -1,6 +1,7 @@
 package gui.layer;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -22,6 +23,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class ManageProductOrderGui extends JFrame {
 
@@ -33,11 +35,14 @@ public class ManageProductOrderGui extends JFrame {
 	private JTextField companyIDtextField;
 	private JTextField ProductLineIDtextField;
 	private JButton btnCreateNewOrder;
+	private JButton btnNewButton;
+	private JLabel label;
 
 	public ManageProductOrderGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1017, 541);
+		setBounds(100, 100, 1073, 541);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -51,70 +56,80 @@ public class ManageProductOrderGui extends JFrame {
 	        fillTable(productOrdertable);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(452, 0, 539, 502);
+		scrollPane.setBounds(452, 0, 605, 502);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
 		table.setModel(productOrdertable);
 		
 		
 		JLabel lblNewLabel = new JLabel("OrderID");
-		lblNewLabel.setBounds(10, 23, 46, 14);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(102, 205, 80, 14);
 		contentPane.add(lblNewLabel);
 		
 		orderIDTextField = new JTextField();
-		orderIDTextField.setBounds(120, 20, 86, 20);
+		orderIDTextField.setBounds(212, 202, 136, 20);
 		contentPane.add(orderIDTextField);
 		orderIDTextField.setColumns(10);
 		
 		JLabel lblOrderStatus = new JLabel("Order Status");
-		lblOrderStatus.setBounds(10, 55, 46, 14);
+		lblOrderStatus.setForeground(new Color(255, 255, 255));
+		lblOrderStatus.setBounds(102, 235, 80, 14);
 		contentPane.add(lblOrderStatus);
 		
 		orderStatustextField = new JTextField();
-		orderStatustextField.setBounds(120, 52, 86, 20);
+		orderStatustextField.setBounds(212, 232, 136, 20);
 		contentPane.add(orderStatustextField);
 		orderStatustextField.setColumns(10);
 		
 		JLabel lblDeliveryDate = new JLabel("Delivery Date");
-		lblDeliveryDate.setBounds(10, 99, 46, 14);
+		lblDeliveryDate.setForeground(new Color(255, 255, 255));
+		lblDeliveryDate.setBounds(102, 263, 80, 14);
 		contentPane.add(lblDeliveryDate);
 		
 		deliveryDatetextField = new JTextField();
-		deliveryDatetextField.setBounds(120, 96, 86, 20);
+		deliveryDatetextField.setBounds(212, 260, 136, 20);
 		contentPane.add(deliveryDatetextField);
 		deliveryDatetextField.setColumns(10);
 		
 		companyIDtextField = new JTextField();
-		companyIDtextField.setBounds(120, 146, 86, 20);
+		companyIDtextField.setBounds(212, 291, 136, 20);
 		contentPane.add(companyIDtextField);
 		companyIDtextField.setColumns(10);
 		
 		JLabel lblCompanyid = new JLabel("CompanyID");
-		lblCompanyid.setBounds(10, 149, 46, 14);
+		lblCompanyid.setForeground(new Color(255, 255, 255));
+		lblCompanyid.setBounds(102, 294, 80, 14);
 		contentPane.add(lblCompanyid);
 		
 		JLabel lblProductLineId = new JLabel("Product Line ID");
-		lblProductLineId.setBounds(10, 189, 46, 14);
+		lblProductLineId.setForeground(new Color(255, 255, 255));
+		lblProductLineId.setBounds(102, 325, 100, 14);
 		contentPane.add(lblProductLineId);
 		
 		ProductLineIDtextField = new JTextField();
-		ProductLineIDtextField.setBounds(120, 186, 86, 20);
+		ProductLineIDtextField.setBounds(212, 322, 136, 20);
 		contentPane.add(ProductLineIDtextField);
 		ProductLineIDtextField.setColumns(10);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.setBackground(new Color(2, 52, 68));
+		btnDelete.setForeground(new Color(255, 255, 255));
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DeleteProductOrder deleteProductOrder = new DeleteProductOrder();
                 deleteProductOrder.delete(orderIDTextField.getText());
 			}
 		});
-		btnDelete.setBounds(10, 271, 89, 23);
+		btnDelete.setBounds(75, 468, 123, 23);
 		contentPane.add(btnDelete);
 		
 		btnCreateNewOrder = new JButton("Create new order");
+		btnCreateNewOrder.setBackground(new Color(2, 52, 68));
+		btnCreateNewOrder.setForeground(new Color(255, 255, 255));
 		btnCreateNewOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -122,8 +137,19 @@ public class ManageProductOrderGui extends JFrame {
                 productOrderGui.setVisible(true);
 			}
 		});
-		btnCreateNewOrder.setBounds(117, 271, 123, 23);
+		btnCreateNewOrder.setBounds(225, 468, 123, 23);
 		contentPane.add(btnCreateNewOrder);
+		
+		btnNewButton = new JButton("<");
+		btnNewButton.setBackground(new Color(2, 52, 68));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBounds(10, 468, 46, 23);
+		contentPane.add(btnNewButton);
+		
+		label = new JLabel("");
+		label.setIcon(new ImageIcon("photos\\productorders.png"));
+		label.setBounds(20, 37, 488, 114);
+		contentPane.add(label);
 		
 
 	}
