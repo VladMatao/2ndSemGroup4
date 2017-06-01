@@ -45,8 +45,22 @@ public class ChoseOrderGui extends JFrame {
         
         JLabel label = new JLabel("");
         label.setIcon(new ImageIcon("photos\\chooseordertype.png"));
-        label.setBounds(10, 27, 410, 101);
+        label.setBounds(10, 35, 410, 101);
         contentPane.add(label);
+        
+        JButton button = new JButton("<");
+        button.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		 dispose();
+                 Menu menu = new Menu();
+                 menu.setVisible(true);
+        	}
+        });
+        button.setForeground(new Color(255, 255, 255));
+        button.setBackground(new Color(2, 52, 68));
+        button.setBounds(197, 213, 41, 23);
+        contentPane.add(button);
     }
 
 }
