@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import control.layer.DeleteOrder;
-import control.layer.ReadProductOrder;
+import control.layer.ReadOrder;
 import control.layer.UpdateOrder;
 import model.layer.ProductOrder;
 
@@ -155,8 +155,8 @@ public class ManageProductOrderGui extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				UpdateOrder productOrder = new UpdateOrder();
-				ReadProductOrder readProductOrder= new ReadProductOrder();
-				productOrder.updateProductOrder(orderIDTextField.getText(), readProductOrder.read(orderIDTextField.getText()).getTotalPrice(), orderStatustextField.getText(), deliveryDatetextField.getText(), readProductOrder.read(orderIDTextField.getText()).getCompanyId(), readProductOrder.read(orderIDTextField.getText()).getProductLineId(),readProductOrder.read(orderIDTextField.getText()).getTotalProductionTime());
+				ReadOrder readOrder = new ReadOrder();
+				productOrder.updateProductOrder(orderIDTextField.getText(), readOrder.readProductOrder(orderIDTextField.getText()).getTotalPrice(), orderStatustextField.getText(), deliveryDatetextField.getText(), readOrder.readProductOrder(orderIDTextField.getText()).getCompanyId(), readOrder.readProductOrder(orderIDTextField.getText()).getProductLineId(), readOrder.readProductOrder(orderIDTextField.getText()).getTotalProductionTime());
 				fillTable(productOrdertable);
 			}
 		});
@@ -171,8 +171,8 @@ public class ManageProductOrderGui extends JFrame {
 
     private void fillTable(DefaultTableModel model) {
         model.setRowCount(0);
-        ReadProductOrder productOrderCtr = new ReadProductOrder();
-        ArrayList<ProductOrder> productOrders = productOrderCtr.readAll();
+        ReadOrder productOrderCtr = new ReadOrder();
+        ArrayList<ProductOrder> productOrders = productOrderCtr.readAllProductOrders();
         if (!productOrders.isEmpty()) {
             for (ProductOrder productOrder : productOrders) {
                 String orderID = productOrder.getId();

@@ -2,7 +2,7 @@ package gui.layer;
 
 import control.layer.DeleteOrder;
 import control.layer.ManageProductLine;
-import control.layer.ReadProductOrder;
+import control.layer.ReadOrder;
 import model.layer.ProductLine;
 
 import javax.swing.*;
@@ -41,8 +41,8 @@ public class InvoiceGui extends JFrame {
                 new String[]{
                         "ProductBarcode", "Quantity"
                 });
-        ReadProductOrder readProductOrder = new ReadProductOrder();
-        fillTable(invoicetable, readProductOrder.read(orderID).getProductLineId());
+        ReadOrder readOrder = new ReadOrder();
+        fillTable(invoicetable, readOrder.readProductOrder(orderID).getProductLineId());
 
 
         JLabel lblOrderid = new JLabel("OrderID:");
@@ -59,7 +59,7 @@ public class InvoiceGui extends JFrame {
         lblOrderstatus.setForeground(new Color(255, 255, 255));
         lblOrderstatus.setBounds(119, 131, 78, 14);
         contentPane.add(lblOrderstatus);
-        lblOrderstatus.setText(readProductOrder.read(orderID).getOrderStatus());
+        lblOrderstatus.setText(readOrder.readProductOrder(orderID).getOrderStatus());
 
         JLabel lblDeliverydate = new JLabel("DeliveryDate");
         lblDeliverydate.setForeground(new Color(255, 255, 255));
@@ -70,7 +70,7 @@ public class InvoiceGui extends JFrame {
         lblDelivery.setForeground(new Color(255, 255, 255));
         lblDelivery.setBounds(119, 156, 78, 14);
         contentPane.add(lblDelivery);
-        lblDelivery.setText(readProductOrder.read(orderID).getOrderStatus());
+        lblDelivery.setText(readOrder.readProductOrder(orderID).getOrderStatus());
 
         JLabel lblCompanyid = new JLabel("CompanyID");
         lblCompanyid.setForeground(new Color(255, 255, 255));
@@ -81,7 +81,7 @@ public class InvoiceGui extends JFrame {
         lblCompanyid_1.setForeground(new Color(255, 255, 255));
         lblCompanyid_1.setBounds(119, 181, 78, 14);
         contentPane.add(lblCompanyid_1);
-        lblCompanyid_1.setText(readProductOrder.read(orderID).getCompanyId());
+        lblCompanyid_1.setText(readOrder.readProductOrder(orderID).getCompanyId());
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(313, 0, 330, 439);
@@ -101,7 +101,7 @@ public class InvoiceGui extends JFrame {
         lblTime.setForeground(new Color(255, 255, 255));
         lblTime.setBounds(119, 230, 78, 14);
         contentPane.add(lblTime);
-        lblTime.setText("" + readProductOrder.read(orderID).getTotalProductionTime());
+        lblTime.setText("" + readOrder.readProductOrder(orderID).getTotalProductionTime());
 
         JLabel lblTotalPrice = new JLabel("Total Price");
         lblTotalPrice.setForeground(new Color(255, 255, 255));
@@ -112,7 +112,7 @@ public class InvoiceGui extends JFrame {
         lblPrice.setForeground(new Color(255, 255, 255));
         lblPrice.setBounds(119, 269, 78, 14);
         contentPane.add(lblPrice);
-        lblPrice.setText("" + readProductOrder.read(orderID).getTotalPrice());
+        lblPrice.setText("" + readOrder.readProductOrder(orderID).getTotalPrice());
 
         JButton btnBack = new JButton("Back");
         btnBack.setBackground(new Color(2, 52, 68));

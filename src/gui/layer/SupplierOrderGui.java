@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import com.sun.glass.events.MouseEvent;
 
 import control.layer.DeleteOrder;
-import control.layer.ReadRawMaterialOrder;
+import control.layer.ReadOrder;
 import control.layer.UpdateOrder;
 import model.layer.RawMaterialOrder;
 
@@ -124,8 +124,8 @@ public class SupplierOrderGui extends JFrame {
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				 UpdateOrder rawMaterialtOrder = new UpdateOrder();
-				 ReadRawMaterialOrder readRawMaterialOrder= new ReadRawMaterialOrder();
-				 rawMaterialtOrder.updateRawMaterialOrder(orderIDTextField.getText(), readRawMaterialOrder.read(orderIDTextField.getText()).getTotalPrice(), orderStatusTextField.getText(), deliveryDateTextField.getText(), readRawMaterialOrder.read(orderIDTextField.getText()).getCompanyId(), readRawMaterialOrder.read(orderIDTextField.getText()).getRawMaterialLineId());
+				 ReadOrder readRawMaterialOrder= new ReadOrder();
+				 rawMaterialtOrder.updateRawMaterialOrder(orderIDTextField.getText(), readRawMaterialOrder.readRawMaterialOrder(orderIDTextField.getText()).getTotalPrice(), orderStatusTextField.getText(), deliveryDateTextField.getText(), readRawMaterialOrder.readRawMaterialOrder(orderIDTextField.getText()).getCompanyId(), readRawMaterialOrder.readRawMaterialOrder(orderIDTextField.getText()).getRawMaterialLineId());
 	             fillTable(suppliertable);
 			}
 		});
@@ -136,8 +136,8 @@ public class SupplierOrderGui extends JFrame {
 	
 	 private void fillTable(DefaultTableModel model) {
 	        model.setRowCount(0);
-	        ReadRawMaterialOrder supplierCtr = new ReadRawMaterialOrder();
-	        ArrayList<RawMaterialOrder> rawMaterial = supplierCtr.readAll();
+	        ReadOrder supplierCtr = new ReadOrder();
+	        ArrayList<RawMaterialOrder> rawMaterial = supplierCtr.readAllRawMaterialOrders();
 	        if (!rawMaterial.isEmpty()) {
 	            for (RawMaterialOrder rawMaterials : rawMaterial) {
 					String orderID = rawMaterials.getId();
