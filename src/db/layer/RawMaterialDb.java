@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
-public class RawMaterialdDb implements RawMaterialDbIf {
+public class RawMaterialDb implements RawMaterialDbIf {
 
     @Override
     public void create(String barcode, String name, Double stock) throws SQLException {

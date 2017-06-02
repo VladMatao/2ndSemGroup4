@@ -1,18 +1,15 @@
 package gui.layer;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import control.layer.DeleteProductOrder;
-import control.layer.ManageCompany;
+import control.layer.DeleteOrder;
 import control.layer.ReadProductOrder;
-import model.layer.Company;
+import control.layer.UpdateOrder;
 import model.layer.ProductOrder;
 
 import javax.swing.JTable;
@@ -21,6 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
@@ -120,8 +119,8 @@ public class ManageProductOrderGui extends JFrame {
 		btnDelete.setForeground(new Color(255, 255, 255));
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DeleteProductOrder deleteProductOrder = new DeleteProductOrder();
-                deleteProductOrder.delete(orderIDTextField.getText());
+				DeleteOrder deleteOrder = new DeleteOrder();
+                deleteOrder.deleteProductOrder(orderIDTextField.getText());
 			}
 		});
 		btnDelete.setBounds(75, 468, 123, 23);
@@ -150,7 +149,22 @@ public class ManageProductOrderGui extends JFrame {
 		label.setIcon(new ImageIcon("photos\\productorders.png"));
 		label.setBounds(20, 37, 488, 114);
 		contentPane.add(label);
-		
+
+		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				UpdateOrder productOrder = new UpdateOrder();
+				ReadProductOrder readProductOrder= new ReadProductOrder();
+				productOrder.updateProductOrder(orderIDTextField.getText(), readProductOrder.read(orderIDTextField.getText()).getTotalPrice(), orderStatustextField.getText(), deliveryDatetextField.getText(), readProductOrder.read(orderIDTextField.getText()).getCompanyId(), readProductOrder.read(orderIDTextField.getText()).getProductLineId(),readProductOrder.read(orderIDTextField.getText()).getTotalProductionTime());
+				fillTable(productOrdertable);
+			}
+		});
+		btnUpdate.setBounds(276, 271, 89, 23);
+
+		contentPane.add(btnUpdate);
+
+
 
 	}
 	

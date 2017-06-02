@@ -1,11 +1,13 @@
 package db.layer;
 
+import model.layer.ProductOrder;
 import model.layer.RawMaterialOrder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
@@ -104,6 +106,25 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             DbConnection.closeConnection();
         }
         return rawMaterialOrder;
+    }
+
+    public ArrayList<RawMaterialOrder> readAll() throws SQLException {
+        ArrayList<RawMaterialOrder> rawMaterialOrders = new ArrayList<RawMaterialOrder>();
+        RawMaterialOrder rawMaterialOrder = null;
+        try {
+            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            String sqlO = "SELECT * FROM Orders";
+            ResultSet rsO = conn.createStatement().executeQuery(sqlO);
+            String sqlPO = "SELECT * FROM RawMAterialOrder";
+            ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
+            while (rsO.next() && rsPO.next()) {
+                rawMaterialOrder = buildObject(rsO, rsPO);
+                rawMaterialOrders.add(rawMaterialOrder);
+            }
+        } finally {
+            DbConnection.closeConnection();
+        }
+        return rawMaterialOrders;
     }
 
 

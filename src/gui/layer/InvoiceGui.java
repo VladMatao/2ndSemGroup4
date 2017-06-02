@@ -1,6 +1,6 @@
 package gui.layer;
 
-import control.layer.DeleteProductOrder;
+import control.layer.DeleteOrder;
 import control.layer.ManageProductLine;
 import control.layer.ReadProductOrder;
 import model.layer.ProductLine;
@@ -134,8 +134,8 @@ public class InvoiceGui extends JFrame {
         btnCancel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                DeleteProductOrder deleteProductOrder = new DeleteProductOrder();
-                deleteProductOrder.delete(lblOrdID.getText());
+                DeleteOrder deleteOrder = new DeleteOrder();
+                deleteOrder.deleteProductOrder(lblOrdID.getText());
                 dispose();
                 ProductOrderGui productOrderGui = new ProductOrderGui();
                 productOrderGui.setVisible(true);

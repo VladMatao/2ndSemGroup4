@@ -26,6 +26,14 @@ public class ChoseOrderGui extends JFrame {
         JButton supplierOrderButton = new JButton("Supplier Order");
         supplierOrderButton.setForeground(new Color(255, 255, 255));
         supplierOrderButton.setBackground(new Color(2, 52, 68));
+        supplierOrderButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dispose();
+                SupplierOrderGui supplierOrderGui= new SupplierOrderGui();
+                supplierOrderGui.setVisible(true);
+            }
+        });
         supplierOrderButton.setBounds(248, 147, 140, 23);
         contentPane.add(supplierOrderButton);
         
