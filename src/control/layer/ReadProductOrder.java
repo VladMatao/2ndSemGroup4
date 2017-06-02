@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ReadProductOrder {
-	private ProductOrderDb productOrderDb;
+	private ProductOrderDb productOrderDb=new ProductOrderDb();
 	
     public ProductOrder read(String id) {
         ProductOrder productOrder = null;
@@ -25,7 +25,6 @@ public class ReadProductOrder {
     }
     
     public ArrayList<ProductOrder> readAll() {
-        productOrderDb = new ProductOrderDb();
         ArrayList<ProductOrder> allproductorders = null;
         try {
         	allproductorders = productOrderDb.readAll();
