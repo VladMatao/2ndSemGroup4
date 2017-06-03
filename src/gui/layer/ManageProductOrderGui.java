@@ -140,6 +140,14 @@ public class ManageProductOrderGui extends JFrame {
 		contentPane.add(btnCreateNewOrder);
 		
 		btnNewButton = new JButton("<");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				 dispose();
+                 Menu menu = new Menu();
+                 menu.setVisible(true);
+			}
+		});
 		btnNewButton.setBackground(new Color(2, 52, 68));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBounds(10, 468, 46, 23);
@@ -151,6 +159,8 @@ public class ManageProductOrderGui extends JFrame {
 		contentPane.add(label);
 
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBackground(new Color(2, 52, 68));
+		btnUpdate.setForeground(new Color(255, 255, 255));
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -160,7 +170,7 @@ public class ManageProductOrderGui extends JFrame {
 				fillTable(productOrdertable);
 			}
 		});
-		btnUpdate.setBounds(276, 271, 89, 23);
+		btnUpdate.setBounds(358, 468, 89, 23);
 
 		contentPane.add(btnUpdate);
 
