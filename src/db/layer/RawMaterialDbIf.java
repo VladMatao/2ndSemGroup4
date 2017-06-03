@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public interface RawMaterialDbIf {
 
-    void create(String barcode, String name, Double stock) throws SQLException;
+    void create(String barcode, String name, Double stock, Double price) throws SQLException;
 
     boolean update(RawMaterial rawMat, String barcode) throws SQLException;
 

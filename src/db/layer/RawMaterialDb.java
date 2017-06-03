@@ -16,17 +16,18 @@ import java.util.ArrayList;
 public class RawMaterialDb implements RawMaterialDbIf {
 
     @Override
-    public void create(String barcode, String name, Double stock) throws SQLException {
+    public void create(String barcode, String name, Double stock,Double price) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String query = " INSERT INTO RawMaterial (Barcode, Name, Stock)"
-                    + " values (?, ?, ?)";
+            String query = " INSERT INTO RawMaterial (Barcode, Name, Stock,Price)"
+                    + " values (?, ?, ?,?)";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, barcode);
             preparedStmt.setString(2, name);
             preparedStmt.setDouble(3, stock);
+            preparedStmt.setDouble(4, price);
             // execute the preparedstatement
 
             preparedStmt.execute();
@@ -42,12 +43,13 @@ public class RawMaterialDb implements RawMaterialDbIf {
     public boolean update(RawMaterial rawMat, String barcode) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterial SET Barcode = ?, Name = ?, Stock = ? WHERE Barcode = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterial SET Barcode = ?, Name = ?, Stock = ?, Price = ?  WHERE Barcode = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, rawMat.getBarcode());
             psttm.setString(2, rawMat.getName());
             psttm.setDouble(3, rawMat.getStock());
-            psttm.setString(4, barcode);
+            psttm.setDouble(4, rawMat.getPrice());
+            psttm.setString(5, barcode);
             psttm.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Got an exception!");
@@ -113,7 +115,8 @@ public class RawMaterialDb implements RawMaterialDbIf {
             String barcode = rs.getString(1);
             String name = rs.getString(2);
             Double stock = rs.getDouble(3);
-            rawMat = new RawMaterial(barcode, name, stock);
+            Double price = rs.getDouble(3);
+            rawMat = new RawMaterial(barcode, name, stock,price);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;

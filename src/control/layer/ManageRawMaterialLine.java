@@ -1,9 +1,11 @@
 package control.layer;
 
 import db.layer.RawMaterialLineDb;
+import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
@@ -34,9 +36,18 @@ public class ManageRawMaterialLine {
         }
         return rawMaterialLine;
     }
-
-    public boolean update(RawMaterialLine rawMaterialLine, String id) {
-
+    
+    public ArrayList<RawMaterialLine> readAll() {
+        ArrayList<RawMaterialLine> allrawMaterialLines = null;
+        try {
+        	allrawMaterialLines = rawMaterialLineDb.readAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allrawMaterialLines;
+    }
+    public boolean update(String id, double quantity, String rawMaterialBarcode) {
+        RawMaterialLine rawMaterialLine = new RawMaterialLine(id, quantity, rawMaterialBarcode);
         try {
             return rawMaterialLineDb.update(rawMaterialLine, id);
         } catch (SQLException e) {
@@ -44,6 +55,7 @@ public class ManageRawMaterialLine {
         }
         return false;
     }
+
 
     public boolean delete(String id) {
         boolean aux = false;

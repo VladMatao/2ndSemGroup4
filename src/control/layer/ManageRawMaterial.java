@@ -16,9 +16,9 @@ public class ManageRawMaterial {
         rawMaterialdDb = new RawMaterialDb();
     }
 
-    public boolean create(String barcode, String name, Double stock) {
+    public boolean create(String barcode, String name, Double stock, Double price) {
         try {
-            rawMaterialdDb.create(barcode, name, stock);
+            rawMaterialdDb.create(barcode, name, stock,price);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -35,8 +35,8 @@ public class ManageRawMaterial {
         return rawMaterial;
     }
 
-    public boolean update(String barcode, String name, Double stack) {
-        RawMaterial raw_material = new RawMaterial(barcode, name, stack);
+    public boolean update(String barcode, String name, Double stack, Double price) {
+        RawMaterial raw_material = new RawMaterial(barcode, name, stack,price);
         try {
             return rawMaterialdDb.update(raw_material, barcode);
         } catch (SQLException e) {
