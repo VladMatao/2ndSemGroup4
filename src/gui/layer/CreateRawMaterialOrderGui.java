@@ -24,6 +24,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class CreateRawMaterialOrderGui extends JFrame {
 
@@ -54,8 +55,9 @@ public class CreateRawMaterialOrderGui extends JFrame {
 	public CreateRawMaterialOrderGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1041, 542);
-		contentPane.setBackground(new Color(25, 93, 115));
+		
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -233,6 +235,11 @@ public class CreateRawMaterialOrderGui extends JFrame {
         btnNewButton.setBackground(new Color(2, 52, 68));
         btnNewButton.setBounds(0, 476, 44, 23);
         contentPane.add(btnNewButton);
+        
+        JLabel label = new JLabel("");
+        label.setIcon(new ImageIcon("photos\\rawmaterialorder.png"));
+        label.setBounds(0, 34, 473, 123);
+        contentPane.add(label);
         
 
 	}
