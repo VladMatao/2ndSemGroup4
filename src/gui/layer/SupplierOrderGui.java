@@ -6,9 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,11 +16,6 @@ import control.layer.DeleteOrder;
 import control.layer.ReadOrder;
 import control.layer.UpdateOrder;
 import model.layer.RawMaterialOrder;
-
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 public class SupplierOrderGui extends JFrame {
 
@@ -38,7 +31,7 @@ public class SupplierOrderGui extends JFrame {
 	 * Create the frame.
 	 */
 	public SupplierOrderGui() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 956, 640);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -133,8 +126,8 @@ public class SupplierOrderGui extends JFrame {
 		contentPane.add(btnUpdate);
 		
 		JButton createOrderButton = new JButton("Create supplier order");
-		createOrderButton.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		createOrderButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				dispose();
 				CreateRawMaterialOrderGui createRawMaterialOrderGui=new CreateRawMaterialOrderGui();
 				createRawMaterialOrderGui.setVisible(true);
