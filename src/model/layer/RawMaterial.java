@@ -7,11 +7,13 @@ public class RawMaterial {
     private String barcode;
     private String name;
     private Double stock;
+    private Double price;
 
-    public RawMaterial(String barcode, String name,double stock) {
+    public RawMaterial(String barcode, String name,double stock, double price) {
         this.stock = stock;
         this.barcode = barcode;
         this.name = name;
+        this.price=price;
     }
 
     public String getBarcode() {
@@ -36,5 +38,14 @@ public class RawMaterial {
 
     public void setStock(Double stock) {
         this.stock = stock;
+    }
+    
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

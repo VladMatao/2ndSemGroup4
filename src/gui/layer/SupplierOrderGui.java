@@ -129,9 +129,19 @@ public class SupplierOrderGui extends JFrame {
 	             fillTable(suppliertable);
 			}
 		});
-		btnUpdate.setBounds(276, 271, 89, 23);
-		
+		btnUpdate.setBounds(276, 271, 89, 23);		
 		contentPane.add(btnUpdate);
+		
+		JButton createOrderButton = new JButton("Create supplier order");
+		createOrderButton.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+				CreateRawMaterialOrderGui createRawMaterialOrderGui=new CreateRawMaterialOrderGui();
+				createRawMaterialOrderGui.setVisible(true);
+			}
+		});
+		createOrderButton.setBounds(169, 360, 148, 23);
+		contentPane.add(createOrderButton);
 	}
 	
 	 private void fillTable(DefaultTableModel model) {

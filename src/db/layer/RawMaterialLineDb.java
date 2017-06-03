@@ -1,12 +1,14 @@
 
 package db.layer;
 
+import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
@@ -87,6 +89,22 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         return rawMLine;
     }
 
+    public ArrayList<RawMaterialLine> readAll() throws SQLException {
+        ArrayList<RawMaterialLine> rawMaterialLinecollection = new ArrayList<RawMaterialLine>();
+        RawMaterialLine rawMaterialLine = null;
+        try {
+            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            String sql = "SELECT * FROM ProductLine ";
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()) {
+            	rawMaterialLine = buildObject(rs);
+            	rawMaterialLinecollection.add(rawMaterialLine);
+            }
+        } finally {
+            DbConnection.closeConnection();
+        }
+        return rawMaterialLinecollection;
+    }
 
     private static RawMaterialLine buildObject(ResultSet rs) throws SQLException {
         RawMaterialLine rawMLine;
