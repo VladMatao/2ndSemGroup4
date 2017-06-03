@@ -1,6 +1,6 @@
 package control.layer;
 
-import db.layer.RawMaterialdDb;
+import db.layer.RawMaterialDb;
 import model.layer.RawMaterial;
 
 import java.sql.SQLException;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ManageRawMaterial {
-    private RawMaterialdDb rawMaterialdDb;
+    private RawMaterialDb rawMaterialdDb;
 
     public ManageRawMaterial() {
-        rawMaterialdDb = new RawMaterialdDb();
+        rawMaterialdDb = new RawMaterialDb();
     }
 
     public boolean create(String barcode, String name, Double stock) {
