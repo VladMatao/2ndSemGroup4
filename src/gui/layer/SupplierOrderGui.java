@@ -156,6 +156,14 @@ public class SupplierOrderGui extends JFrame {
 		contentPane.add(createOrderButton);
 		
 		JButton btnNewButton = new JButton("<");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent arg0) {
+				dispose();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+			}
+		});
 		btnNewButton.setBackground(new Color(2, 52, 68));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBounds(14, 387, 54, 23);
