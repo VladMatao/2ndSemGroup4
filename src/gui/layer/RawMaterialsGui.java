@@ -18,6 +18,7 @@ public class RawMaterialsGui extends JFrame {
     private JTextField nameTextField;
     private JTextField barcodeTextField;
     private JTextField stockTf;
+    private JTextField PricetextField;
 
 
     /**
@@ -58,7 +59,7 @@ public class RawMaterialsGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent arg0) {
                 ManageRawMaterial rawMaterial = new ManageRawMaterial();
-                rawMaterial.create(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()));
+                rawMaterial.create(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()), Double.valueOf(PricetextField.getText()));
                 fillTable(rawMaterialtable);
             }
         });
@@ -86,7 +87,7 @@ public class RawMaterialsGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 ManageRawMaterial rawMaterial = new ManageRawMaterial();
-                rawMaterial.update(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()));
+                rawMaterial.update(barcodeTextField.getText(), nameTextField.getText(), Double.valueOf(stockTf.getText()), Double.valueOf(PricetextField.getText()));
                 fillTable(rawMaterialtable);
             }
         });
@@ -140,6 +141,15 @@ public class RawMaterialsGui extends JFrame {
         lblStock.setForeground(new Color(255, 255, 255));
         lblStock.setBounds(18, 194, 46, 14);
         contentPane.add(lblStock);
+        
+        JLabel lblPrice = new JLabel("Price");
+        lblPrice.setBounds(18, 141, 46, 14);
+        contentPane.add(lblPrice);
+        
+        PricetextField = new JTextField();
+        PricetextField.setBounds(131, 138, 145, 20);
+        contentPane.add(PricetextField);
+        PricetextField.setColumns(10);
     }
 
 
