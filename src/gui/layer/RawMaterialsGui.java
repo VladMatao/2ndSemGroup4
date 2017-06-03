@@ -143,6 +143,7 @@ public class RawMaterialsGui extends JFrame {
         contentPane.add(lblStock);
         
         JLabel lblPrice = new JLabel("Price");
+        lblPrice.setForeground(new Color(255, 255, 255));
         lblPrice.setBounds(18, 141, 46, 14);
         contentPane.add(lblPrice);
         
