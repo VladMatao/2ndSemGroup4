@@ -29,7 +29,6 @@ public class ProductOrderDb implements ProductOrderDbIf {
             preparedStmtO.setString(4, deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-
             String queryProductOrder = " INSERT INTO ProductOrder (ProductOrderId, ProductLineID, TotalProductionTime)"
                     + " values (?, ?, ?)";
 
@@ -38,8 +37,8 @@ public class ProductOrderDb implements ProductOrderDbIf {
             preparedStmtPO.setString(2, productLineId);
             preparedStmtPO.setDouble(3, totalProductionTime);
 
-            preparedStmtPO.execute();
             preparedStmtO.execute();
+            preparedStmtPO.execute();
         } catch (Exception e) {
             System.err.println("Got an exception in ProductOrderDb.create()!");
             System.err.println(e.getMessage());
@@ -80,8 +79,8 @@ public class ProductOrderDb implements ProductOrderDbIf {
             Connection conn = DbConnection.getInstance().getDBcon();
             String sql = String.format("Delete from ProductOrder where ProductOrderId='%s'", productOrderId);
             String sql1 = String.format("Delete from Orders where OrderID='%s'", productOrderId);
-            conn.createStatement().executeUpdate(sql1);
             conn.createStatement().executeUpdate(sql);
+            conn.createStatement().executeUpdate(sql1);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
@@ -119,9 +118,13 @@ public class ProductOrderDb implements ProductOrderDbIf {
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
             String sqlPO = "SELECT * FROM ProductOrder";
             ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
-            while (rsO.next() && rsPO.next()) {
-                productOrder = buildObject(rsO, rsPO);
-                productOrders.add(productOrder);
+            while(rsPO.next()) {
+                while(rsO.next()) {
+                    if (rsO.getString(1).equals(rsPO.getString(1))) {
+                        productOrder = buildObject(rsO, rsPO);
+                        productOrders.add(productOrder);
+                    }
+                }
             }
         } finally {
             DbConnection.closeConnection();

@@ -99,7 +99,7 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		lblTotalPrice.setBounds(10, 382, 77, 14);
 		contentPane.add(lblTotalPrice);
 		
-		lblPrice = new JLabel("Price");
+		lblPrice = new JLabel("0");
 		lblPrice.setForeground(new Color(255, 255, 255));
 		lblPrice.setBounds(132, 382, 46, 14);
 		contentPane.add(lblPrice);
@@ -198,9 +198,13 @@ public class CreateRawMaterialOrderGui extends JFrame {
         btnUpdate.addMouseListener(new MouseAdapter() {
         	@Override
         	public void mouseClicked(MouseEvent e) {
-        		 ManageRawMaterialLine rawMaterialLine= new ManageRawMaterialLine();
-                 rawMaterialLine.update(rawMaterialLineTextField.getText(), Double.parseDouble(quantityTextField.getText()), rawMaterialBarcodeTextField.getText());
-                 fillTable(rawMaterialLineTable,rawMaterialLineTextField.getText());
+                ManageRawMaterialLine rawMaterialLine= new ManageRawMaterialLine();
+				CreateRawMaterialOrder order = new CreateRawMaterialOrder();
+                rawMaterialLine.update(rawMaterialLineTextField.getText(), Double.parseDouble(quantityTextField.getText()), rawMaterialBarcodeTextField.getText());
+                fillTable(rawMaterialLineTable,rawMaterialLineTextField.getText());
+                Double sum=Double.parseDouble(lblPrice.getText());
+                sum= sum + order.calculatePrice(rawMaterialBarcodeTextField.getText(), Integer.parseInt(quantityTextField.getText()));
+				lblPrice.setText("" + sum);
         	}
         });
         btnUpdate.setBounds(255, 476, 89, 23);

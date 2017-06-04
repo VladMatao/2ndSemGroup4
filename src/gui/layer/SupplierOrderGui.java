@@ -146,7 +146,8 @@ public class SupplierOrderGui extends JFrame {
 		createOrderButton.setBackground(new Color(2, 52, 68));
 		createOrderButton.setForeground(new Color(255, 255, 255));
 		createOrderButton.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent arg0) {
 				dispose();
 				CreateRawMaterialOrderGui createRawMaterialOrderGui=new CreateRawMaterialOrderGui();
 				createRawMaterialOrderGui.setVisible(true);

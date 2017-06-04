@@ -42,12 +42,13 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
     public boolean update(RawMaterialLine rawMLine, String id) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ? WHERE RawMaterialLineID = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ? WHERE RawMaterialLineID = ? AND RawBarcode = ?");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, rawMLine.getId());
             psttm.setDouble(2, rawMLine.getQuantity());
             psttm.setString(3, rawMLine.getRawMaterialBarcode());
             psttm.setString(4, id);
+            psttm.setString(5, rawMLine.getRawMaterialBarcode());
             psttm.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Got an exception!");
@@ -62,7 +63,7 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
     public boolean delete(String id) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMLine where ID='%s'", id);
+            String sql = String.format("Delete from RawMaterialLine where RawMaterialLineID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -78,7 +79,7 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         RawMaterialLine rawMLine = null;
         try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM rawMLine where ID =%s", id);
+            String sql = String.format("SELECT * FROM RawMaterialLine where RawMaterialLineID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()) {
                 rawMLine = buildObject(rs);
@@ -94,7 +95,7 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         RawMaterialLine rawMaterialLine = null;
         try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = "SELECT * FROM ProductLine ";
+            String sql = "SELECT * FROM RawMaterialLine ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
             	rawMaterialLine = buildObject(rs);
@@ -126,7 +127,7 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
     public boolean deleteRawMaterialFromRawMaterialLine(String id, String rawMaterialBarcode) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMaterialLine where id='%s' AND RawBarcode='%s' ", id, rawMaterialBarcode);
+            String sql = String.format("Delete from RawMaterialLine where RawMaterialLineID='%s' AND RawBarcode='%s' ", id, rawMaterialBarcode);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -29,15 +29,14 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             preparedStmtO.setString(4, deliveryDate);
             preparedStmtO.setString(5, companyId);
 
-            preparedStmtO.execute();
-
-            String queryRawMaterialOrder = " INSERT INTO RawMaterialOrder (RawMaterialOrder,RawMaterialLineID)"
+            String queryRawMaterialOrder = " INSERT INTO RawMaterialOrder (RawMaterialOrderID,RawMaterialLineID)"
                     + " values (?, ?)";
 
             PreparedStatement preparedStmtPO = conn.prepareStatement(queryRawMaterialOrder);
             preparedStmtPO.setString(1, rawMaterialOrderId);
             preparedStmtPO.setString(2, rawMaterialLineId);
 
+            preparedStmtO.execute();
             preparedStmtPO.execute();
         } catch (Exception e) {
             System.err.println("Got an exception in RawMaterialdDb.create()!");
@@ -78,8 +77,8 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
             Connection conn = DbConnection.getInstance().getDBcon();
             String sql = String.format("Delete from RawMaterialOrder where RawMaterialOrderID='%s'", rawMaterialOrderId);
             String sql1 = String.format("Delete from Orders where OrderID='%s'", rawMaterialOrderId);
-            conn.createStatement().executeUpdate(sql);
             conn.createStatement().executeUpdate(sql1);
+            conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
@@ -113,15 +112,19 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
         RawMaterialOrder rawMaterialOrder = null;
         try {
             java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sqlO = "SELECT * FROM Orders";
+            String sqlO = "SELECT * FROM Orders ";
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
-            String sqlPO = "SELECT * FROM RawMAterialOrder";
-            ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
-            while (rsO.next() && rsPO.next()) {
-                rawMaterialOrder = buildObject(rsO, rsPO);
-                rawMaterialOrders.add(rawMaterialOrder);
+            String sqlRMO = "SELECT * FROM RawMaterialOrder";
+            ResultSet rsRMO = conn.createStatement().executeQuery(sqlRMO);
+            while(rsRMO.next()) {
+                while(rsO.next()) {
+                    if (rsO.getString(1).equals(rsRMO.getString(1))) {
+                        rawMaterialOrder = buildObject(rsO, rsRMO);
+                        rawMaterialOrders.add(rawMaterialOrder);
+                    }
+                }
             }
-        } finally {
+        }finally {
             DbConnection.closeConnection();
         }
         return rawMaterialOrders;
