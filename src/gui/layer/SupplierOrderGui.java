@@ -6,7 +6,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,6 +18,12 @@ import control.layer.DeleteOrder;
 import control.layer.ReadOrder;
 import control.layer.UpdateOrder;
 import model.layer.RawMaterialOrder;
+
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class SupplierOrderGui extends JFrame {
 
@@ -31,9 +39,10 @@ public class SupplierOrderGui extends JFrame {
 	 * Create the frame.
 	 */
 	public SupplierOrderGui() {
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setBounds(100, 100, 956, 640);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 956, 460);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -52,52 +61,58 @@ public class SupplierOrderGui extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
 		table.setModel(suppliertable);
 		
 		JLabel lblOrderId = new JLabel("Order ID");
-		lblOrderId.setBounds(10, 35, 46, 14);
+		lblOrderId.setForeground(new Color(255, 255, 255));
+		lblOrderId.setBounds(55, 115, 46, 14);
 		contentPane.add(lblOrderId);
 		
 		orderIDTextField = new JTextField();
-		orderIDTextField.setBounds(126, 32, 86, 20);
+		orderIDTextField.setBounds(171, 112, 130, 20);
 		contentPane.add(orderIDTextField);
 		orderIDTextField.setColumns(10);
 		
 		JLabel lblOrderStatus = new JLabel("Order Status");
-		lblOrderStatus.setBounds(10, 84, 46, 14);
+		lblOrderStatus.setForeground(new Color(255, 255, 255));
+		lblOrderStatus.setBounds(55, 164, 106, 14);
 		contentPane.add(lblOrderStatus);
 		
 		orderStatusTextField = new JTextField();
-		orderStatusTextField.setBounds(126, 81, 86, 20);
+		orderStatusTextField.setBounds(171, 161, 130, 20);
 		contentPane.add(orderStatusTextField);
 		orderStatusTextField.setColumns(10);
 		
 		JLabel lblDeliveryDate = new JLabel("Delivery Date");
-		lblDeliveryDate.setBounds(10, 134, 46, 14);
+		lblDeliveryDate.setForeground(new Color(255, 255, 255));
+		lblDeliveryDate.setBounds(55, 214, 106, 14);
 		contentPane.add(lblDeliveryDate);
 		
 		deliveryDateTextField = new JTextField();
-		deliveryDateTextField.setBounds(126, 131, 86, 20);
+		deliveryDateTextField.setBounds(171, 211, 130, 20);
 		contentPane.add(deliveryDateTextField);
 		deliveryDateTextField.setColumns(10);
 		
 		JLabel lblCompanyid = new JLabel("CompanyID");
-		lblCompanyid.setBounds(10, 182, 46, 14);
+		lblCompanyid.setForeground(new Color(255, 255, 255));
+		lblCompanyid.setBounds(55, 262, 130, 14);
 		contentPane.add(lblCompanyid);
 		
 		companyIDTextField = new JTextField();
-		companyIDTextField.setBounds(126, 179, 86, 20);
+		companyIDTextField.setBounds(171, 259, 130, 20);
 		contentPane.add(companyIDTextField);
 		companyIDTextField.setColumns(10);
 		
 		rawMaterialsIDTextField = new JTextField();
-		rawMaterialsIDTextField.setBounds(126, 229, 86, 20);
+		rawMaterialsIDTextField.setBounds(171, 309, 130, 20);
 		contentPane.add(rawMaterialsIDTextField);
 		rawMaterialsIDTextField.setColumns(10);
 		
 		JLabel lblRawmaterialsId = new JLabel("RawMaterials ID");
-		lblRawmaterialsId.setBounds(10, 232, 46, 14);
+		lblRawmaterialsId.setForeground(new Color(255, 255, 255));
+		lblRawmaterialsId.setBounds(55, 312, 106, 14);
 		contentPane.add(lblRawmaterialsId);
 		
 		JButton btnDelete = new JButton("Delete");
@@ -109,11 +124,13 @@ public class SupplierOrderGui extends JFrame {
 				deleteRawMaterialOrder.deleteRawMaterialOrder(orderIDTextField.getText());
 			}
 		});
-		btnDelete.setBounds(75, 468, 123, 23);
+		btnDelete.setBounds(312, 387, 77, 23);
 		contentPane.add(btnDelete);
 		
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setForeground(new Color(255, 255, 255));
+		btnUpdate.setBackground(new Color(2, 52, 68));
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				 UpdateOrder rawMaterialtOrder = new UpdateOrder();
@@ -122,19 +139,40 @@ public class SupplierOrderGui extends JFrame {
 	             fillTable(suppliertable);
 			}
 		});
-		btnUpdate.setBounds(276, 271, 89, 23);		
+		btnUpdate.setBounds(78, 387, 77, 23);		
 		contentPane.add(btnUpdate);
 		
 		JButton createOrderButton = new JButton("Create supplier order");
-		createOrderButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		createOrderButton.setBackground(new Color(2, 52, 68));
+		createOrderButton.setForeground(new Color(255, 255, 255));
+		createOrderButton.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
 				dispose();
 				CreateRawMaterialOrderGui createRawMaterialOrderGui=new CreateRawMaterialOrderGui();
 				createRawMaterialOrderGui.setVisible(true);
 			}
 		});
-		createOrderButton.setBounds(169, 360, 148, 23);
+		createOrderButton.setBounds(165, 387, 137, 23);
 		contentPane.add(createOrderButton);
+		
+		JButton btnNewButton = new JButton("<");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent arg0) {
+				dispose();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+			}
+		});
+		btnNewButton.setBackground(new Color(2, 52, 68));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBounds(14, 387, 54, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("photos\\supplierorder.png"));
+		label.setBounds(-6, 0, 395, 112);
+		contentPane.add(label);
 	}
 	
 	 private void fillTable(DefaultTableModel model) {
