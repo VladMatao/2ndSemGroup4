@@ -1,6 +1,7 @@
 package control.layer;
 
 import db.layer.ProductLineDb;
+import model.layer.Product;
 import model.layer.ProductLine;
 
 import java.sql.SQLException;
@@ -35,6 +36,17 @@ public class ManageProductLine {
             e.printStackTrace();
         }
         return productLine;
+    }
+
+    public ArrayList<Product> returnProducts(String productLineId) throws SQLException {
+        ArrayList<Product> products = new ArrayList<>();
+        ArrayList<ProductLine> productLines = new ArrayList<>();
+        ManageProduct manageProduct = new ManageProduct();
+        productLines=productLineDb.readAll();
+        for(ProductLine productLine:productLines)
+            if(productLine.getproductLineId().equals(productLineId))
+                products.add(manageProduct.read(productLine.getProductBarcode()));
+        return products;
     }
 
     public boolean update(String id, double quantity, String productBarcode) {

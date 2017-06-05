@@ -35,6 +35,16 @@ public class ManageRawMaterial {
         return rawMaterial;
     }
 
+    public Double getPrice(String barcode){
+        RawMaterial rawMaterial = null;
+        try {
+            rawMaterial = rawMaterialdDb.read(barcode);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rawMaterial.getPrice();
+    }
+
     public boolean update(String barcode, String name, Double stack, Double price) {
         RawMaterial raw_material = new RawMaterial(barcode, name, stack,price);
         try {

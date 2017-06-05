@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 
-public class ProductDb implements ProductDbId {
+public class ProductDb implements ProductDbIf {
 
     @Override
     public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException {

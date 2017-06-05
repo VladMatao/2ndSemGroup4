@@ -93,6 +93,7 @@ public class ProductOrderGui extends JFrame {
                 time = time + order.calculateTime(productBarcodeTextField.getText(), Integer.parseInt(quantityTextField.getText()));
                 timeLabel.setText("" + time);
                 fillTable(productLineTable,productLineTextField.getText());
+                order.makeRawMaterialOrder(Double.parseDouble(quantityTextField.getText()),productLineTextField.getText(),productBarcodeTextField.getText());
             }
         });
         addButton.setBounds(353, 314, 89, 23);
