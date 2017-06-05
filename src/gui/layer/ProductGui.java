@@ -148,7 +148,7 @@ public class ProductGui extends JFrame {
         contentPane.add(lblAdress);
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(341, 0, 645, 527);
+        scrollPane.setBounds(341, 0, 645, 538);
         contentPane.add(scrollPane);
 
         JTable table = new JTable();

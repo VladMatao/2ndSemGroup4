@@ -121,5 +121,17 @@ public class Menu extends JFrame {
         label.setIcon(new ImageIcon("photos\\logo3.png"));
         label.setBounds(-168, 11, 835, 108);
         panel.add(label);
+        
+        JButton requirerdRawMaterialsButton = new JButton("Required Raw Materials");
+        requirerdRawMaterialsButton.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		dispose();
+                RequiredRawMaterialsGui requiredRawMaterialsGui = new RequiredRawMaterialsGui();
+                requiredRawMaterialsGui.setVisible(true);
+        	}
+        });
+        requirerdRawMaterialsButton.setBounds(67, 459, 140, 23);
+        panel.add(requirerdRawMaterialsButton);
     }
 }

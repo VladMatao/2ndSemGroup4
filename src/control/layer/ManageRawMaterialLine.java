@@ -67,7 +67,7 @@ public class ManageRawMaterialLine {
         return aux;
     }
 
-    public boolean deleteProductFromProducLine(String idRawMaterialLine, String rawMaterialBarcode) {
+    public boolean deleteRawMaterialFromRawMaterialLine(String idRawMaterialLine, String rawMaterialBarcode) {
         boolean aux = false;
         try {
             aux = rawMaterialLineDb.deleteRawMaterialFromRawMaterialLine(idRawMaterialLine, rawMaterialBarcode);

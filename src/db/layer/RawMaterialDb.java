@@ -19,8 +19,8 @@ public class RawMaterialDb implements RawMaterialDbIf {
     public void create(String barcode, String name, Double stock,Double price) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String query = " INSERT INTO RawMaterial (Barcode, Name, Stock,Price)"
-                    + " values (?, ?, ?,?)";
+            String query = " INSERT INTO RawMaterial (Barcode, Name, Stock, Price)"
+                    + " values (?, ?, ?, ?)";
 
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
@@ -64,7 +64,7 @@ public class RawMaterialDb implements RawMaterialDbIf {
     public boolean delete(String barcode) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMaterial whereBarcode='%s'", barcode);
+            String sql = String.format("Delete from RawMaterial where Barcode='%s'", barcode);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();

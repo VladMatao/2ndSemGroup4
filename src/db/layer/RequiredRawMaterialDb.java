@@ -12,8 +12,7 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
-    @Override
-    public void create(String requiredMatId, String rawMaterialBarcode, double quantity) throws SQLException {
+	public  void create(String requiredMatId, String rawMaterialBarcode, double quantity) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
             String query = " INSERT INTO RequiredRawMaterial (RequiredMatId, RawMaterialBarcode, Quantity)"
@@ -39,7 +38,7 @@ public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
     public boolean update(RequiredRawMaterial requiredRawMaterial, String requiredMatId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RequiredRawMaterial SET RequiredMatId = ?, RawMaterialBarcode = ?, Quantity = ?" + "WHERE RequiredMatId = ? ");
+            PreparedStatement psttm = conn.prepareStatement("UPDATE RequiredRawMaterial SET ID = ?, RawMaterialBarcode = ?, Quantity = ?" + "WHERE ID = ? ");
             psttm.setString(1, requiredRawMaterial.getRequiredMatId());
             psttm.setString(2, requiredRawMaterial.getRawMaterialBarcode());
             psttm.setDouble(3, requiredRawMaterial.getQuantity());
@@ -59,7 +58,7 @@ public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
     public boolean delete(String requiredMatId) throws SQLException {
         try {
             Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RequiredRawMaterialCtr where requiredMatId=%s", requiredMatId);
+            String sql = String.format("Delete from RequiredRawMaterial WHERE ID=%s", requiredMatId);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,7 +69,7 @@ public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
         return true;
     }
 
-    public ArrayList<RequiredRawMaterial> readAll() throws SQLException {
+    public static ArrayList<RequiredRawMaterial> readAll() throws SQLException {
         ArrayList<RequiredRawMaterial> requiredRawMaterialArrayList = new ArrayList<RequiredRawMaterial>();
         RequiredRawMaterial requiredRawMaterial = null;
         try {
