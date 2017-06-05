@@ -1,6 +1,7 @@
 package gui.layer;
 
 import control.layer.CreateProductOrder;
+import control.layer.CreateRawMaterialOrder;
 import control.layer.ManageProductLine;
 import model.layer.ProductLine;
 
@@ -205,7 +206,9 @@ public class ProductOrderGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 CreateProductOrder productOrderCtr = new CreateProductOrder();
+                CreateRawMaterialOrder rawMaterialOrderCtr= new CreateRawMaterialOrder();
                 productOrderCtr.create(orderIDTextField.getText(), Double.parseDouble(price.getText()), orderStatusTextField.getText(), deliveryDateTextField.getText(), companyIDTextField.getText(), productLineTextField.getText(), Double.parseDouble(timeLabel.getText()));
+                rawMaterialOrderCtr.create(orderIDTextField.getText()+ "RAW",Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText()+ "RAW");
                 dispose();
                 InvoiceGui invoiceGui = new InvoiceGui(orderIDTextField.getText());
                 invoiceGui.setVisible(true);
