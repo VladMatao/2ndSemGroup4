@@ -1,7 +1,6 @@
 package control.layer;
 
 import db.layer.PersonDb;
-import model.layer.Company;
 import model.layer.Person;
 
 import java.sql.SQLException;
@@ -13,29 +12,14 @@ import java.util.ArrayList;
 public class ManagePerson {
 
 
-    private PersonDb personDb;
+    private final PersonDb personDb;
 
     public ManagePerson() {
         personDb = new PersonDb();
     }
 
-    public boolean create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
-        try {
-            personDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    public Person read(String personId) {
-        Person person = null;
-        try {
-            person = personDb.read(personId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return person;
+    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
+        personDb.create(id, f_name, l_name, CNP, address, phNr, city, position, wage);
     }
 
     public ArrayList<Person> readAll() {
@@ -49,25 +33,18 @@ public class ManagePerson {
     }
 
 
-    public boolean update(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
+    public void update(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         Person person = new Person(id, f_name, l_name, CNP, address, phNr, city, position, wage);
-        try {
-            return personDb.update(person, id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
+        personDb.update(person, id);
     }
 
 
-    public boolean delete(String personId) {
-        boolean aux = false;
+    public void delete(String personId) {
         try {
-            aux = personDb.delete(personId);
+            personDb.delete(personId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return aux;
     }
 
 }

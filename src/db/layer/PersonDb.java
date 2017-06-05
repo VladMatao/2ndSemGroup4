@@ -1,6 +1,5 @@
 package db.layer;
 
-import model.layer.Company;
 import model.layer.Person;
 
 import java.sql.Connection;
@@ -17,9 +16,9 @@ import java.util.ArrayList;
 public class PersonDb implements PersonDbIf {
 
     @Override
-    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) throws SQLException {
+    public void create(String id, String f_name, String l_name, int CNP, String address, String phNr, String city, String position, double wage) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psPersonCreation = conn.prepareStatement("INSERT INTO Person (PersonID, F_name, L_name, CNP, Adress, Phone_number, City, Position, Wage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             psPersonCreation.setString(1, id);
             psPersonCreation.setString(2, f_name);
@@ -40,9 +39,9 @@ public class PersonDb implements PersonDbIf {
     }
 
     @Override
-    public boolean update(Person person, String personId) throws SQLException {
+    public boolean update(Person person, String personId) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttmPerson = conn.prepareStatement("UPDATE Person SET F_name = ?, L_name = ?, CNP = ?, Adress = ?, Phone_number = ?, City = ?, Position = ?, Wage = ? WHERE PersonID = ?");
             psttmPerson.setString(1, person.getF_name());
             psttmPerson.setString(2, person.getL_name());
@@ -66,7 +65,7 @@ public class PersonDb implements PersonDbIf {
     @Override
     public boolean delete(String id) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from Person where PersonID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -82,7 +81,7 @@ public class PersonDb implements PersonDbIf {
     public Person read(String id) throws SQLException {
         Person person = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sqlPerson = String.format("SELECT * FROM Person where PersonID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sqlPerson);
             if (rs.next()) {
@@ -95,10 +94,10 @@ public class PersonDb implements PersonDbIf {
     }
 
     public ArrayList<Person> readAll() throws SQLException {
-        ArrayList<Person> personcollection = new ArrayList<Person>();
-        Person person = null;
+        ArrayList<Person> personcollection = new ArrayList<>();
+        Person person;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM Person ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {

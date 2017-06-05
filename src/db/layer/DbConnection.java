@@ -54,14 +54,9 @@ public class DbConnection {
         }
     }//end closeDB
 
-    //getDBcon: returns the singleton instance of the DB connection
-    public java.sql.Connection getDBcon() {
+    //getDbCon: returns the singleton instance of the DB connection
+    public java.sql.Connection getDbCon() {
         return con;
-    }
-
-    //getDBcon: returns the singleton instance of the DB connection
-    public static boolean instanceIsNull() {
-        return (instance == null);
     }
 
     //this method is used to get the instance of the connection

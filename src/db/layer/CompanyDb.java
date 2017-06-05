@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class CompanyDb implements CompanyDbIf {
 
     @Override
-    public void create(String id, String name, String phNr, String email, String companyType, String address) throws SQLException {
+    public void create(String id, String name, String phNr, String email, String companyType, String address) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO Company (CompanyID, Name, Phone_number, Email, Company_type, Adress)"
                     + " values (?, ?, ?, ?, ?, ?)";
 
@@ -42,16 +42,16 @@ public class CompanyDb implements CompanyDbIf {
     }
 
     @Override
-    public boolean update(Company company, String id) throws SQLException {
+    public boolean update(Company company, String id) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE Company SET CompanyID = ?, Name = ?, Phone_number = ?, Email = ?, Company_type = ?, Adress = ? WHERE CompanyID = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, company.getId());
             psttm.setString(2, company.getName());
             psttm.setString(3, company.getPhNr());
             psttm.setString(4, company.getEmail());
-            psttm.setString(5, company.getcompanyType());
+            psttm.setString(5, company.getCompanyType());
             psttm.setString(6, company.getAddress());
             psttm.setString(7, id);
             psttm.executeUpdate();
@@ -67,7 +67,7 @@ public class CompanyDb implements CompanyDbIf {
     @Override
     public boolean delete(String id) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from Company where CompanyID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -83,7 +83,7 @@ public class CompanyDb implements CompanyDbIf {
     public Company read(String id) throws SQLException {
         Company company = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("SELECT * FROM Company where CompanyID =%s", id);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()) {
@@ -96,20 +96,20 @@ public class CompanyDb implements CompanyDbIf {
     }
 
     public ArrayList<Company> readAll() throws SQLException {
-        ArrayList<Company> companycollection = new ArrayList<Company>();
-        Company company = null;
+        ArrayList<Company> companyCollection = new ArrayList<>();
+        Company company;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM Company ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
                 company = buildObject(rs);
-                companycollection.add(company);
+                companyCollection.add(company);
             }
         } finally {
             DbConnection.closeConnection();
         }
-        return companycollection;
+        return companyCollection;
     }
 
 

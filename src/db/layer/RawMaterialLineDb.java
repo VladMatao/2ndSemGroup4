@@ -1,7 +1,6 @@
 
 package db.layer;
 
-import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 
 import java.sql.Connection;
@@ -16,10 +15,9 @@ import java.util.ArrayList;
 
 public class RawMaterialLineDb implements RawMaterialLineDbIf {
 
-    @Override
-    public void create(String id, double quantity, String rawMaterialBarcode) throws SQLException {
+    public void create(String id, double quantity, String rawMaterialBarcode) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO RawMaterialLine (RawMaterialLineID, Quantity, RawBarcode)"
                     + " values (?, ?, ?)";
 
@@ -38,10 +36,9 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         }
     }
 
-    @Override
-    public boolean update(RawMaterialLine rawMLine, String id) throws SQLException {
+    public void update(RawMaterialLine rawMLine, String id) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterialLine SET RawMaterialLineID = ?, Quantity = ?, RawBarcode = ? WHERE RawMaterialLineID = ? AND RawBarcode = ?");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, rawMLine.getId());
@@ -56,13 +53,11 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         } finally {
             DbConnection.closeConnection();
         }
-        return true;
     }
 
-    @Override
     public boolean delete(String id) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from RawMaterialLine where RawMaterialLineID='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -74,27 +69,11 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
         return true;
     }
 
-    @Override
-    public RawMaterialLine read(String id) throws SQLException {
-        RawMaterialLine rawMLine = null;
-        try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("SELECT * FROM RawMaterialLine where RawMaterialLineID =%s", id);
-            ResultSet rs = conn.createStatement().executeQuery(sql);
-            if (rs.next()) {
-                rawMLine = buildObject(rs);
-            }
-        } finally {
-            DbConnection.closeConnection();
-        }
-        return rawMLine;
-    }
-
     public ArrayList<RawMaterialLine> readAll() throws SQLException {
-        ArrayList<RawMaterialLine> rawMaterialLinecollection = new ArrayList<RawMaterialLine>();
-        RawMaterialLine rawMaterialLine = null;
+        ArrayList<RawMaterialLine> rawMaterialLinecollection = new ArrayList<>();
+        RawMaterialLine rawMaterialLine;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM RawMaterialLine ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
@@ -123,18 +102,4 @@ public class RawMaterialLineDb implements RawMaterialLineDbIf {
     }
 
 
-    @Override
-    public boolean deleteRawMaterialFromRawMaterialLine(String id, String rawMaterialBarcode) throws SQLException {
-        try {
-            Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RawMaterialLine where RawMaterialLineID='%s' AND RawBarcode='%s' ", id, rawMaterialBarcode);
-            conn.createStatement().executeUpdate(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
-        } finally {
-            DbConnection.closeConnection();
-        }
-        return true;
-    }
 }

@@ -2,8 +2,7 @@ package gui.layer;
 
 import java.awt.Color;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -12,35 +11,20 @@ import control.layer.ReadOrder;
 import control.layer.UpdateOrder;
 import model.layer.ProductOrder;
 
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
 
-public class ManageProductOrderGui extends JFrame {
+class ManageProductOrderGui extends JFrame {
 
-	private JPanel contentPane;
-	private JTable table;
-	private JTextField orderIDTextField;
-	private JTextField orderStatustextField;
-	private JTextField deliveryDatetextField;
-	private JTextField companyIDtextField;
-	private JTextField ProductLineIDtextField;
-	private JButton btnCreateNewOrder;
-	private JButton btnNewButton;
-	private JLabel label;
+    private final JTextField orderIDTextField;
+	private final JTextField orderStatustextField;
+	private final JTextField deliveryDatetextField;
 
-	public ManageProductOrderGui() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    ManageProductOrderGui() {
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1073, 541);
-		contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -57,8 +41,8 @@ public class ManageProductOrderGui extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(452, 0, 605, 502);
 		contentPane.add(scrollPane);
-		
-		table = new JTable();
+
+        JTable table = new JTable();
 		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
 		table.setModel(productOrdertable);
@@ -93,8 +77,8 @@ public class ManageProductOrderGui extends JFrame {
 		deliveryDatetextField.setBounds(212, 260, 136, 20);
 		contentPane.add(deliveryDatetextField);
 		deliveryDatetextField.setColumns(10);
-		
-		companyIDtextField = new JTextField();
+
+        JTextField companyIDtextField = new JTextField();
 		companyIDtextField.setBounds(212, 291, 136, 20);
 		contentPane.add(companyIDtextField);
 		companyIDtextField.setColumns(10);
@@ -108,38 +92,34 @@ public class ManageProductOrderGui extends JFrame {
 		lblProductLineId.setForeground(new Color(255, 255, 255));
 		lblProductLineId.setBounds(102, 325, 100, 14);
 		contentPane.add(lblProductLineId);
-		
-		ProductLineIDtextField = new JTextField();
-		ProductLineIDtextField.setBounds(212, 322, 136, 20);
-		contentPane.add(ProductLineIDtextField);
-		ProductLineIDtextField.setColumns(10);
+
+        JTextField productLineIDtextField = new JTextField();
+		productLineIDtextField.setBounds(212, 322, 136, 20);
+		contentPane.add(productLineIDtextField);
+		productLineIDtextField.setColumns(10);
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.setBackground(new Color(2, 52, 68));
 		btnDelete.setForeground(new Color(255, 255, 255));
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				DeleteOrder deleteOrder = new DeleteOrder();
-                deleteOrder.deleteProductOrder(orderIDTextField.getText());
-			}
-		});
+		btnDelete.addActionListener(arg0 -> {
+            DeleteOrder deleteOrder = new DeleteOrder();
+deleteOrder.deleteProductOrder(orderIDTextField.getText());
+        });
 		btnDelete.setBounds(75, 468, 123, 23);
 		contentPane.add(btnDelete);
-		
-		btnCreateNewOrder = new JButton("Create new order");
+
+        JButton btnCreateNewOrder = new JButton("Create new order");
 		btnCreateNewOrder.setBackground(new Color(2, 52, 68));
 		btnCreateNewOrder.setForeground(new Color(255, 255, 255));
-		btnCreateNewOrder.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-                ProductOrderGui productOrderGui = new ProductOrderGui();
-                productOrderGui.setVisible(true);
-			}
-		});
+		btnCreateNewOrder.addActionListener(e -> {
+            dispose();
+ProductOrderGui productOrderGui = new ProductOrderGui();
+productOrderGui.setVisible(true);
+        });
 		btnCreateNewOrder.setBounds(225, 468, 123, 23);
 		contentPane.add(btnCreateNewOrder);
-		
-		btnNewButton = new JButton("<");
+
+        JButton btnNewButton = new JButton("<");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -152,8 +132,8 @@ public class ManageProductOrderGui extends JFrame {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBounds(10, 468, 46, 23);
 		contentPane.add(btnNewButton);
-		
-		label = new JLabel("");
+
+        JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon("photos\\productorders.png"));
 		label.setBounds(20, 37, 488, 114);
 		contentPane.add(label);

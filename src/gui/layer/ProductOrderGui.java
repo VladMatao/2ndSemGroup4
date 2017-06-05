@@ -13,22 +13,21 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.Color;
 
-public class ProductOrderGui extends JFrame {
+class ProductOrderGui extends JFrame {
 
-    private JFrame frame;
-    private JTextField quantityTextField;
-    private JTextField orderIDTextField;
-    private JTextField productBarcodeTextField;
-    private JTextField orderStatusTextField;
-    private JTextField deliveryDateTextField;
-    private JTextField companyIDTextField;
-    private JTextField productLineTextField;
+    private final JTextField quantityTextField;
+    private final JTextField orderIDTextField;
+    private final JTextField productBarcodeTextField;
+    private final JTextField orderStatusTextField;
+    private final JTextField deliveryDateTextField;
+    private final JTextField companyIDTextField;
+    private final JTextField productLineTextField;
 
 
     /**
      * Create the frame.
      */
-    public ProductOrderGui() {
+    ProductOrderGui() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 495);
         JPanel contentPane = new JPanel();

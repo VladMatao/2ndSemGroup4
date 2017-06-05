@@ -13,15 +13,15 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.Color;
 
-public class InvoiceGui extends JFrame {
+class InvoiceGui extends JFrame {
 
 
     /**
      * Create the frame.
      */
-    public InvoiceGui(String orderID) {
+    InvoiceGui(String orderID) {
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 659, 478);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -35,20 +35,20 @@ public class InvoiceGui extends JFrame {
         contentPane.add(lblOrdID);
         lblOrdID.setText(orderID);
 
-        DefaultTableModel invoicetable = new DefaultTableModel(
+        DefaultTableModel invoiceTable = new DefaultTableModel(
                 new Object[][]{
                 },
                 new String[]{
                         "ProductBarcode", "Quantity"
                 });
         ReadOrder readOrder = new ReadOrder();
-        fillTable(invoicetable, readOrder.readProductOrder(orderID).getProductLineId());
+        fillTable(invoiceTable, readOrder.readProductOrder(orderID).getProductLineId());
 
 
-        JLabel lblOrderid = new JLabel("OrderID:");
-        lblOrderid.setForeground(new Color(255, 255, 255));
-        lblOrderid.setBounds(10, 106, 78, 14);
-        contentPane.add(lblOrderid);
+        JLabel lblOrderId = new JLabel("OrderID:");
+        lblOrderId.setForeground(new Color(255, 255, 255));
+        lblOrderId.setBounds(10, 106, 78, 14);
+        contentPane.add(lblOrderId);
 
         JLabel lblOrderStatus = new JLabel("Order Status");
         lblOrderStatus.setForeground(new Color(255, 255, 255));
@@ -90,7 +90,7 @@ public class InvoiceGui extends JFrame {
         JTable table = new JTable();
         table.setBackground(new Color(62, 143, 169));
         scrollPane.setViewportView(table);
-        table.setModel(invoicetable);
+        table.setModel(invoiceTable);
 
         JLabel lblTotalTime = new JLabel("Total time");
         lblTotalTime.setForeground(new Color(255, 255, 255));

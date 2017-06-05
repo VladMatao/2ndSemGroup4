@@ -2,7 +2,6 @@ package control.layer;
 
 import db.layer.ProductOrderDb;
 import db.layer.RawMaterialOrderDb;
-import model.layer.Company;
 import model.layer.ProductOrder;
 import model.layer.RawMaterialOrder;
 
@@ -13,8 +12,8 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ReadOrder {
-	private ProductOrderDb productOrderDb=new ProductOrderDb();
-    private RawMaterialOrderDb rawMaterialOrderDb=new RawMaterialOrderDb();
+	private final ProductOrderDb productOrderDb=new ProductOrderDb();
+    private final RawMaterialOrderDb rawMaterialOrderDb=new RawMaterialOrderDb();
 	
     public ProductOrder readProductOrder(String id) {
         ProductOrder productOrder = null;

@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
-	public  void create(String requiredMatId, String rawMaterialBarcode, double quantity) throws SQLException {
+	public  void create(String requiredMatId, String rawMaterialBarcode, double quantity) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO RequiredRawMaterial (RequiredMatId, RawMaterialBarcode, Quantity)"
                     + " values (?, ?, ?)";
 
@@ -34,31 +34,10 @@ public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
         }
     }
 
-    @Override
-    public boolean update(RequiredRawMaterial requiredRawMaterial, String requiredMatId) throws SQLException {
-        try {
-            Connection conn = DbConnection.getInstance().getDBcon();
-            PreparedStatement psttm = conn.prepareStatement("UPDATE RequiredRawMaterial SET ID = ?, RawMaterialBarcode = ?, Quantity = ?" + "WHERE ID = ? ");
-            psttm.setString(1, requiredRawMaterial.getRequiredMatId());
-            psttm.setString(2, requiredRawMaterial.getRawMaterialBarcode());
-            psttm.setDouble(3, requiredRawMaterial.getQuantity());
-            psttm.setString(4, requiredMatId);
-
-            psttm.executeUpdate();
-        } catch (SQLException e) {
-            System.err.println("Got an exception!");
-            System.err.println(e.getMessage());
-        } finally {
-            DbConnection.closeConnection();
-        }
-        return true;
-    }
-
-    @Override
     public boolean delete(String requiredMatId) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
-            String sql = String.format("Delete from RequiredRawMaterial WHERE ID=%s", requiredMatId);
+            Connection conn = DbConnection.getInstance().getDbCon();
+            String sql = String.format("Delete from RequiredRawMaterial WHERE RequiredMarId=%s", requiredMatId);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,10 +49,10 @@ public class RequiredRawMaterialDb implements RequiredRawMaterialDbIf{
     }
 
     public static ArrayList<RequiredRawMaterial> readAll() throws SQLException {
-        ArrayList<RequiredRawMaterial> requiredRawMaterialArrayList = new ArrayList<RequiredRawMaterial>();
-        RequiredRawMaterial requiredRawMaterial = null;
+        ArrayList<RequiredRawMaterial> requiredRawMaterialArrayList = new ArrayList<>();
+        RequiredRawMaterial requiredRawMaterial;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM RequiredRawMaterial";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {

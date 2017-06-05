@@ -1,6 +1,5 @@
 package db.layer;
 
-import model.layer.ProductOrder;
 import model.layer.RawMaterialOrder;
 
 import java.sql.Connection;
@@ -14,10 +13,9 @@ import java.util.ArrayList;
  */
 public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
 
-    @Override
-    public void create(String rawMaterialOrderId, String deliveryDate, String orderStatus, double totalPrice, String companyId, String rawMaterialLineId) throws SQLException {
+    public void create(String rawMaterialOrderId, String deliveryDate, String orderStatus, double totalPrice, String companyId, String rawMaterialLineId) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
                     + " values (?, ?, ?, ?, ?)";
 
@@ -46,10 +44,9 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
         }
     }
 
-    @Override
-    public boolean update(RawMaterialOrder rawMaterialOrder, String RawMaterialOrderId) throws SQLException {
+    public void update(RawMaterialOrder rawMaterialOrder, String RawMaterialOrderId) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttmOrder = conn.prepareStatement("UPDATE Orders SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
             psttmOrder.setDouble(1, rawMaterialOrder.getTotalPrice());
             psttmOrder.setString(2, rawMaterialOrder.getOrderStatus());
@@ -68,13 +65,11 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
         } finally {
             DbConnection.closeConnection();
         }
-        return true;
     }
 
-    @Override
-    public boolean delete(String rawMaterialOrderId) throws SQLException {
+    public void delete(String rawMaterialOrderId) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from RawMaterialOrder where RawMaterialOrderID='%s'", rawMaterialOrderId);
             String sql1 = String.format("Delete from Orders where OrderID='%s'", rawMaterialOrderId);
             conn.createStatement().executeUpdate(sql1);
@@ -85,14 +80,12 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
         } finally {
             DbConnection.closeConnection();
         }
-        return true;
     }
 
-    @Override
     public RawMaterialOrder read(String orderId) throws SQLException {
         RawMaterialOrder rawMaterialOrder = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sqlO = String.format("SELECT * FROM Orders where OrderID=%s", orderId);
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
 
@@ -108,20 +101,18 @@ public class RawMaterialOrderDb implements RawMaterialOrderDbIf {
     }
 
     public ArrayList<RawMaterialOrder> readAll() throws SQLException {
-        ArrayList<RawMaterialOrder> rawMaterialOrders = new ArrayList<RawMaterialOrder>();
-        RawMaterialOrder rawMaterialOrder = null;
+        ArrayList<RawMaterialOrder> rawMaterialOrders = new ArrayList<>();
+        RawMaterialOrder rawMaterialOrder;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sqlO = "SELECT * FROM Orders ";
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
             String sqlRMO = "SELECT * FROM RawMaterialOrder";
             ResultSet rsRMO = conn.createStatement().executeQuery(sqlRMO);
-            while(rsRMO.next()) {
-                while(rsO.next()) {
-                    if (rsO.getString(1).equals(rsRMO.getString(1))) {
-                        rawMaterialOrder = buildObject(rsO, rsRMO);
-                        rawMaterialOrders.add(rawMaterialOrder);
-                    }
+            while(rsRMO.next()) while (rsO.next()) {
+                if (rsO.getString(1).equals(rsRMO.getString(1))) {
+                    rawMaterialOrder = buildObject(rsO, rsRMO);
+                    rawMaterialOrders.add(rawMaterialOrder);
                 }
             }
         }finally {

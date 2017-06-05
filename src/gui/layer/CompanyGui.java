@@ -11,23 +11,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class CompanyGui extends JFrame {
+class CompanyGui extends JFrame {
 
-    private JFrame frame;
-    private JTable table_1;
-    private JTextField nameTextField;
-    private JTextField companyIDTextField;
-    private JTextField phoneNumberTextField;
-    private JTextField emailTextField;
-    private JTextField companyTypeTextField;
-    private JTextField adressTextField;
+    private final JTextField nameTextField;
+    private final JTextField companyIDTextField;
+    private final JTextField phoneNumberTextField;
+    private final JTextField emailTextField;
+    private final JTextField companyTypeTextField;
+    private final JTextField addressTextField;
 
 
     /**
      * Create the frame.
      */
-    public CompanyGui() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    CompanyGui() {
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 583);
         JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(25, 93, 115));
@@ -36,13 +34,13 @@ public class CompanyGui extends JFrame {
         contentPane.setLayout(null);
 
 
-        DefaultTableModel companytable = new DefaultTableModel(
+        DefaultTableModel companyTable = new DefaultTableModel(
                 new Object[][]{
                 },
                 new String[]{
-                        "Company ID", "Name", "Phone Number", "Email", "Company Type", "Adress"
+                        "Company ID", "Name", "Phone Number", "Email", "Company Type", "Address"
                 });
-        fillTable(companytable);
+        fillTable(companyTable);
 
         nameTextField = new JTextField();
         nameTextField.setBounds(143, 192, 145, 31);
@@ -69,10 +67,10 @@ public class CompanyGui extends JFrame {
         companyTypeTextField.setBounds(143, 355, 145, 31);
         contentPane.add(companyTypeTextField);
 
-        adressTextField = new JTextField();
-        adressTextField.setColumns(10);
-        adressTextField.setBounds(143, 418, 145, 31);
-        contentPane.add(adressTextField);
+        addressTextField = new JTextField();
+        addressTextField.setColumns(10);
+        addressTextField.setBounds(143, 418, 145, 31);
+        contentPane.add(addressTextField);
 
         JButton addButton = new JButton("Add");
         addButton.setForeground(new Color(255, 255, 255));
@@ -81,8 +79,8 @@ public class CompanyGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent arg0) {
                 ManageCompany company = new ManageCompany();
-                company.create(companyIDTextField.getText(), nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), companyTypeTextField.getText(), adressTextField.getText());
-                fillTable(companytable);
+                company.create(companyIDTextField.getText(), nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), companyTypeTextField.getText(), addressTextField.getText());
+                fillTable(companyTable);
 
 
             }
@@ -90,21 +88,21 @@ public class CompanyGui extends JFrame {
         addButton.setBounds(10, 510, 89, 23);
         contentPane.add(addButton);
 
-        JButton deteleButton = new JButton("Delete");
-        deteleButton.setForeground(new Color(255, 255, 255));
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.setForeground(new Color(255, 255, 255));
 
-        deteleButton.setBackground(new Color(2, 52, 68));
-        deteleButton.addMouseListener(new MouseAdapter() {
+        deleteButton.setBackground(new Color(2, 52, 68));
+        deleteButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 ManageCompany company = new ManageCompany();
                 company.delete(companyIDTextField.getText());
-                fillTable(companytable);
+                fillTable(companyTable);
 
             }
         });
-        deteleButton.setBounds(104, 510, 89, 23);
-        contentPane.add(deteleButton);
+        deleteButton.setBounds(104, 510, 89, 23);
+        contentPane.add(deleteButton);
 
         JButton updateButton = new JButton("Update");
         updateButton.setForeground(new Color(255, 255, 255));
@@ -113,8 +111,8 @@ public class CompanyGui extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 ManageCompany company = new ManageCompany();
-                company.update(companyIDTextField.getText(), nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), companyTypeTextField.getText(), adressTextField.getText());
-                fillTable(companytable);
+                company.update(companyIDTextField.getText(), nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), companyTypeTextField.getText(), addressTextField.getText());
+                fillTable(companyTable);
             }
         });
         updateButton.setBounds(199, 510, 89, 23);
@@ -145,10 +143,10 @@ public class CompanyGui extends JFrame {
         lblCompanyType.setBounds(10, 363, 89, 14);
         contentPane.add(lblCompanyType);
 
-        JLabel lblAdress = new JLabel("Adress");
-        lblAdress.setForeground(new Color(255, 255, 255));
-        lblAdress.setBounds(10, 426, 89, 14);
-        contentPane.add(lblAdress);
+        JLabel lblAddress = new JLabel("Address");
+        lblAddress.setForeground(new Color(255, 255, 255));
+        lblAddress.setBounds(10, 426, 89, 14);
+        contentPane.add(lblAddress);
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(338, 0, 648, 533);
@@ -157,7 +155,7 @@ public class CompanyGui extends JFrame {
         JTable table = new JTable();
         table.setBackground(new Color(62, 143, 169));
         scrollPane.setViewportView(table);
-        table.setModel(companytable);
+        table.setModel(companyTable);
 
         JLabel label = new JLabel("");
         label.setIcon(new ImageIcon("photos\\companies.png"));
@@ -185,14 +183,14 @@ public class CompanyGui extends JFrame {
         ManageCompany companyCtr = new ManageCompany();
         ArrayList<Company> company = companyCtr.readAll();
         if (!company.isEmpty()) {
-            for (Company companys : company) {
-                String companyID = companys.getId();
-                String name = companys.getName();
-                String phoneNumber = companys.getPhNr();
-                String email = companys.getEmail();
-                String companyType = companys.getcompanyType();
-                String adress = companys.getAddress();
-                model.addRow(new Object[]{companyID, name, phoneNumber, email, companyType, adress});
+            for (Company companies : company) {
+                String companyID = companies.getId();
+                String name = companies.getName();
+                String phoneNumber = companies.getPhNr();
+                String email = companies.getEmail();
+                String companyType = companies.getCompanyType();
+                String address = companies.getAddress();
+                model.addRow(new Object[]{companyID, name, phoneNumber, email, companyType, address});
             }
 
         } else {

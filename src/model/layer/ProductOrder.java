@@ -4,8 +4,8 @@ package model.layer;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ProductOrder extends Order {
-    private String productLineId;
-    private Double totalProductionTime;
+    private final String productLineId;
+    private final Double totalProductionTime;
 
     public ProductOrder(String id, String deliveryDate, String orderStatus, double totalPrice, String companyId, double totalProductionTime, String productLineId) {
         super(id, deliveryDate, orderStatus, totalPrice, companyId);
@@ -17,15 +17,8 @@ public class ProductOrder extends Order {
         return productLineId;
     }
 
-    public void setProductLineId(String productLineId) {
-        this.productLineId = productLineId;
-    }
-
     public Double getTotalProductionTime() {
         return totalProductionTime;
     }
 
-    public void setTotalProductionTime(Double totalProductionTime) {
-        this.totalProductionTime = totalProductionTime;
-    }
 }

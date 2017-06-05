@@ -1,62 +1,38 @@
 package gui.layer;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import control.layer.CreateProductOrder;
 import control.layer.CreateRawMaterialOrder;
-import control.layer.ManageProductLine;
 import control.layer.ManageRawMaterialLine;
-import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
+class CreateRawMaterialOrderGui extends JFrame {
 
-public class CreateRawMaterialOrderGui extends JFrame {
-
-	private JPanel contentPane;
-	private JTable table;
-    private JTextField rawMaterialLineTextField;
-    private JLabel lblOrderId;
-    private JTextField orderIDTextField;
-    private JLabel lblTotalPrice;
-    private JLabel lblPrice;
-    private JLabel lblOrderStatus;
-    private JTextField orderStatusTextField;
-    private JLabel lblNewLabel;
-    private JTextField deliveryDateTextField;
-    private JLabel lblCompanyId;
-    private JTextField companyIDTextField;
-    private JLabel lblRawmaterialBarcode;
-    private JTextField rawMaterialBarcodeTextField;
-    private JTextField quantityTextField;
-    private JLabel lblQuantity;
-    private JLabel lblRawMaterialLine;
-    private JButton btnUpdate;
+    private final JTextField rawMaterialLineTextField;
+    private final JTextField orderIDTextField;
+    private final JLabel lblPrice;
+    private final JTextField orderStatusTextField;
+    private final JTextField deliveryDateTextField;
+    private final JTextField companyIDTextField;
+    private final JTextField rawMaterialBarcodeTextField;
+    private final JTextField quantityTextField;
 
 
-	/**
+    /**
 	 * Create the frame.
 	 */
-	public CreateRawMaterialOrderGui() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    CreateRawMaterialOrderGui() {
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1041, 542);
-		
-		contentPane = new JPanel();
+
+        JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -78,13 +54,13 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(453, 0, 572, 499);
 		contentPane.add(scrollPane);
-		
-		table = new JTable();
+
+        JTable table = new JTable();
 		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
         table.setModel(rawMaterialLineTable);
-		
-		lblOrderId = new JLabel("Order ID");
+
+        JLabel lblOrderId = new JLabel("Order ID");
 		lblOrderId.setForeground(new Color(255, 255, 255));
 		lblOrderId.setBounds(10, 168, 115, 14);
 		contentPane.add(lblOrderId);
@@ -93,8 +69,8 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		orderIDTextField.setBounds(135, 165, 159, 20);
 		contentPane.add(orderIDTextField);
 		orderIDTextField.setColumns(10);
-		
-		lblTotalPrice = new JLabel("Total Price");
+
+        JLabel lblTotalPrice = new JLabel("Total Price");
 		lblTotalPrice.setForeground(new Color(255, 255, 255));
 		lblTotalPrice.setBounds(10, 382, 77, 14);
 		contentPane.add(lblTotalPrice);
@@ -103,8 +79,8 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		lblPrice.setForeground(new Color(255, 255, 255));
 		lblPrice.setBounds(132, 382, 46, 14);
 		contentPane.add(lblPrice);
-		
-		lblOrderStatus = new JLabel("Order Status");
+
+        JLabel lblOrderStatus = new JLabel("Order Status");
 		lblOrderStatus.setForeground(new Color(255, 255, 255));
 		lblOrderStatus.setBounds(10, 196, 115, 14);
 		contentPane.add(lblOrderStatus);
@@ -113,8 +89,8 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		orderStatusTextField.setBounds(135, 193, 159, 20);
 		contentPane.add(orderStatusTextField);
 		orderStatusTextField.setColumns(10);
-		
-		lblNewLabel = new JLabel("Delivery Date");
+
+        JLabel lblNewLabel = new JLabel("Delivery Date");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(10, 227, 115, 14);
 		contentPane.add(lblNewLabel);
@@ -123,8 +99,8 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		deliveryDateTextField.setBounds(135, 224, 159, 20);
 		contentPane.add(deliveryDateTextField);
 		deliveryDateTextField.setColumns(10);
-		
-		lblCompanyId = new JLabel("Company ID");
+
+        JLabel lblCompanyId = new JLabel("Company ID");
 		lblCompanyId.setForeground(new Color(255, 255, 255));
 		lblCompanyId.setBounds(10, 258, 115, 14);
 		contentPane.add(lblCompanyId);
@@ -133,11 +109,11 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		companyIDTextField.setBounds(135, 255, 159, 20);
 		contentPane.add(companyIDTextField);
 		companyIDTextField.setColumns(10);
-		
-		lblRawmaterialBarcode = new JLabel("RawMaterial Barcode");
-		lblRawmaterialBarcode.setForeground(new Color(255, 255, 255));
-		lblRawmaterialBarcode.setBounds(10, 289, 115, 14);
-		contentPane.add(lblRawmaterialBarcode);
+
+        JLabel lblRawMaterialBarcode = new JLabel("RawMaterial Barcode");
+		lblRawMaterialBarcode.setForeground(new Color(255, 255, 255));
+		lblRawMaterialBarcode.setBounds(10, 289, 115, 14);
+		contentPane.add(lblRawMaterialBarcode);
 		
 		rawMaterialBarcodeTextField = new JTextField();
 		rawMaterialBarcodeTextField.setBounds(135, 286, 159, 20);
@@ -148,13 +124,13 @@ public class CreateRawMaterialOrderGui extends JFrame {
 		quantityTextField.setBounds(135, 317, 159, 20);
 		contentPane.add(quantityTextField);
 		quantityTextField.setColumns(10);
-		
-		lblQuantity = new JLabel("Quantity");
+
+        JLabel lblQuantity = new JLabel("Quantity");
 		lblQuantity.setForeground(new Color(255, 255, 255));
 		lblQuantity.setBounds(10, 320, 115, 14);
 		contentPane.add(lblQuantity);
-		
-		lblRawMaterialLine = new JLabel("Raw Material Line ID");
+
+        JLabel lblRawMaterialLine = new JLabel("Raw Material Line ID");
 		lblRawMaterialLine.setForeground(new Color(255, 255, 255));
 		lblRawMaterialLine.setBounds(10, 352, 115, 14);
 		contentPane.add(lblRawMaterialLine);
@@ -191,8 +167,8 @@ public class CreateRawMaterialOrderGui extends JFrame {
         });
         deleteButton.setBounds(156, 476, 89, 23);
         contentPane.add(deleteButton);
-        
-        btnUpdate = new JButton("Update");
+
+        JButton btnUpdate = new JButton("Update");
         btnUpdate.setBackground(new Color(2, 52, 68));
         btnUpdate.setForeground(new Color(255, 255, 255));
         btnUpdate.addMouseListener(new MouseAdapter() {

@@ -10,29 +10,14 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ManageRawMaterial {
-    private RawMaterialDb rawMaterialdDb;
+    private final RawMaterialDb rawMaterialdDb;
 
     public ManageRawMaterial() {
         rawMaterialdDb = new RawMaterialDb();
     }
 
-    public boolean create(String barcode, String name, Double stock, Double price) {
-        try {
-            rawMaterialdDb.create(barcode, name, stock,price);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    public RawMaterial read(String barcode) {
-        RawMaterial rawMaterial = null;
-        try {
-            rawMaterial = rawMaterialdDb.read(barcode);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rawMaterial;
+    public void create(String barcode, String name, Double stock, Double price) {
+        rawMaterialdDb.create(barcode, name, stock,price);
     }
 
     public Double getPrice(String barcode){
@@ -45,14 +30,9 @@ public class ManageRawMaterial {
         return rawMaterial.getPrice();
     }
 
-    public boolean update(String barcode, String name, Double stack, Double price) {
+    public void update(String barcode, String name, Double stack, Double price) {
         RawMaterial raw_material = new RawMaterial(barcode, name, stack,price);
-        try {
-            return rawMaterialdDb.update(raw_material, barcode);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
+        rawMaterialdDb.update(raw_material, barcode);
     }
 
 
@@ -66,13 +46,11 @@ public class ManageRawMaterial {
         return allrawmaterials;
     }
 
-    public boolean delete(String barcode) {
-        boolean aux = false;
+    public void delete(String barcode) {
         try {
-            aux = rawMaterialdDb.delete(barcode);
+            rawMaterialdDb.delete(barcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return aux;
     }
 }

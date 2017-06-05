@@ -11,18 +11,14 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.Color;
 
-public class PersonGui extends JFrame {
+class PersonGui extends JFrame {
 
-    private JPanel contentPane;
-    private JFrame frame;
-    private JTable table;
-    private JTable table_1;
-    private JTextField f_nameTextField;
-    private JTextField personIDTextField;
-    private JTextField l_nameTextField;
-    private JTextField cnpTextField;
-    private JTextField adressTextField;
-    private JTextField phoneNumberTextField;
+    private final JTextField f_nameTextField;
+    private final JTextField personIDTextField;
+    private final JTextField l_nameTextField;
+    private final JTextField cnpTextField;
+    private final JTextField adressTextField;
+    private final JTextField phoneNumberTextField;
     private JTextField cityTextField;
     private JTextField positionTextField;
     private JTextField wageTextField;
@@ -31,10 +27,10 @@ public class PersonGui extends JFrame {
     /**
      * Create the frame.
      */
-    public PersonGui() {
+    PersonGui() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1056, 720);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(25, 93, 115));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -187,8 +183,8 @@ public class PersonGui extends JFrame {
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(323, 0, 717, 670);
         contentPane.add(scrollPane);
-        
-                table = new JTable();
+
+        JTable table = new JTable();
                 scrollPane.setViewportView(table);
                 table.setModel(persontable);
                 

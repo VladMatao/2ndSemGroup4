@@ -1,59 +1,27 @@
 package gui.layer;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import control.layer.ManageCompany;
 import control.layer.RequiredRawMaterialCtr;
-import model.layer.Company;
 import model.layer.RequiredRawMaterial;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
-import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class RequiredRawMaterialsGui extends JFrame {
+class RequiredRawMaterialsGui extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField IDTextField;
-	private JTextField ProductBarcodeTextField;
-	private JTextField QuantityTextField;
-	private JTable table;
-	private JButton btnDelete;
+	private final JTextField IDTextField;
+	private final JTextField ProductBarcodeTextField;
+	private final JTextField QuantityTextField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RequiredRawMaterialsGui frame = new RequiredRawMaterialsGui();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public RequiredRawMaterialsGui() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	RequiredRawMaterialsGui() {
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 863, 433);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -62,7 +30,7 @@ public class RequiredRawMaterialsGui extends JFrame {
 	                new Object[][]{
 	                },
 	                new String[]{
-	                        "ID", "Product Barcode", "Quantity"
+	                        "ID", "Raw Barcode", "Quantity"
 	                });
 	        fillTable(requiredRawMaterialsTable);
 		
@@ -96,8 +64,8 @@ public class RequiredRawMaterialsGui extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(477, 11, 370, 383);
 		contentPane.add(scrollPane);
-		
-		table = new JTable();
+
+		JTable table = new JTable();
 		scrollPane.setViewportView(table);
 	    table.setModel(requiredRawMaterialsTable);
 	    
@@ -113,8 +81,8 @@ public class RequiredRawMaterialsGui extends JFrame {
 	    });
 	    btnAdd.setBounds(48, 283, 89, 23);
 	    contentPane.add(btnAdd);
-	    
-	    btnDelete = new JButton("Delete");
+
+		JButton btnDelete = new JButton("Delete");
 	    btnDelete.addMouseListener(new MouseAdapter() {
 	    	@Override
 	    	public void mouseClicked(MouseEvent e) {

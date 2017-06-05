@@ -10,19 +10,14 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class ManageProduct {
-    private ProductDb productDb;
+    private final ProductDb productDb;
 
     public ManageProduct() {
         productDb = new ProductDb();
     }
 
-    public boolean create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) {
-        try {
-            productDb.create(name, barcode, price, stock, productionTime, requiredMatID);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
+    public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) {
+        productDb.create(name, barcode, price, stock, productionTime, requiredMatID);
     }
 
     public Product read(String barcode) {
@@ -47,23 +42,16 @@ public class ManageProduct {
 
     }
 
-    public boolean update(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) {
+    public void update(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) {
         Product product = new Product(name, barcode, price, stock, productionTime, requiredMatID);
-        try {
-            return productDb.update(product, barcode);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
+        productDb.update(product, barcode);
     }
 
-    public boolean delete(String barcode) {
-        boolean aux = false;
+    public void delete(String barcode) {
         try {
-            aux = productDb.delete(barcode);
+            productDb.delete(barcode);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return aux;
     }
 }

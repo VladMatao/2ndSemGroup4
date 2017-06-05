@@ -3,11 +3,9 @@ package control.layer;
 import db.layer.ProductDb;
 import db.layer.ProductLineDb;
 import db.layer.ProductOrderDb;
-import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 import model.layer.RequiredRawMaterial;
 
-import java.awt.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,8 +13,8 @@ import java.util.ArrayList;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class CreateProductOrder {
-    private ProductOrderDb productOrderDb;
-    private ProductDb productDb;
+    private final ProductOrderDb productOrderDb;
+    private final ProductDb productDb;
 
     public CreateProductOrder() {
         productOrderDb = new ProductOrderDb();
@@ -24,13 +22,8 @@ public class CreateProductOrder {
         productDb = new ProductDb();
     }
 
-    public boolean create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, double totalProductionTime) {
-        try {
-            productOrderDb.create(productOrderId, totalPrice, orderStatus, deliveryDate, companyId, productLineId, totalProductionTime);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
+    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, double totalProductionTime) {
+        productOrderDb.create(productOrderId, totalPrice, orderStatus, deliveryDate, companyId, productLineId, totalProductionTime);
     }
 
     public double calculatePrice(String productBarcode, int quantity) {
@@ -55,7 +48,7 @@ public class CreateProductOrder {
         return totalTime;
     }
 
-    public void makeRawMaterialOrder(Double quanitiy, String productLineId ,String productBarcode){
+    public void makeRawMaterialOrder(Double quantity, String productLineId ,String productBarcode){
         CreateRawMaterialOrder createRawMaterialOrderCtr = new CreateRawMaterialOrder();
         RequiredRawMaterialCtr requiredRawMaterialCtr = new RequiredRawMaterialCtr();
         ManageRawMaterialLine manageRawMaterialLineCtr = new ManageRawMaterialLine();
@@ -66,7 +59,7 @@ public class CreateProductOrder {
         ArrayList<RawMaterialLine> allRawMaterialLines;
         allRawMaterialLines=manageRawMaterialLineCtr.readAll();
         for (RequiredRawMaterial requiredRawMaterial : requiredRawMaterialsToMakeProduct) {
-            manageRawMaterialLineCtr.create("" + productLineId + "Raw", requiredRawMaterial.getQuantity() * quanitiy, requiredRawMaterial.getRawMaterialBarcode());
+            manageRawMaterialLineCtr.create("" + productLineId + "Raw", requiredRawMaterial.getQuantity() * quantity, requiredRawMaterial.getRawMaterialBarcode());
         }
     }
 }

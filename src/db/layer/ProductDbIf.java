@@ -7,11 +7,11 @@ import java.sql.SQLException;
 /**
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
-public interface ProductDbIf {
+interface ProductDbIf {
 
-    void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException;
+    void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID);
 
-    boolean update(Product product, String barcode) throws SQLException;
+    boolean update(Product product, String barcode);
 
     boolean delete(String barcode) throws SQLException;
 

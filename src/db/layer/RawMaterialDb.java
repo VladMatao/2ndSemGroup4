@@ -15,10 +15,9 @@ import java.util.ArrayList;
 
 public class RawMaterialDb implements RawMaterialDbIf {
 
-    @Override
-    public void create(String barcode, String name, Double stock,Double price) throws SQLException {
+    public void create(String barcode, String name, Double stock,Double price) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO RawMaterial (Barcode, Name, Stock, Price)"
                     + " values (?, ?, ?, ?)";
 
@@ -39,10 +38,9 @@ public class RawMaterialDb implements RawMaterialDbIf {
         }
     }
 
-    @Override
-    public boolean update(RawMaterial rawMat, String barcode) throws SQLException {
+    public void update(RawMaterial rawMat, String barcode) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE RawMaterial SET Barcode = ?, Name = ?, Stock = ?, Price = ?  WHERE Barcode = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, rawMat.getBarcode());
@@ -57,13 +55,11 @@ public class RawMaterialDb implements RawMaterialDbIf {
         } finally {
             DbConnection.closeConnection();
         }
-        return true;
     }
 
-    @Override
     public boolean delete(String barcode) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from RawMaterial where Barcode='%s'", barcode);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -75,11 +71,10 @@ public class RawMaterialDb implements RawMaterialDbIf {
         return true;
     }
 
-    @Override
     public RawMaterial read(String barcode) throws SQLException {
         RawMaterial rawMat = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("SELECT * FROM RawMaterial where Barcode =%s", barcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()) {
@@ -92,10 +87,10 @@ public class RawMaterialDb implements RawMaterialDbIf {
     }
 
     public ArrayList<RawMaterial> readAll() throws SQLException {
-        ArrayList<RawMaterial> rawMaterialcollection = new ArrayList<RawMaterial>();
-        RawMaterial rawMaterial = null;
+        ArrayList<RawMaterial> rawMaterialcollection = new ArrayList<>();
+        RawMaterial rawMaterial;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM RawMaterial ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {

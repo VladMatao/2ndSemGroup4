@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/db/layer/CompanyDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/PersonDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/ProductDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/ProductLineDb.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/db/layer/ProductOrderDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/RawMaterialDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/RawMaterialLineDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/RawMaterialOrderDb.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/db/layer/RequiredRawMaterialDb.java" dialect="MySQL" />
   </component>
 </project>

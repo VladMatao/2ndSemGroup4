@@ -2,19 +2,10 @@ package gui.layer;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class MenuManageProduct {
+class MenuManageProduct {
 
     private JFrame frame;
-
-    /**
-     * Create the application.
-     */
-    public MenuManageProduct() {
-        initialize();
-    }
 
     /**
      * Initialize the contents of the frame.
@@ -23,23 +14,19 @@ public class MenuManageProduct {
         frame = new JFrame();
         frame.setVisible(true);
         frame.setBounds(100, 100, 450, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
         JButton btnCreateProduct = new JButton("Create Product");
-        btnCreateProduct.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new CreateProduct();
-                frame.dispose();
-            }
+        btnCreateProduct.addActionListener(e -> {
+            new CreateProduct();
+            frame.dispose();
         });
         btnCreateProduct.setBounds(154, 84, 105, 23);
         frame.getContentPane().add(btnCreateProduct);
 
         JButton btnUpdateProduct = new JButton("Update Product");
-        btnUpdateProduct.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
+        btnUpdateProduct.addActionListener(e -> {
         });
         btnUpdateProduct.setBounds(152, 118, 107, 23);
         frame.getContentPane().add(btnUpdateProduct);
@@ -49,12 +36,7 @@ public class MenuManageProduct {
         frame.getContentPane().add(btnDeleteProduct);
 
         JButton btnFindProduct = new JButton("Find Product");
-        btnFindProduct.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new FindOrder();
-
-            }
-        });
+        btnFindProduct.addActionListener(e -> new FindOrder());
         btnFindProduct.setBounds(154, 186, 105, 23);
         frame.getContentPane().add(btnFindProduct);
 

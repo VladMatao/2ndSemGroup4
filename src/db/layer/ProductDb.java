@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class ProductDb implements ProductDbIf {
 
     @Override
-    public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) throws SQLException {
+    public void create(String name, String barcode, double price, int stock, int productionTime, String requiredMatID) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO Product (Name, Barcode, Price, Stock, Production_Time, RequiredMatID)"
                     + " values (?, ?, ?, ?, ?, ?)";
 
@@ -42,9 +42,9 @@ public class ProductDb implements ProductDbIf {
     }
 
     @Override
-    public boolean update(Product product, String barcode) throws SQLException {
+    public boolean update(Product product, String barcode) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE Product SET Name = ?, Barcode = ?, Price = ?, Stock = ?, Production_Time = ?, RequiredMatID = ? WHERE Barcode = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setNString(1, product.getName());
@@ -67,7 +67,7 @@ public class ProductDb implements ProductDbIf {
     @Override
     public boolean delete(String barcode) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from Product where barcode=%s", barcode);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -83,7 +83,7 @@ public class ProductDb implements ProductDbIf {
     public Product read(String barcode) throws SQLException {
         Product product = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("SELECT * FROM Product where Barcode='%s'", barcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()) {
@@ -97,10 +97,10 @@ public class ProductDb implements ProductDbIf {
 
 
     public ArrayList<Product> readAll() throws SQLException {
-        ArrayList<Product> productcollection = new ArrayList<Product>();
-        Product product = null;
+        ArrayList<Product> productcollection = new ArrayList<>();
+        Product product;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM Product ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {

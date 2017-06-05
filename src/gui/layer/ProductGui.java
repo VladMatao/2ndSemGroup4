@@ -11,23 +11,21 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class ProductGui extends JFrame {
+class ProductGui extends JFrame {
 
-    private JFrame frame;
-    private JTable table_1;
-    private JTextField barcodeTextField;
-    private JTextField nameTextField;
-    private JTextField priceTextField;
-    private JTextField stockTextField;
-    private JTextField producionTimeTextField;
-    private JTextField requiredMatIDTextField;
+    private final JTextField barcodeTextField;
+    private final JTextField nameTextField;
+    private final JTextField priceTextField;
+    private final JTextField stockTextField;
+    private final JTextField producionTimeTextField;
+    private final JTextField requiredMatIDTextField;
 
 
     /**
      * Create the frame.
      */
-    public ProductGui() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    ProductGui() {
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 577);
         JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(25, 93, 115));
@@ -182,7 +180,8 @@ public class ProductGui extends JFrame {
         ManageProduct productCtr = new ManageProduct();
         ArrayList<Product> product = productCtr.readAll();
         if (!product.isEmpty()) {
-            for (Product products : product) {
+            for (int i = 0; i < product.size(); i++) {
+                Product products = product.get(i);
                 String Name = products.getName();
                 String Barcode = products.getBarcode();
                 String Price = String.valueOf(products.getPrice());

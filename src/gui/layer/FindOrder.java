@@ -7,15 +7,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class FindOrder {
+class FindOrder {
 
-
-	/**
-     * Create the application.
-     */
-    public FindOrder() {
-        initialize();
-    }
 
     /**
      * Initialize the contents of the frame.
@@ -25,7 +18,7 @@ public class FindOrder {
         frame.setVisible(true);
         frame.setBounds(100, 100, 450, 300);
         frame.getContentPane().setLayout(null);
-        DefaultTableModel producttable = new DefaultTableModel(
+        DefaultTableModel productTable = new DefaultTableModel(
                 new Object[][]{
                 },
                 new String[]{
@@ -33,10 +26,10 @@ public class FindOrder {
                 });
 
         JTable table = new JTable();
-        table.setModel(producttable);
+        table.setModel(productTable);
         table.setBounds(10, 11, 414, 239);
         frame.getContentPane().add(table);
-        fillTable(producttable);
+        fillTable(productTable);
     }
 
     private void fillTable(DefaultTableModel model) {

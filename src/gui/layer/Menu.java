@@ -2,8 +2,6 @@ package gui.layer;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -12,7 +10,7 @@ public class Menu extends JFrame {
     public Menu() {
         setTitle("Menu");
         setBounds(100, 100, 664, 560);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
         panel.setBackground(new Color(25, 93, 115));
@@ -23,12 +21,10 @@ public class Menu extends JFrame {
         JButton createOrderButton = new JButton("Create Order");
         createOrderButton.setForeground(new Color(255, 255, 255));
         createOrderButton.setBackground(new Color(2, 52, 68));
-        createOrderButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                ProductOrderGui productOrderGui = new ProductOrderGui();
-                productOrderGui.setVisible(true);
-            }
+        createOrderButton.addActionListener(e -> {
+            dispose();
+            ProductOrderGui productOrderGui = new ProductOrderGui();
+            productOrderGui.setVisible(true);
         });
         createOrderButton.setBounds(67, 205, 140, 23);
         panel.add(createOrderButton);
@@ -36,12 +32,10 @@ public class Menu extends JFrame {
         JButton productButton = new JButton("Products");
         productButton.setForeground(new Color(255, 255, 255));
         productButton.setBackground(new Color(2, 52, 68));
-        productButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                ProductGui productGui = new ProductGui();
-                productGui.setVisible(true);
-            }
+        productButton.addActionListener(e -> {
+            dispose();
+            ProductGui productGui = new ProductGui();
+            productGui.setVisible(true);
         });
         productButton.setBounds(67, 275, 140, 23);
         panel.add(productButton);
@@ -50,9 +44,7 @@ public class Menu extends JFrame {
         JButton statisticsButton = new JButton("Statistics");
         statisticsButton.setForeground(new Color(255, 255, 255));
         statisticsButton.setBackground(new Color(2, 52, 68));
-        statisticsButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
+        statisticsButton.addActionListener(arg0 -> {
         });
         statisticsButton.setBounds(67, 309, 140, 23);
         panel.add(statisticsButton);
@@ -102,12 +94,10 @@ public class Menu extends JFrame {
         JButton ordersButton = new JButton("Orders");
         ordersButton.setForeground(new Color(255, 255, 255));
         ordersButton.setBackground(new Color(2, 52, 68));
-        ordersButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                ChoseOrderGui choseOrderGui = new ChoseOrderGui();
-                choseOrderGui.setVisible(true);
-            }
+        ordersButton.addActionListener(e -> {
+            dispose();
+            ChoseOrderGui choseOrderGui = new ChoseOrderGui();
+            choseOrderGui.setVisible(true);
         });
         ordersButton.setBounds(67, 239, 140, 23);
         panel.add(ordersButton);

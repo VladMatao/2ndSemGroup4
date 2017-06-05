@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class ProductLineDb implements ProductLineDbIf {
 
     @Override
-    public void create(String id, double quantity, String productBarcode) throws SQLException {
+    public void create(String id, double quantity, String productBarcode) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String query = " INSERT INTO ProductLine (ID, Quantity,ProductBarcode)"
                     + " values (?, ?, ?)";
 
@@ -38,10 +38,9 @@ public class ProductLineDb implements ProductLineDbIf {
         }
     }
 
-    @Override
-    public boolean update(ProductLine productLine, String id) throws SQLException {
+    public void update(ProductLine productLine, String id) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttm = conn.prepareStatement("UPDATE ProductLine SET ID = ?, Quantity = ?, ProductBarcode = ? WHERE ID = ? ");
             //psttm.setInt(1,curentQuantity);
             psttm.setString(1, productLine.getproductLineId());
@@ -55,13 +54,11 @@ public class ProductLineDb implements ProductLineDbIf {
         } finally {
             DbConnection.closeConnection();
         }
-        return true;
     }
 
-    @Override
     public boolean delete(String id) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from ProductLine where id='%s'", id);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
@@ -74,10 +71,10 @@ public class ProductLineDb implements ProductLineDbIf {
     }
 
     public ArrayList<ProductLine> readAll() throws SQLException {
-        ArrayList<ProductLine> productLinecollection = new ArrayList<ProductLine>();
-        ProductLine productLine = null;
+        ArrayList<ProductLine> productLinecollection = new ArrayList<>();
+        ProductLine productLine;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = "SELECT * FROM ProductLine ";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
@@ -90,11 +87,10 @@ public class ProductLineDb implements ProductLineDbIf {
         return productLinecollection;
     }
 
-    @Override
     public ProductLine read(String id, String productBarcode) throws SQLException {
         ProductLine productLine = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("SELECT * FROM ProductLine where ID=%s AND ProductBarcode=%s", id, productBarcode);
             ResultSet rs = conn.createStatement().executeQuery(sql);
             if (rs.next()) {
@@ -124,7 +120,7 @@ public class ProductLineDb implements ProductLineDbIf {
     @Override
     public boolean deleteProductFromProductLine(String id, String productBarcode) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from ProductLine where id='%s' AND ProductBarcode='%s' ", id, productBarcode);
             conn.createStatement().executeUpdate(sql);
         } catch (SQLException e) {

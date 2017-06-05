@@ -2,15 +2,8 @@ package gui.layer;
 
 import javax.swing.*;
 
-public class UpdateProduct {
+class UpdateProduct {
 
-
-	/**
-     * Create the application.
-     */
-    public UpdateProduct() {
-        initialize();
-    }
 
     /**
      * Initialize the contents of the frame.
@@ -19,7 +12,7 @@ public class UpdateProduct {
         JFrame frame = new JFrame();
         frame.setVisible(true);
         frame.setBounds(100, 100, 450, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 }

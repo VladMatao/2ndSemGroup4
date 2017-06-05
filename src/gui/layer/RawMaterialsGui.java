@@ -11,12 +11,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class RawMaterialsGui extends JFrame {
+class RawMaterialsGui extends JFrame {
 
-    private JFrame frame;
-    private JTable table_1;
-    private JTextField nameTextField;
-    private JTextField barcodeTextField;
+    private final JTextField nameTextField;
+    private final JTextField barcodeTextField;
     private JTextField stockTf;
     private JTextField PricetextField;
 
@@ -24,8 +22,8 @@ public class RawMaterialsGui extends JFrame {
     /**
      * Create the frame.
      */
-    public RawMaterialsGui() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    RawMaterialsGui() {
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(100, 100, 1002, 495);
         JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(25, 93, 115));

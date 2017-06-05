@@ -1,6 +1,5 @@
 package db.layer;
 
-import model.layer.Company;
 import model.layer.ProductOrder;
 
 import java.sql.Connection;
@@ -15,9 +14,9 @@ import java.util.ArrayList;
 public class ProductOrderDb implements ProductOrderDbIf {
 
     @Override
-    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, Double totalProductionTime) throws SQLException {
+    public void create(String productOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String productLineId, Double totalProductionTime) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String queryOrder = " INSERT INTO Orders (OrderID, Total_price, Order_Status, Delivery_date, CompanyID)"
                     + " values (?, ?, ?, ?, ?)";
 
@@ -48,9 +47,9 @@ public class ProductOrderDb implements ProductOrderDbIf {
     }
 
     @Override
-    public boolean update(ProductOrder productOrder, String productOrderId) throws SQLException {
+    public boolean update(ProductOrder productOrder, String productOrderId) {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             PreparedStatement psttmOrder = conn.prepareStatement("UPDATE Orders SET Total_price = ?, Order_Status = ?, Delivery_date = ?, CompanyID = ? WHERE OrderID = ?");
             psttmOrder.setDouble(1, productOrder.getTotalPrice());
             psttmOrder.setString(2, productOrder.getOrderStatus());
@@ -76,7 +75,7 @@ public class ProductOrderDb implements ProductOrderDbIf {
     @Override
     public boolean delete(String productOrderId) throws SQLException {
         try {
-            Connection conn = DbConnection.getInstance().getDBcon();
+            Connection conn = DbConnection.getInstance().getDbCon();
             String sql = String.format("Delete from ProductOrder where ProductOrderId='%s'", productOrderId);
             String sql1 = String.format("Delete from Orders where OrderID='%s'", productOrderId);
             conn.createStatement().executeUpdate(sql);
@@ -94,7 +93,7 @@ public class ProductOrderDb implements ProductOrderDbIf {
     public ProductOrder read(String orderId) throws SQLException {
         ProductOrder productOrder = null;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sqlO = String.format("SELECT * FROM Orders where OrderID=%s", orderId);
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
 
@@ -110,10 +109,10 @@ public class ProductOrderDb implements ProductOrderDbIf {
     }
 
     public ArrayList<ProductOrder> readAll() throws SQLException {
-        ArrayList<ProductOrder> productOrders = new ArrayList<ProductOrder>();
-        ProductOrder productOrder = null;
+        ArrayList<ProductOrder> productOrders = new ArrayList<>();
+        ProductOrder productOrder;
         try {
-            java.sql.Connection conn = DbConnection.getInstance().getDBcon();
+            java.sql.Connection conn = DbConnection.getInstance().getDbCon();
             String sqlO = "SELECT * FROM Orders";
             ResultSet rsO = conn.createStatement().executeQuery(sqlO);
             String sqlPO = "SELECT * FROM ProductOrder";

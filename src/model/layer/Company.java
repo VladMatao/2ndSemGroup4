@@ -4,12 +4,12 @@ package model.layer;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class Company {
-    private String id;
-    private String name;
-    private String phNr;
-    private String email;
-    private String companyType;
-    private String address;
+    private final String id;
+    private final String name;
+    private final String phNr;
+    private final String email;
+    private final String companyType;
+    private final String address;
 
     public Company(String id, String name, String phNr, String email, String companyType, String address) {
         this.id = id;
@@ -24,47 +24,24 @@ public class Company {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPhNr() {
         return phNr;
     }
 
-    public void setPhNr(String phNr) {
-        this.phNr = phNr;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getcompanyType() {
+    public String getCompanyType() {
         return companyType;
-    }
-
-    public void setcompanyType(String companyType) {
-        this.companyType = companyType;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }

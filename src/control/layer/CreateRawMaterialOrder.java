@@ -10,8 +10,8 @@ import java.sql.SQLException;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class CreateRawMaterialOrder {
-    private RawMaterialOrderDb RawMaterialOrderDb;
-    private RawMaterialDb RawMaterialDb;
+    private final RawMaterialOrderDb RawMaterialOrderDb;
+    private final RawMaterialDb RawMaterialDb;
 
     public CreateRawMaterialOrder() {
         RawMaterialOrderDb = new RawMaterialOrderDb();
@@ -19,13 +19,8 @@ public class CreateRawMaterialOrder {
         RawMaterialDb = new RawMaterialDb();
     }
 
-    public boolean create(String RawMaterialOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String RawMaterialLineId) {
-        try {
-            RawMaterialOrderDb.create(RawMaterialOrderId, deliveryDate, orderStatus, totalPrice, companyId, RawMaterialLineId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
+    public void create(String RawMaterialOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String RawMaterialLineId) {
+        RawMaterialOrderDb.create(RawMaterialOrderId, deliveryDate, orderStatus, totalPrice, companyId, RawMaterialLineId);
     }
 
     public double calculatePrice(String RawMaterialBarcode, int quantity) {
