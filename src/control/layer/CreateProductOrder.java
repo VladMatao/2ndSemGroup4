@@ -7,6 +7,7 @@ import model.layer.ProductLine;
 import model.layer.RawMaterialLine;
 import model.layer.RequiredRawMaterial;
 
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -60,24 +61,12 @@ public class CreateProductOrder {
         ManageRawMaterialLine manageRawMaterialLineCtr = new ManageRawMaterialLine();
         ManageProduct manageProductCtr = new ManageProduct();
         String requiredMaterialId=manageProductCtr.read(productBarcode).getRequiredMatID();
-        ArrayList<RequiredRawMaterial> requiredRawMaterialsToMakeProduct = new ArrayList<>();
+        ArrayList<RequiredRawMaterial> requiredRawMaterialsToMakeProduct;
         requiredRawMaterialsToMakeProduct=requiredRawMaterialCtr.readAllWithId(requiredMaterialId);
-        ArrayList<RawMaterialLine> allRawMaterialLines = new ArrayList<>();
+        ArrayList<RawMaterialLine> allRawMaterialLines;
         allRawMaterialLines=manageRawMaterialLineCtr.readAll();
-        for(RawMaterialLine rawMaterialLine : allRawMaterialLines) {
-            for (RequiredRawMaterial requiredRawMaterial : requiredRawMaterialsToMakeProduct) {
-                if (("" + productLineId + "Raw").equals(rawMaterialLine.getId()) && (requiredRawMaterial.getRawMaterialBarcode().equals(rawMaterialLine.getRawMaterialBarcode()))) {
-                    manageRawMaterialLineCtr.update("" + productLineId + "Raw", rawMaterialLine.getQuantity() + requiredRawMaterial.getQuantity() * quanitiy, requiredRawMaterial.getRawMaterialBarcode());
-                }
-            }
-        }
-
-        for(RawMaterialLine rawMaterialLine : allRawMaterialLines) {
-            for (RequiredRawMaterial requiredRawMaterial : requiredRawMaterialsToMakeProduct) {
-                if (!(("" + productLineId + "Raw").equals(rawMaterialLine.getId()) && (requiredRawMaterial.getRawMaterialBarcode().equals(rawMaterialLine.getRawMaterialBarcode())))) {
-                    manageRawMaterialLineCtr.update("" + productLineId + "Raw", rawMaterialLine.getQuantity() + requiredRawMaterial.getQuantity() * quanitiy, requiredRawMaterial.getRawMaterialBarcode());
-                }
-            }
+        for (RequiredRawMaterial requiredRawMaterial : requiredRawMaterialsToMakeProduct) {
+            manageRawMaterialLineCtr.create("" + productLineId + "Raw", requiredRawMaterial.getQuantity() * quanitiy, requiredRawMaterial.getRawMaterialBarcode());
         }
     }
 }
