@@ -9,15 +9,14 @@ import java.util.ArrayList;
 
 class FindOrder {
 
-
-    /**
-     * Initialize the contents of the frame.
-     */
-    private void initialize() {
+    FindOrder() {
         JFrame frame = new JFrame();
         frame.setVisible(true);
         frame.setBounds(100, 100, 450, 300);
-        frame.getContentPane().setLayout(null);
+        frame.getContentPane().
+
+                setLayout(null);
+
         DefaultTableModel productTable = new DefaultTableModel(
                 new Object[][]{
                 },
@@ -28,7 +27,10 @@ class FindOrder {
         JTable table = new JTable();
         table.setModel(productTable);
         table.setBounds(10, 11, 414, 239);
-        frame.getContentPane().add(table);
+        frame.getContentPane().
+
+                add(table);
+
         fillTable(productTable);
     }
 
