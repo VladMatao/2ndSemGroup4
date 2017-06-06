@@ -18,7 +18,7 @@ class CreateProduct {
     /**
      * Initialize the contents of the frame.
      */
-    private void initialize() {
+    CreateProduct() {
         JFrame frame = new JFrame();
         frame.setVisible(true);
         frame.setBounds(100, 100, 450, 350);
