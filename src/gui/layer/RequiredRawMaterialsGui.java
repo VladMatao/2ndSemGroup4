@@ -11,6 +11,7 @@ import model.layer.RequiredRawMaterial;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Color;
 
 class RequiredRawMaterialsGui extends JFrame {
 
@@ -22,6 +23,7 @@ class RequiredRawMaterialsGui extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 863, 433);
 		JPanel contentPane = new JPanel();
+		contentPane.setBackground(new Color(25, 93, 115));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -35,41 +37,47 @@ class RequiredRawMaterialsGui extends JFrame {
 	        fillTable(requiredRawMaterialsTable);
 		
 		JLabel lblId = new JLabel("ID");
-		lblId.setBounds(26, 40, 46, 14);
+		lblId.setForeground(new Color(255, 255, 255));
+		lblId.setBounds(93, 131, 46, 14);
 		contentPane.add(lblId);
 		
 		IDTextField = new JTextField();
-		IDTextField.setBounds(160, 37, 86, 20);
+		IDTextField.setBounds(243, 128, 116, 20);
 		contentPane.add(IDTextField);
 		IDTextField.setColumns(10);
 		
 		JLabel lblProdutctBarcode = new JLabel("Produtct Barcode");
-		lblProdutctBarcode.setBounds(10, 87, 91, 14);
+		lblProdutctBarcode.setForeground(new Color(255, 255, 255));
+		lblProdutctBarcode.setBounds(93, 178, 91, 14);
 		contentPane.add(lblProdutctBarcode);
 		
 		ProductBarcodeTextField = new JTextField();
-		ProductBarcodeTextField.setBounds(160, 84, 86, 20);
+		ProductBarcodeTextField.setBounds(243, 175, 116, 20);
 		contentPane.add(ProductBarcodeTextField);
 		ProductBarcodeTextField.setColumns(10);
 		
 		JLabel lblQuantity = new JLabel("Quantity");
-		lblQuantity.setBounds(10, 137, 46, 14);
+		lblQuantity.setForeground(new Color(255, 255, 255));
+		lblQuantity.setBounds(93, 228, 46, 14);
 		contentPane.add(lblQuantity);
 		
 		QuantityTextField = new JTextField();
-		QuantityTextField.setBounds(160, 134, 86, 20);
+		QuantityTextField.setBounds(243, 225, 116, 20);
 		contentPane.add(QuantityTextField);
 		QuantityTextField.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(477, 11, 370, 383);
+		scrollPane.setBounds(428, 0, 419, 394);
 		contentPane.add(scrollPane);
 
 		JTable table = new JTable();
+		table.setBackground(new Color(62, 143, 169));
 		scrollPane.setViewportView(table);
 	    table.setModel(requiredRawMaterialsTable);
 	    
 	    JButton btnAdd = new JButton("Add");
+	    btnAdd.setBackground(new Color(2, 52, 68));
+	    btnAdd.setForeground(new Color(255, 255, 255));
 	    btnAdd.addMouseListener(new MouseAdapter() {
 	    	@Override
 	    	public void mouseClicked(MouseEvent arg0) {
@@ -79,10 +87,12 @@ class RequiredRawMaterialsGui extends JFrame {
 
 	    	}
 	    });
-	    btnAdd.setBounds(48, 283, 89, 23);
+	    btnAdd.setBounds(179, 320, 89, 23);
 	    contentPane.add(btnAdd);
 
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.setBackground(new Color(2, 52, 68));
+		btnDelete.setForeground(new Color(255, 255, 255));
 	    btnDelete.addMouseListener(new MouseAdapter() {
 	    	@Override
 	    	public void mouseClicked(MouseEvent e) {
@@ -91,8 +101,19 @@ class RequiredRawMaterialsGui extends JFrame {
                 fillTable(requiredRawMaterialsTable);
 	    	}
 	    });
-	    btnDelete.setBounds(181, 283, 89, 23);
+	    btnDelete.setBounds(312, 320, 89, 23);
 	    contentPane.add(btnDelete);
+	    
+	    JButton btnBack = new JButton("Back");
+	    btnBack.setBackground(new Color(2, 52, 68));
+	    btnBack.setForeground(new Color(255, 255, 255));
+	    btnBack.setBounds(46, 320, 89, 23);
+	    contentPane.add(btnBack);
+	    
+	    JLabel label = new JLabel("");
+	    label.setIcon(new ImageIcon("C:\\Users\\Mircea\\IdeaProjects\\ProiectChiarBaban\\photos\\reqrawmat.png"));
+	    label.setBounds(10, 0, 540, 109);
+	    contentPane.add(label);
 
 	}
 	

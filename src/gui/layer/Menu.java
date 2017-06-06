@@ -112,7 +112,8 @@ public class Menu extends JFrame {
         label.setBounds(-168, 11, 835, 108);
         panel.add(label);
         
-        JButton requirerdRawMaterialsButton = new JButton("Required Raw Materials");
+        JButton requirerdRawMaterialsButton = new JButton("Required Raw Mat");
+        requirerdRawMaterialsButton.setBackground(new Color(2, 52, 68));
         requirerdRawMaterialsButton.addMouseListener(new MouseAdapter() {
         	@Override
         	public void mouseClicked(MouseEvent e) {
