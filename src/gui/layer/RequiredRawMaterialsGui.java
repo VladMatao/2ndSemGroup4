@@ -105,6 +105,14 @@ class RequiredRawMaterialsGui extends JFrame {
 	    contentPane.add(btnDelete);
 	    
 	    JButton btnBack = new JButton("Back");
+	    btnBack.addMouseListener(new MouseAdapter() {
+	    	@Override
+	    	public void mouseClicked(MouseEvent arg0) {
+	    		dispose();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+	    	}
+	    });
 	    btnBack.setBackground(new Color(2, 52, 68));
 	    btnBack.setForeground(new Color(255, 255, 255));
 	    btnBack.setBounds(46, 320, 89, 23);
