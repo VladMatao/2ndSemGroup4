@@ -79,8 +79,7 @@ class ProductGui extends JFrame {
             public void mouseClicked(MouseEvent arg0) {
                 ManageProduct product = new ManageProduct();
                 product.create(nameTextField.getText(), barcodeTextField.getText(), Double.parseDouble(priceTextField.getText()), Integer.parseInt(stockTextField.getText()), Integer.parseInt(producionTimeTextField.getText()), requiredMatIDTextField.getText());
-
-
+                fillTable(producttable);
             }
         });
         addButton.setBounds(10, 504, 89, 23);

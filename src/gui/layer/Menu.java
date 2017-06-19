@@ -113,6 +113,7 @@ public class Menu extends JFrame {
         panel.add(label);
         
         JButton requirerdRawMaterialsButton = new JButton("Required Raw Mat");
+        requirerdRawMaterialsButton.setForeground(new Color(255, 255, 255));
         requirerdRawMaterialsButton.setBackground(new Color(2, 52, 68));
         requirerdRawMaterialsButton.addMouseListener(new MouseAdapter() {
         	@Override
