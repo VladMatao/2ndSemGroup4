@@ -110,7 +110,7 @@ public class RawMaterialDb implements RawMaterialDbIf {
             String barcode = rs.getString(1);
             String name = rs.getString(2);
             Double stock = rs.getDouble(3);
-            Double price = rs.getDouble(3);
+            Double price = rs.getDouble(4);
             rawMat = new RawMaterial(barcode, name, stock,price);
         } catch (SQLException e) {
             e.printStackTrace();

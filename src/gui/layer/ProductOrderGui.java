@@ -207,7 +207,7 @@ class ProductOrderGui extends JFrame {
                 CreateProductOrder productOrderCtr = new CreateProductOrder();
                 CreateRawMaterialOrder rawMaterialOrderCtr= new CreateRawMaterialOrder();
                 productOrderCtr.create(orderIDTextField.getText(), Double.parseDouble(price.getText()), orderStatusTextField.getText(), deliveryDateTextField.getText(), companyIDTextField.getText(), productLineTextField.getText(), Double.parseDouble(timeLabel.getText()));
-                rawMaterialOrderCtr.create(orderIDTextField.getText()+ "RAW",Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText()+ "RAW");
+                rawMaterialOrderCtr.create(orderIDTextField.getText().concat("RAW") ,Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText().concat("RAW"));
 
                 InvoiceGui invoiceGui = new InvoiceGui(orderIDTextField.getText());
                 invoiceGui.setVisible(true);
