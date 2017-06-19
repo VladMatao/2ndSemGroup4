@@ -8,10 +8,10 @@ import model.layer.ProductLine;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.awt.Color;
 
 class ProductOrderGui extends JFrame {
 
@@ -207,8 +207,7 @@ class ProductOrderGui extends JFrame {
                 CreateProductOrder productOrderCtr = new CreateProductOrder();
                 CreateRawMaterialOrder rawMaterialOrderCtr= new CreateRawMaterialOrder();
                 productOrderCtr.create(orderIDTextField.getText(), Double.parseDouble(price.getText()), orderStatusTextField.getText(), deliveryDateTextField.getText(), companyIDTextField.getText(), productLineTextField.getText(), Double.parseDouble(timeLabel.getText()));
-                rawMaterialOrderCtr.create(orderIDTextField.getText().concat("RAW") ,Double.parseDouble(price.getText()),orderStatusTextField.getText(),deliveryDateTextField.getText(),companyIDTextField.getText(),productLineTextField.getText().concat("RAW"));
-
+                rawMaterialOrderCtr.create(orderIDTextField.getText().concat("1"), Double.parseDouble(price.getText()), orderStatusTextField.getText(), deliveryDateTextField.getText(), companyIDTextField.getText(), productLineTextField.getText().concat("1"));
                 InvoiceGui invoiceGui = new InvoiceGui(orderIDTextField.getText());
                 invoiceGui.setVisible(true);
                 dispose();
