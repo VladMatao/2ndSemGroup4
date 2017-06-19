@@ -32,7 +32,7 @@ class RequiredRawMaterialsGui extends JFrame {
 	                new Object[][]{
 	                },
 	                new String[]{
-	                        "ID", "Raw Barcode", "Quantity"
+	                        "ID", "Raw Barcode", "Quantity", "Price"
 	                });
 	        fillTable(requiredRawMaterialsTable);
 		
@@ -46,7 +46,7 @@ class RequiredRawMaterialsGui extends JFrame {
 		contentPane.add(IDTextField);
 		IDTextField.setColumns(10);
 		
-		JLabel lblProdutctBarcode = new JLabel("Produtct Barcode");
+		JLabel lblProdutctBarcode = new JLabel("Raw Material Barcode");
 		lblProdutctBarcode.setForeground(new Color(255, 255, 255));
 		lblProdutctBarcode.setBounds(93, 178, 91, 14);
 		contentPane.add(lblProdutctBarcode);

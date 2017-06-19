@@ -36,7 +36,7 @@ class RawMaterialsGui extends JFrame {
                 new Object[][]{
                 },
                 new String[]{
-                        "Barcode", "Name", "Stock"
+                        "Barcode", "Name", "Stock","Price"
                 });
         fillTable(rawMaterialtable);
 
@@ -161,7 +161,8 @@ class RawMaterialsGui extends JFrame {
                 String barcode = rawMaterial.getBarcode();
                 String name = rawMaterial.getName();
                 Double stock = rawMaterial.getStock();
-                model.addRow(new Object[]{barcode, name, stock});
+                Double price = rawMaterial.getPrice();
+                model.addRow(new Object[]{barcode, name, stock,price});
             }
         } else {
             model.addRow(new Object[]{"NO", "RawMaterials", "FOUND", "!", 0});
