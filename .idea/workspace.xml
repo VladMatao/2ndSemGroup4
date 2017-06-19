@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4a626fc-afba-448d-ac60-11d1633d49c7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata.keystream" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata.keystream.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata.values.at" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata_i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_metadata_/metadata_i.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/_src_/database/dmaj0916_197353/schema/dbo.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/25a56bea-c3ad-4cdc-b8ae-e1ca4725cf10/storage.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata.keystream" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata.keystream.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata.values.at" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata_i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_metadata_/metadata_i.len" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/_src_/database/dmaj0916_197353/schema/dbo.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589/storage.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad_Mataoanu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    <list default="true" id="b4a626fc-afba-448d-ac60-11d1633d49c7" name="Default" comment="va pup">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" afterPath="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/" />
@@ -54,7 +24,6 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
@@ -71,260 +40,96 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353@kraka.ucn.dk" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dbo" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353@kraka.ucn.dk" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dbo" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353@kraka.ucn.dk" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dbo" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ProductOrder" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353@kraka.ucn.dk" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dbo" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ProductLine" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353@kraka.ucn.dk" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dmaj0916_197353" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="dbo" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Orders" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="ProductOrderGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="280">
+              <caret line="87" column="29" lean-forward="true" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Console.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Console.java">
+      <file leaf-file-name="ProductOrderDb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/layer/ProductOrderDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7248">
-              <caret line="91" column="19" lean-forward="false" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManageProductOrderGui.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/layer/ManageProductOrderGui.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vlad_Mataoanu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Vlad_Mataoanu.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="6b8901e4-e601-4347-9bc4-6def1eb25589.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+            <state relative-caret-position="170">
+              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
               <folding>
-                <marker date="1496324719534" expanded="true" signature="116603:116645" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116603:116663" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116603:116676" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116603:116691" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116726:118842" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116739:118827" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116793:117088" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116812:117073" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116875:117053" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116915:117019" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="116936:116997" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117138:117465" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117157:117450" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117252:117430" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117292:117396" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117313:117374" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117516:117781" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117535:117766" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117568:117746" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117608:117712" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117629:117690" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117824:118130" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117843:118115" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117917:118095" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117957:118061" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="117978:118039" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118181:118496" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118200:118481" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118283:118461" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118323:118427" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118344:118405" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118548:118813" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118567:118798" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118600:118778" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118640:118744" ph="..." />
-                <marker date="1496324719534" expanded="true" signature="118661:118722" ph="..." />
+                <marker date="1496711622977" expanded="true" signature="621:750" ph="INSERT INTO Orders... " />
+                <marker date="1496711622977" expanded="true" signature="1200:1319" ph="INSERT INTO ProductOrder... " />
+                <marker date="1496711622977" expanded="true" signature="2145:2248" ph="UPDATE Order... " />
+                <marker date="1496711622977" expanded="true" signature="2679:2770" ph="UPDATE Produ... " />
+                <marker date="1496711622977" expanded="true" signature="5011:5031" ph="SELECT * FRO... Orders" />
+                <marker date="1496711622977" expanded="true" signature="5133:5159" ph="SELECT * FRO... ProductOrder" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvoiceGui.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/layer/InvoiceGui.java">
+      <file leaf-file-name="CreateProductOrder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/CreateProductOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="117" column="49" lean-forward="false" selection-start-line="117" selection-start-column="49" selection-end-line="117" selection-end-column="49" />
+            <state relative-caret-position="306">
+              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteProductOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/control/layer/DeleteProductOrder.java">
+      <file leaf-file-name="ManageProductLine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/ManageProductLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="646">
+              <caret line="44" column="54" lean-forward="true" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/layer/PersonGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="115" column="24" lean-forward="true" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManagePerson.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/layer/ManagePerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonDb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/layer/PersonDb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+              <folding>
+                <marker date="1496711622965" expanded="true" signature="614:743" ph="INSERT INTO Person... " />
+                <marker date="1496711622965" expanded="true" signature="1698:1830" ph="UPDATE Perso... " />
+                <marker date="1496711622965" expanded="true" signature="3899:3919" ph="SELECT * FRO... Person" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequiredRawMaterialsGui.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/layer/RequiredRawMaterialsGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1156">
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -400,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/control/layer/ManageProductLine.java" />
         <option value="$PROJECT_DIR$/src/control/layer/CreateProductOrder.java" />
         <option value="$PROJECT_DIR$/junit.tests/db/layer/CompanyDbTest.java" />
-        <option value="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" />
         <option value="$PROJECT_DIR$/src/db/layer/EmployeeDb.java" />
         <option value="$PROJECT_DIR$/src/db/layer/EmployeeDbIf.java" />
         <option value="$PROJECT_DIR$/src/model/layer/Employee.java" />
@@ -409,11 +213,12 @@
         <option value="$PROJECT_DIR$/junit.tests/db/layer/PersonDbTest.java" />
         <option value="$PROJECT_DIR$/src/gui/layer/PersonGui.java" />
         <option value="$PROJECT_DIR$/src/control/layer/ReadProductOrder.java" />
-        <option value="$PROJECT_DIR$/src/db/layer/ProductOrderDb.java" />
         <option value="$PROJECT_DIR$/src/gui/layer/InvoiceGui.java" />
         <option value="$PROJECT_DIR$/src/control/layer/DeleteProductOrder.java" />
         <option value="$PROJECT_DIR$/src/gui/layer/ManageProductOrderGui.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java" />
+        <option value="$PROJECT_DIR$/src/db/layer/ProductOrderDb.java" />
       </list>
     </option>
   </component>
@@ -429,8 +234,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -447,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -460,26 +266,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProiectChiarBaban" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProiectChiarBaban" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProiectChiarBaban" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProiectChiarBaban" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="console&#9;PSI&#9;JAVA://java.io.Console&#10;jformdesigner&#9;null&#9;null&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="datab&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;console&#9;PSI&#9;JAVA://java.io.Console&#10;jformdesigner&#9;null&#9;null&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="300" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;C:/ProiectChiarBaban/.idea/dictionaries/Vlad_Mataoanu.xml" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -500,9 +337,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/control/layer/ReadProductOrder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/db/layer/ProductOrderDb.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/gui/layer/ProductGui.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -510,7 +345,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/gui/layer/ManageProductOrderGui.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -518,6 +352,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/gui/layer/CreateProduct.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/gui/layer/MenuManageProduct.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -611,7 +447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GuiStart">
+  <component name="RunManager" selected="Application.GuiStart (1)">
     <configuration default="false" name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -680,6 +516,21 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="gui.layer.GuiStart" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="2ndSemGroup4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GuiStart (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="GuiStart" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -974,13 +825,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -1079,18 +923,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Menu" />
       <item index="1" class="java.lang.String" itemvalue="Application.MenuNou" />
       <item index="2" class="java.lang.String" itemvalue="Application.GUI_START" />
       <item index="3" class="java.lang.String" itemvalue="Application.GuiStart" />
+      <item index="4" class="java.lang.String" itemvalue="Application.GuiStart (1)" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.GuiStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GUI_START" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Menu" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MenuNou" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.GuiStart (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GuiStart" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GUI_START" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Menu" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MenuNou" />
       </list>
     </recent_temporary>
   </component>
@@ -1139,20 +985,12 @@
       <workItem from="1496309542208" duration="3450000" />
       <workItem from="1496321082609" duration="9000" />
       <workItem from="1496322239820" duration="2485000" />
-    </task>
-    <task id="LOCAL-00003" summary="Pisatu asta de gui in care ma fut">
-      <created>1494947466280</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1494947466280</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Pisatu asta de gui in care ma fut">
-      <created>1495020719737</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1495020719737</updated>
+      <workItem from="1496711650838" duration="561000" />
+      <workItem from="1496739707177" duration="522000" />
+      <workItem from="1496743780123" duration="1226000" />
+      <workItem from="1496746123858" duration="670000" />
+      <workItem from="1497815652082" duration="2505000" />
+      <workItem from="1497862485240" duration="1690000" />
     </task>
     <task id="LOCAL-00005" summary="Pisatu asta de gui in care ma fut">
       <created>1495021373487</created>
@@ -1483,11 +1321,25 @@
       <option name="project" value="LOCAL" />
       <updated>1496324731136</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="va pup">
+      <created>1496712198592</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1496712198592</updated>
+    </task>
+    <task id="LOCAL-00053" summary="va pup de final">
+      <created>1496744981853</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1496744981854</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106690000" />
+    <option name="totallyTimeSpent" value="113864000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1499,7 +1351,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1510,14 +1363,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.531401" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2431562" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5306554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24312897" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2677761" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19213313" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1592,14 +1445,6 @@
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
             </State>
           </value>
         </entry>
@@ -1615,7 +1460,9 @@
     <MESSAGE value="muie" />
     <MESSAGE value="ceva" />
     <MESSAGE value="asd" />
-    <option name="LAST_COMMIT_MESSAGE" value="asd" />
+    <MESSAGE value="va pup" />
+    <MESSAGE value="va pup de final" />
+    <option name="LAST_COMMIT_MESSAGE" value="va pup de final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1628,60 +1475,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GuiLayer/NewMenu.java" />
-    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/layer/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="104" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/layer/CompanyDbIf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/CompanyGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="187" column="21" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/GuiStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Company" />
     <entry file="file://$PROJECT_DIR$/src/control/layer/UpdateProductOrder.java" />
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.RequiredRawMaterial" />
-    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductLineDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/layer/ProductOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1724,19 +1519,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1496310776711" expanded="true" signature="528:616" ph="INSERT INTO RawMaterial... " />
-            <marker date="1496310776711" expanded="true" signature="1429:1502" ph="UPDATE RawMa... " />
-            <marker date="1496310776711" expanded="true" signature="3392:3417" ph="SELECT * FRO... RawMaterial" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/RawMaterialdDb.java" />
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Product" />
     <entry file="file://$PROJECT_DIR$/junit.tests/db/layer/CompanyDbTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1753,45 +1536,7 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductLine" />
-    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageProductLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="63" lean-forward="false" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/layer/CreateProductOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/b4bcebec/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Person" />
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/layer/PersonDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="108" column="96" lean-forward="false" selection-start-line="108" selection-start-column="96" selection-end-line="108" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db/layer/PersonDbIf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1799,20 +1544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/layer/ManagePerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="19" column="154" lean-forward="false" selection-start-line="19" selection-start-column="154" selection-end-line="19" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/layer/RawMaterialsGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1827,44 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#753#754#0" expanded="false" />
-            <element signature="e#778#779#0" expanded="false" />
-            <element signature="e#814#815#0" expanded="false" />
-            <element signature="e#842#843#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1017#1018#0" expanded="false" />
-            <element signature="e#1046#1047#0" expanded="false" />
-            <element signature="e#1090#1091#0" expanded="false" />
-            <element signature="e#1126#1127#0" expanded="false" />
-            <element signature="e#1153#1154#0" expanded="false" />
-            <element signature="e#1179#1180#0" expanded="false" />
-            <element signature="e#1214#1215#0" expanded="false" />
-            <element signature="e#1244#1245#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-            <element signature="e#1308#1309#0" expanded="false" />
-            <element signature="e#1354#1355#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#1423#1424#0" expanded="false" />
-            <element signature="e#1450#1451#0" expanded="false" />
-            <element signature="e#1490#1491#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1553#1554#0" expanded="false" />
-            <element signature="e#1580#1581#0" expanded="false" />
-            <element signature="e#1620#1621#0" expanded="false" />
-            <element signature="e#1652#1653#0" expanded="false" />
-            <element signature="e#1687#1688#0" expanded="false" />
-            <element signature="e#1718#1719#0" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1837#1838#0" expanded="false" />
-            <element signature="e#1864#1865#0" expanded="false" />
-            <element signature="e#1904#1905#0" expanded="false" />
-            <element signature="e#1936#1937#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1879,187 +1576,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#398#399#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/PersonGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductOrder">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Orders">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.ProductOrder" />
+    <entry file="dbDummy://dbtable:/4182a290/6b8901e4-e601-4347-9bc4-6def1eb25589/dmaj0916_197353.dbo.Orders" />
     <entry file="file://$PROJECT_DIR$/src/gui/layer/MenuManageProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductOrderDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="141" column="57" lean-forward="false" selection-start-line="141" selection-start-column="57" selection-end-line="141" selection-end-column="57" />
-          <folding>
-            <marker date="1496322960789" expanded="true" signature="669:798" ph="INSERT INTO Orders... " />
-            <marker date="1496322960789" expanded="true" signature="1249:1368" ph="INSERT INTO ProductOrder... " />
-            <marker date="1496322960789" expanded="true" signature="2214:2317" ph="UPDATE Order... " />
-            <marker date="1496322960789" expanded="true" signature="2748:2839" ph="UPDATE Produ... " />
-            <marker date="1496322960789" expanded="true" signature="5099:5119" ph="SELECT * FRO... Orders" />
-            <marker date="1496322960789" expanded="true" signature="5221:5247" ph="SELECT * FRO... ProductOrder" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ReadProductOrder.java" />
+    <entry file="file://$PROJECT_DIR$/src/control/layer/DeleteProductOrder.java" />
+    <entry file="uml://JAVA/model">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>model</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">model.layer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-227.0" y="60.0" />
+          <SelectedNodes>
+            <node>model.layer</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/layer/ReadProductOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding />
+    <entry file="uml://JAVA/gui.layer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>gui.layer</OriginalElement>
+          <nodes>
+            <node x="323.0" y="222.0">gui.layer.UpdateProduct</node>
+            <node x="165.0" y="222.0">gui.layer.ChoseOrderGui</node>
+            <node x="224.0" y="0.0">gui.layer.RequiredRawMaterialsGui</node>
+            <node x="0.0" y="296.0">gui.layer.CreateProduct</node>
+            <node x="0.0" y="148.0">gui.layer.SupplierOrderGui</node>
+            <node x="270.0" y="370.0">gui.layer.PersonGui</node>
+            <node x="210.0" y="74.0">gui.layer.MenuManageProduct</node>
+            <node x="153.0" y="296.0">gui.layer.CompanyGui</node>
+            <node x="0.0" y="222.0">gui.layer.RawMaterialsGui</node>
+            <node x="0.0" y="370.0">gui.layer.ProductGui</node>
+            <node x="300.0" y="296.0">gui.layer.StatisticsGui</node>
+            <node x="0.0" y="444.0">gui.layer.FindOrder</node>
+            <node x="137.0" y="370.0">gui.layer.InvoiceGui</node>
+            <node x="130.0" y="444.0">gui.layer.Menu</node>
+            <node x="0.0" y="0.0">gui.layer.CreateRawMaterialOrderGui</node>
+            <node x="0.0" y="74.0">gui.layer.ManageProductOrderGui</node>
+            <node x="168.0" y="148.0">gui.layer.ProductOrderGui</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7890466531440162" x="218.0" y="555.0" />
+          <SelectedNodes>
+            <node>gui.layer.UpdateProduct</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/layer/DeleteProductOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/InvoiceGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="117" column="49" lean-forward="false" selection-start-line="117" selection-start-column="49" selection-end-line="117" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/layer/ManageProductOrderGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Vlad_Mataoanu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding>
-            <marker date="1496324719534" expanded="true" signature="116603:116645" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116603:116663" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116603:116676" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116603:116691" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116726:118842" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116739:118827" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116793:117088" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116812:117073" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116875:117053" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116915:117019" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="116936:116997" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117138:117465" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117157:117450" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117252:117430" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117292:117396" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117313:117374" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117516:117781" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117535:117766" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117568:117746" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117608:117712" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117629:117690" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117824:118130" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117843:118115" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117917:118095" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117957:118061" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="117978:118039" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118181:118496" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118200:118481" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118283:118461" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118323:118427" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118344:118405" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118548:118813" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118567:118798" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118600:118778" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118640:118744" ph="..." />
-            <marker date="1496324719534" expanded="true" signature="118661:118722" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7248">
-          <caret line="91" column="19" lean-forward="false" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
-          <folding />
+    <entry file="uml://MODULES/mdl-2ndSemGroup4">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-2ndSemGroup4</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-2ndSemGroup4</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="82.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -2067,6 +1667,949 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="91" column="19" lean-forward="false" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Vlad_Mataoanu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources/6b8901e4-e601-4347-9bc4-6def1eb25589.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="4512.323209127019" y="946.0">java.rmi</node>
+            <node x="811.0" y="1307.0">com</node>
+            <node x="679.5221291866026" y="946.0">db.layer.RawMaterialDb</node>
+            <node x="103.48295454545405" y="946.0">java.beans</node>
+            <node x="869.2984449760761" y="946.0">java.nio</node>
+            <node x="1750.5732091270195" y="946.0">db.layer.ProductDbTest</node>
+            <node x="1141.298444976076" y="946.0">db.layer.PersonDb</node>
+            <node x="4141.323209127019" y="497.0">db.layer.RawMaterialOrderDbIf</node>
+            <node x="4109.323209127019" y="946.0">db.layer.RawMaterialOrderDb</node>
+            <node x="4414.573209127019" y="497.0">db.layer.CompanyDbIf</node>
+            <node x="2694.5732091270193" y="946.0">db.layer.PersonDbTest</node>
+            <node x="1880.5732091270195" y="946.0">java.math.BigDecimal</node>
+            <node x="3846.0732091270193" y="946.0">java.time</node>
+            <node x="444.52212918660257" y="946.0">java.net</node>
+            <node x="3995.3232091270193" y="497.0">db.layer.ProductOrderDbIf</node>
+            <node x="1590.5732091270195" y="946.0">db.layer.ProductOrderDbTest</node>
+            <node x="660.0" y="1307.0">javax</node>
+            <node x="3809.782750692508" y="497.0">db.layer.ProductDbIf</node>
+            <node x="2569.5732091270193" y="946.0">control.layer</node>
+            <node x="2959.5732091270193" y="946.0">java.math.BigInteger</node>
+            <node x="505.0" y="1307.0">javafx</node>
+            <node x="2246.5732091270193" y="946.0">java.math.RoundingMode</node>
+            <node x="2381.5732091270193" y="946.0">java.math.BitSieve</node>
+            <node x="2047.0732091270195" y="338.0">java.security</node>
+            <node x="2978.0732091270193" y="1154.0">gui.layer</node>
+            <node x="349.0" y="1307.0">oracle</node>
+            <node x="4271.323209127019" y="946.0">java.math.MathContext</node>
+            <node x="1932.5323103147089" y="1065.0">java.math.BigDecimal.LongOverflow</node>
+            <node x="2475.5732091270193" y="946.0">GuiStart</node>
+            <node x="0.0" y="1307.0">META-INF</node>
+            <node x="2056.0732091270193" y="497.0">java.lang</node>
+            <node x="3234.5732091270193" y="946.0">db.layer.RequiredRawMaterialDb</node>
+            <node x="985.2984449760761" y="946.0">junit.framework</node>
+            <node x="3510.782750692508" y="497.0">db.layer.ProductLineDbIf</node>
+            <node x="3084.5732091270193" y="946.0">java.math.MutableBigInteger</node>
+            <node x="1244.298444976076" y="946.0">java.sql</node>
+            <node x="463.6161632482406" y="1233.0">java.applet.Applet.AccessibleApplet</node>
+            <node x="654.8283476314143" y="179.0">java.util</node>
+            <node x="3737.0732091270193" y="946.0">db.layer.ProductDb</node>
+            <node x="178.0" y="1307.0">netscape</node>
+            <node x="1529.0" y="1307.0">java.applet.AudioClip</node>
+            <node x="1992.5732091270195" y="946.0">model.layer</node>
+            <node x="21.210227272727025" y="497.0">java.applet.AppletStub</node>
+            <node x="159.2556818181813" y="497.0">java.applet.AppletContext</node>
+            <node x="1104.0" y="1307.0">sun</node>
+            <node x="2363.8232091270193" y="1065.0">java.math.BigDecimal.StringBuilderHelper</node>
+            <node x="2923.8232091270193" y="1065.0">java.math.BigInteger.UnsafeHolder</node>
+            <node x="445.9958133971288" y="497.0">db.layer.RawMaterialDbIf</node>
+            <node x="513.1161632482406" y="1154.0">java.applet.Applet</node>
+            <node x="3648.782750692508" y="497.0">db.layer.RawMaterialLineDbIf</node>
+            <node x="1235.1498707481223" y="1154.0">junit.textui</node>
+            <node x="3564.8232091270193" y="946.0">db.layer.RawMaterialLineDb</node>
+            <node x="2117.5732091270193" y="946.0">db.layer.DbConnection</node>
+            <node x="3432.5732091270193" y="946.0">db.layer.ProductLineDb</node>
+            <node x="3969.0732091270193" y="946.0">db.layer.ProductOrderDb</node>
+            <node x="1173.2327820128223" y="1065.0">junit.extensions</node>
+            <node x="3324.782750692508" y="497.0">db.layer.RequiredRawMaterialDbIf</node>
+            <node x="1247.0" y="1307.0">org</node>
+            <node x="959.0" y="1307.0">db.layer.StatisticsDbIf</node>
+            <node x="591.0484449760761" y="497.0">db.layer.PersonDbIf</node>
+            <node x="491.94949658157384" y="1065.0">java.awt</node>
+            <node x="1389.0" y="1307.0">jdk</node>
+            <node x="560.5221291866026" y="946.0">java.text</node>
+            <node x="4393.323209127019" y="946.0">db.layer.CompanyDb</node>
+            <node x="2099.2874948413055" y="0.0">java.io</node>
+            <node x="1554.0732091270195" y="1065.0">java.math.BigDecimal.UnsafeHolder</node>
+            <node x="2818.5732091270193" y="946.0">db.layer.CompanyDbTest</node>
+            <node x="1420.0732091270195" y="1065.0">junit.runner</node>
+            <node x="3066.5732091270193" y="1065.0">java.math.SignedMutableBigInteger</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="db.layer.PersonDb" target="db.layer.PersonDbIf">
+              <point x="-20.75" y="-14.5" />
+              <point x="1162.048444976076" y="556.0" />
+              <point x="636.0484449760761" y="556.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.math.RoundingMode" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2304.0732091270193" y="906.0" />
+              <point x="2110.922265730793" y="906.0" />
+              <point x="3.8490566037735334" y="14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.UnsafeHolder" target="java.lang">
+              <point x="-26.0" y="-14.5" />
+              <point x="1580.0732091270195" y="876.0" />
+              <point x="2095.5260393156987" y="876.0" />
+              <point x="-11.5471698113206" y="14.5" />
+            </edge>
+            <edge source="java.net" target="java.util">
+              <point x="-8.0" y="-14.5" />
+              <point x="484.52212918660257" y="626.0" />
+              <point x="414.64712918660234" y="626.0" />
+              <point x="414.64712918660234" y="268.0" />
+              <point x="677.5651897366774" y="268.0" />
+              <point x="-25.263157894736878" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductOrderDbTest" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="1660.5732091270195" y="886.0" />
+              <point x="2097.450567617586" y="886.0" />
+              <point x="-9.622641509433834" y="14.5" />
+            </edge>
+            <edge source="java.awt" target="java.io">
+              <point x="-42.875" y="-14.5" />
+              <point x="498.07449658157384" y="1045.0" />
+              <point x="0.0" y="1045.0" />
+              <point x="0.0" y="59.0" />
+              <point x="2101.3102221140325" y="59.0" />
+              <point x="-42.47727272727252" y="14.5" />
+            </edge>
+            <edge source="junit.textui" target="java.lang">
+              <point x="36.33333333333326" y="-14.5" />
+              <point x="1325.9832040814554" y="1134.0" />
+              <point x="2684.0732091270193" y="1134.0" />
+              <point x="2684.0732091270193" y="856.0" />
+              <point x="2120.544907240227" y="856.0" />
+              <point x="13.471698113207367" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialLineDb" target="java.lang">
+              <point x="-33.5" y="-14.5" />
+              <point x="3598.3232091270193" y="756.0" />
+              <point x="2139.7901902590947" y="756.0" />
+              <point x="32.71698113207549" y="14.5" />
+            </edge>
+            <edge source="java.math.SignedMutableBigInteger" target="java.math.MutableBigInteger">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.text" target="java.util">
+              <point x="-8.25" y="-14.5" />
+              <point x="601.7721291866026" y="596.0" />
+              <point x="430.69976076554985" y="596.0" />
+              <point x="430.69976076554985" y="288.0" />
+              <point x="687.6704528945722" y="288.0" />
+              <point x="-15.157894736842081" y="14.5" />
+            </edge>
+            <edge source="java.time" target="java.io">
+              <point x="34.333333333333485" y="-14.5" />
+              <point x="3931.906542460353" y="926.0" />
+              <point x="3948.991851880198" y="926.0" />
+              <point x="3948.991851880198" y="79.0" />
+              <point x="2174.1284039322145" y="79.0" />
+              <point x="30.34090909090901" y="14.5" />
+            </edge>
+            <edge source="junit.textui" target="junit.framework">
+              <point x="-36.33333333333326" y="-14.5" />
+              <point x="1253.3165374147889" y="1134.0" />
+              <point x="925.8503424462355" y="1134.0" />
+              <point x="925.8503424462355" y="1015.0" />
+              <point x="1002.2984449760761" y="1015.0" />
+              <point x="-51.0" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductDb" target="db.layer.ProductDbIf">
+              <point x="22.25" y="-14.5" />
+              <point x="3803.8232091270193" y="926.0" />
+              <point x="3857.782750692508" y="926.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="control.layer" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2621.5732091270193" y="866.0" />
+              <point x="2118.62037893834" y="866.0" />
+              <point x="11.5471698113206" y="14.5" />
+            </edge>
+            <edge source="java.nio" target="java.util">
+              <point x="-32.0" y="-14.5" />
+              <point x="885.2984449760761" y="576.0" />
+              <point x="575.4958133971288" y="576.0" />
+              <point x="575.4958133971288" y="298.0" />
+              <point x="692.7230844735197" y="298.0" />
+              <point x="-10.10526315789457" y="14.5" />
+            </edge>
+            <edge source="java.math.MathContext" target="java.lang">
+              <point x="-25.5" y="-14.5" />
+              <point x="4296.823209127019" y="696.0" />
+              <point x="2151.3373600704153" y="696.0" />
+              <point x="44.26415094339609" y="14.5" />
+            </edge>
+            <edge source="java.sql" target="java.util">
+              <point x="-37.59999999999991" y="-14.5" />
+              <point x="1253.6984449760762" y="546.0" />
+              <point x="691.5484449760761" y="546.0" />
+              <point x="691.5484449760761" y="318.0" />
+              <point x="702.8283476314143" y="318.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.text" target="java.lang">
+              <point x="8.25" y="-14.5" />
+              <point x="618.2721291866026" y="716.0" />
+              <point x="2064.7335864855104" y="716.0" />
+              <point x="-42.33962264150932" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialLineDb" target="db.layer.RawMaterialLineDbIf">
+              <point x="33.5" y="-14.5" />
+              <point x="3665.3232091270193" y="926.0" />
+              <point x="3719.282750692508" y="926.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.net" target="java.lang">
+              <point x="40.0" y="-14.5" />
+              <point x="532.5221291866026" y="706.0" />
+              <point x="2062.809058183623" y="706.0" />
+              <point x="-44.26415094339609" y="14.5" />
+            </edge>
+            <edge source="junit.extensions" target="junit.framework">
+              <point x="-33.75" y="-14.5" />
+              <point x="1206.9827820128223" y="1015.0" />
+              <point x="1036.298444976076" y="1015.0" />
+              <point x="-17.0" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductLineDb" target="db.layer.ProductLineDbIf">
+              <point x="27.75" y="-14.5" />
+              <point x="3515.8232091270193" y="926.0" />
+              <point x="3569.782750692508" y="926.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="junit.framework" target="java.util">
+              <point x="-45.33333333333337" y="-14.5" />
+              <point x="1007.9651116427427" y="566.0" />
+              <point x="580.5484449760761" y="566.0" />
+              <point x="580.5484449760761" y="308.0" />
+              <point x="697.7757160524668" y="308.0" />
+              <point x="-5.052631578947512" y="14.5" />
+            </edge>
+            <edge source="java.math.BitSieve" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2418.0732091270193" y="896.0" />
+              <point x="2112.84679403268" y="896.0" />
+              <point x="5.7735849056603" y="14.5" />
+            </edge>
+            <edge source="java.math.BigInteger.UnsafeHolder" target="java.lang">
+              <point x="-26.0" y="-14.5" />
+              <point x="2949.0732091270193" y="826.0" />
+              <point x="2126.318492145888" y="826.0" />
+              <point x="19.245283018868122" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialOrderDb" target="java.lang">
+              <point x="-35.5" y="-14.5" />
+              <point x="4144.823209127019" y="706.0" />
+              <point x="2149.412831768529" y="706.0" />
+              <point x="42.33962264150932" y="14.5" />
+            </edge>
+            <edge source="java.applet.Applet.AccessibleApplet" target="java.awt">
+              <point x="-30.5" y="-14.5" />
+              <point x="494.1161632482406" y="1208.0" />
+              <point x="502.6161632482406" y="1208.0" />
+              <point x="502.6161632482406" y="1134.0" />
+              <point x="508.2828299149071" y="1134.0" />
+              <point x="-32.66666666666674" y="14.5" />
+            </edge>
+            <edge source="GuiStart" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2512.5732091270193" y="876.0" />
+              <point x="2116.6958506364535" y="876.0" />
+              <point x="9.622641509433834" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductOrderDb" target="db.layer.ProductOrderDbIf">
+              <point x="29.75" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.security" target="java.io">
+              <point x="51.42857142857156" y="-14.5" />
+              <point x="2158.501780555591" y="318.0" />
+              <point x="2149.2874948413055" y="318.0" />
+              <point x="2149.2874948413055" y="149.0" />
+              <point x="2145.8102221140325" y="149.0" />
+              <point x="2.0227272727274794" y="14.5" />
+            </edge>
+            <edge source="java.util" target="java.lang">
+              <point x="5.052631578947512" y="14.5" />
+              <point x="707.8809792103618" y="318.0" />
+              <point x="2004.6982091270195" y="318.0" />
+              <point x="2004.6982091270195" y="447.0" />
+              <point x="2059.2607091270193" y="447.0" />
+              <point x="-47.8125" y="-14.5" />
+            </edge>
+            <edge source="db.layer.DbConnection" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2172.0732091270193" y="916.0" />
+              <point x="2108.9977374289065" y="916.0" />
+              <point x="1.9245283018867667" y="14.5" />
+            </edge>
+            <edge source="db.layer.CompanyDb" target="java.lang">
+              <point x="-24.75" y="-14.5" />
+              <point x="4418.073209127019" y="686.0" />
+              <point x="2153.2618883723026" y="686.0" />
+              <point x="46.18867924528331" y="14.5" />
+            </edge>
+            <edge source="java.awt" target="java.security">
+              <point x="6.125" y="-14.5" />
+              <point x="547.0744965815738" y="1015.0" />
+              <point x="858.7984449760761" y="1015.0" />
+              <point x="858.7984449760761" y="467.0" />
+              <point x="2072.7874948413055" y="467.0" />
+              <point x="-34.28571428571422" y="14.5" />
+            </edge>
+            <edge source="java.math.MutableBigInteger" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="3149.5732091270193" y="786.0" />
+              <point x="2134.016605353435" y="786.0" />
+              <point x="26.94339622641519" y="14.5" />
+            </edge>
+            <edge source="java.rmi" target="java.lang">
+              <point x="-36.375" y="-14.5" />
+              <point x="4524.448209127019" y="676.0" />
+              <point x="2155.18641667419" y="676.0" />
+              <point x="48.11320754717008" y="14.5" />
+            </edge>
+            <edge source="junit.runner" target="junit.framework">
+              <point x="-28.5" y="-14.5" />
+              <point x="1448.5732091270195" y="995.0" />
+              <point x="1104.298444976076" y="995.0" />
+              <point x="51.0" y="14.5" />
+            </edge>
+            <edge source="db.layer.CompanyDbTest" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2878.5732091270193" y="836.0" />
+              <point x="2124.3939638440006" y="836.0" />
+              <point x="17.320754716981355" y="14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.StringBuilderHelper" target="java.math.BigDecimal">
+              <point x="-33.75" y="-14.5" />
+              <point x="2397.5732091270193" y="1035.0" />
+              <point x="1957.2398757936862" y="1035.0" />
+              <point x="30.666666666666742" y="14.5" />
+            </edge>
+            <edge source="java.io" target="java.security">
+              <point x="-2.0227272727274794" y="14.5" />
+              <point x="2141.7647675685776" y="159.0" />
+              <point x="2138.2874948413055" y="159.0" />
+              <point x="2138.2874948413055" y="318.0" />
+              <point x="2141.358923412734" y="318.0" />
+              <point x="34.28571428571422" y="-14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.LongOverflow" target="java.math.BigDecimal">
+              <point x="-26.75" y="-14.5" />
+              <point x="1959.2823103147089" y="1045.0" />
+              <point x="1926.5732091270195" y="1045.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.applet.Applet" target="java.awt">
+              <point x="0.0" y="-14.5" />
+              <point x="546.6161632482406" y="1134.0" />
+              <point x="540.9494965815738" y="1134.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.time" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="3897.5732091270193" y="726.0" />
+              <point x="2145.5637751647555" y="726.0" />
+              <point x="38.49056603773579" y="14.5" />
+            </edge>
+            <edge source="db.layer.RequiredRawMaterialDb" target="java.lang">
+              <point x="-39.75" y="-14.5" />
+              <point x="3274.3232091270193" y="776.0" />
+              <point x="2135.941133655321" y="776.0" />
+              <point x="28.867924528301955" y="14.5" />
+            </edge>
+            <edge source="java.lang" target="java.security">
+              <point x="-9.5625" y="-14.5" />
+              <point x="2097.5107091270193" y="387.0" />
+              <point x="2107.0732091270193" y="387.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.applet.Applet.AccessibleApplet" target="java.applet.Applet">
+              <point x="30.5" y="-14.5" />
+              <point x="555.1161632482406" y="1208.0" />
+              <point x="546.6161632482406" y="1208.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="db.layer.CompanyDb" target="db.layer.CompanyDbIf">
+              <point x="24.75" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="gui.layer" target="java.awt">
+              <point x="-26.0" y="-14.5" />
+              <point x="3004.0732091270193" y="1114.0" />
+              <point x="573.6161632482406" y="1114.0" />
+              <point x="32.66666666666663" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialDb" target="db.layer.RawMaterialDbIf">
+              <point x="-28.0" y="-14.5" />
+              <point x="707.5221291866026" y="586.0" />
+              <point x="505.4958133971288" y="586.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.security" target="java.util">
+              <point x="-51.42857142857156" y="-14.5" />
+              <point x="2055.6446376984477" y="258.0" />
+              <point x="738.196768684046" y="258.0" />
+              <point x="35.36842105263156" y="14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.UnsafeHolder" target="java.math.BigDecimal">
+              <point x="26.0" y="-14.5" />
+              <point x="1632.0732091270195" y="1045.0" />
+              <point x="1895.9065424603527" y="1045.0" />
+              <point x="-30.666666666666742" y="14.5" />
+            </edge>
+            <edge source="java.io" target="java.lang">
+              <point x="6.0681818181819835" y="14.5" />
+              <point x="2149.8556766594875" y="139.0" />
+              <point x="2177.5732091270193" y="139.0" />
+              <point x="2177.5732091270193" y="427.0" />
+              <point x="2123.0107091270193" y="427.0" />
+              <point x="15.9375" y="-14.5" />
+            </edge>
+            <edge source="java.awt" target="java.lang">
+              <point x="18.375" y="-14.5" />
+              <point x="559.3244965815738" y="1025.0" />
+              <point x="1348.798444976076" y="1025.0" />
+              <point x="1348.798444976076" y="836.0" />
+              <point x="2087.8279261081516" y="836.0" />
+              <point x="-19.245283018868122" y="14.5" />
+            </edge>
+            <edge source="db.layer.PersonDb" target="java.lang">
+              <point x="20.75" y="-14.5" />
+              <point x="1203.548444976076" y="796.0" />
+              <point x="2080.1298129006045" y="796.0" />
+              <point x="-26.94339622641519" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialOrderDb" target="db.layer.RawMaterialOrderDbIf">
+              <point x="35.5" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.net" target="java.io">
+              <point x="-24.0" y="-14.5" />
+              <point x="468.52212918660257" y="636.0" />
+              <point x="137.7556818181813" y="636.0" />
+              <point x="137.7556818181813" y="99.0" />
+              <point x="2117.4920402958505" y="99.0" />
+              <point x="-26.295454545454504" y="14.5" />
+            </edge>
+            <edge source="java.util" target="java.security">
+              <point x="45.473684210526244" y="14.5" />
+              <point x="748.3020318419406" y="238.0" />
+              <point x="2089.9303519841624" y="238.0" />
+              <point x="-17.142857142857338" y="-14.5" />
+            </edge>
+            <edge source="junit.runner" target="java.lang">
+              <point x="28.5" y="-14.5" />
+              <point x="1505.5732091270195" y="866.0" />
+              <point x="2093.6015110138123" y="866.0" />
+              <point x="-13.471698113207367" y="14.5" />
+            </edge>
+            <edge source="java.math.MathContext" target="java.io">
+              <point x="25.5" y="-14.5" />
+              <point x="4347.823209127019" y="69.0" />
+              <point x="2178.1738584776685" y="69.0" />
+              <point x="34.38636363636351" y="14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.LongOverflow" target="java.lang">
+              <point x="26.75" y="-14.5" />
+              <point x="2012.7823103147089" y="1045.0" />
+              <point x="2107.0732091270193" y="1045.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.awt" target="java.util">
+              <point x="-18.375" y="-14.5" />
+              <point x="522.5744965815738" y="1025.0" />
+              <point x="303.71949760765506" y="1025.0" />
+              <point x="303.71949760765506" y="467.0" />
+              <point x="385.3462555231408" y="467.0" />
+              <point x="385.3462555231408" y="248.0" />
+              <point x="667.4599265787826" y="248.0" />
+              <point x="-35.368421052631675" y="14.5" />
+            </edge>
+            <edge source="model.layer" target="java.lang">
+              <point x="2.2737367544323206E-13" y="-14.5" />
+              <point x="2044.5732091270197" y="926.0" />
+              <point x="2105.148680825133" y="926.0" />
+              <point x="-1.9245283018867667" y="14.5" />
+            </edge>
+            <edge source="java.security" target="java.lang">
+              <point x="34.28571428571422" y="14.5" />
+              <point x="2141.358923412734" y="407.0" />
+              <point x="2110.2607091270193" y="407.0" />
+              <point x="3.1875" y="-14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal.StringBuilderHelper" target="java.lang">
+              <point x="33.75" y="-14.5" />
+              <point x="2465.0732091270193" y="886.0" />
+              <point x="2114.7713223345663" y="886.0" />
+              <point x="7.698113207547067" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductLineDb" target="java.lang">
+              <point x="-27.75" y="-14.5" />
+              <point x="3460.3232091270193" y="766.0" />
+              <point x="2137.8656619572084" y="766.0" />
+              <point x="30.792452830188722" y="14.5" />
+            </edge>
+            <edge source="junit.textui" target="junit.runner">
+              <point x="0.0" y="-14.5" />
+              <point x="1289.6498707481223" y="1124.0" />
+              <point x="1477.0732091270195" y="1124.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.lang" target="java.util">
+              <point x="-35.0625" y="-14.5" />
+              <point x="2072.0107091270193" y="427.0" />
+              <point x="2017.4482091270195" y="427.0" />
+              <point x="2017.4482091270195" y="298.0" />
+              <point x="717.9862423682564" y="298.0" />
+              <point x="15.157894736842081" y="14.5" />
+            </edge>
+            <edge source="java.rmi" target="java.io">
+              <point x="36.375" y="-14.5" />
+              <point x="4597.198209127019" y="926.0" />
+              <point x="4590.573209127019" y="926.0" />
+              <point x="4590.573209127019" y="49.0" />
+              <point x="2186.2647675685776" y="49.0" />
+              <point x="42.47727272727252" y="14.5" />
+            </edge>
+            <edge source="java.beans" target="java.lang">
+              <point x="34.375" y="-14.5" />
+              <point x="192.85795454545405" y="676.0" />
+              <point x="2057.0354732779633" y="676.0" />
+              <point x="-50.03773584905639" y="14.5" />
+            </edge>
+            <edge source="java.nio" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="917.2984449760761" y="756.0" />
+              <point x="2072.4316996930575" y="756.0" />
+              <point x="-34.641509433962256" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductDbTest" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="1805.5732091270195" y="896.0" />
+              <point x="2099.375095919472" y="896.0" />
+              <point x="-7.698113207547067" y="14.5" />
+            </edge>
+            <edge source="java.beans" target="java.io">
+              <point x="-20.625" y="-14.5" />
+              <point x="137.85795454545405" y="906.0" />
+              <point x="122.71022727272702" y="906.0" />
+              <point x="122.71022727272702" y="79.0" />
+              <point x="2109.4011312049415" y="79.0" />
+              <point x="-34.38636363636351" y="14.5" />
+            </edge>
+            <edge source="db.layer.RawMaterialDb" target="java.lang">
+              <point x="28.0" y="-14.5" />
+              <point x="763.5221291866026" y="746.0" />
+              <point x="2070.5071713911702" y="746.0" />
+              <point x="-36.56603773584902" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductOrderDb" target="java.lang">
+              <point x="-29.75" y="-14.5" />
+              <point x="3998.8232091270193" y="716.0" />
+              <point x="2147.488303466642" y="716.0" />
+              <point x="40.415094339622556" y="14.5" />
+            </edge>
+            <edge source="java.beans" target="java.applet.AppletStub">
+              <point x="-34.375" y="-14.5" />
+              <point x="124.10795454545405" y="916.0" />
+              <point x="66.71022727272702" y="916.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="db.layer.RequiredRawMaterialDb" target="db.layer.RequiredRawMaterialDbIf">
+              <point x="39.75" y="-14.5" />
+              <point x="3353.8232091270193" y="926.0" />
+              <point x="3407.782750692508" y="926.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.sql" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="1291.298444976076" y="806.0" />
+              <point x="2082.054341202491" y="806.0" />
+              <point x="-25.018867924528422" y="14.5" />
+            </edge>
+            <edge source="gui.layer" target="java.lang">
+              <point x="26.0" y="-14.5" />
+              <point x="3056.0732091270193" y="796.0" />
+              <point x="2132.0920770515477" y="796.0" />
+              <point x="25.018867924528422" y="14.5" />
+            </edge>
+            <edge source="java.text" target="java.io">
+              <point x="-41.25" y="-14.5" />
+              <point x="568.7721291866026" y="616.0" />
+              <point x="387.59449760765506" y="616.0" />
+              <point x="387.59449760765506" y="437.0" />
+              <point x="280.9051670063943" y="437.0" />
+              <point x="280.9051670063943" y="109.0" />
+              <point x="2121.5374948413055" y="109.0" />
+              <point x="-22.25" y="14.5" />
+            </edge>
+            <edge source="java.net" target="java.security">
+              <point x="8.0" y="-14.5" />
+              <point x="500.52212918660257" y="666.0" />
+              <point x="702.5484449760761" y="666.0" />
+              <point x="702.5484449760761" y="457.0" />
+              <point x="2055.6446376984477" y="457.0" />
+              <point x="-51.42857142857156" y="14.5" />
+            </edge>
+            <edge source="java.util" target="java.io">
+              <point x="24.0" y="-14.5" />
+              <point x="726.8283476314143" y="129.0" />
+              <point x="2129.6284039322145" y="129.0" />
+              <point x="-14.159090909090992" y="14.5" />
+            </edge>
+            <edge source="java.beans" target="java.util">
+              <point x="20.625" y="-14.5" />
+              <point x="179.10795454545405" y="666.0" />
+              <point x="278.7556818181813" y="666.0" />
+              <point x="278.7556818181813" y="457.0" />
+              <point x="360.3824397336673" y="457.0" />
+              <point x="360.3824397336673" y="238.0" />
+              <point x="662.4072949998354" y="238.0" />
+              <point x="-40.42105263157896" y="14.5" />
+            </edge>
+            <edge source="java.awt" target="java.beans">
+              <point x="-30.625" y="-14.5" />
+              <point x="510.32449658157384" y="1035.0" />
+              <point x="158.48295454545405" y="1035.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.sql" target="java.security">
+              <point x="-18.799999999999955" y="-14.5" />
+              <point x="1272.498444976076" y="477.0" />
+              <point x="2089.9303519841624" y="477.0" />
+              <point x="-17.142857142857338" y="14.5" />
+            </edge>
+            <edge source="db.layer.ProductDb" target="java.lang">
+              <point x="-22.25" y="-14.5" />
+              <point x="3759.3232091270193" y="746.0" />
+              <point x="2141.714718560982" y="746.0" />
+              <point x="34.641509433962256" y="14.5" />
+            </edge>
+            <edge source="java.math.BigInteger.UnsafeHolder" target="java.math.BigInteger">
+              <point x="26.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.beans" target="java.applet.AppletContext">
+              <point x="6.875" y="-14.5" />
+              <point x="165.35795454545405" y="656.0" />
+              <point x="213.7556818181813" y="656.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.math.BigDecimal" target="java.lang">
+              <point x="-23.0" y="-14.5" />
+              <point x="1903.5732091270195" y="906.0" />
+              <point x="2101.2996242213594" y="906.0" />
+              <point x="-5.7735849056603" y="14.5" />
+            </edge>
+            <edge source="java.lang" target="java.io">
+              <point x="47.8125" y="-14.5" />
+              <point x="2154.8857091270193" y="477.0" />
+              <point x="2209.4482091270193" y="477.0" />
+              <point x="2209.4482091270193" y="89.0" />
+              <point x="2170.0829493867595" y="89.0" />
+              <point x="26.295454545454504" y="14.5" />
+            </edge>
+            <edge source="db.layer.PersonDbTest" target="java.lang">
+              <point x="0.0" y="-14.5" />
+              <point x="2746.5732091270193" y="846.0" />
+              <point x="2122.4694355421143" y="846.0" />
+              <point x="15.396226415094588" y="14.5" />
+            </edge>
+            <edge source="junit.framework" target="java.lang">
+              <point x="45.33333333333326" y="-14.5" />
+              <point x="1098.6317783094094" y="786.0" />
+              <point x="2078.2052845987173" y="786.0" />
+              <point x="-28.867924528301955" y="14.5" />
+            </edge>
+            <edge source="java.math.BigInteger" target="java.lang">
+              <point x="21.5" y="-14.5" />
+              <point x="3024.0732091270193" y="806.0" />
+              <point x="2130.1675487496614" y="806.0" />
+              <point x="23.094339622641655" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="531.0" y="680.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/ManageProductOrderGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/ChoseOrderGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductLineDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="89" column="23" lean-forward="false" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1496711622972" expanded="true" signature="515:610" ph="INSERT INTO ProductLine... " />
+            <marker date="1496711622972" expanded="true" signature="1420:1496" ph="UPDATE Produ... " />
+            <marker date="1496711622972" expanded="true" signature="2787:2812" ph="SELECT * FRO... ProductLine" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ReadOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/InvoiceGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2938" column="25" lean-forward="false" selection-start-line="2938" selection-start-column="25" selection-end-line="2938" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#124311#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4677#4678#0" expanded="false" />
+            <element signature="e#4714#4715#0" expanded="false" />
+            <element signature="e#5687#5688#0" expanded="false" />
+            <element signature="e#5750#5751#0" expanded="false" />
+            <element signature="e#13098#13099#0" expanded="false" />
+            <element signature="e#13150#13151#0" expanded="false" />
+            <element signature="e#18781#18782#0" expanded="false" />
+            <element signature="e#18834#18835#0" expanded="false" />
+            <element signature="e#20727#20728#0" expanded="false" />
+            <element signature="e#20771#20772#0" expanded="false" />
+            <element signature="e#21961#21962#0" expanded="false" />
+            <element signature="e#22041#22042#0" expanded="false" />
+            <element signature="e#22786#22787#0" expanded="false" />
+            <element signature="e#22821#22822#0" expanded="false" />
+            <element signature="e#23072#23073#0" expanded="false" />
+            <element signature="e#23112#23113#0" expanded="false" />
+            <element signature="e#29462#29463#0" expanded="false" />
+            <element signature="e#29533#29534#0" expanded="false" />
+            <element signature="e#36393#36394#0" expanded="false" />
+            <element signature="e#36459#36460#0" expanded="false" />
+            <element signature="e#38369#38370#0" expanded="false" />
+            <element signature="e#38423#38424#0" expanded="false" />
+            <element signature="e#47538#47539#0" expanded="false" />
+            <element signature="e#47602#47603#0" expanded="false" />
+            <element signature="e#55800#55801#0" expanded="false" />
+            <element signature="e#55844#55845#0" expanded="false" />
+            <element signature="e#56437#56438#0" expanded="false" />
+            <element signature="e#56514#56515#0" expanded="false" />
+            <element signature="e#58481#58482#0" expanded="false" />
+            <element signature="e#58518#58519#0" expanded="false" />
+            <element signature="e#62860#62861#0" expanded="false" />
+            <element signature="e#62916#62917#0" expanded="false" />
+            <element signature="e#66457#66458#0" expanded="false" />
+            <element signature="e#66495#66496#0" expanded="false" />
+            <element signature="e#70749#70750#0" expanded="false" />
+            <element signature="e#70802#70803#0" expanded="false" />
+            <element signature="e#78240#78241#0" expanded="false" />
+            <element signature="e#78299#78300#0" expanded="false" />
+            <element signature="e#82616#82617#0" expanded="false" />
+            <element signature="e#82667#82668#0" expanded="false" />
+            <element signature="e#82971#82972#0" expanded="false" />
+            <element signature="e#83020#83021#0" expanded="false" />
+            <element signature="e#94598#94599#0" expanded="false" />
+            <element signature="e#94636#94637#0" expanded="false" />
+            <element signature="e#104675#104676#0" expanded="false" />
+            <element signature="e#104730#104731#0" expanded="false" />
+            <element signature="e#111196#111197#0" expanded="false" />
+            <element signature="e#111251#111252#0" expanded="false" />
+            <element signature="e#113343#113344#0" expanded="false" />
+            <element signature="e#113370#113371#0" expanded="false" />
+            <element signature="e#117893#117894#0" expanded="false" />
+            <element signature="e#117955#117956#0" expanded="false" />
+            <element signature="e#118405#118406#0" expanded="false" />
+            <element signature="e#118444#118445#0" expanded="false" />
+            <element signature="e#119456#119457#0" expanded="false" />
+            <element signature="e#119510#119511#0" expanded="false" />
+            <element signature="e#120159#120160#0" expanded="false" />
+            <element signature="e#120213#120214#0" expanded="false" />
+            <element signature="e#120482#120483#0" expanded="false" />
+            <element signature="e#120521#120522#0" expanded="false" />
+            <element signature="e#120889#120890#0" expanded="false" />
+            <element signature="e#120932#120933#0" expanded="false" />
+            <element signature="e#121727#121728#0" expanded="false" />
+            <element signature="e#121769#121770#0" expanded="false" />
+            <element signature="e#122184#122185#0" expanded="false" />
+            <element signature="e#122223#122224#0" expanded="false" />
+            <element signature="e#122645#122646#0" expanded="false" />
+            <element signature="e#122685#122686#0" expanded="false" />
+            <element signature="e#123115#123116#0" expanded="false" />
+            <element signature="e#123156#123157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/CreateProductOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/ProductOrderDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <marker date="1496711622977" expanded="true" signature="621:750" ph="INSERT INTO Orders... " />
+            <marker date="1496711622977" expanded="true" signature="1200:1319" ph="INSERT INTO ProductOrder... " />
+            <marker date="1496711622977" expanded="true" signature="2145:2248" ph="UPDATE Order... " />
+            <marker date="1496711622977" expanded="true" signature="2679:2770" ph="UPDATE Produ... " />
+            <marker date="1496711622977" expanded="true" signature="5011:5031" ph="SELECT * FRO... Orders" />
+            <marker date="1496711622977" expanded="true" signature="5133:5159" ph="SELECT * FRO... ProductOrder" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/ProductOrderGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="87" column="29" lean-forward="true" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManageProductLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="44" column="54" lean-forward="true" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/PersonGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="115" column="24" lean-forward="true" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/layer/ManagePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/layer/PersonDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding>
+            <marker date="1496711622965" expanded="true" signature="614:743" ph="INSERT INTO Person... " />
+            <marker date="1496711622965" expanded="true" signature="1698:1830" ph="UPDATE Perso... " />
+            <marker date="1496711622965" expanded="true" signature="3899:3919" ph="SELECT * FRO... Person" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/layer/RequiredRawMaterialsGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding />
         </state>
       </provider>
