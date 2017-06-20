@@ -59,7 +59,7 @@ public class CreateProductOrder {
         ArrayList<RawMaterialLine> allRawMaterialLines;
         allRawMaterialLines=manageRawMaterialLineCtr.readAll();
         for (RequiredRawMaterial requiredRawMaterial : requiredRawMaterialsToMakeProduct) {
-            manageRawMaterialLineCtr.create("" + productLineId + "Raw", requiredRawMaterial.getQuantity() * quantity, requiredRawMaterial.getRawMaterialBarcode());
+            manageRawMaterialLineCtr.create("" + productLineId + "1", requiredRawMaterial.getQuantity() * quantity, requiredRawMaterial.getRawMaterialBarcode());
         }
     }
 }

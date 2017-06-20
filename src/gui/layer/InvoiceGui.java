@@ -70,7 +70,7 @@ class InvoiceGui extends JFrame {
         lblDelivery.setForeground(new Color(255, 255, 255));
         lblDelivery.setBounds(119, 156, 78, 14);
         contentPane.add(lblDelivery);
-        lblDelivery.setText(readOrder.readProductOrder(orderID).getOrderStatus());
+        lblDelivery.setText(readOrder.readProductOrder(orderID).getDeliveryDate());
 
         JLabel lblCompanyid = new JLabel("CompanyID");
         lblCompanyid.setForeground(new Color(255, 255, 255));

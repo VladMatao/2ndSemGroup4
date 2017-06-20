@@ -191,7 +191,7 @@ class ProductGui extends JFrame {
             }
 
         } else {
-            model.addRow(new Object[]{"NO", "Companies", "FOUND", "!", 0});
+            model.addRow(new Object[]{"NO", "Products", "FOUND", "!", 0});
         }
     }
 }

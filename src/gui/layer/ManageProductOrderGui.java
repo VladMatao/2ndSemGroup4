@@ -104,6 +104,7 @@ class ManageProductOrderGui extends JFrame {
 		btnDelete.addActionListener(arg0 -> {
             DeleteOrder deleteOrder = new DeleteOrder();
 deleteOrder.deleteProductOrder(orderIDTextField.getText());
+
         });
 		btnDelete.setBounds(75, 468, 123, 23);
 		contentPane.add(btnDelete);

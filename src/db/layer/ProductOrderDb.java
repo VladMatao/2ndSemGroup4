@@ -119,10 +119,8 @@ public class ProductOrderDb implements ProductOrderDbIf {
             ResultSet rsPO = conn.createStatement().executeQuery(sqlPO);
             while(rsPO.next()) {
                 while(rsO.next()) {
-                    if (rsO.getString(1).equals(rsPO.getString(1))) {
-                        productOrder = buildObject(rsO, rsPO);
-                        productOrders.add(productOrder);
-                    }
+                    productOrder = buildObject(rsO, rsPO);
+                    productOrders.add(productOrder);
                 }
             }
         } finally {

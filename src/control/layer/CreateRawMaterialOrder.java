@@ -10,23 +10,22 @@ import java.sql.SQLException;
  * Project 2nd Semester Group 4 dmaj0916 UCN
  */
 public class CreateRawMaterialOrder {
-    private final RawMaterialOrderDb RawMaterialOrderDb;
-    private final RawMaterialDb RawMaterialDb;
+    private final RawMaterialOrderDb rawMaterialOrderDb;
+    private final RawMaterialDb rawMaterialDb;
 
     public CreateRawMaterialOrder() {
-        RawMaterialOrderDb = new RawMaterialOrderDb();
-        RawMaterialLineDb RawMaterialLineDb = new RawMaterialLineDb();
-        RawMaterialDb = new RawMaterialDb();
+        rawMaterialOrderDb = new RawMaterialOrderDb();
+        rawMaterialDb = new RawMaterialDb();
     }
 
     public void create(String RawMaterialOrderId, double totalPrice, String orderStatus, String deliveryDate, String companyId, String RawMaterialLineId) {
-        RawMaterialOrderDb.create(RawMaterialOrderId, deliveryDate, orderStatus, totalPrice, companyId, RawMaterialLineId);
+        rawMaterialOrderDb.create(RawMaterialOrderId, deliveryDate, orderStatus, totalPrice, companyId, RawMaterialLineId);
     }
 
     public double calculatePrice(String RawMaterialBarcode, int quantity) {
         double totalPrice = 0;
         try {
-            totalPrice = RawMaterialDb.read(RawMaterialBarcode).getPrice() * quantity;
+            totalPrice = rawMaterialDb.read(RawMaterialBarcode).getPrice() * quantity;
             //System.out.println(RawMaterialDb.read(RawMaterialBarcode).getPrice()*quantity);
         } catch (SQLException e) {
             e.printStackTrace();
